@@ -13,7 +13,7 @@ export default defineConfig({
   ],
   build: {
     // do not copy the contents of the public folder to the dist folder
-    copyPublicDir: false,
+    copyPublicDir: false, 
     lib: {
       // this is the file that exports our components
       entry: resolve(__dirname, "lib/vite-storybook-library.ts"),

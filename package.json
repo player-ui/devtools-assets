@@ -12,6 +12,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@devtools-ds/console": "^1.2.1",
+    "@devtools-ds/navigation": "^1.2.1",
     "@player-ui/react": "^0.5.1",
     "@player-ui/types": "^0.5.1",
     "react": "^17.0.2",
