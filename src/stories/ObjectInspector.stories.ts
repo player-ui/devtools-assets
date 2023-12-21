@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ObjectInspectorComponent } from '../../lib/components/objectInspector'
+import { Data } from '../../lib/components/data'
 
 
 const meta = {
   title: 'Components/ObjectInspector',
-  component: ObjectInspectorComponent,
+  component: Data,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof ObjectInspectorComponent>;
+} satisfies Meta<typeof Data>;
 
 const testFunction = () => {
   setTimeout(() => {}, 2000);
@@ -68,8 +68,12 @@ const data = {
 
 export const ObjectInspector: Story = {
   args: {
-    data: data
+    allBindings: {
+      binding: '',
+      value:{
+        currentValue:data
+      }
   },
-
+  }
 };
 

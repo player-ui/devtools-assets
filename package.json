@@ -15,10 +15,12 @@
     "@devtools-ds/console": "^1.2.1",
     "@devtools-ds/navigation": "^1.2.1",
     "@devtools-ds/object-inspector": "^1.2.1",
+    "@player-tools/devtools-common": "^0.4.1",
     "@player-ui/react": "^0.5.1",
     "@player-ui/types": "^0.5.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-split": "^2.0.14"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.4",
