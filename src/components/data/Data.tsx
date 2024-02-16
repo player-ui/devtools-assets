@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import { ObjectInspector } from '@devtools-ds/object-inspector'
 import {
@@ -7,7 +7,7 @@ import {
     ASTNode,
     ResolvedASTNode,
   } from "@devtools-ds/object-parser";
-import type { Runtime } from '@player-tools/devtools-common';
+
 import Split from 'react-split';
 import styles from './data.module.css';
 
@@ -101,33 +101,63 @@ export const DataDetailsPanel = (props: DataDetailsPanelProps) => {
 };
 
 interface DataProps {
-  allBindings: Runtime.PlayerDataBindingRPC['result'];
-  selectedBinding: Runtime.PlayerDataBindingRPC['result'];
-  onSelect: (astNode: ASTNode | ResolvedASTNode | undefined) => Promise<void>;
+  data: object;
+  onSelect?: (astNode: ASTNode | ResolvedASTNode | undefined) => Promise<void>;
 }
 
-export const Data = ({ allBindings, selectedBinding, onSelect }: DataProps) => (
+const getBindingFromSelectedNode = (
+  node: ASTNode | ResolvedASTNode
+): string => {
+  const bindingSegments: Array<string | number> = [];
+  let currentNode: ASTNode | ResolvedASTNode | undefined = node;
+
+  while (currentNode.parent) {
+    bindingSegments.push(currentNode.key);
+    currentNode = currentNode.parent as ASTNode;
+  }
+
+  return bindingSegments.reverse().join('.');
+};
+
+export const Data = ({ data }: DataProps) => {
+
+  const [binding,setBinding] = useState('')  
+  const select = async (astNode: ASTNode | ResolvedASTNode | undefined) => {
+    console.log('Select- ASTNode', astNode)
+    const binding = astNode
+      ? getBindingFromSelectedNode(astNode)
+      : undefined;
+
+    if (!binding) {
+      return;
+    }
+
+    console.log('setting binding:', binding)
+    //need to get player binding Data
+    setBinding(binding)
+    return binding
+  }
+  return (
   <Split
     direction="horizontal"
-    sizes={[75, 25]}
-    className={styles.split}
-    gutterSize={1}
+    className={styles['split']}
   >
     <div className={styles['data-panel-wrapper']}>
-      {allBindings?.value.currentValue ? (
+      {data ? (
         <ObjectInspector
-          data={allBindings?.value?.currentValue}
+          data={data}
           includePrototypes={false}
           expandLevel={7}
-          onSelect={onSelect}
+          onSelect = {select}
         />
       ) : (
         <div>No data available</div>
       )}
     </div>
     <div className={styles['data-panel-wrapper']}>
-      <DataDetailsPanel details={selectedBinding} />
+      <DataDetailsPanel details={binding} />
     </div>
   </Split>
-);
+)
+};
 

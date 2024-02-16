@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Console } from '../../lib/components/console/';
+import { Console } from '../components/console';
 
 
 const meta = {

@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Data } from '../../lib/components/data'
+import { Data } from '../components/data'
+import { action } from "@storybook/addon-actions";
+import { boolean, number } from "@storybook/addon-knobs";
+import { selectAllBindings } from '@player-tools/devtools-common';
 
-
-const meta = {
+export default {
   title: 'Components/ObjectInspector',
   component: Data,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
@@ -27,8 +29,6 @@ map.set("foo", "bar");
 const set = new Set();
 set.add("test");
 
-export default meta;
-type Story = StoryObj<typeof meta>;
 
 const data = {
   string: "string",
@@ -66,14 +66,9 @@ const data = {
   },
 };
 
-export const ObjectInspector: Story = {
-  args: {
-    allBindings: {
-      binding: '',
-      value:{
-        currentValue:data
-      }
-  },
-  }
-};
+export const Playground = () => {
+  return(
+    <Data data={data}></Data>
+  )
+}
 

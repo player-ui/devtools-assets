@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
+
+
+import { SimpleFlow } from './SimpleFlow';
+import { useReactPlayer, ReactPlayerPlugin } from '@player-ui/react';
+import { ReferenceAssetsPlugin } from '@player-ui/reference-assets-plugin-react';
+
+import { DevToolsAssetsPlugin } from './plugin'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+const plugins: Array<ReactPlayerPlugin> = [new DevToolsAssetsPlugin(),new ReferenceAssetsPlugin()];
+
+const Fallback = () => <div id="loader">Loading...</div>;
+
+export const App = () => {
+  // Create Player with our plugins
+  const { reactPlayer } = useReactPlayer({ plugins });
+
+  // Start the flow.
+
+  React.useEffect(() => {
+    reactPlayer.start(SimpleFlow);
+  }, []);
+
+  // Render Player
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  <React.Suspense fallback={<Fallback />}>
+    <reactPlayer.Component/>
+  </React.Suspense>);
 }
 
-export default App
+export default App;
