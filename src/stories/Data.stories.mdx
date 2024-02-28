@@ -1,0 +1,13 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import {PlayerStory} from '@player-ui/storybook';
+import { Data} from '../components/data';
+import SimpleFlow  from "../App.tsx";
+
+<Meta title="Devtools Assets/Data" component={Data}/>
+
+
+<Canvas>
+    <Story name="Data">
+        <PlayerStory flow={SimpleFlow} />
+    </Story>
+</Canvas>
