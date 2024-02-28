@@ -1,15 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Data } from '../../lib/components/data'
-
+import type { Meta, StoryObj } from "@storybook/react";
+import { Data } from "../../lib/components/data";
 
 const meta = {
-  title: 'Components/ObjectInspector',
+  title: "Components/ObjectInspector",
   component: Data,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } satisfies Meta<typeof Data>;
 
@@ -69,11 +68,12 @@ const data = {
 export const ObjectInspector: Story = {
   args: {
     allBindings: {
-      binding: '',
-      value:{
-        currentValue:data
-      }
+      binding: "",
+      value: {
+        currentValue: data,
+      },
+    },
+    selectedBinding: undefined,
+    onSelect: async () => {},
   },
-  }
 };
-

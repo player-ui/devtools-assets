@@ -1,0 +1,167 @@
+version: 2.1
+
+defaults: &defaults
+  docker:
+    - image: node:18
+  parallelism: 10
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore pnpm Package Cache
+          keys:
+            - pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
+      - run:
+          name: Install pnpm package manager
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-8 --activate
+            pnpm config set store-dir .pnpm-store
+      - run:
+          name: Install Dependencies
+          command: |
+            pnpm install
+      - save_cache:
+          name: Save pnpm Package Cache
+          key: pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
+          paths:
+            - .pnpm-store
+            - ~/.pnpm-store
+            - ~/.corepack
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Activate pnpm
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-8 --activate
+      - run:
+          name: Build
+          command: pnpm run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Activate pnpm
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-8 --activate
+      - run:
+          name: Lint
+          command: pnpm run lint
+
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Activate pnpm
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-8 --activate
+      - run:
+          name: Test
+          command: pnpm run test
+      - run:
+          name: Send CodeCov Results
+          command: bash <(curl -s https://codecov.io/bash) -t $CODECOV_KEY
+      - store_test_results:
+          path: ./reports/junit/
+      - store_artifacts:
+          path: ./reports/junit
+
+  release:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Activate pnpm
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-8 --activate
+      - run: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - run:
+          name: Release
+          command: pnpm run release
+
+  format:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Activate pnpm
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-8 --activate
+      - run:
+          name: Format
+          command: pnpm run format
+
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Activate pnpm
+          command: |
+            corepack enable
+            corepack prepare pnpm@latest-8 --activate
+      - run:
+          name: Deploy
+          command: pnpm run deploy
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - install
+      - build:
+          context:
+            - Publish
+          requires:
+            - install
+      - lint:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
+      - release:
+          context:
+            - Publish
+          requires:
+            - test
+            - lint
+      - format:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - test
+            - lint
+          filters:
+            branches:
+              only: main
