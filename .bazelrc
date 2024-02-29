@@ -1,0 +1,57 @@
+common --enable_bzlmod
+test --test_output=errors
+coverage --combined_report=lcov
+
+build:ci --experimental_remote_cache_compression --experimental_remote_cache_async
+test:ci --experimental_remote_cache_compression --experimental_remote_cache_async
+coverage:ci --experimental_remote_cache_compression --experimental_remote_cache_async
+
+build --bes_results_url=https://app.buildbuddy.io/invocation/
+build --bes_backend=grpcs://remote.buildbuddy.io
+build --remote_cache=grpcs://remote.buildbuddy.io
+build --experimental_remote_cache_compression
+build --experimental_remote_cache_async
+build --remote_download_toplevel
+build --remote_timeout=3600
+build --build_metadata=REPO_URL=https://github.com/player-ui/tools.git
+
+test --bes_results_url=https://app.buildbuddy.io/invocation/
+test --bes_backend=grpcs://remote.buildbuddy.io
+test --remote_cache=grpcs://remote.buildbuddy.io
+test --experimental_remote_cache_compression
+test --experimental_remote_cache_async
+test --remote_download_toplevel
+test --remote_timeout=3600
+test --build_metadata=REPO_URL=https://github.com/player-ui/tools.git
+
+coverage --bes_results_url=https://app.buildbuddy.io/invocation/
+coverage --bes_backend=grpcs://remote.buildbuddy.io
+coverage --remote_cache=grpcs://remote.buildbuddy.io
+coverage --experimental_remote_cache_compression
+coverage --experimental_remote_cache_async
+coverage --remote_download_toplevel
+coverage --remote_timeout=3600
+coverage --build_metadata=REPO_URL=https://github.com/player-ui/tools.git
+
+build:ci --build_metadata=ROLE=CI --workspace_status_command=./scripts/workspace-status.sh
+
+# Circle large has 2 CPU cores/4GB mem
+build:ci --local_cpu_resources=4
+build:ci --local_ram_resources=8000
+build:ci --config="release"
+
+build:release --stamp --workspace_status_command=./scripts/workspace-status.sh
+
+# Support for debugging NodeJS tests
+test:debug --test_output=streamed --test_strategy=exclusive --test_timeout=9999 --nocache_test_results --define=VERBOSE_LOGS=1
+run:debug --define=VERBOSE_LOGS=1 -- --node_options=--inspect-brk
+
+# The following option will change the build output of certain rules such as terser and may not be desirable in all cases
+build:debug --compilation_mode=dbg
+
+# honor the setting of `skipLibCheck` in the tsconfig.json file
+build --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+fetch --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+query --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+
+try-import %workspace%/.bazelrc.local
