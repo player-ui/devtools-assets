@@ -5,8 +5,7 @@ import { ReferenceAssetsPlugin } from '@player-ui/reference-assets-plugin-react'
 import { Flow } from "@player-ui/types";
 import { DevToolsAssetsPlugin } from './plugin'
 import './App.css'
-import { AssetTransformPlugin } from '@player-ui/asset-transform-plugin';
-import { dataTransform } from './assets/objectInspector';
+
 export const SimpleFlow: Flow = {
   "id": "hello-world",
   "views": [
@@ -17,12 +16,12 @@ export const SimpleFlow: Flow = {
         {
           "asset": {
             "id": "name-input",
-            "type": "DataInspector",
+            "type": "objectInspector",
             "label": {
               "asset": {
                 "id": "name-input-label",
                 "type": "text",
-                "value": "hello wrold"
+                "value": "hello world"
               }
             },
             "data":{

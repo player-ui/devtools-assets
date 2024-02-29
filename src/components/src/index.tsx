@@ -6,21 +6,22 @@ import { createSlot, Asset, View } from '@player-tools/dsl';
 import type { Asset as AssetType } from '@player-ui/player';
 import type { ObjectInspector as ObjectInspectorAsset} from '../../assets/objectInspector';
 import type {
-    CollectionAsset,
+    CollectionAsset, TextAsset
   } from '@player-ui/reference-assets-plugin';
 
-export const ObjectInspector = (
-    props: Omit<AssetPropsWithChildren<ObjectInspectorAsset>, 'value'> & {
+
+
+  export const Text = (
+    props: Omit<AssetPropsWithChildren<TextAsset>, 'value'> & {
       value?: string;
     }
   ) => {
     return (
-      <Asset type="data-inspector" {...props}>
+      <Asset type="text" {...props}>
         <property name="value">{props.children}</property>
       </Asset>
     );
   };
-
 
 export const Collection = (props: AssetPropsWithChildren<CollectionAsset>) => {
     return <Asset type="collection" {...props} />;
@@ -35,6 +36,26 @@ export const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
       </Collection>
     );
   };
+
+  Collection.Values = createSlot({
+    name: 'values',
+    isArray: true,
+    TextComp: Text,
+    wrapInAsset: true,
+  });
+
+  export const ObjectInspector = (
+    props: Omit<AssetPropsWithChildren<ObjectInspectorAsset>, 'value'> & {
+      value?: string;
+    }
+  ) => {
+    return (    
+      <Asset type="data-inspector" {...props}>
+        <property name="value">{props.children}</property>
+      </Asset>
+    );
+  };
+
 
   /** A utility for quickly creating named slots using the text and collection factories */
 const slotFactory = (name: string, isArray = false) =>
@@ -53,9 +74,5 @@ export const SubtitleSlot = slotFactory('subtitle');
 export const ActionsSlot = slotFactory('actions', true);
 export const PrimaryInfoSlot = slotFactory('primaryInfo');
 
-Collection.Values = createSlot({
-    name: 'values',
-    isArray: true,
-    TextComp: Text,
-    wrapInAsset: true,
-  });
+ObjectInspector.Label = LabelSlot
+

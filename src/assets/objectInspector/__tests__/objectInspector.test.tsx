@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-json-reconciler'
 import { ObjectInspector } from '../../../components/src/index';
 import { test, expect } from "vitest";
+import { Text } from "@player-ui/reference-assets-plugin-react"
 
 const expectedBasicObjectInspector = {
     id: "root",
@@ -17,8 +18,8 @@ const expectedBasicObjectInspector = {
     const element = (
       <ObjectInspector data={data}>
         <ObjectInspector.Label>
-          <Text>Label</Text>
-          </ObjectInspector.Label>
+          <Text value={'Label'} id={'label'} type={'text'}>Label</Text>
+        </ObjectInspector.Label>
       </ObjectInspector>
     );
   
