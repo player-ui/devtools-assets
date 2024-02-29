@@ -1,1 +1,1 @@
-export * from "./ObjectInspector"
+export * from "./ObjectInspector";

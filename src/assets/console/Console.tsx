@@ -1,25 +1,24 @@
-import React from 'react';
+import React from "react";
 import {
   Console as ConsoleComp,
   ConsoleResultInspector,
-} from '@devtools-ds/console';
-import { Navigation } from '@devtools-ds/navigation';
-import { DeleteIcon } from '@devtools-ds/icon';
-
+} from "@devtools-ds/console";
+import { Navigation } from "@devtools-ds/navigation";
+import { DeleteIcon } from "@devtools-ds/icon";
 
 export const ConsoleHeader = () => {
   return (
     <div style={{ margin: 10 }}>
       <p>
         The console allows you to evaluate any Player expression <br />
-        Check out the{' '}
+        Check out the{" "}
         <a
           href="https://player-ui.github.io/latest/content/data-expressions"
           target="_blank"
           rel="noreferrer"
         >
           docs
-        </a>{' '}
+        </a>{" "}
         for the available expressions
       </p>
     </div>
