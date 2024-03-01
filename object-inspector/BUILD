@@ -10,7 +10,14 @@ vitest_config(name = "vitest_config")
 
 js_pipeline(
     package_name = "@devtools-ui/object-inspector",
+    test_deps = [
+        ":node_modules",
+        "//:vitest_config",
+    ],
     deps = [
-        "//:node_modules/redux",
+        "//:node_modules/@types/react",
+        "//:node_modules/react",
+        "//:node_modules/@devtools-ds/object-inspector",
+        "//:node_modules/@player-tools/dsl",
     ],
 )

@@ -1,5 +1,5 @@
 import React from "react";
-import Text from "@devtools-ui/text";
+import { TextComponent } from "@devtools-ui/text";
 import { ObjectInspector as ObjectorInspectorDS } from "@devtools-ds/object-inspector";
 import { ReactAsset } from "@player-ui/react";
 
@@ -19,7 +19,7 @@ export const ObjectInspectorComponent = (props: ObjectInspectorAsset) => {
           expandLevel={7}
         />
       ) : (
-        <Text>No data available</Text>
+        <TextComponent value="No data available" />
       )}
     </div>
   );
