@@ -11,6 +11,5 @@ vitest_config(name = "vitest_config")
 js_pipeline(
     package_name = "@devtools-ui/object-inspector",
     deps = [
-        "//:node_modules/redux",
     ],
 )

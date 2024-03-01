@@ -1,0 +1,10 @@
+{
+  "name": "@devtools-ui/plugin",
+  "version": "0.0.0-PLACEHOLDER",
+  "sideEffects": false,
+  "main": "src/index.js",
+  "dependencies": {
+    "@devtools-ui/text": "workspace:*",
+    "@devtools-ui/object-inspector": "workspace:*"
+  }
+}
