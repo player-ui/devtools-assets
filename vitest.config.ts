@@ -31,7 +31,7 @@ export default defineConfig({
       exclude: [
         "**/node_modules/**",
         "external/**",
-        "tools/**",
+        "helpers/**",
         "**/__tests__/**",
         "**/__mocks__/**",
         "**/*.d.ts",

@@ -4,7 +4,7 @@
   "versionBranches": true,
   "noVersionPrefix": true,
   "owner": "player-ui",
-  "repo": "tools",
+  "repo": "devtools-assets",
   "plugins": [
     "all-contributors",
     [
