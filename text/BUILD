@@ -10,5 +10,18 @@ vitest_config(name = "vitest_config")
 
 js_pipeline(
     package_name = "@devtools-ui/text",
-    deps = [],
+    test_deps = [
+        ":node_modules",
+        "//:vitest_config",
+    ],
+    deps = [
+        "//:node_modules/@chakra-ui/react",
+        "//:node_modules/@emotion/react",
+        "//:node_modules/@emotion/styled",
+        "//:node_modules/@player-tools/dsl",
+        "//:node_modules/@player-ui/types",
+        "//:node_modules/@types/react",
+        "//:node_modules/framer-motion",
+        "//:node_modules/react",
+    ],
 )

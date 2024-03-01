@@ -14,7 +14,8 @@ profile
 
 # Node modules
 node_modules
-**/node_modules
+text/node_modules
+object-inspector/node_modules
 
 # Backup files
 _backup
