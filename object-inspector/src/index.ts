@@ -1,2 +1,3 @@
-export { ObjectInspectorComponent } from "./components";
-export { ObjectInspector } from "./dsl";
+export * from "./components";
+export * from "./dsl";
+export * from "./types";

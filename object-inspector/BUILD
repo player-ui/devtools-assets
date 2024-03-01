@@ -10,6 +10,10 @@ vitest_config(name = "vitest_config")
 
 js_pipeline(
     package_name = "@devtools-ui/object-inspector",
+    test_deps = [
+        ":node_modules",
+        "//:vitest_config",
+    ],
     deps = [
     ],
 )

@@ -7,18 +7,32 @@ describe("DSL: Text", () => {
   test("with value", async () => {
     const rendered = await render(<Text>Value</Text>);
 
-    expect(rendered.jsonValue).toMatchInlineSnapshot();
+    expect(rendered.jsonValue).toStrictEqual({
+      id: "root",
+      type: "text",
+      value: "Value",
+    });
   });
 
   test("with value and size", async () => {
     const rendered = await render(<Text size="md">Value</Text>);
 
-    expect(rendered.jsonValue).toMatchInlineSnapshot();
+    expect(rendered.jsonValue).toStrictEqual({
+      id: "root",
+      type: "text",
+      value: "Value",
+      size: "md",
+    });
   });
 
   test("with value and element override", async () => {
     const rendered = await render(<Text as="b">Value</Text>);
 
-    expect(rendered.jsonValue).toMatchInlineSnapshot();
+    expect(rendered.jsonValue).toStrictEqual({
+      id: "root",
+      type: "text",
+      value: "Value",
+      as: "b",
+    });
   });
 });
