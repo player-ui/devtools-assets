@@ -3,11 +3,11 @@ import { Text } from "@player-ui/text";
 import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
 import { ObjectInspectorAsset } from "../types";
 
-export const ObjectInspector = (
+export const Action = (
   props: AssetPropsWithChildren<ObjectInspectorAsset>
-) => <Asset type="object-inspector" {...props} />;
+) => <Asset type="action" {...props} />;
 
-ObjectInspector.Label = createSlot({
+Action.Label = createSlot({
   wrapInAsset: true,
   name: "label",
   TextComp: Text,
