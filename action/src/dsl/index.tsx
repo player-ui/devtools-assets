@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "@player-ui/text";
 import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
 import { ObjectInspectorAsset } from "../types";
 
