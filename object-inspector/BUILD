@@ -26,5 +26,6 @@ js_pipeline(
         "//:node_modules/@devtools-ui/text",
         "//:node_modules/@player-ui/react",
         "//:node_modules/@player-ui/types",
+        "//:node_modules/dlv",
     ],
 )

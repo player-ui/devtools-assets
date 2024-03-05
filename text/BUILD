@@ -23,5 +23,6 @@ js_pipeline(
         "//:node_modules/@types/react",
         "//:node_modules/framer-motion",
         "//:node_modules/react",
+        "//:node_modules/dlv",
     ],
 )
