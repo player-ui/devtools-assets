@@ -1,1 +1,0 @@
-export { ObjectInspectorComponent } from "./TextComponent";
