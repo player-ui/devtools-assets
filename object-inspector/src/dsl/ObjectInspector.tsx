@@ -1,11 +1,19 @@
 import React from "react";
-import { Text } from "@player-ui/text";
-import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
-import { ObjectInspectorAsset } from "../types";
+import { Text } from "@devtools-ui/text";
+import {
+  AssetPropsWithChildren,
+  Asset,
+  createSlot,
+  AssetWrapper,
+} from "@player-tools/dsl";
+import type { ObjectInspectorAsset } from "../types";
+import { ObjectInspectorComponent } from "../components";
 
 export const ObjectInspector = (
   props: AssetPropsWithChildren<ObjectInspectorAsset>
-) => <Asset type="object-inspector" {...props} />;
+) => {
+  return <Asset type="object-inspector" {...props}></Asset>;
+};
 
 ObjectInspector.Label = createSlot({
   wrapInAsset: true,

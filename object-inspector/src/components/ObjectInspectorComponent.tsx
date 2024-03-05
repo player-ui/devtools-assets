@@ -7,10 +7,10 @@ import styles from "./objectInspector.module.css";
 import { ObjectInspectorAsset } from "../types";
 
 export const ObjectInspectorComponent = (props: ObjectInspectorAsset) => {
-  const { id, data, label } = props;
+  const { data, label } = props;
 
   return (
-    <div id={id} className={styles["data-panel-wrapper"]}>
+    <div className={styles["data-panel-wrapper"]}>
       {label && <ReactAsset {...label} />}
       {data ? (
         <ObjectorInspectorDS
@@ -19,7 +19,7 @@ export const ObjectInspectorComponent = (props: ObjectInspectorAsset) => {
           expandLevel={7}
         />
       ) : (
-        <TextComponent value="No data available" />
+        <TextComponent value="No data available" id={""} type={"text"} />
       )}
     </div>
   );
