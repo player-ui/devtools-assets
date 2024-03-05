@@ -2,3 +2,5 @@
 packages:
   - "object-inspector"
   - "text"
+  - "action"
+  - "navigation"

@@ -1,4 +1,4 @@
-import { Asset, AssetWrapper } from "@player-ui/types";
+import { Asset, Expression } from "@player-ui/types";
 import type { IconButton } from "@chakra-ui/react";
 export type JSONArray = JSONValue[];
 
@@ -14,14 +14,13 @@ export type JSONValue =
 
 export type Variant = "solid" | "outline" | "ghost" | "link";
 
-export interface ActionAsset<AnyAsset extends Asset = Asset>
-  extends Asset<"action"> {
+export interface ActionAsset extends Asset<"action"> {
   /**text value for action */
   value?: string;
   /** Icon Button for Left of Action*/
-  ButtonLeft?: typeof IconButton;
+  ButtonLeft?: JSX.Element;
   /** Icon Button for Right of Action*/
-  ButtonRight?: typeof IconButton;
+  ButtonRight?: JSX.Element;
   /** Variant of button */
   Variant?: Variant;
 
@@ -33,4 +32,7 @@ export interface ActionAsset<AnyAsset extends Asset = Asset>
 
   /** automationId for testing */
   automationId?: string;
+
+  /** option expression to exevute before transition */
+  exp?: Expression;
 }

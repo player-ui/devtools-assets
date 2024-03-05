@@ -9,7 +9,7 @@ tsup_config(name = "tsup_config")
 vitest_config(name = "vitest_config")
 
 js_pipeline(
-    package_name = "@devtools-ui/action",
+    package_name = "@devtools-ui/navigation",
     test_deps = [
         ":node_modules",
         "//:vitest_config",
@@ -23,9 +23,5 @@ js_pipeline(
         "//:node_modules/@types/react",
         "//:node_modules/framer-motion",
         "//:node_modules/react",
-        "//:node_modules/@devtools-ui/text",
-        "//:node_modules/@player-ui/react",
-        "//:node_modules/@player-ui/reference-assets-plugin",
-        "//:node_modules/@player-ui/player"
     ],
 )
