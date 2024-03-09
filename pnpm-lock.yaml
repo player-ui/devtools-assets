@@ -172,8 +172,6 @@ importers:
         specifier: workspace:*
         version: link:../text
 
-  navigation: {}
-
   object-inspector:
     dependencies:
       '@devtools-ui/text':
