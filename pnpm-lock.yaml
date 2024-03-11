@@ -132,6 +132,11 @@ importers:
       lint-staged:
         specifier: ^11.2.3
         version: 11.2.6
+      "list-item\n":
+        specifier: |
+          link:@devtools-ui/list-item
+        version: |
+          link:@devtools-ui/list-item
       mkdirp:
         specifier: ^1.0.4
         version: 1.0.4

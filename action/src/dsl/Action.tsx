@@ -54,6 +54,7 @@ export const Action = (
 
   return (
     <Asset type="action" {...rest}>
+      <property name="exp">{exp?.toValue()}</property>
       {children}
     </Asset>
   );

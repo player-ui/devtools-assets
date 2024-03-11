@@ -60,6 +60,7 @@
     "is-ci-cli": "^2.2.0",
     "lcov-result-merger": "^3.1.0",
     "lint-staged": "^11.2.3",
+    "list-item\n": "link:@devtools-ui/list-item\n",
     "mkdirp": "^1.0.4",
     "patch-package": "^6.4.7",
     "prettier": "^2.4.1",
