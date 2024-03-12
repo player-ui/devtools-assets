@@ -8,7 +8,7 @@ export const NavigationComponent = (props: NavigationAsset) => {
   const { id, actions, ...rest } = props;
   return (
     <div id={id} {...rest}>
-      {actions.map((action, index) => (
+      {actions?.map((action, index) => (
         <ActionComponent key={index} {...action} />
       ))}
     </div>
