@@ -18,6 +18,7 @@ action/node_modules
 navigation/node_modules
 text/node_modules
 object-inspector/node_modules
+input/node_modules
 
 # Backup files
 _backup

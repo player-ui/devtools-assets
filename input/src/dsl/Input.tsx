@@ -15,7 +15,7 @@ export const Input = (
   const { children, ...rest } = props;
   return (
     <Asset type="input" {...rest}>
-      <property name="value">{children}</property>
+      <property name="value">{props.children}</property>
     </Asset>
   );
 };

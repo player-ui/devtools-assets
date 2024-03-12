@@ -4,3 +4,4 @@ packages:
   - "text"
   - "action"
   - "navigation"
+  - "input"

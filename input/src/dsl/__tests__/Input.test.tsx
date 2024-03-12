@@ -20,6 +20,8 @@ describe("DSL: Input", () => {
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
       type: "input",
+      placeholder: "User input",
+      size: "small",
       value: "My input",
     });
   });
@@ -28,7 +30,7 @@ describe("DSL: Input", () => {
     const rendered = await render(
       <Input>
         <Input.Label>
-          Input Label
+          My label
         </Input.Label>
         My value
       </Input>
