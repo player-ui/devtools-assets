@@ -7,10 +7,10 @@ import styles from "./objectInspector.module.css";
 import { ObjectInspectorAsset } from "../types";
 
 export const ObjectInspectorComponent = (props: ObjectInspectorAsset) => {
-  const { data, label } = props;
+  const { data, label, id } = props;
 
   return (
-    <div className={styles["data-panel-wrapper"]}>
+    <div id={id} className={styles["data-panel-wrapper"]}>
       {label && <ReactAsset {...label} />}
       {data ? (
         <ObjectorInspectorDS

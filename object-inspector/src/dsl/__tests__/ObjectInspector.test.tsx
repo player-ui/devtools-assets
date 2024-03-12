@@ -13,9 +13,6 @@ describe("DSL: Object Inspector", () => {
     });
   });
 
-  const testData = {
-    hello: "world",
-  };
   test("with value and size", async () => {
     const rendered = await render(
       <ObjectInspector>

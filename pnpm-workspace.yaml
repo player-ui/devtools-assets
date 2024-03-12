@@ -5,3 +5,6 @@ packages:
   - "action"
   - "navigation"
   - "input"
+  - "list"
+  - "list-item"
+  - "slots"
