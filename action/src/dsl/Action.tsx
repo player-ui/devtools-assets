@@ -8,7 +8,6 @@ import {
 import { ActionAsset } from "../types";
 import { LabelSlot } from "@devtools-ui/slots";
 
-
 export const Action = (
   props: Omit<AssetPropsWithChildren<ActionAsset>, "exp"> & {
     /** An optional expression to execute before transitioning */
@@ -24,6 +23,4 @@ export const Action = (
     </Asset>
   );
 };
-
-
 Action.Label = LabelSlot;

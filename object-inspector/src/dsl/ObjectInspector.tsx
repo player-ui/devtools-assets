@@ -1,9 +1,5 @@
 import React from "react";
-import { Text } from "@devtools-ui/text";
-import {
-  AssetPropsWithChildren,
-  Asset,
-} from "@player-tools/dsl";
+import { AssetPropsWithChildren, Asset } from "@player-tools/dsl";
 import type { ObjectInspectorAsset } from "../types";
 import { LabelSlot } from "@devtools-ui/slots";
 export const ObjectInspector = (
@@ -11,5 +7,4 @@ export const ObjectInspector = (
 ) => {
   return <Asset type="object-inspector" {...props}></Asset>;
 };
-
-ObjectInspector.Label = LabelSlot
+ObjectInspector.Label = LabelSlot;

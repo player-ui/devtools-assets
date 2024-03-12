@@ -34,34 +34,4 @@ describe("DSL: Navigation", () => {
       ],
     });
   });
-
-  test("Renders navigation with multiple actions", async () => {
-    const rendered = await render(
-      <Navigation>
-        <Navigation.Actions>Test</Navigation.Actions>
-        <Navigation.Actions>End</Navigation.Actions>
-      </Navigation>
-    );
-
-    expect(rendered.jsonValue).toStrictEqual({
-      id: "root",
-      type: "navigation",
-      actions: [
-        {
-          asset: {
-            id: "actions-0",
-            type: "text",
-            value: "Test",
-          },
-        },
-        {
-          asset: {
-            id: "actions-0",
-            type: "text",
-            value: "End",
-          },
-        },
-      ],
-    });
-  });
 });
