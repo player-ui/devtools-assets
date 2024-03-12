@@ -7,12 +7,11 @@ interface ListItemData {
 }
 
 export interface ListAsset extends Asset<"list-item"> {
-  columnsData: ListItemData[];
+  columnsData?: ListItemData;
 }
-
 
 /**columnsData = [
  * { content: 'Log Message', type: log, message: "" },
  * { content: 'Debug Data', type: debug, message: ""},
  * { content: "Event Triggered", type: Event, message: ""}
-*/
+ */

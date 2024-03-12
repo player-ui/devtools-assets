@@ -30,6 +30,12 @@ importers:
       '@devtools-ds/object-parser':
         specifier: ^1.2.1
         version: 1.2.1
+      '@devtools-ui/action':
+        specifier: workspace:0.0.0-PLACEHOLDER
+        version: link:action
+      '@devtools-ui/list-item':
+        specifier: workspace:0.0.0-PLACEHOLDER
+        version: link:list-item
       '@devtools-ui/text':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:text
@@ -132,11 +138,6 @@ importers:
       lint-staged:
         specifier: ^11.2.3
         version: 11.2.6
-      "list-item\n":
-        specifier: |
-          link:@devtools-ui/list-item
-        version: |
-          link:@devtools-ui/list-item
       mkdirp:
         specifier: ^1.0.4
         version: 1.0.4
@@ -176,6 +177,10 @@ importers:
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
+
+  list: {}
+
+  list-item: {}
 
   navigation: {}
 

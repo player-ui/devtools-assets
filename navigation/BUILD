@@ -25,5 +25,6 @@ js_pipeline(
         "//:node_modules/react",
         "//:node_modules/dlv",
         "//:node_modules/@devtools-ui/action",
+        "//:node_modules/@player-ui/react",
     ],
 )

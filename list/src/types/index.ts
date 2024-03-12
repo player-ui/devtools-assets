@@ -1,6 +1,6 @@
 import { Asset } from "@player-ui/types";
-import { ListItemData } from "@devtools-ui/list-item";
+import type { ListAsset } from "@devtools-ui/list-item";
 
-export interface ListAsset extends Asset<"text"> {
-  items: ListItemData[];
+export interface ListAssetType extends Asset<"list"> {
+  data?: ListAsset[];
 }
