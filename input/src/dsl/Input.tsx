@@ -8,12 +8,14 @@ import { Text } from "@devtools-ui/text";
 import { InputAsset } from "../types";
 
 export const Input = (
-  props: AssetPropsWithChildren<InputAsset>
+  props: Omit<AssetPropsWithChildren<InputAsset>, "value"> & {
+    value?: string;
+  }
 ) => {
   const { children, ...rest } = props;
   return (
     <Asset type="input" {...rest}>
-      {children}
+      <property name="value">{children}</property>
     </Asset>
   );
 };
