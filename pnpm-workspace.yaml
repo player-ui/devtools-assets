@@ -6,3 +6,4 @@ packages:
   - "navigation"
   - "list"
   - "list-item"
+  - "slots"

@@ -36,6 +36,9 @@ importers:
       '@devtools-ui/list-item':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:list-item
+      '@devtools-ui/slots':
+        specifier: workspace:0.0.0-PLACEHOLDER
+        version: link:slots
       '@devtools-ui/text':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:text
@@ -189,6 +192,8 @@ importers:
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
+
+  slots: {}
 
   text: {}
 

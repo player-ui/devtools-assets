@@ -3,46 +3,11 @@ import React from "react";
 import {
   AssetPropsWithChildren,
   Asset,
-  createSlot,
   ExpressionTemplateInstance,
 } from "@player-tools/dsl";
 import { ActionAsset } from "../types";
-import { Text } from "@devtools-ui/text";
-import { CollectionAsset } from "@player-ui/reference-assets-plugin";
-import type { Asset as AssetType } from "@player-ui/player";
+import { LabelSlot } from "@devtools-ui/slots";
 
-export const Collection = (props: AssetPropsWithChildren<CollectionAsset>) => {
-  return <Asset type="collection" {...props} />;
-};
-
-const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
-  return (
-    <Collection>
-      <Collection.Values>{props.children}</Collection.Values>
-    </Collection>
-  );
-};
-
-Collection.Values = createSlot({
-  name: "values",
-  isArray: true,
-  TextComp: Text,
-  wrapInAsset: true,
-});
-
-/** A utility for quickly creating named slots using the text and collection factories */
-const slotFactory = (name: string, isArray = false) =>
-  createSlot({
-    name,
-    TextComp: Text,
-    CollectionComp,
-    isArray,
-    wrapInAsset: true,
-  });
-
-export const LabelSlot = slotFactory("label");
-
-Collection.Label = LabelSlot;
 
 export const Action = (
   props: Omit<AssetPropsWithChildren<ActionAsset>, "exp"> & {
@@ -60,9 +25,5 @@ export const Action = (
   );
 };
 
-Action.Label = createSlot({
-  wrapInAsset: true,
-  name: "label",
-  TextComp: Text,
-  CollectionComp,
-});
+
+Action.Label = LabelSlot;

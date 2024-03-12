@@ -1,7 +1,9 @@
 import React from "react";
-import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
+import { AssetPropsWithChildren, Asset } from "@player-tools/dsl";
 import { NavigationAsset } from "../types";
-import { Text } from "@devtools-ui/text";
+
+import { LabelSlot, ActionsSlot } from "@devtools-ui/slots";
+
 
 export const Navigation = (
   props: Omit<AssetPropsWithChildren<NavigationAsset>, "value"> & {
@@ -9,9 +11,6 @@ export const Navigation = (
   }
 ) => <Asset type="navigation" {...props}></Asset>;
 
-Navigation.Actions = createSlot({
-  name: "actions",
-  isArray: true,
-  TextComp: Text,
-  wrapInAsset: true,
-});
+
+  Navigation.Label = LabelSlot
+  Navigation.Actions = ActionsSlot

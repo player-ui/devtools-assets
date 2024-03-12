@@ -28,6 +28,7 @@
     "@devtools-ds/object-parser": "^1.2.1",
     "@devtools-ui/action": "workspace:0.0.0-PLACEHOLDER",
     "@devtools-ui/list-item": "workspace:0.0.0-PLACEHOLDER",
+    "@devtools-ui/slots": "workspace:0.0.0-PLACEHOLDER",
     "@devtools-ui/text": "workspace:0.0.0-PLACEHOLDER",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
