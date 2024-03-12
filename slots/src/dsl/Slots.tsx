@@ -3,6 +3,7 @@ import React from "react";
 import {
   AssetPropsWithChildren,
   Asset,
+  createSlot,
 } from "@player-tools/dsl";
 import { Text } from "@devtools-ui/text";
 import { CollectionAsset } from "@player-ui/reference-assets-plugin";
