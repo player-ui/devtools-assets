@@ -27,5 +27,6 @@ js_pipeline(
         "//:node_modules/@devtools-ui/action",
         "//:node_modules/@devtools-ui/text",
         "//:node_modules/@player-ui/react",
+        "//:node_modules/@devtools-ui/slots",
     ],
 )
