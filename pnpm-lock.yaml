@@ -183,9 +183,9 @@ importers:
 
   input:
     dependencies:
-      '@devtools-ui/text':
+      '@devtools-ui/slots':
         specifier: workspace:*
-        version: link:../text
+        version: link:../slots
 
   list: {}
 

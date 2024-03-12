@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  AssetPropsWithChildren,
-  Asset,
-  createSlot,
-} from "@player-tools/dsl";
-import { Text } from "@devtools-ui/text";
+import { AssetPropsWithChildren, Asset } from "@player-tools/dsl";
+import { LabelSlot } from "@devtools-ui/slots";
 import { InputAsset } from "../types";
 
 export const Input = (
@@ -15,13 +11,9 @@ export const Input = (
   const { children, ...rest } = props;
   return (
     <Asset type="input" {...rest}>
-      <property name="value">{props.children}</property>
+      {children}
     </Asset>
   );
 };
 
-Input.Label = createSlot({
-  wrapInAsset: true,
-  name: "label",
-  TextComp: Text,
-});
+Input.Label = LabelSlot;
