@@ -4,3 +4,6 @@ packages:
   - "text"
   - "action"
   - "navigation"
+  - "list"
+  - "list-item"
+  - "slots"

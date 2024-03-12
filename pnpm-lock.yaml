@@ -30,6 +30,15 @@ importers:
       '@devtools-ds/object-parser':
         specifier: ^1.2.1
         version: 1.2.1
+      '@devtools-ui/action':
+        specifier: workspace:0.0.0-PLACEHOLDER
+        version: link:action
+      '@devtools-ui/list-item':
+        specifier: workspace:0.0.0-PLACEHOLDER
+        version: link:list-item
+      '@devtools-ui/slots':
+        specifier: workspace:0.0.0-PLACEHOLDER
+        version: link:slots
       '@devtools-ui/text':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:text
@@ -172,6 +181,10 @@ importers:
         specifier: workspace:*
         version: link:../text
 
+  list: {}
+
+  list-item: {}
+
   navigation: {}
 
   object-inspector:
@@ -179,6 +192,8 @@ importers:
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
+
+  slots: {}
 
   text: {}
 
