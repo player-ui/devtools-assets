@@ -9,7 +9,7 @@ tsup_config(name = "tsup_config")
 vitest_config(name = "vitest_config")
 
 js_pipeline(
-    package_name = "@devtools-ui/list-item",
+    package_name = "@devtools-ui/text",
     test_deps = [
         ":node_modules",
         "//:vitest_config",
@@ -21,10 +21,11 @@ js_pipeline(
         "//:node_modules/@player-tools/dsl",
         "//:node_modules/@player-ui/types",
         "//:node_modules/@types/react",
+        "//:node_modules/@player-ui/react",
         "//:node_modules/framer-motion",
+        "//:node_modules/@player-ui/player",
         "//:node_modules/react",
         "//:node_modules/dlv",
-        "//:node_modules/@devtools-ui/text"
-        
+        ":node_modules/@devtools-ui/text",
     ],
 )

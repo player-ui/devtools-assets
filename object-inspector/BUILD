@@ -23,10 +23,12 @@ js_pipeline(
         "//:node_modules/@emotion/react",
         "//:node_modules/@emotion/styled",
         "//:node_modules/framer-motion",
+        "//:node_modules/@player-ui/player",
         "//:node_modules/@devtools-ui/text",
-        "//:node_modules/@devtools-ui/slots",
         "//:node_modules/@player-ui/react",
         "//:node_modules/@player-ui/types",
         "//:node_modules/dlv",
+        ":node_modules/@devtools-ui/collection",
+        ":node_modules/@devtools-ui/text",
     ],
 )

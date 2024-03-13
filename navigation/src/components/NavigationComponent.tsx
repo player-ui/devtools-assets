@@ -1,14 +1,16 @@
 import React from "react";
 import { NavigationAsset } from "../types";
-import { ActionComponent } from "@devtools-ui/action";
+import { Stack } from "@chakra-ui/react";
+import { ReactAsset } from "@player-ui/react";
 
 export const NavigationComponent = (props: NavigationAsset) => {
-  const { id, actions, ...rest } = props;
+  const { actions, ...rest } = props;
+
   return (
-    <div id={id} {...rest}>
-      {actions?.map((action, index) => (
-        <ActionComponent key={index} {...action} />
+    <Stack direction="row" spacing={4} {...rest}>
+      {actions?.map((a) => (
+        <ReactAsset key={a.asset.id} {...a} />
       ))}
-    </div>
+    </Stack>
   );
 };

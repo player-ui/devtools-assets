@@ -15,12 +15,12 @@ profile
 # Node modules
 node_modules
 action/node_modules
+collection/node_modules
 navigation/node_modules
 text/node_modules
 object-inspector/node_modules
+plugin/node_modules
 list/node_modules
-list-item/node_modules
-slots/node_modules
 
 # Backup files
 _backup

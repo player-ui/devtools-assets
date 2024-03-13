@@ -1,19 +1,26 @@
 import React from "react";
-import { Text } from "@chakra-ui/react";
-import { ListAssetType } from "../types";
-import { ListAsset, ListItem } from "@devtools-ui/list-item";
+import { ListItem, OrderedList, UnorderedList } from "@chakra-ui/react";
+import { ListAsset } from "../types";
+import { ReactAsset } from "@player-ui/react";
 
-export const ListComponent = (props: ListAssetType) => {
-  return (
-    <div className="list">
-      {props.data?.map((item: ListAsset, index) => {
-        const data = {
-          content: item.columnsData?.content ?? "content",
-          type: item.columnsData?.type ?? "type",
-          message: item.columnsData?.message ?? "message",
-        };
-        return <ListItem key={index} columnsData={data} />;
-      })}
-    </div>
+export const ListComponent = (props: ListAsset) => {
+  return props.metaData?.ordered ? (
+    <UnorderedList>
+      {props.values &&
+        props.values.map(({ asset }) => (
+          <ListItem key={asset.id}>
+            <ReactAsset {...asset} />
+          </ListItem>
+        ))}
+    </UnorderedList>
+  ) : (
+    <OrderedList>
+      {props.values &&
+        props.values.map(({ asset }) => (
+          <ListItem key={asset.id}>
+            <ReactAsset {...asset} />
+          </ListItem>
+        ))}
+    </OrderedList>
   );
 };

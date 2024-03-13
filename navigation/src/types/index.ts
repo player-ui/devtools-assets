@@ -1,6 +1,6 @@
-import { Asset } from "@player-ui/types";
-import { ActionAsset } from "@devtools-ui/action";
-/** list of actions that tell which view to go to */
+import { Asset, AssetWrapper } from "@player-ui/types";
+
+/** Navigation between flow's views */
 export interface NavigationAsset extends Asset<"navigation"> {
-  actions?: ActionAsset[];
+  actions?: Array<AssetWrapper>;
 }

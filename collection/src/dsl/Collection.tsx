@@ -1,13 +1,21 @@
 import React from "react";
 import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
 import type { Asset as AssetType } from "@player-ui/player";
+import { CollectionAsset } from "../types";
 import { Text } from "@devtools-ui/text";
-import { Collection } from "@devtools-ui/collection";
-import { NavigationAsset } from "../types";
 
-export const Navigation = (props: AssetPropsWithChildren<NavigationAsset>) => (
-  <Asset type="navigation" {...props}></Asset>
-);
+export const Collection = (
+  props: Omit<AssetPropsWithChildren<CollectionAsset>, "value"> & {
+    value?: string;
+  }
+) => {
+  const { children, ...rest } = props;
+  return (
+    <Asset type="collection" {...rest}>
+      {children}
+    </Asset>
+  );
+};
 
 const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
   return (
@@ -17,8 +25,8 @@ const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
   );
 };
 
-Navigation.Actions = createSlot({
-  name: "actions",
+Collection.Values = createSlot({
+  name: "values",
   TextComp: Text,
   CollectionComp,
   isArray: true,

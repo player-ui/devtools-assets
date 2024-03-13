@@ -1,38 +1,39 @@
-import { Asset, Expression } from "@player-ui/types";
-import type { IconButton } from "@chakra-ui/react";
-export type JSONArray = JSONValue[];
-
-export type JSONObject = { [key: string]: JSONValue };
-
-export type JSONValue =
-  | string
-  | number
-  | boolean
-  | null
-  | JSONObject
-  | JSONArray;
+import type { TextAsset } from "@devtools-ui/text";
+import type { Asset, AssetWrapper, Expression } from "@player-ui/types";
 
 export type Variant = "solid" | "outline" | "ghost" | "link";
 
 export interface ActionAsset extends Asset<"action"> {
   /**text value for action */
   value?: string;
-  /** Icon Button for Left of Action*/
-  ButtonLeft?: JSX.Element;
-  /** Icon Button for Right of Action*/
-  ButtonRight?: JSX.Element;
-  /** Variant of button */
-  Variant?: Variant;
 
-  /**indicate a spinner for loading */
-  isLoading?: boolean;
+  /** An optional Icon asset. */
+  icon?: AssetWrapper;
 
-  /** function */
-  onClick?: () => void;
+  /** A text asset for the action's label */
+  label?: AssetWrapper<TextAsset>;
 
-  /** automationId for testing */
-  automationId?: string;
-
-  /** option expression to exevute before transition */
+  /** An optional expression to execute before transitioning */
   exp?: Expression;
+
+  /** Additional optional data to assist with the action interactions on the page */
+  metaData?: {
+    /** Force transition to the next view without checking for validation */
+    skipValidation?: boolean;
+
+    /** Button variant */
+    variant?: Variant;
+
+    /**indicate a spinner for loading */
+    isLoading?: boolean;
+
+    /** icon position */
+    iconPosition?: "left" | "right";
+  };
+}
+
+/** A stateful instance of an action */
+export interface TransformedAction extends ActionAsset {
+  /** A method to execute the action */
+  run: () => void;
 }
