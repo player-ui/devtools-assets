@@ -1,8 +1,7 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render } from "@player-tools/dsl";
+import { render, expression as e, Asset } from "@player-tools/dsl";
 import { Action } from "../Action";
-import { Text } from "@devtools-ui/text";
 
 describe("DSL: Action", () => {
   test("Renders action", async () => {
@@ -17,7 +16,7 @@ describe("DSL: Action", () => {
   test("action with label", async () => {
     const rendered = await render(
       <Action>
-        <Action.Label>Value</Action.Label>
+        <Action.Label>Label</Action.Label>
       </Action>
     );
 
@@ -28,8 +27,84 @@ describe("DSL: Action", () => {
         asset: {
           id: "label",
           type: "text",
-          value: "Value",
+          value: "Label",
         },
+      },
+    });
+  });
+
+  test("action with exp", async () => {
+    const rendered = await render(
+      <Action exp={e`noop`}>
+        <Action.Label>Label</Action.Label>
+      </Action>
+    );
+
+    expect(rendered.jsonValue).toStrictEqual({
+      id: "root",
+      type: "action",
+      exp: "noop",
+      label: {
+        asset: {
+          id: "label",
+          type: "text",
+          value: "Label",
+        },
+      },
+    });
+  });
+
+  test("action with icon", async () => {
+    const rendered = await render(
+      <Action exp={e`noop`}>
+        <Action.Label>Label</Action.Label>
+        <Action.Icon>
+          <Asset type="icon">
+            <property name="value">SomeIcon</property>
+          </Asset>
+        </Action.Icon>
+      </Action>
+    );
+
+    expect(rendered.jsonValue).toStrictEqual({
+      id: "root",
+      type: "action",
+      exp: "noop",
+      label: {
+        asset: {
+          id: "label",
+          type: "text",
+          value: "Label",
+        },
+      },
+      icon: {
+        asset: {
+          id: "icon",
+          type: "icon",
+          value: "SomeIcon",
+        },
+      },
+    });
+  });
+
+  test("action with metadata", async () => {
+    const rendered = await render(
+      <Action
+        metaData={{
+          isLoading: true,
+          variant: "solid",
+          iconPosition: "left",
+        }}
+      />
+    );
+
+    expect(rendered.jsonValue).toStrictEqual({
+      id: "root",
+      type: "action",
+      metaData: {
+        isLoading: true,
+        variant: "solid",
+        iconPosition: "left",
       },
     });
   });
@@ -38,8 +113,12 @@ describe("DSL: Action", () => {
     const rendered = await render(
       <Action>
         <Action.Label>
-          <Text>Some</Text>
-          <Text>Text</Text>
+          <Asset type="text">
+            <property name="value">Some</property>
+          </Asset>
+          <Asset type="text">
+            <property name="value">Text</property>
+          </Asset>
         </Action.Label>
       </Action>
     );

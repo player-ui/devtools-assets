@@ -1,12 +1,11 @@
 import React from "react";
-
 import {
   AssetPropsWithChildren,
   Asset,
   ExpressionTemplateInstance,
 } from "@player-tools/dsl";
-import { ActionAsset } from "../types";
-import { LabelSlot } from "@devtools-ui/slots";
+import type { ActionAsset } from "../types";
+import { IconSlot, LabelSlot } from "@devtools-ui/slots";
 
 export const Action = (
   props: Omit<AssetPropsWithChildren<ActionAsset>, "exp"> & {
@@ -23,4 +22,6 @@ export const Action = (
     </Asset>
   );
 };
+
 Action.Label = LabelSlot;
+Action.Icon = IconSlot;

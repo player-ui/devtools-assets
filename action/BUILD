@@ -26,7 +26,7 @@ js_pipeline(
         "//:node_modules/@devtools-ui/text",
         "//:node_modules/@devtools-ui/slots",
         "//:node_modules/@player-ui/react",
-        "//:node_modules/@player-ui/reference-assets-plugin",
+        "//:node_modules/@player-ui/asset-transform-plugin",
         "//:node_modules/@player-ui/player",
         "//:node_modules/dlv",
     ],

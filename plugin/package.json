@@ -1,0 +1,11 @@
+{
+  "name": "@devtools-ui/plugin",
+  "version": "0.0.0-PLACEHOLDER",
+  "sideEffects": false,
+  "main": "src/index.tsx",
+  "dependencies": {
+    "@devtools-ui/action": "workspace:*",
+    "@devtools-ui/collection": "workspace:*",
+    "@devtools-ui/text": "workspace:*"
+  }
+}

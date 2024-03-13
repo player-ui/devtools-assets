@@ -1,0 +1,1 @@
+export { CollectionComponent } from "./CollectionComponent";
