@@ -29,5 +29,6 @@ js_pipeline(
         "//:node_modules/@player-ui/player",
         "//:node_modules/dlv",
         ":node_modules/@devtools-ui/text",
+        ":node_modules/@devtools-ui/collection",
     ],
 )

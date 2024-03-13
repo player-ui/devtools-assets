@@ -20,6 +20,7 @@ js_pipeline(
         "//:node_modules/@emotion/styled",
         "//:node_modules/@player-tools/dsl",
         "//:node_modules/@player-ui/types",
+        "//:node_modules/@player-ui/player",
         "//:node_modules/@types/react",
         "//:node_modules/framer-motion",
         "//:node_modules/react",

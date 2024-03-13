@@ -177,6 +177,9 @@ importers:
 
   action:
     dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text

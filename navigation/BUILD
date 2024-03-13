@@ -24,6 +24,7 @@ js_pipeline(
         "//:node_modules/framer-motion",
         "//:node_modules/react",
         "//:node_modules/dlv",
+        "//:node_modules/@player-ui/player",
         "//:node_modules/@player-ui/react",
         ":node_modules/@devtools-ui/collection",
         ":node_modules/@devtools-ui/text",
