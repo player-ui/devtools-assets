@@ -4,7 +4,7 @@ import type {
   TransformFunction,
 } from "@player-ui/player";
 import { compose, composeBefore } from "@player-ui/asset-transform-plugin";
-import { ActionAsset } from "../types";
+import { ActionAsset, TransformedAction } from "../types";
 
 /**
  * Attaches the methods to execute an action

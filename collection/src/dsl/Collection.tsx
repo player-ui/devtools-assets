@@ -1,7 +1,7 @@
 import React from "react";
-import { AssetPropsWithChildren, Asset } from "@player-tools/dsl";
+import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
 import { CollectionAsset } from "../types";
-import { ValuesSlot } from "@devtools-ui/slots";
+import { Text } from "@devtools-ui/text";
 
 export const Collection = (
   props: Omit<AssetPropsWithChildren<CollectionAsset>, "value"> & {
@@ -16,4 +16,9 @@ export const Collection = (
   );
 };
 
-Collection.Values = ValuesSlot;
+Collection.Values = createSlot({
+  name: "values",
+  TextComp: Text,
+  isArray: true,
+  wrapInAsset: true,
+});

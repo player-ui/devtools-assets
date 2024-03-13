@@ -33,12 +33,6 @@ importers:
       '@devtools-ui/action':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:action
-      '@devtools-ui/list-item':
-        specifier: workspace:0.0.0-PLACEHOLDER
-        version: link:list-item
-      '@devtools-ui/slots':
-        specifier: workspace:0.0.0-PLACEHOLDER
-        version: link:slots
       '@devtools-ui/text':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:text
@@ -189,18 +183,33 @@ importers:
 
   collection:
     dependencies:
-      '@devtools-ui/slots':
+      '@devtools-ui/text':
         specifier: workspace:*
-        version: link:../slots
+        version: link:../text
 
-  list: {}
+  list:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
 
-  list-item: {}
-
-  navigation: {}
+  navigation:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
 
   object-inspector:
     dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
@@ -210,15 +219,6 @@ importers:
       '@devtools-ui/action':
         specifier: workspace:*
         version: link:../action
-      '@devtools-ui/collection':
-        specifier: workspace:*
-        version: link:../collection
-      '@devtools-ui/text':
-        specifier: workspace:*
-        version: link:../text
-
-  slots:
-    dependencies:
       '@devtools-ui/collection':
         specifier: workspace:*
         version: link:../collection

@@ -1,10 +1,19 @@
 import React from "react";
-import { AssetPropsWithChildren, Asset } from "@player-tools/dsl";
+import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
+import { Text } from "@devtools-ui/text";
+import { Collection } from "@devtools-ui/collection";
 import type { ObjectInspectorAsset } from "../types";
-import { LabelSlot } from "@devtools-ui/slots";
+
 export const ObjectInspector = (
   props: AssetPropsWithChildren<ObjectInspectorAsset>
 ) => {
-  return <Asset type="object-inspector" {...props}></Asset>;
+  return <Asset type="object-inspector" {...props} />;
 };
-ObjectInspector.Label = LabelSlot;
+
+ObjectInspector.Label = createSlot({
+  name: "values",
+  TextComp: Text,
+  CollectionComp: Collection,
+  isArray: true,
+  wrapInAsset: true,
+});

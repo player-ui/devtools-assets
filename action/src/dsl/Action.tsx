@@ -3,9 +3,10 @@ import {
   AssetPropsWithChildren,
   Asset,
   ExpressionTemplateInstance,
+  createSlot,
 } from "@player-tools/dsl";
 import type { ActionAsset } from "../types";
-import { IconSlot, LabelSlot } from "@devtools-ui/slots";
+import { Text } from "@devtools-ui/text";
 
 export const Action = (
   props: Omit<AssetPropsWithChildren<ActionAsset>, "exp"> & {
@@ -23,5 +24,16 @@ export const Action = (
   );
 };
 
-Action.Label = LabelSlot;
-Action.Icon = IconSlot;
+Action.Label = createSlot({
+  name: "label",
+  TextComp: Text,
+  isArray: false,
+  wrapInAsset: true,
+});
+
+Action.Icon = createSlot({
+  name: "icon",
+  TextComp: Text,
+  isArray: false,
+  wrapInAsset: true,
+});

@@ -20,5 +20,6 @@ js_pipeline(
         "//:node_modules/@player-ui/player",
         "//:node_modules/@player-ui/react",
         "//:node_modules/react",
+        "//:node_modules/@types/react",
     ],
 )
