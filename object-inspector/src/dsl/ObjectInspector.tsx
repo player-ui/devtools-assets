@@ -29,6 +29,6 @@ ObjectInspector.Label = createSlot({
   name: "label",
   TextComp: Text,
   CollectionComp,
-  isArray: true,
+  isArray: false,
   wrapInAsset: true,
 });
