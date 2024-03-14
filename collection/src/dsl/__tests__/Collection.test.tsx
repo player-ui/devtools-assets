@@ -1,26 +1,26 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
 import { Asset, render } from "@player-tools/dsl";
-import { List } from "../List";
+import { Collection } from "../Collection";
 
-describe("DSL: List", () => {
-  test("with value", async () => {
+describe("DSL: Collection", () => {
+  test("with values", async () => {
     const rendered = await render(
-      <List>
-        <List.Values>
+      <Collection>
+        <Collection.Values>
           <Asset type="text">
             <property name="value">Test 1</property>
           </Asset>
           <Asset type="text">
             <property name="value">Test 2</property>
           </Asset>
-        </List.Values>
-      </List>
+        </Collection.Values>
+      </Collection>
     );
 
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
-      type: "list",
+      type: "collection",
       values: [
         {
           asset: {

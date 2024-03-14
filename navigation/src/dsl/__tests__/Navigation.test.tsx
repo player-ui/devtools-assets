@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render } from "@player-tools/dsl";
+import { Asset, render } from "@player-tools/dsl";
 import { Navigation } from "../index";
 
 describe("DSL: Navigation", () => {
@@ -16,7 +16,10 @@ describe("DSL: Navigation", () => {
   test("Renders navigation with an action", async () => {
     const rendered = await render(
       <Navigation>
-        <Navigation.Actions>Test</Navigation.Actions>
+        <Navigation.Actions>
+          <Asset type="action" />
+          <Asset type="action" />
+        </Navigation.Actions>
       </Navigation>
     );
 
@@ -27,8 +30,13 @@ describe("DSL: Navigation", () => {
         {
           asset: {
             id: "actions-0",
-            type: "text",
-            value: "Test",
+            type: "action",
+          },
+        },
+        {
+          asset: {
+            id: "actions-1",
+            type: "action",
           },
         },
       ],

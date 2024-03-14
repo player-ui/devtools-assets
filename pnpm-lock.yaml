@@ -33,12 +33,6 @@ importers:
       '@devtools-ui/action':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:action
-      '@devtools-ui/list-item':
-        specifier: workspace:0.0.0-PLACEHOLDER
-        version: link:list-item
-      '@devtools-ui/slots':
-        specifier: workspace:0.0.0-PLACEHOLDER
-        version: link:slots
       '@devtools-ui/text':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:text
@@ -183,29 +177,63 @@ importers:
 
   action:
     dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
+  collection:
+    dependencies:
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
 
   input:
     dependencies:
-      '@devtools-ui/slots':
-        specifier: workspace:*
-        version: link:../slots
-
-  list: {}
-
-  list-item: {}
-
-  navigation: {}
-
-  object-inspector:
-    dependencies:
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
 
-  slots: {}
+  list:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
+  navigation:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
+  object-inspector:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
+  plugin:
+    dependencies:
+      '@devtools-ui/action':
+        specifier: workspace:*
+        version: link:../action
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
 
   text: {}
 

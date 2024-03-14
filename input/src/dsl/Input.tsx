@@ -1,7 +1,7 @@
 import React from "react";
-import { AssetPropsWithChildren, Asset } from "@player-tools/dsl";
-import { LabelSlot } from "@devtools-ui/slots";
+import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
 import { InputAsset } from "../types";
+import { Text } from "@devtools-ui/text";
 
 export const Input = (
   props: Omit<AssetPropsWithChildren<InputAsset>, "binding"> & {
@@ -17,4 +17,9 @@ export const Input = (
   );
 };
 
-Input.Label = LabelSlot;
+Input.Label = createSlot({
+  name: "label",
+  TextComp: Text,
+  isArray: false,
+  wrapInAsset: true,
+});

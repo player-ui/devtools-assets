@@ -15,6 +15,7 @@ describe("DSL: Object Inspector", () => {
 
   test("with value and size", async () => {
     const rendered = await render(
+      // TODO: test with data
       <ObjectInspector>
         <ObjectInspector.Label>Hello</ObjectInspector.Label>
       </ObjectInspector>

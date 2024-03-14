@@ -1,6 +1,12 @@
-import { Asset } from "@player-ui/types";
-import type { ListAsset } from "@devtools-ui/list-item";
+import { Asset, AssetWrapper } from "@player-ui/types";
 
-export interface ListAssetType extends Asset<"list"> {
-  data?: ListAsset[];
+export interface ListAsset extends Asset<"list"> {
+  /** List items */
+  values?: Array<AssetWrapper>;
+
+  /** List metadata */
+  metaData?: {
+    /** Ordered list */
+    ordered?: boolean;
+  };
 }
