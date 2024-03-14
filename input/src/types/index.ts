@@ -2,7 +2,7 @@ import type { TextAsset } from "@devtools-ui/text";
 import { Asset, Schema, AssetWrapper } from "@player-ui/types";
 import { ValidationResponse } from "@player-ui/player";
 
-export type InputSize = "x-small" | "small" | "medium" | "large" | "full-width";
+export type InputSize = "xs" | "sm" | "md" | "lg";
 
 type ValueType = string | undefined;
 export interface InputAsset extends Asset<"input"> {
@@ -12,7 +12,10 @@ export interface InputAsset extends Asset<"input"> {
   /** A text asset for the action's label */
   label?: AssetWrapper<TextAsset>;
 
-  /** Size of the Input */
+  /** Asset container for a note. */
+  note?: AssetWrapper<TextAsset>;
+
+  /** Size of the Input height */
   size?: InputSize;
 
   /** Placeholder of the Input */

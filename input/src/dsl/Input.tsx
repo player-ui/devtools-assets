@@ -23,3 +23,10 @@ Input.Label = createSlot({
   isArray: false,
   wrapInAsset: true,
 });
+
+Input.Note = createSlot({
+  name: "note",
+  TextComp: Text,
+  isArray: false,
+  wrapInAsset: true,
+});
