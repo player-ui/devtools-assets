@@ -1,0 +1,8 @@
+{
+  "name": "@devtools-ui/input",
+  "version": "0.0.0-PLACEHOLDER",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@devtools-ui/text": "workspace:*"
+  }
+}

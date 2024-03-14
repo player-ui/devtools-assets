@@ -190,6 +190,12 @@ importers:
         specifier: workspace:*
         version: link:../text
 
+  input:
+    dependencies:
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
   list:
     dependencies:
       '@devtools-ui/collection':

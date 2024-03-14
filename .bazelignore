@@ -19,6 +19,7 @@ collection/node_modules
 navigation/node_modules
 text/node_modules
 object-inspector/node_modules
+input/node_modules
 plugin/node_modules
 list/node_modules
 
