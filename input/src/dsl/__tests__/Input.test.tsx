@@ -13,9 +13,9 @@ describe("DSL: Input", () => {
     });
   });
 
-  test("Renders input with size, placeholder and value", async () => {
+  test("Renders input with size, placeholder and maxLength", async () => {
     const rendered = await render(
-      <Input size={"small"} placeholder={"User input"} />
+      <Input size={"small"} placeholder={"User input"} maxLength={10} />
     );
 
     expect(rendered.jsonValue).toStrictEqual({
@@ -23,12 +23,13 @@ describe("DSL: Input", () => {
       type: "input",
       placeholder: "User input",
       size: "small",
+      maxLength: 10,
     });
   });
 
   test("Renders input with label and value", async () => {
     const rendered = await render(
-      <Input value="My Value">
+      <Input binding="myBinding">
         <Input.Label>My Label</Input.Label>
       </Input>
     );
@@ -43,7 +44,7 @@ describe("DSL: Input", () => {
           value: "My Label",
         },
       },
-      value: "My Value",
+      binding: "myBinding",
     });
   });
 });

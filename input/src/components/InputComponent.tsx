@@ -1,14 +1,15 @@
 import React from "react";
 import { Input } from "@chakra-ui/react";
-import { InputAsset } from "../types";
+import { TransformedInput } from "../types";
+import { ReactAsset } from "@player-ui/react";
 
-export const InputComponent = ({
-  value,
-  size,
-  maxLength,
-  placeholder,
-}: InputAsset) => (
-  <Input size={size} maxLength={maxLength} placeholder={placeholder}>
-    {value}
-  </Input>
-);
+const useInputProps = (props: TransformedInput) => {
+  return {
+    ...(props.label ? { children: <ReactAsset {...props.label.asset} /> } : {}),
+  } as const;
+};
+
+export const InputComponent = (props: TransformedInput) => {
+  const { children, ...rest } = useInputProps(props);
+  return <Input {...rest} />;
+};

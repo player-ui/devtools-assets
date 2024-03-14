@@ -4,13 +4,14 @@ import { LabelSlot } from "@devtools-ui/slots";
 import { InputAsset } from "../types";
 
 export const Input = (
-  props: Omit<AssetPropsWithChildren<InputAsset>, "value"> & {
-    value?: string;
+  props: Omit<AssetPropsWithChildren<InputAsset>, "binding"> & {
+    binding?: string;
   }
 ) => {
-  const { children, ...rest } = props;
+  const { children, binding, ...rest } = props;
   return (
     <Asset type="input" {...rest}>
+      <property name="binding">{binding}</property>
       {children}
     </Asset>
   );
