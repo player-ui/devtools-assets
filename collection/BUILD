@@ -9,7 +9,7 @@ tsup_config(name = "tsup_config")
 vitest_config(name = "vitest_config")
 
 js_pipeline(
-    package_name = "@devtools-ui/text",
+    package_name = "@devtools-ui/collection",
     test_deps = [
         ":node_modules",
         "//:vitest_config",

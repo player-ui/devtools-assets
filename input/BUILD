@@ -23,10 +23,10 @@ js_pipeline(
         "//:node_modules/@player-ui/player",
         "//:node_modules/@player-ui/react",
         "//:node_modules/@player-ui/asset-transform-plugin",
-        "//:node_modules/@devtools-ui/text",
         "//:node_modules/@types/react",
         "//:node_modules/framer-motion",
         "//:node_modules/react",
         "//:node_modules/dlv",
+        ":node_modules/@devtools-ui/text",
     ],
 )
