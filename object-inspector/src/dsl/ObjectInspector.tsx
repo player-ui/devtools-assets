@@ -1,17 +1,26 @@
 import React from "react";
-import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
+import {
+  AssetPropsWithChildren,
+  Asset,
+  createSlot,
+  BindingTemplateInstance,
+} from "@player-tools/dsl";
 import type { Asset as AssetType } from "@player-ui/player";
 import { Text } from "@devtools-ui/text";
 import { Collection } from "@devtools-ui/collection";
 import type { ObjectInspectorAsset } from "../types";
 
 export const ObjectInspector = (
-  props: AssetPropsWithChildren<ObjectInspectorAsset>
+  props: Omit<AssetPropsWithChildren<ObjectInspectorAsset>, "binding"> & {
+    /** The binding */
+    binding: BindingTemplateInstance;
+  }
 ) => {
-  const { children, ...rest } = props;
+  const { children, binding, ...rest } = props;
 
   return (
     <Asset type="object-inspector" {...rest}>
+      <property name="binding">{binding.toValue()}</property>
       {children}
     </Asset>
   );

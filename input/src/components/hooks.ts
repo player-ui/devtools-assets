@@ -1,6 +1,7 @@
 import React from "react";
 import type { TransformedInput } from "../types";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type KeyDownHandler = (currentValue: string, props?: TransformedInput) => any;
 
 export interface InputHookConfig {

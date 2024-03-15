@@ -5,9 +5,14 @@ import { Text } from "@devtools-ui/text";
 import { Collection } from "@devtools-ui/collection";
 import { NavigationAsset } from "../types";
 
-export const Navigation = (props: AssetPropsWithChildren<NavigationAsset>) => (
-  <Asset type="navigation" {...props}></Asset>
-);
+export const Navigation = (props: AssetPropsWithChildren<NavigationAsset>) => {
+  const { children, ...rest } = props;
+  return (
+    <Asset type="collection" {...rest}>
+      {children}
+    </Asset>
+  );
+};
 
 const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
   return (
@@ -17,8 +22,8 @@ const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
   );
 };
 
-Navigation.Actions = createSlot({
-  name: "actions",
+Navigation.Values = createSlot({
+  name: "values",
   TextComp: Text,
   CollectionComp,
   isArray: true,

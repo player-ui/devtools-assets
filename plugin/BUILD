@@ -13,6 +13,10 @@ js_pipeline(
     deps = [
         ":node_modules/@devtools-ui/action",
         ":node_modules/@devtools-ui/collection",
+        ":node_modules/@devtools-ui/input",
+        ":node_modules/@devtools-ui/list",
+        ":node_modules/@devtools-ui/navigation",
+        ":node_modules/@devtools-ui/object-inspector",
         ":node_modules/@devtools-ui/text",
         "//:node_modules/@chakra-ui/react",
         "//:node_modules/@player-ui/asset-provider-plugin-react",
