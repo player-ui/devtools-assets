@@ -190,6 +190,15 @@ importers:
         specifier: workspace:*
         version: link:../text
 
+  console:
+    dependencies:
+      '@devtools-ui/input':
+        specifier: workspace:*
+        version: link:../input
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
   input:
     dependencies:
       '@devtools-ui/text':
