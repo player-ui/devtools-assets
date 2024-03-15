@@ -33,6 +33,9 @@ importers:
       '@devtools-ui/action':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:action
+      '@devtools-ui/collection':
+        specifier: workspace:0.0.0-PLACEHOLDER
+        version: link:collection
       '@devtools-ui/text':
         specifier: workspace:0.0.0-PLACEHOLDER
         version: link:text
@@ -228,6 +231,8 @@ importers:
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
+
+  table: {}
 
   text: {}
 
