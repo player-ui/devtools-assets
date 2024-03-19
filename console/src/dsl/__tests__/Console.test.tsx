@@ -8,7 +8,6 @@ describe("DSL: Console View", () => {
     const rendered = await render(<Console execute={() => {}} />);
 
     expect(rendered.jsonValue).toStrictEqual({
-      Asset: true,
       id: "root",
       type: "console",
     });

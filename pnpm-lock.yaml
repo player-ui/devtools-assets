@@ -192,6 +192,9 @@ importers:
 
   console:
     dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
       '@devtools-ui/input':
         specifier: workspace:*
         version: link:../input

@@ -12,31 +12,23 @@ import { useInputAssetProps } from "./hooks";
 
 const useInputProps = (props: TransformedInput) => {
   return {
-    ...(props.label ? { children: <ReactAsset {...props.label.asset} /> } : {}),
+    ...(props.label ? { label: <ReactAsset {...props.label.asset} /> } : {}),
     ...(props.note ? { note: <ReactAsset {...props.note.asset} /> } : {}),
     ...useInputAssetProps(props),
   } as const;
 };
 
 export const InputComponent = (props: TransformedInput) => {
-  const { validation, label, id, note, ...rest } = props;
+  const { validation, id } = props;
 
-  const inputProps = useInputProps(props);
+  const { label, note, ...inputProps } = useInputProps(props);
 
   return (
     <FormControl isInvalid={Boolean(validation)}>
-      {label && (
-        <FormLabel htmlFor={id}>
-          <ReactAsset {...label} />
-        </FormLabel>
-      )}
+      {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
       <Input id={id} {...inputProps} />
       {validation && <FormErrorMessage>{validation.message}</FormErrorMessage>}
-      {note && (
-        <FormHelperText>
-          <ReactAsset {...note} />
-        </FormHelperText>
-      )}
+      {note && <FormHelperText>{note}</FormHelperText>}
     </FormControl>
   );
 };

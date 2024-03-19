@@ -1,5 +1,5 @@
 import type { TransformFunction } from "@player-ui/player";
-import { InputAsset, TransformedInput } from "../types";
+import type { InputAsset, TransformedInput } from "../types";
 
 export const inputTransform: TransformFunction<InputAsset, TransformedInput> = (
   asset,

@@ -4,6 +4,7 @@
   "main": "src/index.ts",
   "dependencies": {
     "@devtools-ui/text": "workspace:*",
+    "@devtools-ui/collection": "workspace:*",
     "@devtools-ui/input": "workspace:*"
   }
 }
