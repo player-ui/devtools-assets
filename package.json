@@ -24,7 +24,7 @@
     "@auto-it/omit-release-notes": "^11.0.4",
     "@auto-it/version-file": "^10.46.0",
     "@chakra-ui/react": "^2.8.2",
-    "@devtools-ds/console": "^1.1.2",
+    "@devtools-ds/console": "^1.2.1",
     "@devtools-ds/object-inspector": "^1.1.2",
     "@devtools-ds/object-parser": "^1.2.1",
     "@devtools-ui/action": "workspace:0.0.0-PLACEHOLDER",

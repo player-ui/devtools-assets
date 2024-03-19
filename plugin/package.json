@@ -6,6 +6,7 @@
   "dependencies": {
     "@devtools-ui/action": "workspace:*",
     "@devtools-ui/collection": "workspace:*",
-    "@devtools-ui/text": "workspace:*"
+    "@devtools-ui/text": "workspace:*",
+    "@devtools-ui/input": "workspace:*"
   }
 }

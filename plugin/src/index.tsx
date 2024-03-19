@@ -9,6 +9,7 @@ import type {
 } from "@player-ui/react";
 import { AssetProviderPlugin } from "@player-ui/asset-provider-plugin-react";
 import { actionTransform, ActionAsset, Action } from "@devtools-ui/action";
+import { inputTransform, InputAsset, Input } from "@devtools-ui/input";
 import { CollectionAsset, Collection } from "@devtools-ui/collection";
 import { TextAsset, Text } from "@devtools-ui/text";
 
@@ -18,6 +19,10 @@ class DevtoolsUITransformsPlugin implements PlayerPlugin {
   apply(player: Player) {
     player.registerPlugin(
       new AssetTransformPlugin([[{ type: "action" }, actionTransform]])
+    );
+
+    player.registerPlugin(
+      new AssetTransformPlugin([[{ type: "input" }, inputTransform]])
     );
   }
 }
@@ -47,6 +52,7 @@ export class DevtoolsUIPlugin
         ["text", Text],
         ["action", Action],
         ["collection", Collection],
+        ["input", Input],
       ])
     );
 

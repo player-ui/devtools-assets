@@ -5,7 +5,7 @@ import { Console } from "../Console";
 
 describe("DSL: Console View", () => {
   test("Renders default console", async () => {
-    const rendered = await render(<Console execute={() => {}}/>);
+    const rendered = await render(<Console execute={() => {}} />);
 
     expect(rendered.jsonValue).toStrictEqual({
       Asset: true,

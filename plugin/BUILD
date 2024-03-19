@@ -14,6 +14,7 @@ js_pipeline(
         ":node_modules/@devtools-ui/action",
         ":node_modules/@devtools-ui/collection",
         ":node_modules/@devtools-ui/text",
+        ":node_modules/@devtools-ui/input",
         "//:node_modules/@chakra-ui/react",
         "//:node_modules/@player-ui/asset-provider-plugin-react",
         "//:node_modules/@player-ui/asset-transform-plugin",

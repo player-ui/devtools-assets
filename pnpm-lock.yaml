@@ -22,7 +22,7 @@ importers:
         specifier: ^2.8.2
         version: 2.8.2(@emotion/react@11.11.4)(@emotion/styled@11.11.0)(@types/react@18.2.61)(framer-motion@11.0.8)(react-dom@18.2.0)(react@18.2.0)
       '@devtools-ds/console':
-        specifier: ^1.1.2
+        specifier: ^1.2.1
         version: 1.2.1(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)
       '@devtools-ds/object-inspector':
         specifier: ^1.1.2
@@ -240,6 +240,9 @@ importers:
       '@devtools-ui/collection':
         specifier: workspace:*
         version: link:../collection
+      '@devtools-ui/input':
+        specifier: workspace:*
+        version: link:../input
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
