@@ -8,9 +8,5 @@ export const Console = (
     binding?: string;
   }
 ) => {
-  return (
-    <Asset type="console" Asset/>
-  );
+  return <Asset type="console" Asset />;
 };
-
-
