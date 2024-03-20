@@ -7,6 +7,13 @@ export const consoleTransform: TransformFunction<
 > = (asset, options) => {
   return {
     ...asset,
+    expression:
+      asset.expressionBinding === undefined
+        ? ""
+        : options.data.model.get(asset.expressionBinding, {
+            includeInvalid: true,
+            formatted: true,
+          }),
     execute: asset.execute === undefined ? (exp) => exp : asset.execute,
   };
 };

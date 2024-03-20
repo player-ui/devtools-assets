@@ -9,7 +9,7 @@ export const Console = (props: AssetPropsWithChildren<ConsoleAsset>) => {
   return (
     <Asset type="console">
       {props.children}
-      <property name="expression">{props.expression}</property>
+      <property name="expression">{props.expressionBinding}</property>
     </Asset>
   );
 };

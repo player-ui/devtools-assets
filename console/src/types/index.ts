@@ -5,8 +5,11 @@ import { ConsoleExpression } from "@devtools-ds/console";
 type ValueType = string | undefined;
 
 export interface ConsoleAsset extends Asset<"console"> {
-  /** The expression to be evalued next */
-  expression?: ValueType;
+  /** The location in the data-model to store the pre-eval expression */
+  expressionBinding: ValueType;
+
+  /** The location in the data-model to store the post-eval expressions history */
+  historyBinding?: ValueType;
 
   /** The history of each evalued expression */
   evaluations?: Array<ConsoleExpression>;
@@ -16,6 +19,9 @@ export interface ConsoleAsset extends Asset<"console"> {
 }
 
 export interface TransformedConsole extends ConsoleAsset {
+  /** The current value of the pre-eval expression from the data-model */
+  expression?: ValueType;
+
   /** The history of each executed expression */
   history?: Array<ConsoleExpression>;
 }

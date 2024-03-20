@@ -6,19 +6,19 @@ import { Console } from "../Console";
 describe("DSL: Console View", () => {
   test("Renders default console", async () => {
     const rendered = await render(
-      <Console execute={() => {}} expression="Test Expression" />
+      <Console execute={() => {}} expressionBinding="test.Expression" />
     );
 
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
       type: "console",
-      expression: "Test Expression",
+      expression: "test.Expression",
     });
   });
 
   test("Renders console with history and no current expression", async () => {
     const rendered = await render(
-      <Console execute={() => {}}>
+      <Console execute={() => {}} expressionBinding="my.expression.binding">
         <Console.Values>
           <Asset type="text">
             <property name="expression">Some Expression</property>
@@ -47,6 +47,7 @@ describe("DSL: Console View", () => {
       ],
       id: "root",
       type: "console",
+      expression: "my.expression.binding",
     });
   });
 });
