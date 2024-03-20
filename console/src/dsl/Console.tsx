@@ -6,7 +6,12 @@ import type { Asset as AssetType } from "@player-ui/player";
 import { ConsoleAsset } from "../types";
 
 export const Console = (props: AssetPropsWithChildren<ConsoleAsset>) => {
-  return <Asset type="console">{props.children}</Asset>;
+  return (
+    <Asset type="console">
+      {props.children}
+      <property name="expression">{props.expression}</property>
+    </Asset>
+  );
 };
 
 const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
@@ -22,5 +27,5 @@ Console.Values = createSlot({
   TextComp: Text,
   CollectionComp,
   isArray: true,
-  wrapInAsset: true,
+  wrapInAsset: false,
 });

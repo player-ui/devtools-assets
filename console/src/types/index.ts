@@ -5,12 +5,13 @@ import { ConsoleExpression } from "@devtools-ds/console";
 type ValueType = string | undefined;
 
 export interface ConsoleAsset extends Asset<"console"> {
-  /** A text asset for the action's label */
+  /** The expression to be evalued next */
   expression?: ValueType;
 
-  /** The history of each executed expression */
+  /** The history of each evalued expression */
   evaluations?: Array<ConsoleExpression>;
-  /** A function used to execute an expression from the console. */
+
+  /** A function used to evalue an expression from the console. */
   execute: (expression: string) => any;
 }
 
