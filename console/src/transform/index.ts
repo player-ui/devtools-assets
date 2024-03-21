@@ -14,6 +14,11 @@ export const consoleTransform: TransformFunction<
             includeInvalid: true,
             formatted: true,
           }),
+    history: asset.evaluations
+      ? asset.evaluations.map((e) => ({
+          asset: { ...e, type: "text", value: e.expression },
+        }))
+      : [],
     execute: asset.execute === undefined ? (exp) => exp : asset.execute,
   };
 };

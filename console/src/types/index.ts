@@ -1,6 +1,16 @@
-import type { TextAsset } from "@devtools-ui/text";
-import { AssetWrapper, Asset } from "@player-ui/types";
-import { ConsoleExpression } from "@devtools-ds/console";
+import { Asset, AssetWrapper } from "@player-ui/types";
+import { TextAsset } from "@devtools-ui/text";
+
+export interface ConsoleExpression {
+  /** The unique key for the expression */
+  id: string;
+  /** The expression itself */
+  expression: string;
+  /** The result for a given expression */
+  result?: any;
+  /** Whether there were any errors with the result */
+  severity?: "error" | "warning";
+}
 
 type ValueType = string | undefined;
 
@@ -23,5 +33,5 @@ export interface TransformedConsole extends ConsoleAsset {
   expression?: ValueType;
 
   /** The history of each executed expression */
-  history?: Array<ConsoleExpression>;
+  history?: Array<AssetWrapper<TextAsset & ConsoleExpression>>;
 }

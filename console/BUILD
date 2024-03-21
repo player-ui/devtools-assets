@@ -18,7 +18,6 @@ js_pipeline(
         "//:node_modules/@chakra-ui/react",
         "//:node_modules/@emotion/react",
         "//:node_modules/@emotion/styled",
-        "//:node_modules/@devtools-ds/console",
         "//:node_modules/@player-tools/dsl",
         "//:node_modules/@player-ui/types",
         "//:node_modules/@player-ui/player",
@@ -30,6 +29,7 @@ js_pipeline(
         "//:node_modules/dlv",
         ":node_modules/@devtools-ui/text",
         ":node_modules/@devtools-ui/collection",
+        ":node_modules/@devtools-ui/list",
         ":node_modules/@devtools-ui/input",
     ],
 )
