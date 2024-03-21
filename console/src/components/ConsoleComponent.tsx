@@ -5,16 +5,21 @@ import { ReactAsset } from "@player-ui/react";
 const useConsoleProps = (props: TransformedConsole) => {
   return {
     ...props,
+    value: props.expression,
   } as const;
 };
 
 export const ConsoleComponent = (props: TransformedConsole) => {
-  const { history } = props;
+  const { history } = useConsoleProps(props);
+
   return (
     <>
-      <ReactAsset {...props} type="list">
-        {history?.map((a) => (
-          <ReactAsset key={a.asset.id} {...a} />
+      <ReactAsset asset={{ type: "list", id: "some" }}>
+        {history?.map(({ expression, result }) => (
+          <>
+            <ReactAsset key={expression.asset.id} {...expression} />
+            {result && <ReactAsset key={result.asset.id} {...result} />}
+          </>
         ))}
       </ReactAsset>
       <ReactAsset {...props} type="input" />

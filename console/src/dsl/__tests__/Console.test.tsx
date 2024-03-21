@@ -1,24 +1,33 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render, Asset } from "@player-tools/dsl";
+import { render, Asset, binding as b } from "@player-tools/dsl";
 import { Console } from "../Console";
 
 describe("DSL: Console View", () => {
   test("Renders default console", async () => {
     const rendered = await render(
-      <Console execute={() => {}} expressionBinding="test.Expression" />
+      <Console
+        execute={() => {}}
+        expressionBinding={b`test.Expression`.toValue()}
+        historyBinding={b`history.binding`.toValue()}
+      />
     );
 
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
       type: "console",
       expression: "test.Expression",
+      historyBinding: "history.binding",
     });
   });
 
   test("Renders console with history and no current expression", async () => {
     const rendered = await render(
-      <Console execute={() => {}} expressionBinding="my.expression.binding">
+      <Console
+        execute={() => {}}
+        expressionBinding={b`test.Expression`.toValue()}
+        historyBinding={b`history.binding`.toValue()}
+      >
         <Console.Values>
           <Asset type="text">
             <property name="expression">Some Expression</property>
@@ -47,7 +56,8 @@ describe("DSL: Console View", () => {
       ],
       id: "root",
       type: "console",
-      expression: "my.expression.binding",
+      expression: "test.Expression",
+      historyBinding: "history.binding",
     });
   });
 });

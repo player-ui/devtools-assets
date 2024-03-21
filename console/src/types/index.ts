@@ -12,6 +12,14 @@ export interface ConsoleExpression {
   severity?: "error" | "warning";
 }
 
+type HistoryItem = {
+  /** The expression on the item */
+  expression: AssetWrapper<TextAsset>;
+
+  /** The result on the item */
+  result?: AssetWrapper<TextAsset>;
+};
+
 type ValueType = string | undefined;
 
 export interface ConsoleAsset extends Asset<"console"> {
@@ -19,7 +27,7 @@ export interface ConsoleAsset extends Asset<"console"> {
   expressionBinding: ValueType;
 
   /** The location in the data-model to store the post-eval expressions history */
-  historyBinding?: ValueType;
+  historyBinding: ValueType;
 
   /** The history of each evalued expression */
   evaluations?: Array<ConsoleExpression>;
@@ -33,5 +41,5 @@ export interface TransformedConsole extends ConsoleAsset {
   expression?: ValueType;
 
   /** The history of each executed expression */
-  history?: Array<AssetWrapper<TextAsset & ConsoleExpression>>;
+  history?: Array<HistoryItem>;
 }

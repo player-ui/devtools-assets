@@ -10,6 +10,7 @@ export const Console = (props: AssetPropsWithChildren<ConsoleAsset>) => {
     <Asset type="console">
       {props.children}
       <property name="expression">{props.expressionBinding}</property>
+      <property name="historyBinding">{props.historyBinding}</property>
     </Asset>
   );
 };

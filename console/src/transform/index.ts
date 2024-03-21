@@ -16,7 +16,10 @@ export const consoleTransform: TransformFunction<
           }),
     history: asset.evaluations
       ? asset.evaluations.map((e) => ({
-          asset: { ...e, type: "text", value: e.expression },
+          expression: { asset: { ...e, type: "text", value: e.expression } },
+          ...(e.result
+            ? { result: { asset: { ...e, type: "text", value: e.result } } }
+            : {}),
         }))
       : [],
     execute: asset.execute === undefined ? (exp) => exp : asset.execute,
