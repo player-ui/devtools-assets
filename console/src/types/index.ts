@@ -40,6 +40,12 @@ export interface TransformedConsole extends ConsoleAsset {
   /** The current value of the pre-eval expression from the data-model */
   expression?: ValueType;
 
+  /** A function to commit the pre-eval epxression to the data-model */
+  setExpression?: (newValue: ValueType) => void;
+
+  /** A function to commit the pre-eval epxression to the data-model */
+  setHistory?: (history: ConsoleExpression) => void;
+
   /** The history of each executed expression */
   history?: Array<HistoryItem>;
 }

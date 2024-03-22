@@ -1,5 +1,9 @@
 import type { TransformFunction } from "@player-ui/player";
-import type { ConsoleAsset, TransformedConsole } from "../types";
+import type {
+  ConsoleAsset,
+  TransformedConsole,
+  ConsoleExpression,
+} from "../types";
 
 export const consoleTransform: TransformFunction<
   ConsoleAsset,
@@ -12,8 +16,26 @@ export const consoleTransform: TransformFunction<
         ? ""
         : options.data.model.get(asset.expressionBinding, {
             includeInvalid: true,
-            formatted: true,
           }),
+    setExpression(val) {
+      if (asset.expressionBinding === undefined) {
+        return;
+      }
+
+      return options.data.model.set([[asset.expressionBinding, val]]);
+    },
+    setHistory(val) {
+      if (asset.historyBinding === undefined) {
+        return;
+      }
+
+      const currentHistory: Array<ConsoleExpression> =
+        options.data.model.get(asset.historyBinding) || [];
+
+      return options.data.model.set([
+        [asset.historyBinding, [...currentHistory, val]],
+      ]);
+    },
     history: asset.evaluations
       ? asset.evaluations.map((e) => ({
           expression: { asset: { ...e, type: "text", value: e.expression } },
