@@ -8,8 +8,8 @@ describe("DSL: Console View", () => {
     const rendered = await render(
       <Console
         execute={() => {}}
-        expressionBinding={b`test.Expression`.toValue()}
-        historyBinding={b`history.binding`.toValue()}
+        expressionBinding={b`test.Expression`}
+        historyBinding={b`history.binding`}
       />
     );
 
@@ -25,8 +25,8 @@ describe("DSL: Console View", () => {
     const rendered = await render(
       <Console
         execute={() => {}}
-        expressionBinding={b`test.Expression`.toValue()}
-        historyBinding={b`history.binding`.toValue()}
+        expressionBinding={b`test.Expression`}
+        historyBinding={b`history.binding`}
       >
         <Console.Values>
           <Asset type="text">

@@ -1,16 +1,34 @@
 import React from "react";
-import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
+import {
+  AssetPropsWithChildren,
+  Asset,
+  createSlot,
+  BindingTemplateInstance,
+} from "@player-tools/dsl";
 import { Collection } from "@devtools-ui/collection";
 import { Text } from "@devtools-ui/text";
 import type { Asset as AssetType } from "@player-ui/player";
 import { ConsoleAsset } from "../types";
 
-export const Console = (props: AssetPropsWithChildren<ConsoleAsset>) => {
+export const Console = (
+  props: Omit<
+    AssetPropsWithChildren<ConsoleAsset>,
+    "expressionBinding" | "historyBinding"
+  > & {
+    /** The expresion binding */
+    expressionBinding: BindingTemplateInstance;
+
+    /** The history binding */
+    historyBinding: BindingTemplateInstance;
+  }
+) => {
   return (
     <Asset type="console">
       {props.children}
-      <property name="expression">{props.expressionBinding}</property>
-      <property name="historyBinding">{props.historyBinding}</property>
+      <property name="expression">{props.expressionBinding.toValue()}</property>
+      <property name="historyBinding">
+        {props.historyBinding.toValue()}
+      </property>
     </Asset>
   );
 };
