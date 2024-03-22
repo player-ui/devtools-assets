@@ -2,9 +2,15 @@ import { Asset, AssetWrapper } from "@player-ui/types";
 
 export interface ObjectInspectorAsset<AnyTextAsset extends Asset = Asset>
   extends Asset<"object-inspector"> {
-  /** Object to inspect */
-  data: unknown;
+  /** binding pointing to the object to inspect */
+  binding?: string;
 
   /** A text-like asset for the action's label */
   label?: AssetWrapper<AnyTextAsset>;
+}
+
+export interface TransformedObjectInspector extends ObjectInspectorAsset {
+  /** A stateful instance of an action */
+  /** object to inspect */
+  data: unknown;
 }

@@ -2,25 +2,29 @@ import React from "react";
 import {
   AssetPropsWithChildren,
   Asset,
-  ExpressionTemplateInstance,
   createSlot,
+  isTemplateStringInstance,
 } from "@player-tools/dsl";
 import type { Asset as AssetType } from "@player-ui/player";
 import type { ActionAsset } from "../types";
 import { Collection } from "@devtools-ui/collection";
 import { Text } from "@devtools-ui/text";
 
-export const Action = (
-  props: Omit<AssetPropsWithChildren<ActionAsset>, "exp"> & {
-    /** An optional expression to execute before transitioning */
-    exp?: ExpressionTemplateInstance;
-  }
-) => {
+export const Action = (props: AssetPropsWithChildren<ActionAsset>) => {
   const { exp, children, ...rest } = props;
 
+  let expValue: ActionAsset["exp"];
+
+  if (isTemplateStringInstance(exp)) {
+    expValue = exp.toValue();
+  } else if (Array.isArray(exp)) {
+    expValue = exp.map((e) => (typeof e === "string" ? e : e.toValue()));
+  } else if (exp) {
+    expValue = exp;
+  }
+
   return (
-    <Asset type="action" {...rest}>
-      <property name="exp">{exp?.toValue()}</property>
+    <Asset type="action" {...rest} {...(expValue && { exp: expValue })}>
       {children}
     </Asset>
   );

@@ -1,21 +1,27 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render } from "@player-tools/dsl";
+import { render, binding as b } from "@player-tools/dsl";
 import { Input } from "../Input";
 
 describe("DSL: Input", () => {
   test("Renders default input", async () => {
-    const rendered = await render(<Input />);
+    const rendered = await render(<Input binding={b`binding`} />);
 
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
       type: "input",
+      binding: "binding",
     });
   });
 
   test("Renders input with size, placeholder and maxLength", async () => {
     const rendered = await render(
-      <Input size={"md"} placeholder={"User input"} maxLength={10} />
+      <Input
+        size={"md"}
+        placeholder={"User input"}
+        maxLength={10}
+        binding={b`binding`}
+      />
     );
 
     expect(rendered.jsonValue).toStrictEqual({
@@ -24,12 +30,13 @@ describe("DSL: Input", () => {
       placeholder: "User input",
       size: "md",
       maxLength: 10,
+      binding: "binding",
     });
   });
 
   test("Renders input with label, binding and note", async () => {
     const rendered = await render(
-      <Input binding="inputBinding">
+      <Input binding={b`binding`}>
         <Input.Label>Label</Input.Label>
         <Input.Note>Some note</Input.Note>
       </Input>
@@ -52,7 +59,7 @@ describe("DSL: Input", () => {
           value: "Some note",
         },
       },
-      binding: "inputBinding",
+      binding: "binding",
     });
   });
 });

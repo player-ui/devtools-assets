@@ -4,11 +4,11 @@ import { Stack } from "@chakra-ui/react";
 import { ReactAsset } from "@player-ui/react";
 
 export const NavigationComponent = (props: NavigationAsset) => {
-  const { actions, ...rest } = props;
+  const { values, ...rest } = props;
 
   return (
     <Stack direction="row" spacing={4} {...rest}>
-      {actions?.map((a) => (
+      {values?.map((a) => (
         <ReactAsset key={a.asset.id} {...a} />
       ))}
     </Stack>

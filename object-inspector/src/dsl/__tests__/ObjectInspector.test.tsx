@@ -1,22 +1,12 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render } from "@player-tools/dsl";
+import { render, binding as b } from "@player-tools/dsl";
 import { ObjectInspector } from "../ObjectInspector";
 
 describe("DSL: Object Inspector", () => {
-  test("with value", async () => {
-    const rendered = await render(<ObjectInspector></ObjectInspector>);
-
-    expect(rendered.jsonValue).toStrictEqual({
-      id: "root",
-      type: "object-inspector",
-    });
-  });
-
-  test("with value and size", async () => {
+  test("basic", async () => {
     const rendered = await render(
-      // TODO: test with data
-      <ObjectInspector>
+      <ObjectInspector binding={b`foo`}>
         <ObjectInspector.Label>Hello</ObjectInspector.Label>
       </ObjectInspector>
     );
@@ -24,6 +14,7 @@ describe("DSL: Object Inspector", () => {
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
       type: "object-inspector",
+      binding: "foo",
       label: {
         asset: {
           id: "label",
