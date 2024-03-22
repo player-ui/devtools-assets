@@ -1,17 +1,23 @@
 import React from "react";
-import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
+import {
+  AssetPropsWithChildren,
+  Asset,
+  createSlot,
+  BindingTemplateInstance,
+} from "@player-tools/dsl";
 import { InputAsset } from "../types";
 import { Text } from "@devtools-ui/text";
 
 export const Input = (
   props: Omit<AssetPropsWithChildren<InputAsset>, "binding"> & {
-    binding?: string;
+    /** The binding */
+    binding: BindingTemplateInstance;
   }
 ) => {
   const { children, binding, ...rest } = props;
   return (
     <Asset type="input" {...rest}>
-      <property name="binding">{binding}</property>
+      <property name="binding">{binding.toValue()}</property>
       {children}
     </Asset>
   );

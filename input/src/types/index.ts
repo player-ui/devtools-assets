@@ -5,6 +5,7 @@ import { ValidationResponse } from "@player-ui/player";
 export type InputSize = "xs" | "sm" | "md" | "lg";
 
 type ValueType = string | undefined;
+
 export interface InputAsset extends Asset<"input"> {
   /** The location in the data-model to store the data */
   binding: ValueType;

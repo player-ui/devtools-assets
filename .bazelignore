@@ -14,6 +14,7 @@ profile
 
 # Node modules
 node_modules
+addon-storybook/node_modules
 action/node_modules
 collection/node_modules
 navigation/node_modules
@@ -23,6 +24,8 @@ input/node_modules
 plugin/node_modules
 list/node_modules
 console/node_modules
+docs/storybook/node_modules
+docs/site/node_modules
 
 # Backup files
 _backup

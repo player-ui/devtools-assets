@@ -4,11 +4,7 @@ import type { Asset as AssetType } from "@player-ui/player";
 import { CollectionAsset } from "../types";
 import { Text } from "@devtools-ui/text";
 
-export const Collection = (
-  props: Omit<AssetPropsWithChildren<CollectionAsset>, "value"> & {
-    value?: string;
-  }
-) => {
+export const Collection = (props: AssetPropsWithChildren<CollectionAsset>) => {
   const { children, ...rest } = props;
   return (
     <Asset type="collection" {...rest}>

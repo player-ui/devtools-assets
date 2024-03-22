@@ -2,11 +2,14 @@
   "name": "@devtools-ui/plugin",
   "version": "0.0.0-PLACEHOLDER",
   "sideEffects": false,
-  "main": "src/index.tsx",
+  "main": "src/index.ts",
   "dependencies": {
     "@devtools-ui/action": "workspace:*",
     "@devtools-ui/collection": "workspace:*",
-    "@devtools-ui/text": "workspace:*",
-    "@devtools-ui/input": "workspace:*"
+    "@devtools-ui/input": "workspace:*",
+    "@devtools-ui/list": "workspace:*",
+    "@devtools-ui/navigation": "workspace:*",
+    "@devtools-ui/object-inspector": "workspace:*",
+    "@devtools-ui/text": "workspace:*"
   }
 }

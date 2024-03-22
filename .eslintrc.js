@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
+    "plugin:storybook/recommended",
   ],
   parser: "@typescript-eslint/parser",
   ignorePatterns: ["node_modules", "dist", "__snapshots__"],

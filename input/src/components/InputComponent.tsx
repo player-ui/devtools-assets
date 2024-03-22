@@ -10,25 +10,30 @@ import { TransformedInput } from "../types";
 import { ReactAsset } from "@player-ui/react";
 import { useInputAssetProps } from "./hooks";
 
-const useInputProps = (props: TransformedInput) => {
-  return {
-    ...(props.label ? { label: <ReactAsset {...props.label.asset} /> } : {}),
-    ...(props.note ? { note: <ReactAsset {...props.note.asset} /> } : {}),
-    ...useInputAssetProps(props),
-  } as const;
-};
-
 export const InputComponent = (props: TransformedInput) => {
-  const { validation, id } = props;
-
-  const { label, note, ...inputProps } = useInputProps(props);
+  const { validation, label, id, note, size, maxLength, placeholder } = props;
+  const inputProps = useInputAssetProps(props);
 
   return (
     <FormControl isInvalid={Boolean(validation)}>
-      {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
-      <Input id={id} {...inputProps} />
+      {label && (
+        <FormLabel htmlFor={id}>
+          <ReactAsset {...label.asset} />
+        </FormLabel>
+      )}
+      <Input
+        id={id}
+        {...inputProps}
+        size={size}
+        maxLength={maxLength}
+        placeholder={placeholder}
+      />
       {validation && <FormErrorMessage>{validation.message}</FormErrorMessage>}
-      {note && <FormHelperText>{note}</FormHelperText>}
+      {note && (
+        <FormHelperText>
+          <ReactAsset {...note.asset} />
+        </FormHelperText>
+      )}
     </FormControl>
   );
 };

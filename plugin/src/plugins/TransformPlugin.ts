@@ -1,0 +1,19 @@
+import type { Player, PlayerPlugin } from "@player-ui/player";
+import { AssetTransformPlugin } from "@player-ui/asset-transform-plugin";
+import { actionTransform } from "@devtools-ui/action";
+import { inputTransform } from "@devtools-ui/input";
+import { objectInspectorTransform } from "@devtools-ui/object-inspector";
+
+export class TransformsPlugin implements PlayerPlugin {
+  name = "devtools-ui-transforms";
+
+  apply(player: Player) {
+    player.registerPlugin(
+      new AssetTransformPlugin([
+        [{ type: "action" }, actionTransform],
+        [{ type: "input" }, inputTransform],
+        [{ type: "object-inspector" }, objectInspectorTransform],
+      ])
+    );
+  }
+}
