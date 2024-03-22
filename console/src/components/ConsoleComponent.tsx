@@ -3,8 +3,8 @@ import { FormControl, Input, Button } from "@chakra-ui/react";
 import { TransformedConsole } from "../types";
 import { ReactAsset } from "@player-ui/react";
 
-const useConsoleAssetProps = (props) => {
-  const [localValue, setLocalValue] = React.useState(props.value ?? "");
+const useConsoleAssetProps = (props: TransformedConsole) => {
+  const [localValue, setLocalValue] = React.useState(props.expression ?? "");
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setLocalValue(e.target.value);
