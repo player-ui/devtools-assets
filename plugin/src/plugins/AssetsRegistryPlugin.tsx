@@ -17,6 +17,7 @@ import {
   ObjectInspectorComponent,
 } from "@devtools-ui/object-inspector";
 import { TextAsset, TextComponent } from "@devtools-ui/text";
+import { ConsoleAsset, ConsoleComponent } from "@devtools-ui/console";
 import { TransformsPlugin } from "./TransformPlugin";
 
 const OptionalChakraThemeProvider = (
@@ -42,7 +43,8 @@ export class AssetsRegistryPlugin
         ListAsset,
         NavigationAsset,
         ObjectInspectorAsset,
-        TextAsset
+        TextAsset,
+        ConsoleAsset
       ]
     >
 {
@@ -58,6 +60,7 @@ export class AssetsRegistryPlugin
         ["navigation", NavigationComponent],
         ["object-inspector", ObjectInspectorComponent],
         ["text", TextComponent],
+        ["console", ConsoleComponent],
       ])
     );
 

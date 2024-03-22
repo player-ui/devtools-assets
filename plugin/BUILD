@@ -18,6 +18,7 @@ js_pipeline(
         ":node_modules/@devtools-ui/navigation",
         ":node_modules/@devtools-ui/object-inspector",
         ":node_modules/@devtools-ui/text",
+        ":node_modules/@devtools-ui/console",
         "//:node_modules/@chakra-ui/react",
         "//:node_modules/@player-ui/asset-provider-plugin-react",
         "//:node_modules/@player-ui/asset-transform-plugin",

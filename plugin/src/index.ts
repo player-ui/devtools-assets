@@ -8,6 +8,7 @@ import {
   ObjectInspector,
 } from "@devtools-ui/object-inspector";
 import { TextAsset, Text } from "@devtools-ui/text";
+import { ConsoleAsset, Console } from "@devtools-ui/console";
 import { AssetsRegistryPlugin } from "./plugins";
 
 export default AssetsRegistryPlugin;
@@ -20,6 +21,7 @@ export type {
   NavigationAsset,
   ObjectInspectorAsset,
   TextAsset,
+  ConsoleAsset
 };
 
-export { Action, Collection, Input, List, Navigation, ObjectInspector, Text };
+export { Action, Collection, Input, List, Navigation, ObjectInspector, Text, Console };

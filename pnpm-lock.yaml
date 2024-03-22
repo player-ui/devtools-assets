@@ -353,6 +353,9 @@ importers:
       '@devtools-ui/collection':
         specifier: workspace:*
         version: link:../collection
+      '@devtools-ui/console':
+        specifier: workspace:*
+        version: link:../console
       '@devtools-ui/input':
         specifier: workspace:*
         version: link:../input
