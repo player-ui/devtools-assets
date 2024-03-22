@@ -29,13 +29,13 @@ describe("DSL: Navigation", () => {
       values: [
         {
           asset: {
-            id: "actions-0",
+            id: "values-0",
             type: "action",
           },
         },
         {
           asset: {
-            id: "actions-1",
+            id: "values-1",
             type: "action",
           },
         },

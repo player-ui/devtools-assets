@@ -8,7 +8,7 @@ import { NavigationAsset } from "../types";
 export const Navigation = (props: AssetPropsWithChildren<NavigationAsset>) => {
   const { children, ...rest } = props;
   return (
-    <Asset type="collection" {...rest}>
+    <Asset type="navigation" {...rest}>
       {children}
     </Asset>
   );
