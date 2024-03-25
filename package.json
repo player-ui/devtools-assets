@@ -13,7 +13,8 @@
     "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx $(scripts/pkg-roots.sh)",
     "prepare": "is-ci || husky install",
     "test": "bazel test -- $(bazel query \"kind(nodejs_test, //...)\" --output label 2>/dev/null | tr '\\n' ' ')",
-    "pub:local": "scripts/publish-to-verdaccio.sh"
+    "pub:local": "scripts/publish-to-verdaccio.sh",
+    "gen:asset": "plop asset"
   },
   "engines": {
     "node": "^18.18.0",
@@ -92,6 +93,7 @@
     "lz-string": "^1.5.0",
     "mkdirp": "^1.0.4",
     "patch-package": "^6.4.7",
+    "plop": "^4.0.1",
     "prettier": "^2.4.1",
     "react": "^18.2.0",
     "react-docgen-typescript": "^2.2.2",

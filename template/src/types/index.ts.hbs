@@ -1,0 +1,20 @@
+import type { Asset } from "@player-ui/types";
+
+export interface {{pascalCase assetName}}Asset extends Asset<"action"> {
+  // DSL properties
+  // /** Value */
+  // value?: AssetWrapper;
+  // /** list of assets in the collection */
+  // values?: Array<AssetWrapper>;
+  // /** Label */
+  // label?: AssetWrapper<TextAsset>;
+  // /** Expression */
+  // exp?: Expression;
+  // /** Binding */
+  // binding?: string;
+}
+
+/** A stateful instance of the asset */
+export interface Transformed{{pascalCase assetName}} extends {{pascalCase assetName}}Asset {
+  // The result of the transformation (transform/index.ts)
+}

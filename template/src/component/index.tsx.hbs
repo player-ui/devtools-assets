@@ -1,0 +1,21 @@
+import React from "react";
+import type { Transformed{{pascalCase assetName}} } from "../types";
+
+/**
+ * Hook to convert the data we get from the Player Content into the properties our component expects:
+ */
+const use{{pascalCase assetName}}Pros = (props: Transformed{{pascalCase assetName}}) => {
+  // Translate the properties we get from the Player Content (DSL > JSON > transformer)
+  // into what the elements that compose your component expect (platform-specific, for
+  // platform-agnostic transformations, see the transformer):
+  return {
+    ...props,
+  } as const;
+};
+
+export const {{pascalCase assetName}}Component = (props: Transformed{{pascalCase assetName}}) => {
+  const { children, ...buttonProps } = use{{pascalCase assetName}}Pros(props);
+
+  // Replace with the Elements that render your component:
+  return <div {...buttonProps}>{children}</div>;
+};
