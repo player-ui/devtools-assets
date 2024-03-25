@@ -102,6 +102,7 @@
     "react-redux": "^9.1.0",
     "redux": "^5.0.1",
     "redux-state-sync": "^3.1.4",
+    "remark-gfm": "^4.0.0",
     "storybook": "^8.0.2",
     "tslib": "^2.6.2",
     "tsup": "^8.0.2",

@@ -6,10 +6,6 @@ export default function (plop) {
     const { assetName } = answers;
     const basePath = path.resolve(process.cwd(), assetName);
     fs.renameSync(
-      path.join(basePath, "README.hbs"),
-      path.join(basePath, "README")
-    );
-    fs.renameSync(
       path.join(basePath, "BUILD.hbs"),
       path.join(basePath, "BUILD")
     );
@@ -29,8 +25,8 @@ export default function (plop) {
       {
         type: "addMany",
         destination: "./{{assetName}}",
-        base: "./template",
-        templateFiles: "./template/**/*",
+        base: "./asset-template",
+        templateFiles: "./asset-template/**/*",
         globOptions: { dot: true },
         stripExtension: true,
       },

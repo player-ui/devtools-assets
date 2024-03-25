@@ -1,0 +1,20 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as ObjectInspectorStories from "./ObjectInspector.stories";
+
+<Meta of={ObjectInspectorStories} />
+
+# ObjectInspector Asset
+
+> type: `object-inspector`
+
+It provides an `ObjectInspector` component to display objects for debugging purposes.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `data` | `Object` | false | The object to inspect. |
+
+## Basic Use Case
+
+<Canvas of={ObjectInspectorStories.Basic} />

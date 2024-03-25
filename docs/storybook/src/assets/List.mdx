@@ -1,0 +1,21 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as ListStories from "./List.stories";
+
+<Meta of={ListStories} />
+
+# List Asset
+
+> type: `list`
+
+It provides a `List` component that can be used group assets into an ordered or unordered list.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `values` | `Array<AssetWrapper>` | false | An array of items to be rendered in the list. |
+| `metaData.ordered` | `boolean` | false | If true, the list will be rendered as an ordered list. |
+
+## Basic Use Case
+
+<Canvas of={ListStories.Basic} />

@@ -1,0 +1,20 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as CollectionStories from "./Collection.stories";
+
+<Meta of={CollectionStories} />
+
+# Collection Asset
+
+> type: `collection`
+
+It provides a `Collection` component that can be used to group other Player assets into a stacked layout.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `values` | `Array<AssetWrapper>` | false | list of assets in the collection |
+
+## Basic Use Case
+
+<Canvas of={CollectionStories.Basic} />

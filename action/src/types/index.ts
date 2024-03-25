@@ -24,7 +24,7 @@ export interface ActionAsset extends Asset<"action"> {
     /** Button variant */
     variant?: Variant;
 
-    /**indicate a spinner for loading */
+    /** Indicate a spinner for loading */
     isLoading?: boolean;
 
     /** icon position */

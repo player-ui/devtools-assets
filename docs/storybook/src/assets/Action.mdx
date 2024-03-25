@@ -5,18 +5,33 @@ import * as ActionStories from "./Action.stories";
 
 # Action Asset
 
-The `action` asset is used when you want a user to perform some _action_. It typically manifests as a `button` or `link` depending on the context, and intention.
+> type: `action`
+
+It provides a `Action` component that can be used to allow a user interaction (e.g., [transition](https://player-ui.github.io/next/content/navigation)), usually rendered as a `<button>`.
 
 Actions can advance Player's state machine using the `value` prop, and/or evaluate an expression using the `exp` prop.
 
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | false | The value to transition to when the action is clicked |
+| `icon` | `AssetWrapper` | false | The icon to display on the action |
+| `label` | `AssetWrapper<TextAsset>` | false | A text asset for the action's label |
+| `exp` | `string` | false | The expression to evaluate when the action is clicked |
+| `metadata.skipValidation` | `boolean` | false | Force transition to the next view without checking for validation |
+| `metadata.variant` | `"solid" | "outline" | "ghost" | "link"` | false | Button variant |
+| `metadata.isLoading` | `boolean` | false | Indicate a spinner for loading |
+| `metadata.iconPosition` | `"left" | "right"` | false | Disable the action |
+
 ## Basic Use Case
 
-The example below uses the `exp` property to evaluate an expression when the action is clicked.
-This will increment the count, and update the label
+The example below uses the `exp` property to evaluate an expression when the action is clicked. This will increment the count, and update the label
 
 <Canvas of={ActionStories.Basic} />
 
 ## Navigation Transition
 
-<Canvas of={ActionStories.Transitions} />
+This example uses the `value` property to transition to a different scene when the action is clicked.
 
+<Canvas of={ActionStories.Transitions} />

@@ -1,0 +1,22 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as TextStories from "./Text.stories";
+
+<Meta of={TextStories} />
+
+# Text Asset
+
+> type: `text`
+
+It provides an `Text` component that can be used to render strings.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `value` | `string` | true | The text to render |
+| `size` | `"xs" | "sm" | "md" | "lg" | "xl"` | false | Text size |
+| `as` | `"b" | "i" | "u" | "abbr" | "cite" | "del" | "em" | "ins" | "kbd" | "mark" | "s" | "samp" | "sub" | "sup"` | false | HTML Element |
+
+## Basic Use Case
+
+<Canvas of={TextStories.Basic} />

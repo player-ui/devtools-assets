@@ -24,7 +24,7 @@ To run the tests, you can run `bazel test //...`.
 
 ## Storybook
 
-We use Storybook for developing and showcasing the components. You can start the Storybook server by running `bazel run //docs/storybook:storybook`. Then, you can open your browser and navigate to `localhost:6006` to view the Storybook.
+We use Storybook for developing and showcasing the components. You can start the Storybook server by running `bazel run //docs/storybook:start`. Then, you can open your browser and navigate to `localhost:6006` to view the Storybook.
 
 ## Generating Assets
 
