@@ -4,7 +4,7 @@ import type { TransformedInput } from "../types";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type KeyDownHandler = (currentValue: string, props?: TransformedInput) => any;
 
-export interface InputHookConfig {
+interface InputHookConfig {
   /** Time in ms to wait before formatting the user input for normal keys */
   formatDelay?: number;
 
@@ -19,7 +19,7 @@ export interface InputHookConfig {
 }
 
 /** Create a valid config mixing in defaults and user overrides */
-export const getConfig = (
+const getConfig = (
   userConfig: InputHookConfig = {}
 ): Required<InputHookConfig> => {
   return {

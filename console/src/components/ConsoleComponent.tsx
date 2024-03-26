@@ -1,24 +1,31 @@
 import React from "react";
-import { FormControl, Input, Button } from "@chakra-ui/react";
+import {
+  FormControl,
+  Input,
+  Button,
+  UnorderedList,
+  ListItem,
+  FormErrorMessage,
+} from "@chakra-ui/react";
 import { TransformedConsole } from "../types";
-import { ReactAsset } from "@player-ui/react";
+import { useInputAssetProps } from "@devtools-ui/input";
+
+// const evaluateExpression = e`publish(${INTERACTIONS.EVALUATE_EXPRESSION}, ${bindings.expression})`;
 
 const useConsoleAssetProps = (props: TransformedConsole) => {
-  const [localValue, setLocalValue] = React.useState(props.expression ?? "");
-
-  const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    setLocalValue(e.target.value);
-    props.set(e.target.value);
-  };
+  const inputProps = useInputAssetProps({
+    ...props,
+    binding: props.expression,
+    type: "input",
+  });
 
   const onSubmit: React.FocusEventHandler<HTMLInputElement> = (e) => {
     // Logic to get the result of the expression and add it to the History
   };
 
   return {
-    onChange,
+    inputProps,
     onSubmit,
-    value: localValue,
   };
 };
 
@@ -31,19 +38,27 @@ const useConsoleProps = (props: TransformedConsole) => {
 };
 
 export const ConsoleComponent = (props: TransformedConsole) => {
-  const { evaluations, inputProps } = useConsoleProps(props);
+  const { evaluations, inputProps, validation } = useConsoleProps(props);
 
   return (
     <>
-      <ReactAsset asset={{ type: "list", id: "some" }}>
-        {evaluations?.map(() => (
-          <></>
-        ))}
-      </ReactAsset>
-      {/* <ReactAsset {...props} type="input" /> */}
-      <FormControl onSubmit={inputProps.onSubmit}>
-        <Input onChange={inputProps.onChange} value={inputProps.value} />
-        <Button type="submit" />
+      <UnorderedList>
+        {evaluations &&
+          evaluations.map(({ expression, result, outcome }, idx) => (
+            <ListItem key={`console-item-${idx}`}>
+              {`${expression} ${result}`}
+            </ListItem>
+          ))}
+      </UnorderedList>
+      <FormControl
+        isInvalid={Boolean(validation)}
+        onSubmit={inputProps.onSubmit}
+      >
+        <Input {...inputProps} />
+        <Button type="submit">Evaluate</Button>
+        {validation && (
+          <FormErrorMessage>{validation.message}</FormErrorMessage>
+        )}
       </FormControl>
     </>
   );
