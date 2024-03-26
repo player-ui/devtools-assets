@@ -8,12 +8,11 @@ const useConsoleAssetProps = (props: TransformedConsole) => {
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setLocalValue(e.target.value);
-    props.setExpression(e.target.value);
+    props.set(e.target.value);
   };
 
   const onSubmit: React.FocusEventHandler<HTMLInputElement> = (e) => {
     // Logic to get the result of the expression and add it to the History
-    console.log(e);
   };
 
   return {
@@ -32,16 +31,13 @@ const useConsoleProps = (props: TransformedConsole) => {
 };
 
 export const ConsoleComponent = (props: TransformedConsole) => {
-  const { history, inputProps } = useConsoleProps(props);
+  const { evaluations, inputProps } = useConsoleProps(props);
 
   return (
     <>
       <ReactAsset asset={{ type: "list", id: "some" }}>
-        {history?.map(({ expression, result }) => (
-          <>
-            <ReactAsset key={expression.asset.id} {...expression} />
-            {result && <ReactAsset key={result.asset.id} {...result} />}
-          </>
+        {evaluations?.map(() => (
+          <></>
         ))}
       </ReactAsset>
       {/* <ReactAsset {...props} type="input" /> */}

@@ -1,9 +1,5 @@
 import type { TransformFunction } from "@player-ui/player";
-import type {
-  ConsoleAsset,
-  TransformedConsole,
-  ConsoleExpression,
-} from "../types";
+import type { ConsoleAsset, TransformedConsole } from "../types";
 
 export const consoleTransform: TransformFunction<
   ConsoleAsset,
@@ -11,39 +7,34 @@ export const consoleTransform: TransformFunction<
 > = (asset, options) => {
   return {
     ...asset,
-    expression:
-      asset.expressionBinding === undefined
-        ? ""
-        : options.data.model.get(asset.expressionBinding, {
+    value:
+      asset.expression === undefined
+        ? undefined
+        : options.data.model.get(asset.expression, {
             includeInvalid: true,
+            formatted: false,
           }),
-    setExpression(val) {
-      if (asset.expressionBinding === undefined) {
+    set(val) {
+      if (asset.expression === undefined) {
         return;
       }
 
-      return options.data.model.set([[asset.expressionBinding, val]]);
+      return options.data.model.set([[asset.expression, val]]);
     },
-    setHistory(val) {
-      if (asset.historyBinding === undefined) {
-        return;
+    format(val) {
+      if (asset.expression === undefined) {
+        return val;
       }
 
-      const currentHistory: Array<ConsoleExpression> =
-        options.data.model.get(asset.historyBinding) || [];
-
-      return options.data.model.set([
-        [asset.historyBinding, [...currentHistory, val]],
-      ]);
+      return options.data.format(asset.expression, val);
     },
-    history: asset.evaluations
-      ? asset.evaluations.map((e) => ({
-          expression: { asset: { ...e, type: "text", value: e.expression } },
-          ...(e.result
-            ? { result: { asset: { ...e, type: "text", value: e.result } } }
-            : {}),
-        }))
-      : [],
-    execute: asset.execute === undefined ? (exp) => exp : asset.execute,
+    validation:
+      asset.expression === undefined
+        ? undefined
+        : options.validation?.get(asset.expression, { track: true }),
+    dataType:
+      asset.expression === undefined
+        ? undefined
+        : options.validation?.type(asset.expression),
   };
 };

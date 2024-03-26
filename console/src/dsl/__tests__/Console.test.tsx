@@ -7,9 +7,8 @@ describe("DSL: Console View", () => {
   test("Renders default console", async () => {
     const rendered = await render(
       <Console
-        execute={() => {}}
-        expressionBinding={b`test.Expression`}
-        historyBinding={b`history.binding`}
+        expression={b`test.Expression`}
+        history={b`history.expression`}
       />
     );
 
@@ -17,17 +16,13 @@ describe("DSL: Console View", () => {
       id: "root",
       type: "console",
       expression: "test.Expression",
-      historyBinding: "history.binding",
+      history: "history.expression",
     });
   });
 
   test("Renders console with history and no current expression", async () => {
     const rendered = await render(
-      <Console
-        execute={() => {}}
-        expressionBinding={b`test.Expression`}
-        historyBinding={b`history.binding`}
-      >
+      <Console expression={b`test.Expression`} history={b`history.expression`}>
         <Console.Values>
           <Asset type="text">
             <property name="expression">Some Expression</property>
@@ -57,7 +52,7 @@ describe("DSL: Console View", () => {
       id: "root",
       type: "console",
       expression: "test.Expression",
-      historyBinding: "history.binding",
+      history: "history.expression",
     });
   });
 });

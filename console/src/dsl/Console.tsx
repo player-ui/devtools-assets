@@ -13,22 +13,20 @@ import { ConsoleAsset } from "../types";
 export const Console = (
   props: Omit<
     AssetPropsWithChildren<ConsoleAsset>,
-    "expressionBinding" | "historyBinding"
+    "expression" | "history"
   > & {
     /** The expresion binding */
-    expressionBinding: BindingTemplateInstance;
+    expression: BindingTemplateInstance;
 
     /** The history binding */
-    historyBinding: BindingTemplateInstance;
+    history: BindingTemplateInstance;
   }
 ) => {
   return (
     <Asset type="console">
       {props.children}
-      <property name="expression">{props.expressionBinding.toValue()}</property>
-      <property name="historyBinding">
-        {props.historyBinding.toValue()}
-      </property>
+      <property name="expression">{props.expression.toValue()}</property>
+      <property name="history">{props.history.toValue()}</property>
     </Asset>
   );
 };

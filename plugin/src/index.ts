@@ -21,7 +21,16 @@ export type {
   NavigationAsset,
   ObjectInspectorAsset,
   TextAsset,
-  ConsoleAsset
+  ConsoleAsset,
 };
 
-export { Action, Collection, Input, List, Navigation, ObjectInspector, Text, Console };
+export {
+  Action,
+  Collection,
+  Input,
+  List,
+  Navigation,
+  ObjectInspector,
+  Text,
+  Console,
+};
