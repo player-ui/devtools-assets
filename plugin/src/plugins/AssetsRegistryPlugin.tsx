@@ -12,6 +12,8 @@ import { CollectionAsset, CollectionComponent } from "@devtools-ui/collection";
 import { InputAsset, InputComponent } from "@devtools-ui/input";
 import { ListAsset, ListComponent } from "@devtools-ui/list";
 import { NavigationAsset, NavigationComponent } from "@devtools-ui/navigation";
+import { ConsoleAsset, ConsoleComponent } from "@devtools-ui/console";
+import { InfoView, InfoComponent } from "@devtools-ui/info";
 import {
   ObjectInspectorAsset,
   ObjectInspectorComponent,
@@ -37,12 +39,14 @@ export class AssetsRegistryPlugin
     ExtendedPlayerPlugin<
       [
         ActionAsset,
+        ConsoleAsset,
         CollectionAsset,
         InputAsset,
         ListAsset,
         NavigationAsset,
         ObjectInspectorAsset,
-        TextAsset
+        TextAsset,
+        InfoView
       ]
     >
 {
@@ -58,6 +62,8 @@ export class AssetsRegistryPlugin
         ["navigation", NavigationComponent],
         ["object-inspector", ObjectInspectorComponent],
         ["text", TextComponent],
+        ["console", ConsoleComponent],
+        ["info", InfoComponent],
       ])
     );
 

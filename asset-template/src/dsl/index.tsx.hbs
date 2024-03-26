@@ -29,7 +29,7 @@ export const {{pascalCase assetName}} = (props: AssetPropsWithChildren<{{pascalC
   }
 
   return (
-    <Asset type="action" {...rest}>
+    <Asset type="{{assetName}}" {...rest}>
       <property name="binding">{binding.toValue()}</property>
       {props.children}
     </Asset>

@@ -1,0 +1,22 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as InfoStories from "./Info.stories";
+
+<Meta of={InfoStories} />
+
+# Info Asset
+
+> type: `info`
+
+It provides an Info view. A simple stacked layout composed by header, main content and footer.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `header` | `AssetWrapper` | false | header section |
+| `main` | `AssetWrapper` | false | main section |
+| `footer` | `AssetWrapper` | false | footer section |
+
+## Basic Use Case
+
+<Canvas of={InfoStories.Basic} />

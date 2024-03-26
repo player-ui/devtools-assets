@@ -6,6 +6,8 @@ import DevtoolsUIPlugin, {
   Navigation,
   ObjectInspector,
   Text,
+  Info,
+  Console,
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
 import { CommonTypesPlugin } from "@player-ui/common-types-plugin";
@@ -28,6 +30,8 @@ const components = {
   Navigation,
   ObjectInspector,
   Text,
+  Info,
+  Console,
 };
 
 export const parameters = {
