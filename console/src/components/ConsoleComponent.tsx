@@ -17,7 +17,6 @@ const useConsoleProps = (props: TransformedConsole) => {
     ...props,
     inputProps: useInputAssetProps({
       ...props,
-      binding: props.expression,
       type: "input",
     }),
     value: props.expression,
@@ -25,7 +24,7 @@ const useConsoleProps = (props: TransformedConsole) => {
 };
 
 export const ConsoleComponent = (props: TransformedConsole) => {
-  const { evaluations, inputProps, validation } = useConsoleProps(props);
+  const { history, inputProps, validation } = useConsoleProps(props);
 
   const onSubmit: React.FocusEventHandler<HTMLInputElement> = (event) => {
     // Logic to get the result of the expression and add it to the History
@@ -35,8 +34,8 @@ export const ConsoleComponent = (props: TransformedConsole) => {
   return (
     <Flex direction="column">
       <UnorderedList>
-        {evaluations &&
-          evaluations.map(({ expression, result, outcome }, idx) => (
+        {history &&
+          history.map(({ expression, result }, idx) => (
             <ListItem key={`console-item-${idx}`}>
               {`${expression} - ${result}`}
             </ListItem>

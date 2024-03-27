@@ -1,10 +1,15 @@
-import type { TransformFunction } from "@player-ui/player";
+import type {
+  Asset,
+  BeforeTransformFunction,
+  TransformFunction,
+} from "@player-ui/player";
+import { compose, composeBefore } from "@player-ui/asset-transform-plugin";
 import type { ConsoleAsset, TransformedConsole } from "../types";
 
-export const consoleTransform: TransformFunction<
-  ConsoleAsset,
-  TransformedConsole
-> = (asset, options) => {
+export const transform: TransformFunction<ConsoleAsset, TransformedConsole> = (
+  asset,
+  options
+) => {
   return {
     ...asset,
     value:
@@ -36,5 +41,47 @@ export const consoleTransform: TransformFunction<
       asset.expression === undefined
         ? undefined
         : options.validation?.type(asset.expression),
+    history:
+      asset.binding === undefined
+        ? undefined
+        : options.data.model.get(asset.binding, {
+            includeInvalid: true,
+            formatted: false,
+          }),
+    evaluate() {
+      if (asset.exp) {
+        options.evaluate(asset.expression);
+      }
+    },
   };
 };
+
+/**
+ * Appends `exp` to the plugins.stringResolver.propertiesToSkip array or creates it if it doesn't exist
+ */
+export const expPropTransform: BeforeTransformFunction<Asset> = (asset) => {
+  const skipArray = asset.plugins?.stringResolver?.propertiesToSkip;
+
+  if (skipArray && skipArray.indexOf("exp") > 1) {
+    return asset;
+  }
+
+  return {
+    ...asset,
+    plugins: {
+      ...asset.plugins,
+      stringResolver: {
+        ...asset?.plugins?.stringResolver,
+        propertiesToSkip: [
+          ...(asset.plugins?.stringResolver?.propertiesToSkip ?? []),
+          "exp",
+        ],
+      },
+    },
+  };
+};
+
+export const consoleTransform = compose(
+  transform,
+  composeBefore(expPropTransform)
+);

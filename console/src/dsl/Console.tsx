@@ -2,47 +2,33 @@ import React from "react";
 import {
   AssetPropsWithChildren,
   Asset,
-  createSlot,
   BindingTemplateInstance,
+  isTemplateStringInstance,
 } from "@player-tools/dsl";
-import { Collection } from "@devtools-ui/collection";
-import { Text } from "@devtools-ui/text";
-import type { Asset as AssetType } from "@player-ui/player";
 import { ConsoleAsset } from "../types";
 
 export const Console = (
-  props: Omit<
-    AssetPropsWithChildren<ConsoleAsset>,
-    "expression" | "history"
-  > & {
-    /** The expresion binding */
-    expression: BindingTemplateInstance;
-
-    /** The history binding */
-    history: BindingTemplateInstance;
+  props: Omit<AssetPropsWithChildren<ConsoleAsset>, "binding"> & {
+    /** The binding */
+    binding: BindingTemplateInstance;
   }
 ) => {
+  const { expression, binding } = props;
+
+  // Extracting the exp value from the props
+  let expValue: ConsoleAsset["expression"];
+
+  if (isTemplateStringInstance(expression)) {
+    expValue = expression.toValue();
+  } else if (Array.isArray(expression)) {
+    expValue = expression.map((e) => (typeof e === "string" ? e : e.toValue()));
+  } else {
+    expValue = expression;
+  }
+
   return (
-    <Asset type="console">
-      {props.children}
-      <property name="expression">{props.expression.toValue()}</property>
-      <property name="history">{props.history.toValue()}</property>
+    <Asset type="console" {...(expValue && { expression: expValue })}>
+      {binding && <property name="binding">{binding.toValue()}</property>}
     </Asset>
   );
 };
-
-const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
-  return (
-    <Collection>
-      <Collection.Values>{props.children}</Collection.Values>
-    </Collection>
-  );
-};
-
-Console.Values = createSlot({
-  name: "evaluations",
-  TextComp: Text,
-  CollectionComp,
-  isArray: true,
-  wrapInAsset: false,
-});

@@ -1,7 +1,7 @@
-import { Asset, Schema } from "@player-ui/types";
+import { Asset, Schema, Expression } from "@player-ui/types";
 import { ValidationResponse } from "@player-ui/player";
 
-export interface ConsoleExpression {
+export interface Evaluation {
   /** The unique key for the expression */
   id: string;
   /** The expression itself */
@@ -9,20 +9,17 @@ export interface ConsoleExpression {
   /** The result for a given expression */
   result?: string;
   /** Whether there were any errors with the result */
-  outcome?: "error" | "success";
+  severity?: "error" | "success";
 }
 
 type ValueType = string | undefined;
 
 export interface ConsoleAsset extends Asset<"console"> {
   /** The location in the data-model to store the pre-eval expression */
-  expression: ValueType;
+  expression: Expression;
 
   /** The location in the data-model to store the post-eval expressions history */
-  history: ValueType;
-
-  /** The history of each evalued expression */
-  evaluations?: Array<ConsoleExpression>;
+  binding: ValueType;
 }
 
 export interface TransformedConsole extends ConsoleAsset {
@@ -40,4 +37,10 @@ export interface TransformedConsole extends ConsoleAsset {
 
   /** The dataType defined from the schema */
   dataType?: Schema.DataType;
+
+  /** A stateful instance of evaluations */
+  history: Evaluation[];
+
+  /** A method to evaluate the expression */
+  evaluate: () => void;
 }
