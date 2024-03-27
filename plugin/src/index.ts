@@ -16,21 +16,21 @@ export default AssetsRegistryPlugin;
 export type {
   ActionAsset,
   CollectionAsset,
+  ConsoleAsset,
   InputAsset,
   ListAsset,
   NavigationAsset,
   ObjectInspectorAsset,
   TextAsset,
-  ConsoleAsset,
 };
 
 export {
   Action,
   Collection,
+  Console,
   Input,
   List,
   Navigation,
   ObjectInspector,
   Text,
-  Console,
 };

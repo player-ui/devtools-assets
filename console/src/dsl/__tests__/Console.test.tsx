@@ -11,13 +11,13 @@ import { Console } from "../Console";
 describe("DSL: Console View", () => {
   test("Renders default console", async () => {
     const rendered = await render(
-      <Console expression={e`test.Expression`} binding={b`history.binding`} />
+      <Console exp={e`test.Expression`} binding={b`history.binding`} />
     );
 
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
       type: "console",
-      expression: "test.Expression",
+      exp: "test.Expression",
       binding: "history.binding",
     });
   });

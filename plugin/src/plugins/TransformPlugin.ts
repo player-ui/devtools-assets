@@ -12,9 +12,9 @@ export class TransformsPlugin implements PlayerPlugin {
     player.registerPlugin(
       new AssetTransformPlugin([
         [{ type: "action" }, actionTransform],
+        [{ type: "console" }, consoleTransform],
         [{ type: "input" }, inputTransform],
         [{ type: "object-inspector" }, objectInspectorTransform],
-        [{ type: "console" }, consoleTransform],
       ])
     );
   }

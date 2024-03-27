@@ -12,35 +12,6 @@ export const transform: TransformFunction<ConsoleAsset, TransformedConsole> = (
 ) => {
   return {
     ...asset,
-    value:
-      asset.expression === undefined
-        ? undefined
-        : options.data.model.get(asset.expression, {
-            includeInvalid: true,
-            formatted: false,
-          }),
-    set(val) {
-      if (asset.expression === undefined) {
-        return;
-      }
-
-      return options.data.model.set([[asset.expression, val]]);
-    },
-    format(val) {
-      if (asset.expression === undefined) {
-        return val;
-      }
-
-      return options.data.format(asset.expression, val);
-    },
-    validation:
-      asset.expression === undefined
-        ? undefined
-        : options.validation?.get(asset.expression, { track: true }),
-    dataType:
-      asset.expression === undefined
-        ? undefined
-        : options.validation?.type(asset.expression),
     history:
       asset.binding === undefined
         ? undefined
@@ -50,7 +21,7 @@ export const transform: TransformFunction<ConsoleAsset, TransformedConsole> = (
           }),
     evaluate() {
       if (asset.exp) {
-        options.evaluate(asset.expression);
+        options.evaluate(asset.exp);
       }
     },
   };

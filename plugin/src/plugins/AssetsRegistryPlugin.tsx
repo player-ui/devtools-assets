@@ -9,6 +9,7 @@ import type {
 import { AssetProviderPlugin } from "@player-ui/asset-provider-plugin-react";
 import { ActionAsset, ActionComponent } from "@devtools-ui/action";
 import { CollectionAsset, CollectionComponent } from "@devtools-ui/collection";
+import { ConsoleAsset, ConsoleComponent } from "@devtools-ui/console";
 import { InputAsset, InputComponent } from "@devtools-ui/input";
 import { ListAsset, ListComponent } from "@devtools-ui/list";
 import { NavigationAsset, NavigationComponent } from "@devtools-ui/navigation";
@@ -17,7 +18,6 @@ import {
   ObjectInspectorComponent,
 } from "@devtools-ui/object-inspector";
 import { TextAsset, TextComponent } from "@devtools-ui/text";
-import { ConsoleAsset, ConsoleComponent } from "@devtools-ui/console";
 import { TransformsPlugin } from "./TransformPlugin";
 
 const OptionalChakraThemeProvider = (
@@ -39,12 +39,12 @@ export class AssetsRegistryPlugin
       [
         ActionAsset,
         CollectionAsset,
+        ConsoleAsset,
         InputAsset,
         ListAsset,
         NavigationAsset,
         ObjectInspectorAsset,
-        TextAsset,
-        ConsoleAsset
+        TextAsset
       ]
     >
 {
@@ -55,12 +55,12 @@ export class AssetsRegistryPlugin
       new AssetProviderPlugin([
         ["action", ActionComponent],
         ["collection", CollectionComponent],
+        ["console", ConsoleComponent],
         ["input", InputComponent],
         ["list", ListComponent],
         ["navigation", NavigationComponent],
         ["object-inspector", ObjectInspectorComponent],
         ["text", TextComponent],
-        ["console", ConsoleComponent],
       ])
     );
 

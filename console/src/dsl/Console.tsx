@@ -13,21 +13,21 @@ export const Console = (
     binding: BindingTemplateInstance;
   }
 ) => {
-  const { expression, binding } = props;
+  const { exp, binding } = props;
 
   // Extracting the exp value from the props
-  let expValue: ConsoleAsset["expression"];
+  let expValue: ConsoleAsset["exp"];
 
-  if (isTemplateStringInstance(expression)) {
-    expValue = expression.toValue();
-  } else if (Array.isArray(expression)) {
-    expValue = expression.map((e) => (typeof e === "string" ? e : e.toValue()));
+  if (isTemplateStringInstance(exp)) {
+    expValue = exp.toValue();
+  } else if (Array.isArray(exp)) {
+    expValue = exp.map((e) => (typeof e === "string" ? e : e.toValue()));
   } else {
-    expValue = expression;
+    expValue = exp;
   }
 
   return (
-    <Asset type="console" {...(expValue && { expression: expValue })}>
+    <Asset type="console" {...(expValue && { exp: expValue })}>
       {binding && <property name="binding">{binding.toValue()}</property>}
     </Asset>
   );
