@@ -312,15 +312,6 @@ importers:
         specifier: workspace:*
         version: link:../../addon-storybook
 
-  info:
-    dependencies:
-      '@devtools-ui/collection':
-        specifier: workspace:*
-        version: link:../collection
-      '@devtools-ui/text':
-        specifier: workspace:*
-        version: link:../text
-
   input:
     dependencies:
       '@devtools-ui/text':
@@ -365,9 +356,6 @@ importers:
       '@devtools-ui/console':
         specifier: workspace:*
         version: link:../console
-      '@devtools-ui/info':
-        specifier: workspace:*
-        version: link:../info
       '@devtools-ui/input':
         specifier: workspace:*
         version: link:../input
@@ -380,6 +368,30 @@ importers:
       '@devtools-ui/object-inspector':
         specifier: workspace:*
         version: link:../object-inspector
+      '@devtools-ui/stacked-view':
+        specifier: workspace:*
+        version: link:../stacked-view
+      '@devtools-ui/table':
+        specifier: workspace:*
+        version: link:../table
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
+  stacked-view:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
+  table:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text

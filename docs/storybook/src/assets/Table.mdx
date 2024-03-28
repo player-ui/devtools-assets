@@ -1,0 +1,20 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as TableStories from "./Table.stories";
+
+<Meta of={TableStories} />
+
+# Table Asset
+
+> type: `table`
+
+It provides an `Table` component.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `binding` | `Array<Record<string,string>` | false | The table rows expressed as Records where the keys are the column header, and the value. |
+
+## Basic Use Case
+
+<Canvas of={TableStories.Basic} />

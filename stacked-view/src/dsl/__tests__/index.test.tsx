@@ -1,33 +1,33 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
 import { render, Asset } from "@player-tools/dsl";
-import { Info } from "../";
+import { StackedView } from "../";
 
-describe("DSL: Info", () => {
-  test("Renders info view", async () => {
+describe("DSL: StackedView", () => {
+  test("Renders stacked-view view", async () => {
     const rendered = await render(
-      <Info>
-        <Info.Header>
+      <StackedView>
+        <StackedView.Header>
           <Asset type="text">
             <property name="value">Header</property>
           </Asset>
-        </Info.Header>
-        <Info.Main>
+        </StackedView.Header>
+        <StackedView.Main>
           <Asset type="text">
             <property name="value">Main</property>
           </Asset>
-        </Info.Main>
-        <Info.Footer>
+        </StackedView.Main>
+        <StackedView.Footer>
           <Asset type="text">
             <property name="value">Footer</property>
           </Asset>
-        </Info.Footer>
-      </Info>
+        </StackedView.Footer>
+      </StackedView>
     );
 
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
-      type: "info",
+      type: "stacked-view",
       header: {
         asset: {
           id: "header",

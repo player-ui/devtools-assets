@@ -1,13 +1,13 @@
 import { Grid, GridItem } from "@chakra-ui/react";
 import { ReactAsset } from "@player-ui/react";
 import React from "react";
-import type { InfoView } from "../types";
+import type { StackedViewView } from "../types";
 
-export const InfoComponent = (props: InfoView) => {
+export const StackedViewComponent = (props: StackedViewView) => {
   const { header, main, footer } = props;
 
   return (
-    <Grid templateAreas={'"header header" "main main" "footer footer"'}>
+    <Grid h="100%" w="100%" gap="1" templateAreas={'"header" "main" "footer"'}>
       <GridItem area={"header"}>
         {header && <ReactAsset {...header} />}
       </GridItem>

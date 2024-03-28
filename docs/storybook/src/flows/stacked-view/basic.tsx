@@ -1,13 +1,13 @@
 import React from "react";
-import { Collection, Info, Text } from "@devtools-ui/plugin";
+import { Collection, StackedView, Text } from "@devtools-ui/plugin";
 import type { DSLFlow } from "@player-tools/dsl";
 
 const view1 = (
-  <Info>
-    <Info.Header>
+  <StackedView>
+    <StackedView.Header>
       <Text>Header</Text>
-    </Info.Header>
-    <Info.Main>
+    </StackedView.Header>
+    <StackedView.Main>
       <Collection>
         <Collection.Values>
           <Text>Item 1</Text>
@@ -15,15 +15,15 @@ const view1 = (
           <Text>Item 3</Text>
         </Collection.Values>
       </Collection>
-    </Info.Main>
-    <Info.Footer>
+    </StackedView.Main>
+    <StackedView.Footer>
       <Text>Footer</Text>
-    </Info.Footer>
-  </Info>
+    </StackedView.Footer>
+  </StackedView>
 );
 
 const flow: DSLFlow = {
-  id: "info-basic",
+  id: "stacked-view-basic",
   views: [view1],
   data: {
     count: 0,

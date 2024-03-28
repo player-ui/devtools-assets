@@ -1,6 +1,6 @@
 import { ActionAsset, Action } from "@devtools-ui/action";
 import { CollectionAsset, Collection } from "@devtools-ui/collection";
-import { InfoView, Info } from "@devtools-ui/info";
+import { StackedViewView, StackedView } from "@devtools-ui/stacked-view";
 import { InputAsset, Input } from "@devtools-ui/input";
 import { ListAsset, List } from "@devtools-ui/list";
 import { NavigationAsset, Navigation } from "@devtools-ui/navigation";
@@ -10,6 +10,7 @@ import {
 } from "@devtools-ui/object-inspector";
 import { TextAsset, Text } from "@devtools-ui/text";
 import { ConsoleAsset, Console } from "@devtools-ui/console";
+import { TableAsset, Table } from "@devtools-ui/table";
 import { AssetsRegistryPlugin } from "./plugins";
 
 export default AssetsRegistryPlugin;
@@ -23,7 +24,8 @@ export type {
   ObjectInspectorAsset,
   TextAsset,
   ConsoleAsset,
-  InfoView,
+  StackedViewView,
+  TableAsset,
 };
 
 export {
@@ -35,5 +37,6 @@ export {
   Navigation,
   ObjectInspector,
   Text,
-  Info,
+  StackedView,
+  Table,
 };

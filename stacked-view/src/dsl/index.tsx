@@ -3,16 +3,16 @@ import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
 import type { Asset as AssetType } from "@player-ui/player";
 import { Collection } from "@devtools-ui/collection";
 import { Text } from "@devtools-ui/text";
-import type { InfoView } from "../types";
+import type { StackedViewView } from "../types";
 
 /**
- * Defines the component DSL representation for the Info view.
+ * Defines the component DSL representation for the StackedView view.
  */
-export const Info = (props: AssetPropsWithChildren<InfoView>) => {
+export const StackedView = (props: AssetPropsWithChildren<StackedViewView>) => {
   const { children, ...rest } = props;
 
   return (
-    <Asset type="info" {...rest}>
+    <Asset type="stacked-view" {...rest}>
       {children}
     </Asset>
   );
@@ -26,7 +26,7 @@ const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
   );
 };
 
-Info.Header = createSlot({
+StackedView.Header = createSlot({
   name: "header",
   TextComp: Text,
   CollectionComp,
@@ -34,7 +34,7 @@ Info.Header = createSlot({
   wrapInAsset: true,
 });
 
-Info.Main = createSlot({
+StackedView.Main = createSlot({
   name: "main",
   TextComp: Text,
   CollectionComp,
@@ -42,7 +42,7 @@ Info.Main = createSlot({
   wrapInAsset: true,
 });
 
-Info.Footer = createSlot({
+StackedView.Footer = createSlot({
   name: "footer",
   TextComp: Text,
   CollectionComp,

@@ -1,23 +1,23 @@
-# @devtools-ui/info
+# @devtools-ui/stacked-view
 
 ## Overview
 
-`@devtools-ui/info` is a component package designed to be leveraged by a [Player-UI assets plugin](https://player-ui.github.io/next/plugins).
+`@devtools-ui/stacked-view` is a component package designed to be leveraged by a [Player-UI assets plugin](https://player-ui.github.io/next/plugins).
 
-It provides an Info view. A simple stacked layout composed by header, main content and footer.
+It provides an StackedView view. A simple stacked layout composed by header, main content and footer.
 
 ## Installation
 
-To install `@devtools-ui/info`, you can use pnpm or yarn:
+To install `@devtools-ui/stacked-view`, you can use pnpm or yarn:
 
 ```sh
-pnpm i @devtools-ui/info
+pnpm i @devtools-ui/stacked-view
 ```
 
 or
 
 ```sh
-yarn add @devtools-ui/info
+yarn add @devtools-ui/stacked-view
 ```
 
 ## Usage
@@ -25,23 +25,23 @@ yarn add @devtools-ui/info
 You can leverage this asset through the `@devtools-ui/plugin`:
 
 ```ts
-import { Info, Text } from "@devtools-ui/plugin";
+import { StackedView, Text } from "@devtools-ui/plugin";
 
 // and use it to define your Player-UI content:
 myFlow = {
   id: "my_flow",
   views: [
-    <Info>
-      <Info.Header>
+    <StackedView>
+      <StackedView.Header>
         <Text>Header</Text>
-      </Info.Header>
-      <Info.Main>
+      </StackedView.Header>
+      <StackedView.Main>
         <Text>Main</Text>
-      </Info.Main>
-      <Info.Footer>
+      </StackedView.Main>
+      <StackedView.Footer>
         <Text>Footer</Text>
-      </Info.Footer>
-    </Info>,
+      </StackedView.Footer>
+    </StackedView>,
   ],
 };
 ```
@@ -61,16 +61,19 @@ import type {
 } from "@player-ui/react";
 import { AssetProviderPlugin } from "@player-ui/asset-provider-plugin-react";
 import { TransformsPlugin } from "./TransformPlugin";
-import { InfoAsset, InfoComponent } from "@devtools-ui/info";
+import {
+  StackedViewAsset,
+  StackedViewComponent,
+} from "@devtools-ui/stacked-view";
 
 export class AssetsRegistryPlugin
-  implements ReactPlayerPlugin, ExtendedPlayerPlugin<[InfoAsset]>
+  implements ReactPlayerPlugin, ExtendedPlayerPlugin<[StackedViewAsset]>
 {
   name = "my-plugin";
 
   applyReact(reactPlayer: ReactPlayer) {
     reactPlayer.registerPlugin(
-      new AssetProviderPlugin([["info", InfoComponent]])
+      new AssetProviderPlugin([["stacked-view", StackedViewComponent]])
     );
   }
 
@@ -82,4 +85,4 @@ export class AssetsRegistryPlugin
 
 ## Contributing
 
-We welcome contributions to `@devtools-ui/info`!
+We welcome contributions to `@devtools-ui/stacked-view`!

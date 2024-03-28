@@ -1,6 +1,6 @@
 import type { Asset, AssetWrapper, View } from "@player-ui/types";
 
-export interface InfoView extends View<Asset<"info">> {
+export interface StackedViewView extends View<Asset<"info">> {
   /** Header */
   header?: AssetWrapper;
   /** Main */

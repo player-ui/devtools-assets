@@ -13,7 +13,11 @@ import { InputAsset, InputComponent } from "@devtools-ui/input";
 import { ListAsset, ListComponent } from "@devtools-ui/list";
 import { NavigationAsset, NavigationComponent } from "@devtools-ui/navigation";
 import { ConsoleAsset, ConsoleComponent } from "@devtools-ui/console";
-import { InfoView, InfoComponent } from "@devtools-ui/info";
+import { TableAsset, TableComponent } from "@devtools-ui/table";
+import {
+  StackedViewView,
+  StackedViewComponent,
+} from "@devtools-ui/stacked-view";
 import {
   ObjectInspectorAsset,
   ObjectInspectorComponent,
@@ -46,7 +50,8 @@ export class AssetsRegistryPlugin
         NavigationAsset,
         ObjectInspectorAsset,
         TextAsset,
-        InfoView
+        StackedViewView,
+        TableAsset
       ]
     >
 {
@@ -63,7 +68,8 @@ export class AssetsRegistryPlugin
         ["object-inspector", ObjectInspectorComponent],
         ["text", TextComponent],
         ["console", ConsoleComponent],
-        ["info", InfoComponent],
+        ["stacked-view", StackedViewComponent],
+        ["table", TableComponent],
       ])
     );
 

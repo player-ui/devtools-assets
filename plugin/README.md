@@ -13,6 +13,9 @@ It register the following assets to your React Player instance:
 - navigation
 - object-inspector
 - text
+- stacked-view
+- table
+- console
 
 ## Installation
 
