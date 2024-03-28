@@ -20,13 +20,40 @@ const useTablePros = (props: TransformedTable) => {
 
   const { rows } = props;
 
+  const parsedRows = rows.map((row) =>
+    Object.entries(row).reduce((acc, [key, value]) => {
+      if (key === "time") {
+        return {
+          ...acc,
+          [key]: new Date(value).toLocaleString(),
+        };
+      }
+
+      if (value === null || value === undefined) {
+        return {
+          ...acc,
+          [key]: "",
+        };
+      }
+
+      if (typeof value === "object") {
+        return {
+          ...acc,
+          [key]: JSON.stringify(value),
+        };
+      }
+
+      return { ...acc, [key]: value };
+    }, {} as Record<string, string>)
+  );
+
   // Get the keys to use as column headers (checking all the rows for cases where we have different keys):
   const headers = Array.from(new Set(rows.flatMap((row) => Object.keys(row))));
 
   return {
     ...props,
     headers,
-    rows,
+    rows: parsedRows,
   } as const;
 };
 
