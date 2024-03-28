@@ -5,11 +5,14 @@
   "main": "src/index.ts",
   "dependencies": {
     "@devtools-ui/action": "workspace:*",
+    "@devtools-ui/console": "workspace:*",
     "@devtools-ui/collection": "workspace:*",
     "@devtools-ui/input": "workspace:*",
     "@devtools-ui/list": "workspace:*",
     "@devtools-ui/navigation": "workspace:*",
     "@devtools-ui/object-inspector": "workspace:*",
-    "@devtools-ui/text": "workspace:*"
+    "@devtools-ui/text": "workspace:*",
+    "@devtools-ui/stacked-view": "workspace:*",
+    "@devtools-ui/table": "workspace:*"
   }
 }

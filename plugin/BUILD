@@ -13,6 +13,9 @@ js_pipeline(
     deps = [
         ":node_modules/@devtools-ui/action",
         ":node_modules/@devtools-ui/collection",
+        ":node_modules/@devtools-ui/console",
+        ":node_modules/@devtools-ui/stacked-view",
+        ":node_modules/@devtools-ui/table",
         ":node_modules/@devtools-ui/input",
         ":node_modules/@devtools-ui/list",
         ":node_modules/@devtools-ui/navigation",

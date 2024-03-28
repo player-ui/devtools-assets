@@ -13,14 +13,14 @@ import type { ObjectInspectorAsset } from "../types";
 export const ObjectInspector = (
   props: Omit<AssetPropsWithChildren<ObjectInspectorAsset>, "binding"> & {
     /** The binding */
-    binding: BindingTemplateInstance;
+    binding?: BindingTemplateInstance;
   }
 ) => {
   const { children, binding, ...rest } = props;
 
   return (
     <Asset type="object-inspector" {...rest}>
-      <property name="binding">{binding.toValue()}</property>
+      {binding && <property name="binding">{binding.toValue()}</property>}
       {children}
     </Asset>
   );

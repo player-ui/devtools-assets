@@ -1,0 +1,22 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as StackedViewStories from "./StackedView.stories";
+
+<Meta of={StackedViewStories} />
+
+# StackedView Asset
+
+> type: `stacked-view`
+
+A simple stacked layout composed by header, main content and footer.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `header` | `AssetWrapper` | false | header section |
+| `main` | `AssetWrapper` | false | main section |
+| `footer` | `AssetWrapper` | false | footer section |
+
+## Basic Use Case
+
+<Canvas of={StackedViewStories.Basic} />

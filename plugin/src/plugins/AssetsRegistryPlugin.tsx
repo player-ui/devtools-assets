@@ -12,6 +12,12 @@ import { CollectionAsset, CollectionComponent } from "@devtools-ui/collection";
 import { InputAsset, InputComponent } from "@devtools-ui/input";
 import { ListAsset, ListComponent } from "@devtools-ui/list";
 import { NavigationAsset, NavigationComponent } from "@devtools-ui/navigation";
+import { ConsoleAsset, ConsoleComponent } from "@devtools-ui/console";
+import { TableAsset, TableComponent } from "@devtools-ui/table";
+import {
+  StackedViewView,
+  StackedViewComponent,
+} from "@devtools-ui/stacked-view";
 import {
   ObjectInspectorAsset,
   ObjectInspectorComponent,
@@ -37,12 +43,15 @@ export class AssetsRegistryPlugin
     ExtendedPlayerPlugin<
       [
         ActionAsset,
+        ConsoleAsset,
         CollectionAsset,
         InputAsset,
         ListAsset,
         NavigationAsset,
         ObjectInspectorAsset,
-        TextAsset
+        TextAsset,
+        StackedViewView,
+        TableAsset
       ]
     >
 {
@@ -58,6 +67,9 @@ export class AssetsRegistryPlugin
         ["navigation", NavigationComponent],
         ["object-inspector", ObjectInspectorComponent],
         ["text", TextComponent],
+        ["console", ConsoleComponent],
+        ["stacked-view", StackedViewComponent],
+        ["table", TableComponent],
       ])
     );
 

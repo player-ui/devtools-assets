@@ -31,8 +31,7 @@ const flow: DSLFlow = {
       },
     },
   },
-  // TODO: update @devtools-ui version to 0.5.1
-  schema: schema as unknown as DSLFlow["schema"],
+  schema,
   navigation: {
     BEGIN: "FLOW_1",
     FLOW_1: {

@@ -19,7 +19,7 @@ const Nav = () => (
 );
 
 const view1 = (
-  <Collection>
+  <Collection id="v1">
     <Collection.Values>
       <Nav />
       <Text>View 1</Text>
@@ -28,7 +28,7 @@ const view1 = (
 );
 
 const view2 = (
-  <Collection>
+  <Collection id="v2">
     <Collection.Values>
       <Nav />
       <Text>View 2</Text>
@@ -37,7 +37,7 @@ const view2 = (
 );
 
 const view3 = (
-  <Collection>
+  <Collection id="v3">
     <Collection.Values>
       <Nav />
       <Text>View 3</Text>

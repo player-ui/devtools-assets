@@ -1,0 +1,22 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as ConsoleStories from "./Console.stories";
+
+<Meta of={ConsoleStories} />
+
+# Console Asset
+
+> type: `console`
+
+It provides a `Console` component that can be used to allow the user to interact with the Player-UI expression evaluator.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `binding` | `string` | true | Binding to the history of evaluations. | 
+| `exp` | `string` | true | Evaluation expression | 
+
+## Basic Use Case
+
+<Canvas of={ConsoleStories.Basic} />
+

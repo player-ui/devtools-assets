@@ -6,7 +6,6 @@ import {
   Tr,
   Th,
   Td,
-  TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
@@ -20,33 +19,50 @@ interface EventsPanelProps {
   active: boolean;
 }
 
-const prettifyEventPayload = (evt: EventType) => {
-  switch (evt.type) {
-    case "log":
-      return JSON.stringify({ message: evt.message, severity: evt.severity });
-    case "dataChange":
-      return JSON.stringify({
-        binding: evt.binding,
-        from: evt.from,
-        to: evt.to,
-      });
-    case "metric":
-      return JSON.stringify({
-        metricType: evt.metricType,
-        message: evt.message,
-      });
-    case "stateChange":
-      return JSON.stringify({
-        state: evt.state,
-        error: evt.error,
-        outcome: evt.outcome,
-      });
-  }
+const useTablePros = () => {
+  const rows = useSelector<StateType, EventType[]>((state) => state.events);
+
+  const parsedRows = rows.map((row) =>
+    Object.entries(row).reduce((acc, [key, value]) => {
+      if (key === "time") {
+        return {
+          ...acc,
+          [key]: new Date(value).toLocaleString(),
+        };
+      }
+
+      if (value === null || value === undefined) {
+        return {
+          ...acc,
+          [key]: "",
+        };
+      }
+
+      if (typeof value === "object") {
+        return {
+          ...acc,
+          [key]: JSON.stringify(value),
+        };
+      }
+
+      return { ...acc, [key]: value };
+    }, {} as Record<string, string>)
+  );
+
+  // Get the keys to use as column headers (checking all the rows for cases where we have different keys):
+  const headers = rows?.length
+    ? Array.from(new Set(rows.flatMap((row) => Object.keys(row))))
+    : undefined;
+
+  return {
+    headers,
+    rows: parsedRows,
+  } as const;
 };
 
 /** The panel to show events */
 export const EventsPanel = (props: EventsPanelProps) => {
-  const events = useSelector<StateType, EventType[]>((state) => state.events);
+  const { headers, rows } = useTablePros();
   const contentType = useContentKind();
 
   if (!props.active) {
@@ -61,23 +77,30 @@ export const EventsPanel = (props: EventsPanelProps) => {
     );
   }
 
+  if (!rows.length) {
+    return (
+      <Placeholder>
+        No events have been recorded for this story yet.
+      </Placeholder>
+    );
+  }
+
   return (
     <TableContainer>
       <Table variant="simple">
-        <TableCaption>Events</TableCaption>
         <Thead>
           <Tr>
-            <Th>Time</Th>
-            <Th>Type</Th>
-            <Th>Payload</Th>
+            {headers?.map((key) => (
+              <Th key={key}>{key}</Th>
+            ))}
           </Tr>
         </Thead>
         <Tbody>
-          {events.map((evt) => (
-            <Tr key={evt.id}>
-              <Td>{evt.time}</Td>
-              <Td>{evt.type}</Td>
-              <Td>{prettifyEventPayload(evt)}</Td>
+          {rows.map((row, index) => (
+            <Tr key={index}>
+              {headers?.map((key) => (
+                <Td key={key}>{row[key as keyof typeof row] ?? ""}</Td>
+              ))}
             </Tr>
           ))}
         </Tbody>

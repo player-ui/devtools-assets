@@ -10,3 +10,6 @@ packages:
   - "input"
   - "list"
   - "docs/storybook"
+  - "console"
+  - "stacked-view"
+  - "table"

@@ -1,7 +1,6 @@
 import React from "react";
 import { Input } from "@devtools-ui/plugin";
-import type { DSLFlow } from "@player-tools/dsl";
-import { binding as b } from "@player-tools/dsl";
+import { DSLFlow, makeBindingsForObject } from "@player-tools/dsl";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const schema: any = {
@@ -10,9 +9,11 @@ const schema: any = {
   },
 };
 
+const bindings = makeBindingsForObject(schema);
+
 const view1 = (
   <Input
-    binding={b`content`}
+    binding={bindings.content}
     size={"md"}
     placeholder={"User input"}
     maxLength={10}
@@ -26,7 +27,7 @@ const flow: DSLFlow = {
   id: "input-basic",
   views: [view1],
   data: {
-    count: 0,
+    content: "testing...",
   },
   schema,
   navigation: {
