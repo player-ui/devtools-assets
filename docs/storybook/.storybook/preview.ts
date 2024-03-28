@@ -1,6 +1,7 @@
 import DevtoolsUIPlugin, {
   Action,
   Collection,
+  Console,
   Input,
   List,
   Navigation,
@@ -23,11 +24,12 @@ const reactPlayerPlugins = [
 const components = {
   Action,
   Collection,
+  Console,
   Input,
   List,
   Navigation,
   ObjectInspector,
-  Text,
+  Text
 };
 
 export const parameters = {
