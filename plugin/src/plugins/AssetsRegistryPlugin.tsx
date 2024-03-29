@@ -43,7 +43,6 @@ export class AssetsRegistryPlugin
     ExtendedPlayerPlugin<
       [
         ActionAsset,
-        ConsoleAsset,
         CollectionAsset,
         ConsoleAsset,
         InputAsset,

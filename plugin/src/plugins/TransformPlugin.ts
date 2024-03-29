@@ -16,7 +16,6 @@ export class TransformsPlugin implements PlayerPlugin {
         [{ type: "console" }, consoleTransform],
         [{ type: "input" }, inputTransform],
         [{ type: "object-inspector" }, objectInspectorTransform],
-        [{ type: "console" }, consoleTransform],
         [{ type: "table" }, tableTransform],
       ])
     );

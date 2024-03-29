@@ -11,6 +11,5 @@ packages:
   - "list"
   - "console"
   - "docs/storybook"
-  - "console"
   - "stacked-view"
   - "table"

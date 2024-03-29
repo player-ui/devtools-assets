@@ -26,7 +26,6 @@ list/node_modules
 console/node_modules
 docs/storybook/node_modules
 docs/site/node_modules
-console/node_modules
 stacked-view/node_modules
 table/node_modules
 
