@@ -5,7 +5,7 @@ import {
   BindingTemplateInstance,
   isTemplateStringInstance,
 } from "@player-tools/dsl";
-import { ConsoleAsset } from "../types";
+import type { ConsoleAsset } from "../types";
 
 /**
  * Defines the component DSL representation for the Console asset,
@@ -13,7 +13,7 @@ import { ConsoleAsset } from "../types";
  */
 export const Console = (
   props: Omit<AssetPropsWithChildren<ConsoleAsset>, "binding"> & {
-    /** The binding */
+    /** Binding as template string */
     binding: BindingTemplateInstance;
   }
 ) => {
@@ -26,12 +26,12 @@ export const Console = (
     expValue = exp.toValue();
   } else if (Array.isArray(exp)) {
     expValue = exp.map((e) => (typeof e === "string" ? e : e.toValue()));
-  } else {
+  } else if (exp) {
     expValue = exp;
   }
 
   return (
-    <Asset type="console" {...(expValue && { exp: expValue })}>
+    <Asset type="console">
       {exp && <property name="exp">{expValue}</property>}
       {binding && <property name="binding">{binding.toValue()}</property>}
     </Asset>
