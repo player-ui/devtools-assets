@@ -21,6 +21,7 @@ deps = [
     "//:node_modules/@player-ui/data-change-listener-plugin",
     "//:node_modules/@player-ui/computed-properties-plugin",
     "//:node_modules/@chakra-ui/storybook-addon",
+    "//:node_modules/remark-gfm",
     ":node_modules/@player-ui/storybook-addon-player",
     ":node_modules/@devtools-ui/plugin",
 ]

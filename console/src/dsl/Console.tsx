@@ -7,6 +7,10 @@ import {
 } from "@player-tools/dsl";
 import { ConsoleAsset } from "../types";
 
+/**
+ * Defines the component DSL representation for the Console asset,
+ * a component that emulates a REPL environment that you see in browsers.
+ */
 export const Console = (
   props: Omit<AssetPropsWithChildren<ConsoleAsset>, "binding"> & {
     /** The binding */
@@ -28,6 +32,7 @@ export const Console = (
 
   return (
     <Asset type="console" {...(expValue && { exp: expValue })}>
+      {exp && <property name="exp">{expValue}</property>}
       {binding && <property name="binding">{binding.toValue()}</property>}
     </Asset>
   );

@@ -32,7 +32,12 @@ const flow: DSLFlow = {
     history: [
       { id: "0", expression: "1 + 1", result: "2" },
       { id: "1", expression: "1 / 0", result: "Infinity", severity: "error" },
-      { id: "2", expression: "1 + a", result: "1a", severity: "warning" },
+      {
+        id: "2",
+        expression: "1 + a",
+        result: "Expected a integer, got a string",
+        severity: "warning",
+      },
     ],
   },
   schema,

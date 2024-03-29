@@ -1,0 +1,70 @@
+import React from "react";
+import {
+  AssetPropsWithChildren,
+  Asset,
+  createSlot,
+  isTemplateStringInstance,
+} from "@player-tools/dsl";
+import type { Asset as AssetType } from "@player-ui/player";
+import { Collection } from "@devtools-ui/collection";
+import { Text } from "@devtools-ui/text";
+import type { {{pascalCase assetName}}Asset } from "../types";
+
+/**
+* Defines the component DSL representation, so users of this plugin can author Player-UI
+* content leveraging .jsx/.tsx syntax.
+*/
+export const {{pascalCase assetName}} = (props: AssetPropsWithChildren<{{pascalCase assetName}}Asset>) => {
+  const { exp, binding, children, ...rest } = props;
+
+  // Extracting the exp value from the props
+  let expValue: {{pascalCase assetName}}Asset["exp"];
+
+  if (isTemplateStringInstance(exp)) {
+    expValue = exp.toValue();
+  } else if (Array.isArray(exp)) {
+    expValue = exp.map((e) => (typeof e === "string" ? e : e.toValue()));
+  } else if (exp) {
+    expValue = exp;
+  }
+
+  return (
+    <Asset type="{{assetName}}" {...rest}>
+      <property name="binding">{binding.toValue()}</property>
+      {props.children}
+    </Asset>
+  );
+};
+
+const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
+  return (
+    <Collection>
+      <Collection.Values>{props.children}</Collection.Values>
+    </Collection>
+  );
+};
+
+{{pascalCase assetName}}.Label = createSlot({
+  name: "label",
+  TextComp: Text,
+  CollectionComp,
+  isArray: false,
+  wrapInAsset: true,
+});
+
+{{pascalCase assetName}}.Value = createSlot({
+  name: "value",
+  TextComp: Text,
+  CollectionComp,
+  isArray: false,
+  wrapInAsset: true,
+});
+
+{{pascalCase assetName}}.Values = createSlot({
+  name: "values",
+  TextComp: Text,
+  CollectionComp,
+  isArray: true,
+  wrapInAsset: true,
+});
+

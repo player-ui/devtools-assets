@@ -1,11 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import {
-  render,
-  Asset,
-  binding as b,
-  expression as e,
-} from "@player-tools/dsl";
+import { render, binding as b, expression as e } from "@player-tools/dsl";
 import { Console } from "../Console";
 
 describe("DSL: Console View", () => {

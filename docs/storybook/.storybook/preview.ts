@@ -7,6 +7,8 @@ import DevtoolsUIPlugin, {
   Navigation,
   ObjectInspector,
   Text,
+  StackedView,
+  Table,
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
 import { CommonTypesPlugin } from "@player-ui/common-types-plugin";
@@ -29,7 +31,9 @@ const components = {
   List,
   Navigation,
   ObjectInspector,
-  Text
+  Text,
+  StackedView,
+  Table,
 };
 
 export const parameters = {

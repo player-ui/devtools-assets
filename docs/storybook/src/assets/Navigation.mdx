@@ -1,0 +1,20 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as NavigationStories from "./Navigation.stories";
+
+<Meta of={NavigationStories} />
+
+# Navigation Asset
+
+> type: `navigation`
+
+It provides a `Navigation` component that can be used to group actions in a row.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `values` | `Array<AssetWrapper>` | false | Array of `action` assets |
+
+## Basic Use Case
+
+<Canvas of={NavigationStories.Basic} />

@@ -1,31 +1,30 @@
-import { Asset, Schema, Expression } from "@player-ui/types";
-import { ValidationResponse } from "@player-ui/player";
+import type { Asset, Expression } from "@player-ui/types";
 
 export interface Evaluation {
-  /** The unique key for the expression */
+  /** A unique key for this expression */
   id: string;
+
   /** The expression itself */
   expression: string;
-  /** The result for a given expression */
-  result?: string;
-  /** Whether there were any errors with the result */
-  severity?: "error" | "success";
-}
 
-type ValueType = string | undefined;
+  /** The result for a given expression */
+  result?: unknown;
+
+  /** Whether there were any errors with the result */
+  severity?: "error" | "warning";
+}
 
 export interface ConsoleAsset extends Asset<"console"> {
-  /** The location in the data-model to store the pre-eval expression */
-  exp: Expression;
-
-  /** The location in the data-model to store the post-eval expressions history */
-  binding: ValueType;
+  /** Evaluate expression */
+  exp?: Expression;
+  /** History binding */
+  binding?: string;
 }
 
+/** A stateful instance of the asset */
 export interface TransformedConsole extends ConsoleAsset {
-  /** A stateful instance of evaluations */
+  /** A stateful instance of an action */
   history: Evaluation[];
-
   /** A method to evaluate the expression */
   evaluate: () => void;
 }

@@ -4,6 +4,7 @@ import { actionTransform } from "@devtools-ui/action";
 import { inputTransform } from "@devtools-ui/input";
 import { objectInspectorTransform } from "@devtools-ui/object-inspector";
 import { consoleTransform } from "@devtools-ui/console";
+import { tableTransform } from "@devtools-ui/table";
 
 export class TransformsPlugin implements PlayerPlugin {
   name = "devtools-ui-transforms";
@@ -15,6 +16,8 @@ export class TransformsPlugin implements PlayerPlugin {
         [{ type: "console" }, consoleTransform],
         [{ type: "input" }, inputTransform],
         [{ type: "object-inspector" }, objectInspectorTransform],
+        [{ type: "console" }, consoleTransform],
+        [{ type: "table" }, tableTransform],
       ])
     );
   }

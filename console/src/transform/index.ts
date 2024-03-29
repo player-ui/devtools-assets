@@ -4,8 +4,12 @@ import type {
   TransformFunction,
 } from "@player-ui/player";
 import { compose, composeBefore } from "@player-ui/asset-transform-plugin";
-import type { ConsoleAsset, TransformedConsole } from "../types";
+import { ConsoleAsset, TransformedConsole } from "../types";
 
+/**
+ * Platform-agnostic transform function that takes the properties we get from the Player Content (DSL > JSON)
+ * and embeds Player state and methods:
+ */
 export const transform: TransformFunction<ConsoleAsset, TransformedConsole> = (
   asset,
   options
