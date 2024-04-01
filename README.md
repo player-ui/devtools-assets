@@ -1,5 +1,7 @@
 # Devtools-UI
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/player-ui/devtools-assets/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/player-ui/devtools-assets/tree/main) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
 Welcome to Devtools-UI, a monorepo containing a collection of assets packages and an assets plugin designed to be leveraged by [Player-UI](https://player-ui.github.io/).
 
 ## Packages
