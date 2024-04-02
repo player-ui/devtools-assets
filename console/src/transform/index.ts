@@ -23,8 +23,14 @@ export const transform: TransformFunction<ConsoleAsset, TransformedConsole> = (
             includeInvalid: true,
             formatted: false,
           }),
-    evaluate() {
+    evaluate(expression: string) {
       if (asset.exp) {
+        // get the referenced expression property holder from the expression
+        const referencedExpression = asset.exp.match(/{{\s*(.*?)\s*}}/);
+        // set the referenced expression property to the new expression
+        // so it is available to the asset.exp
+        referencedExpression &&
+          options.data.model.set([[referencedExpression[1], expression]]);
         options.evaluate(asset.exp);
       }
     },

@@ -1,4 +1,4 @@
-import type { Asset, Expression } from "@player-ui/types";
+import type { Asset } from "@player-ui/types";
 
 export interface Evaluation {
   /** A unique key for this expression */
@@ -16,7 +16,7 @@ export interface Evaluation {
 
 export interface ConsoleAsset extends Asset<"console"> {
   /** Evaluate expression */
-  exp?: Expression;
+  exp?: string;
   /** History binding */
   binding?: string;
 }
@@ -26,5 +26,5 @@ export interface TransformedConsole extends ConsoleAsset {
   /** A stateful instance of an action */
   history: Evaluation[];
   /** A method to evaluate the expression */
-  evaluate: () => void;
+  evaluate: (expression: string) => void;
 }
