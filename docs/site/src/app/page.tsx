@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import {
   ButtonGroup,
-  Button
+  Button,
+  VStack
 } from '@chakra-ui/react';
 import styles from "./page.module.css";
 
@@ -10,7 +11,8 @@ export default function Home() {
     <main className={styles.main}>
 
       <div>
-        <ButtonGroup spacing="16" size="lg">
+      <VStack gap="8">
+        <ButtonGroup spacing="6" size="lg">
           <Link passHref href="/my-mdx-page">
             <Button variant="outline">Learn More</Button>
           </Link>
@@ -19,7 +21,7 @@ export default function Home() {
             <Button variant="solid">Get Started</Button>
           </Link>
         </ButtonGroup>
-
+        </VStack>
       </div>
     </main>
   );
