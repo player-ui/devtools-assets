@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { ChakraProvider, useColorMode } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import {
   ButtonGroup,
   Button,
-  VStack
+  VStack,
+  Text
 } from '@chakra-ui/react';
 import styles from "./page.module.css";
 
@@ -13,13 +14,10 @@ export default function Home() {
       <main className={styles.main}>
         <div>
           <VStack gap="8">
+            <Text fontSize='5xl'> Devtools Assets </Text>
             <ButtonGroup spacing="6" size="lg">
               <Link passHref href="/my-mdx-page">
-                <Button variant="outline">Learn More</Button>
-              </Link>
-
-              <Link passHref href="/page">
-                <Button variant="solid">Get Started</Button>
+                <Button variant="outline">Get Started</Button>
               </Link>
             </ButtonGroup>
           </VStack>
