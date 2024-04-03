@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { ChakraProvider } from '@chakra-ui/react';
 import {
   ButtonGroup,
   Button,
@@ -10,7 +9,6 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <ChakraProvider>
       <main className={styles.main}>
         <div>
           <VStack gap="8">
@@ -23,6 +21,5 @@ export default function Home() {
           </VStack>
         </div>
       </main>
-    </ChakraProvider>
   );
 }
