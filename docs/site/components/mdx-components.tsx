@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import path, { parse } from 'path';
 import Link from 'next/link';
 import {
@@ -156,7 +156,7 @@ const langMap: Record<string, string> = {
 /**
  * Code Block comopnent
  */
-const Code = (props: any) => {
+const CodeBlock = ({children: {props}}: any) => {
   let lang = props.className?.split('-')[1];
   if (langMap[lang] !== undefined) {
     lang = langMap[lang];
@@ -225,7 +225,7 @@ export const InlineCode = (props: JSX.IntrinsicElements['code']) => {
   return (
     <ChakraCode
       colorScheme="gray"
-      bg={useColorModeValue('blue.50', 'gray.800')}
+      bg={useColorModeValue('blue.100', 'gray.800')}
       {...props}
     />
   );
@@ -275,13 +275,11 @@ export const MDXComponents: MDXProviderComponents = {
   li: ListItem,
   img: Img,
   code: InlineCode,
-  pre: Code,
+  pre: CodeBlock,
 
   a: A,
 
   Tabs,
-
-  PlatformTabs: withRouter(PlatformTabs),
 
   ContentTabs,
 
@@ -289,8 +287,6 @@ export const MDXComponents: MDXProviderComponents = {
   th: Th,
   tr: Tr,
   td: Td,
-
-  inlineCode: InlineCode,
 
   Alert,
   AlertTitle,

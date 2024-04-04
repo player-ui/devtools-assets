@@ -2,7 +2,6 @@ import Link from 'next/link';
 import {
   Button
 } from '@chakra-ui/react';
-import MdxLayout from '../components/mdx-layout'
 
 # First MDX pages
 
@@ -26,8 +25,3 @@ www.example.com, https://example.com, and contact@example.com.
 <Link passHref href="/first-mdx">
     <Button variant="outline">First Page</Button>
 </Link>
-
-
-export default function MDXPage({ children }) {
-  return <MdxLayout>{children}</MdxLayout>;
-}

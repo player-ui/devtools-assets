@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { ChakraProvider, useColorMode } from '@chakra-ui/react';
 import { theme } from '../components/chakra-theme';
 import { Context } from '../components/Context';
+import MdxLayout from '../components/mdx-layout';
 import './globals.css';
 
 
@@ -25,7 +26,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Context>
         <ChakraProvider theme={theme}>
           <HTMLThemeSetter />
-          <Component {...pageProps} />
+          <MdxLayout>
+            <Component {...pageProps} />
+          </MdxLayout>
         </ChakraProvider>
       </Context>
     </>
