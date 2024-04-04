@@ -13,6 +13,7 @@
     "@devtools-ui/object-inspector": "workspace:*",
     "@devtools-ui/text": "workspace:*",
     "@devtools-ui/stacked-view": "workspace:*",
-    "@devtools-ui/table": "workspace:*"
+    "@devtools-ui/table": "workspace:*",
+    "@devtools-ui/copy-to-clipboard": "workspace:*"
   }
 }

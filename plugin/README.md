@@ -16,6 +16,7 @@ It register the following assets to your React Player instance:
 - stacked-view
 - table
 - console
+- copy-to-clipboard
 
 ## Installation
 

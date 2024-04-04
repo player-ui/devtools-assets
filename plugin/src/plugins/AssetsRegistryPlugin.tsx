@@ -15,6 +15,10 @@ import { NavigationAsset, NavigationComponent } from "@devtools-ui/navigation";
 import { ConsoleAsset, ConsoleComponent } from "@devtools-ui/console";
 import { TableAsset, TableComponent } from "@devtools-ui/table";
 import {
+  CopyToClipboardAsset,
+  CopyToClipboardComponent,
+} from "@devtools-ui/copy-to-clipboard";
+import {
   StackedViewView,
   StackedViewComponent,
 } from "@devtools-ui/stacked-view";
@@ -51,7 +55,8 @@ export class AssetsRegistryPlugin
         ObjectInspectorAsset,
         TextAsset,
         StackedViewView,
-        TableAsset
+        TableAsset,
+        CopyToClipboardAsset
       ]
     >
 {
@@ -70,6 +75,7 @@ export class AssetsRegistryPlugin
         ["console", ConsoleComponent],
         ["stacked-view", StackedViewComponent],
         ["table", TableComponent],
+        ["copy-to-clipboard", CopyToClipboardComponent],
       ])
     );
 

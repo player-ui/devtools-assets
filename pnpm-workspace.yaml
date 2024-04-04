@@ -13,3 +13,4 @@ packages:
   - "console"
   - "stacked-view"
   - "table"
+  - "copy-to-clipboard"

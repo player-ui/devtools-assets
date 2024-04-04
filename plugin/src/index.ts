@@ -11,6 +11,10 @@ import {
 import { TextAsset, Text } from "@devtools-ui/text";
 import { ConsoleAsset, Console } from "@devtools-ui/console";
 import { TableAsset, Table } from "@devtools-ui/table";
+import {
+  CopyToClipboardAsset,
+  CopyToClipboard,
+} from "@devtools-ui/copy-to-clipboard";
 import { AssetsRegistryPlugin } from "./plugins";
 
 export default AssetsRegistryPlugin;
@@ -26,6 +30,7 @@ export type {
   ConsoleAsset,
   StackedViewView,
   TableAsset,
+  CopyToClipboardAsset,
 };
 
 export {
@@ -39,4 +44,5 @@ export {
   Text,
   StackedView,
   Table,
+  CopyToClipboard,
 };
