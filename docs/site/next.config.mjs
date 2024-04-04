@@ -1,15 +1,17 @@
 /** @type {import('next').NextConfig} */
 import MDX from '@next/mdx';
+import smartypants from 'remark-smartypants'
+import remarkGFM from 'remark-gfm'
 
 const withMDX = MDX({
     extension: /\.mdx?$/,
     options: {
       // If using remark-gfm: you'll need to use next.config.mjs as the package is ESM only
       // https://github.com/remarkjs/remark-gfm#install
-      remarkPlugins: [],
+      remarkPlugins: [smartypants, remarkGFM],
       rehypePlugins: [],
       // If using `MDXProvider`, uncomment the following line.
-      // providerImportSource: "@mdx-js/react",
+      providerImportSource: "@mdx-js/react",
     },
   })
   

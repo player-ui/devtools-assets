@@ -22,12 +22,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      {/* <ChakraProvider theme={theme}> */}
-        <Context>
+      <Context>
+        <ChakraProvider theme={theme}>
           <HTMLThemeSetter />
           <Component {...pageProps} />
-        </Context>
-      {/* </ChakraProvider> */}
+        </ChakraProvider>
+      </Context>
     </>
   );
 };

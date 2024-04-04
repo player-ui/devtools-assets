@@ -1,0 +1,35 @@
+import Link from 'next/link';
+import {
+  Button
+} from '@chakra-ui/react';
+import MdxLayout from '../components/mdx-layout'
+ 
+# Welcome to my MDX page!
+
+### Create Your Asset
+
+First and foremost you need to create a component to handle rendering of your asset. Without any form of transforms, the props to the component will be those from the incoming player content. It's recommended that you attach the `id`, and any other html properties to the root of the asset's tree:
+
+```tsx
+const CustomAssetComp = (props) => {
+  return (
+    <div id={props.id} style={{ color: 'purple' }}>
+      {props.text}
+    </div>
+  );
+};
+```
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+<Link passHref href="/">
+    <Button variant="outline">Back to Home</Button>
+</Link>
+
+ 
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>;
+}

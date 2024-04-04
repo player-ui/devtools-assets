@@ -3,18 +3,24 @@ import Link from 'next/link';
 import {
   Button
 } from '@chakra-ui/react';
+import MdxLayout from '../components/mdx-layout'
+
 
 export const name = 'Future of Devtools Docs'
 export const title = 'This is: ' + name + '!'
 
 # {title}
 
-## To do list
+# To do list
 
-## - Structure
-## - Style
-## - Add more Docs
+ - Structure
+  - Style
+- Add more Docs
 
 <Link passHref href="/">
     <Button variant="outline">Back to Home</Button>
 </Link>
+
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>;
+}

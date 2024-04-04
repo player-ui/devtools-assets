@@ -2,10 +2,22 @@ import Link from 'next/link';
 import {
   Button
 } from '@chakra-ui/react';
+import MdxLayout from '../components/mdx-layout'
 
 # First MDX pages
 
 ## This is so cool for the Player Devtools Assets!
+
+# GFM
+
+## Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Tasklist
+
+* [ ] to do
+* [x] done
 
 <Link passHref href="/">
     <Button variant="outline">Back to Home</Button>
@@ -14,3 +26,8 @@ import {
 <Link passHref href="/first-mdx">
     <Button variant="outline">First Page</Button>
 </Link>
+
+
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>;
+}

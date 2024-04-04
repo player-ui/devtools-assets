@@ -17,6 +17,9 @@ export default function Home() {
               <Link passHref href="/my-mdx-page">
                 <Button variant="outline">Get Started</Button>
               </Link>
+              <Link passHref href="/mdx-page">
+                <Button variant="outline">See example</Button>
+              </Link>
             </ButtonGroup>
           </VStack>
         </div>
