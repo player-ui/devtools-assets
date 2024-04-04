@@ -19,16 +19,61 @@ const navigation: Navigation = {
       title: 'Devtools',
       routes: [
         {
-          title: 'MDX Page',
-          path: '/mdx-page',
+          title: 'Overview',
+          path: '/overview',
         },
         {
-          title: 'First MDX',
-          path: '/first-mdx',
+          title: 'Team',
+          path: '/team',
         },
         {
-          title: 'FAQs',
-          path: '/faqs',
+          title: 'Plugin',
+          path: '/plugin',
+        },
+        {
+          title: 'Assets',
+          routes: [
+            {
+              title: 'Action',
+              path: '/assets/action'
+            },
+            {
+              title: 'Collection',
+              path: '/assets/collection',
+            },
+            {
+              title: 'Console',
+              path: '/assets/console',
+            },
+            {
+              title: 'Input',
+              path: '/assets/input',
+            },
+            {
+              title: 'list',
+              path: '/assets/list',
+            },
+            {
+              title: 'Navigation',
+              path: '/assets/navigation',
+            },
+            {
+              title: 'Object Inspector',
+              path: '/assets/object-inspector',
+            },
+            {
+              title: 'Stacked View',
+              path: '/assets/stacked-view',
+            },
+            {
+              title: 'Table',
+              path: '/assets/table',
+            },
+            {
+              title: 'Text',
+              path: '/assets/text',
+            },
+          ]
         },
       ],
     },

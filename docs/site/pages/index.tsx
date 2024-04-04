@@ -14,11 +14,8 @@ export default function Home() {
           <VStack gap="8">
             <Text fontSize='5xl'> Devtools Assets </Text>
             <ButtonGroup spacing="6" size="lg">
-              <Link passHref href="/my-mdx-page">
+              <Link passHref href="/overview">
                 <Button variant="outline">Get Started</Button>
-              </Link>
-              <Link passHref href="/mdx-page">
-                <Button variant="outline">See example</Button>
               </Link>
             </ButtonGroup>
           </VStack>
