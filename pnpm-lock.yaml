@@ -141,6 +141,9 @@ importers:
       '@types/react':
         specifier: ^18.2.51
         version: 18.2.72
+      '@types/react-copy-to-clipboard':
+        specifier: ^5.0.7
+        version: 5.0.7
       '@types/redux-state-sync':
         specifier: ^3.1.9
         version: 3.1.9
@@ -234,6 +237,9 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
+      react-copy-to-clipboard:
+        specifier: ^5.1.0
+        version: 5.1.0(react@18.2.0)
       react-docgen-typescript:
         specifier: ^2.2.2
         version: 2.2.2(typescript@4.8.4)
@@ -303,6 +309,15 @@ importers:
         specifier: workspace:*
         version: link:../text
 
+  copy-to-clipboard:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
   docs/storybook:
     dependencies:
       '@devtools-ui/plugin':
@@ -356,6 +371,9 @@ importers:
       '@devtools-ui/console':
         specifier: workspace:*
         version: link:../console
+      '@devtools-ui/copy-to-clipboard':
+        specifier: workspace:*
+        version: link:../copy-to-clipboard
       '@devtools-ui/input':
         specifier: workspace:*
         version: link:../input
@@ -5477,6 +5495,12 @@ packages:
 
   /@types/range-parser@1.2.7:
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==, tarball: https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.7.tgz}
+    dev: false
+
+  /@types/react-copy-to-clipboard@5.0.7:
+    resolution: {integrity: sha512-Gft19D+as4M+9Whq1oglhmK49vqPhcLzk8WfvfLvaYMIPYanyfLy0+CwFucMJfdKoSFyySPmkkWn8/E6voQXjQ==, tarball: https://registry.npmjs.org/@types/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.7.tgz}
+    dependencies:
+      '@types/react': 18.2.72
     dev: false
 
   /@types/react-dom@18.2.22:
@@ -11592,6 +11616,16 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /react-copy-to-clipboard@5.1.0(react@18.2.0):
+    resolution: {integrity: sha512-k61RsNgAayIJNoy9yDsYzDe/yAZAzEbEgcz3DZMhF686LEyukcE1hzurxe85JandPUG+yTfGVFzuEw3xt8WP/A==, tarball: https://registry.npmjs.org/react-copy-to-clipboard/-/react-copy-to-clipboard-5.1.0.tgz}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      copy-to-clipboard: 3.3.3
+      prop-types: 15.8.1
+      react: 18.2.0
     dev: false
 
   /react-docgen-typescript@2.2.2(typescript@4.8.4):

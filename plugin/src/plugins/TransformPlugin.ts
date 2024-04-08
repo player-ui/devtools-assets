@@ -5,6 +5,7 @@ import { inputTransform } from "@devtools-ui/input";
 import { objectInspectorTransform } from "@devtools-ui/object-inspector";
 import { consoleTransform } from "@devtools-ui/console";
 import { tableTransform } from "@devtools-ui/table";
+import { copyToClipboardTransform } from "@devtools-ui/copy-to-clipboard";
 
 export class TransformsPlugin implements PlayerPlugin {
   name = "devtools-ui-transforms";
@@ -17,6 +18,7 @@ export class TransformsPlugin implements PlayerPlugin {
         [{ type: "object-inspector" }, objectInspectorTransform],
         [{ type: "console" }, consoleTransform],
         [{ type: "table" }, tableTransform],
+        [{ type: "copy-to-clipboard" }, copyToClipboardTransform],
       ])
     );
   }
