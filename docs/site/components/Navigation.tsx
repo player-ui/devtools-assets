@@ -23,7 +23,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import type { Route } from '../config/navigation';
 import NAV, { PATH_TO_NAV } from '../config/navigation';
 import { ColorSchemeSwitch } from './ColorSchemeSwitch';
-import { DOCS_BASE_URL, GITHUB_URL } from '../config/constants';
+import { GITHUB_URL } from '../config/constants';
 import { withBasePrefix } from './Image';
 import { GithubIcon } from './gh-icon';
 

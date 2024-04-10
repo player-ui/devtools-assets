@@ -1,5 +1,5 @@
-import React, {Fragment} from 'react';
-import path, { parse } from 'path';
+import React from 'react';
+import path from 'path';
 import Link from 'next/link';
 import {
   Heading,
@@ -15,7 +15,6 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  Progress,
   Image,
   HStack,
   Table,
@@ -31,7 +30,7 @@ import {
   Box,
 } from '@chakra-ui/react';
 import { MDXProviderComponents } from '@mdx-js/react';
-import { withRouter, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { CodeHighlight } from './code-highlight';
 import { withBasePrefix } from './Image';
 
