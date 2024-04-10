@@ -20,9 +20,7 @@
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "react-syntax-highlighter": "^15.5.0",
-    "rehype-highlight": "^7.0.0",
-    "remark-gfm": "^4.0.0",
-    "remark-smartypants": "^2.1.0"
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

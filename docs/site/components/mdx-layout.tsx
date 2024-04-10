@@ -29,10 +29,14 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
                             <SideNavigation />
                         </Box>
                         <Box flex="1" minW="0" overflow="auto" maxH={maxH}>
-                            <Box minH={minH}>
-                                <MDXProvider components={MDXComponents} >
-                                    {children}
-                                </MDXProvider>
+                            <Box minH={minH} >
+                                <Flex alignItems="center">
+                                    <Container maxW="container.lg">
+                                        <MDXProvider components={MDXComponents}>
+                                            {children}
+                                        </MDXProvider>
+                                    </Container>
+                                </Flex>
                             </Box>
                         </Box>
                     </Box>

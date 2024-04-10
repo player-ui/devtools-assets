@@ -50,7 +50,7 @@ const navigation: Navigation = {
               path: '/assets/input',
             },
             {
-              title: 'list',
+              title: 'List',
               path: '/assets/list',
             },
             {
