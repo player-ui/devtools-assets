@@ -21,7 +21,6 @@ import {
   Th,
   Tr,
   Td,
-  Link as CLink,
   Alert as ChakraAlert,
   AlertStatus,
   AlertTitle,
@@ -100,41 +99,6 @@ const Tabs = (props: any) => {
   );
 };
 
-/**
- * Tabs specifically for plugin docs that only allow certain tabs
- */
-const PlatformTabs = (props: React.PropsWithChildren<unknown>) => {
-  const router = useRouter();
-
-  const children = React.Children.toArray(props.children).filter((c: any) =>
-    CodeTabsNameMap.has(c.props.mdxType.toLowerCase())
-  );
-
-  const langPrefIndex = children.findIndex(
-    (c: any) => c.props.mdxType.toLowerCase() === router.query.lang
-  );
-
-  const defaultTab = Math.max(langPrefIndex, 0);
-
-  return (
-    <Tabs
-      defaultTab={defaultTab}
-      nameMap={CodeTabsNameMap}
-      callback={(tabIndex: number) => {
-        const lang = (children[tabIndex] as any).props.mdxType.toLowerCase();
-        router.push({
-          pathname: router.pathname,
-          query: {
-            ...router.query,
-            lang,
-          },
-        });
-      }}
-    >
-      {children}
-    </Tabs>
-  );
-};
 
 /**
  * Tab section for Content Authoring. This should include tsx and/or example JSON files.
@@ -256,8 +220,8 @@ export const Alert = (props: ChakraAlertProps) => {
 const A = (props: JSX.IntrinsicElements['a']) => {
   const { href, ...other } = props;
   return (
-    <Link passHref href={useNormalizedUrl(href || '')}>
-      <CLink color={useColorModeValue('blue.800', 'blue.600')} {...other} />
+    <Link passHref href={useNormalizedUrl(href || '')} style={{color: 'blue'}} {...other}>
+      <Box color={useColorModeValue('blue.800', 'blue.600')} style={{display: 'inline'}} {...other} />
     </Link>
   );
 };
