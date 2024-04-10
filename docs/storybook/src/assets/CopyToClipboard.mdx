@@ -1,0 +1,21 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as CopyToClipboardStories from "./CopyToClipboard.stories";
+
+<Meta of={CopyToClipboardStories} />
+
+# CopyToClipboard Asset
+
+> type: `copy-to-clipboard`
+
+It provides an `CopyToClipboard` component to copy a data binding to the clipboard.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `binding` | `string` | false | The binding to the data to be copied. |
+| `label` | `AssetWrapper` | false | The label for the action to be displayed and have the click event capture. |
+
+## Basic Use Case
+
+<Canvas of={CopyToClipboardStories.Basic} />

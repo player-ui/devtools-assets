@@ -19,7 +19,7 @@ const bindings = makeBindingsForObject(schema);
 
 const view1 = (
   <Console
-    exp={e`publish('evaluate-expression', ${bindings.expression})`}
+    exp={e`beacon('evaluate-expression', ${bindings.expression})`}
     binding={bindings.history}
   />
 );

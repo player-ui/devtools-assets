@@ -2,7 +2,7 @@ module(name = "devtools-ui", version = "1.0")
 
 bazel_dep(name = "rules_player")
 
-git_override(module_name = "rules_player", remote = "https://github.com/player-ui/rules_player.git", commit = "56d4319435f0cafe7e6d9b90223e74d3b4dc25ef")
+git_override(module_name = "rules_player", remote = "https://github.com/player-ui/rules_player.git", commit = "e71339c96deeec1f4976fbc04815143ee23d8541")
 
 bazel_dep(name = "aspect_bazel_lib", version = "1.39.0")
 bazel_dep(name = "aspect_rules_js", version = "1.34.1")

@@ -9,6 +9,7 @@ import DevtoolsUIPlugin, {
   StackedView,
   Console,
   Table,
+  CopyToClipboard,
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
 import { CommonTypesPlugin } from "@player-ui/common-types-plugin";
@@ -34,6 +35,7 @@ const components = {
   StackedView,
   Console,
   Table,
+  CopyToClipboard,
 };
 
 export const parameters = {
