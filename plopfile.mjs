@@ -33,6 +33,13 @@ export default function (plop) {
       {
         type: "renameFiles",
       },
+      {
+        type: "addMany",
+        destination: "./docs/storybook/src/assets",
+        base: "./docs/storybook/src/story-templates",
+        templateFiles: "./docs/storybook/src/story-templates/*.hbs",
+        stripExtension: true,
+      },
     ],
   });
 }
