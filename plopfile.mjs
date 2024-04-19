@@ -50,6 +50,17 @@ const extendedActions = {
     type: "add",
     path: "./docs/storybook/src/flows/{{assetName}}/basic.tsx",
     templateFile: "./docs/storybook/src/story-templates/flows/basic.tsx.hbs",
-    stripExtension: true,
-  }
+  },
+  mdxDocsiteDoc: 
+  {
+    type: "add",
+    path: "./docs/site/pages/assets/{{assetName}}.mdx",
+    templateFile: "./asset-template/README.md.hbs",
+  },
+  linkingAssetToSBPreview: {
+    type: 'append',
+    path: 'docs/storybook/.storybook/preview.ts',
+    pattern: /\/\* gen:asset Inject asset import \*\//g,
+    template: '  {{pascalCase assetName}},'
+  },
 }

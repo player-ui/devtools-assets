@@ -10,6 +10,7 @@ import DevtoolsUIPlugin, {
   Console,
   Table,
   CopyToClipboard,
+  /* gen:asset Inject asset import */
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
 import { CommonTypesPlugin } from "@player-ui/common-types-plugin";
@@ -36,6 +37,7 @@ const components = {
   Console,
   Table,
   CopyToClipboard,
+  /* gen:asset Inject asset import */
 };
 
 export const parameters = {
