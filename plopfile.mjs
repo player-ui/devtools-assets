@@ -33,13 +33,23 @@ export default function (plop) {
       {
         type: "renameFiles",
       },
-      {
-        type: "addMany",
-        destination: "./docs/storybook/src/assets",
-        base: "./docs/storybook/src/story-templates",
-        templateFiles: "./docs/storybook/src/story-templates/*.hbs",
-        stripExtension: true,
-      },
+      ...Object.values(extendedActions)
     ],
   });
+}
+
+const extendedActions = {
+  storyBookAssetTemplates: {
+    type: "addMany",
+    destination: "./docs/storybook/src/assets",
+    base: "./docs/storybook/src/story-templates",
+    templateFiles: "./docs/storybook/src/story-templates/*.hbs",
+    stripExtension: true,
+  },
+  storyBookAssetFlowTemplate: {
+    type: "add",
+    path: "./docs/storybook/src/flows/{{assetName}}/basic.tsx",
+    templateFile: "./docs/storybook/src/story-templates/flows/basic.tsx.hbs",
+    stripExtension: true,
+  }
 }
