@@ -59,8 +59,20 @@ const extendedActions = {
   },
   linkingAssetToSBPreview: {
     type: 'append',
-    path: 'docs/storybook/.storybook/preview.ts',
+    path: './docs/storybook/.storybook/preview.ts',
     pattern: /\/\* gen:asset Inject asset import \*\//g,
     template: '  {{pascalCase assetName}},'
+  },
+  bazelIgnore: {
+    type: 'append',
+    path: './.bazelignore',
+    pattern: /(.|\n)+(.*node_modules)/g,
+    template: '{{assetName}}/node_modules,',
+  },
+  pnpmWorkspace: {
+    type: 'append',
+    path: './pnpm-workspace.yaml',
+    pattern: /(.|\n)+(.[\w|"])/g,
+    template: '  - "{{assetName}}"',
   },
 }
