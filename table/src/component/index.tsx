@@ -65,7 +65,7 @@ export const TableComponent = (props: TransformedTable) => {
   }
 
   return (
-    <TableContainer>
+    <TableContainer overflow={"auto"}>
       <Table variant="simple">
         <Thead>
           <Tr>
