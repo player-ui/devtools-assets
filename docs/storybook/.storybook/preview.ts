@@ -10,6 +10,7 @@ import DevtoolsUIPlugin, {
   Console,
   Table,
   CopyToClipboard,
+  CodeEditor,
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
 import { CommonTypesPlugin } from "@player-ui/common-types-plugin";
@@ -36,6 +37,7 @@ const components = {
   Console,
   Table,
   CopyToClipboard,
+  CodeEditor,
 };
 
 export const parameters = {

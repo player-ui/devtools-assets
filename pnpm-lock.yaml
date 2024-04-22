@@ -318,6 +318,15 @@ importers:
 
   addon-storybook: {}
 
+  code-editor:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
   collection:
     dependencies:
       '@devtools-ui/text':
@@ -389,6 +398,9 @@ importers:
       '@devtools-ui/action':
         specifier: workspace:*
         version: link:../action
+      '@devtools-ui/code-editor':
+        specifier: workspace:*
+        version: link:../code-editor
       '@devtools-ui/collection':
         specifier: workspace:*
         version: link:../collection
