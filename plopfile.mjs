@@ -12,6 +12,24 @@ export default function (plop) {
     return `${assetName}/README and ${assetName}/BUILD have been renamed`;
   });
 
+  plop.setActionType("renameStorybookFiles", function (answers) {
+    const { assetName } = answers;
+    const pascalCaseName = assetName[0].toUpperCase() + assetName.substring(1)
+    const sbTemplatesBasePath = path.resolve(process.cwd(), './docs/storybook/src/assets/');
+    
+    fs.renameSync(
+      path.join(sbTemplatesBasePath, "template.mdx"),
+      path.join(sbTemplatesBasePath, `${pascalCaseName}.mdx`)
+    );
+
+    fs.renameSync(
+      path.join(sbTemplatesBasePath, "template.stories.tsx"),
+      path.join(sbTemplatesBasePath, `${pascalCaseName}.stories.tsx`)
+    );
+
+    return `${sbTemplatesBasePath}/template.stories.tsx.hbs and ${sbTemplatesBasePath}/template.stories.tsx.hbs have been renamed`;
+  })
+
   plop.setGenerator("asset", {
     description: "Create a new asset",
     prompts: [
@@ -50,6 +68,9 @@ const extendedActions = {
     type: "add",
     path: "./docs/storybook/src/flows/{{assetName}}/basic.tsx",
     templateFile: "./docs/storybook/src/story-templates/flows/basic.tsx.hbs",
+  },
+  renameStorybookFiles: {
+    type: "renameStorybookFiles"
   },
   mdxDocsiteDoc: 
   {
