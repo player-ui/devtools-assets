@@ -96,4 +96,16 @@ const extendedActions = {
     pattern: /(.|\n)+(.[\w|"])/g,
     template: '  - "{{assetName}}"',
   },
+  pluginReadme: {
+    type: 'append',
+    path: './plugin/README.md',
+    pattern: /(.|\n)+(-\s.*)/,
+    template: '- {{assetName}}',
+  },
+  pluginSrcIndex: {
+    type: 'append',
+    path: './plugin/src/index.ts',
+    pattern: /(.|\n)+(import.*)/,
+    template: 'import { {{pascalCase assetName}}Asset, {{pascalCase assetName}} } from "@devtools-ui/{{assetName}}";',
+  },
 }
