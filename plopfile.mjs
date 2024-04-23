@@ -78,22 +78,28 @@ const extendedActions = {
     path: "./docs/site/pages/assets/{{assetName}}.mdx",
     templateFile: "./asset-template/README.md.hbs",
   },
-  linkingAssetToSBPreview: {
+  linkingAssetToSBPreviewImport: {
     type: 'append',
     path: './docs/storybook/.storybook/preview.ts',
-    pattern: /\/\* gen:asset Inject asset import \*\//g,
+    pattern: /(?=\s})/,
+    template: '  {{pascalCase assetName}},'
+  },
+  linkingAssetToSBPreviewComponent: {
+    type: 'append',
+    path: './docs/storybook/.storybook/preview.ts',
+    pattern: /(?=\s};)/,
     template: '  {{pascalCase assetName}},'
   },
   bazelIgnore: {
     type: 'append',
     path: './.bazelignore',
-    pattern: /(.|\n)+(.*node_modules)/g,
+    pattern: /(.|\n)+(.*node_modules)/,
     template: '{{assetName}}/node_modules,',
   },
   pnpmWorkspace: {
     type: 'append',
     path: './pnpm-workspace.yaml',
-    pattern: /(.|\n)+(.[\w|"])/g,
+    pattern: /(.|\n)+(.[\w|"])/,
     template: '  - "{{assetName}}"',
   },
   pluginReadme: {
