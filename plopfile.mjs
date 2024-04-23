@@ -114,10 +114,22 @@ const extendedActions = {
     pattern: /(.|\n)+(.@dev.*)/,
     template: '        ":node_modules/@devtools-ui/{{assetName}}",',
   },
-  pluginSrcIndex: {
+  pluginSrcIndexImportAsset: {
     type: 'append',
     path: './plugin/src/index.ts',
     pattern: /(.|\n)+(import.*from "@.*)/,
     template: 'import { {{pascalCase assetName}}Asset, {{pascalCase assetName}} } from "@devtools-ui/{{assetName}}";',
+  },
+  pluginSrcIndexExportAsset: {
+    type: 'append',
+    path: './plugin/src/index.ts',
+    pattern: /(export\s{(.|\s)*)+(,)/,
+    template: '  {{pascalCase assetName}},',
+  },
+  pluginSrcIndexExportAssetType: {
+    type: 'append',
+    path: './plugin/src/index.ts',
+    pattern: /(export\stype\s{)+(.|\n)*(?=\n};\n\s)/,
+    template: '  {{pascalCase assetName}}Asset,',
   },
 }
