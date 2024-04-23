@@ -102,10 +102,22 @@ const extendedActions = {
     pattern: /(.|\n)+(-\s.*)/,
     template: '- {{assetName}}',
   },
+  pluginPackageJson: {
+    type: 'modify',
+    path: './plugin/package.json',
+    pattern: /"$/m,
+    template: '",\n    "@devtools-ui/{{assetName}}": "workspace:*"',
+  },
+  pluginBazelBuild: {
+    type: 'append',
+    path: './plugin/BUILD',
+    pattern: /(.|\n)+(.@dev.*)/,
+    template: '        ":node_modules/@devtools-ui/{{assetName}}",',
+  },
   pluginSrcIndex: {
     type: 'append',
     path: './plugin/src/index.ts',
-    pattern: /(.|\n)+(import.*)/,
+    pattern: /(.|\n)+(import.*from "@.*)/,
     template: 'import { {{pascalCase assetName}}Asset, {{pascalCase assetName}} } from "@devtools-ui/{{assetName}}";',
   },
 }
