@@ -155,21 +155,21 @@ const extendedActions = {
     template: ',\n        {{pascalCase assetName}}Asset',
   },
   pluginSrcAssetRegistryAssetProvider: {
-    type: 'append',
+    type: 'modify',
     path: './plugin/src/plugins/AssetsRegistryPlugin.tsx',
     pattern: /(?=\s+]\))/,
-    template: '        ["{{assetName}}", {{pascalCase assetName}}Component],',
+    template: '\n        ["{{assetName}}", {{pascalCase assetName}}Component],',
   },
   pluginSrcTransformFunctionImport: {
     type: 'append',
     path: './plugin/src/plugins/TransformPlugin.ts',
     pattern: /(.|\n)+@dev.+/,
-    template: 'import { {{assetName}}Transform } from "@devtools-ui/{{assetName}}";',
+    template: 'import { {{camelCase assetName}}Transform } from "@devtools-ui/{{assetName}}";',
   },
   pluginSrcTransformFunctionRegistry: {
-    type: 'append',
+    type: 'modify',
     path: './plugin/src/plugins/TransformPlugin.ts',
-    pattern: /(?=\s+]\))/,
-    template: '        [{ type: "{{assetName}}" }, {{assetName}}Transform],',
+    pattern: /(?=\s+])/,
+    template: '\n        [{ type: "{{assetName}}" }, {{camelCase assetName}}Transform],',
   },
 }
