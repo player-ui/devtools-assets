@@ -5,7 +5,7 @@ import { {{pascalCase assetName}}Asset, Transformed{{pascalCase assetName}} } fr
  * Platform-agnostic transform function that takes the properties we get from the Player Content (DSL > JSON)
  * and embeds Player state and methods:
  */
-export const {{assetName}}Transform: TransformFunction<{{pascalCase assetName}}Asset, Transformed{{pascalCase assetName}}> = (
+export const {{camelCase assetName}}Transform: TransformFunction<{{pascalCase assetName}}Asset, Transformed{{pascalCase assetName}}> = (
   asset,
   options
 ) => {

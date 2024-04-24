@@ -98,7 +98,7 @@ const extendedActions = {
     type: 'append',
     path: './.bazelignore',
     pattern: /(.|\n)+(.*node_modules)/,
-    template: '{{assetName}}/node_modules,',
+    template: '{{assetName}}/node_modules',
   },
   pnpmWorkspace: {
     type: 'append',
