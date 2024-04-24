@@ -14,9 +14,13 @@ export default function (plop) {
 
   plop.setActionType("renameStorybookFiles", function (answers) {
     const { assetName } = answers;
-    const pascalCaseName = assetName[0].toUpperCase() + assetName.substring(1)
+
+    const pascalCaseName = assetName.replace(/(^\w|-\w)/g, (text) => {
+      return text.replace(/-/, "").toUpperCase();
+    });
+
     const sbTemplatesBasePath = path.resolve(process.cwd(), './docs/storybook/src/assets/');
-    
+
     fs.renameSync(
       path.join(sbTemplatesBasePath, "template.mdx"),
       path.join(sbTemplatesBasePath, `${pascalCaseName}.mdx`)
@@ -72,7 +76,7 @@ const extendedActions = {
   renameStorybookFiles: {
     type: "renameStorybookFiles"
   },
-  mdxDocsiteDoc: 
+  mdxDocsiteDoc:
   {
     type: "add",
     path: "./docs/site/pages/assets/{{assetName}}.mdx",
@@ -137,5 +141,35 @@ const extendedActions = {
     path: './plugin/src/index.ts',
     pattern: /(export\stype\s{)+(.|\n)*(?=\n};\n\s)/,
     template: '  {{pascalCase assetName}}Asset,',
+  },
+  pluginSrcAssetRegistryAssetImport: {
+    type: 'append',
+    path: './plugin/src/plugins/AssetsRegistryPlugin.tsx',
+    pattern: /(.|\n)+@dev.+/,
+    template: 'import { {{pascalCase assetName}}Asset, {{pascalCase assetName}}Component } from "@devtools-ui/{{assetName}}";',
+  },
+  pluginSrcAssetRegistryAssetInterfaceExport: {
+    type: 'modify',
+    path: './plugin/src/plugins/AssetsRegistryPlugin.tsx',
+    pattern: /(?=\s+])/,
+    template: ',\n        {{pascalCase assetName}}Asset',
+  },
+  pluginSrcAssetRegistryAssetProvider: {
+    type: 'append',
+    path: './plugin/src/plugins/AssetsRegistryPlugin.tsx',
+    pattern: /(?=\s+]\))/,
+    template: '        ["{{assetName}}", {{pascalCase assetName}}Component],',
+  },
+  pluginSrcTransformFunctionImport: {
+    type: 'append',
+    path: './plugin/src/plugins/TransformPlugin.ts',
+    pattern: /(.|\n)+@dev.+/,
+    template: 'import { {{assetName}}Transform } from "@devtools-ui/{{assetName}}";',
+  },
+  pluginSrcTransformFunctionRegistry: {
+    type: 'append',
+    path: './plugin/src/plugins/TransformPlugin.ts',
+    pattern: /(?=\s+]\))/,
+    template: '        [{ type: "{{assetName}}" }, {{assetName}}Transform],',
   },
 }
