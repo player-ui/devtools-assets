@@ -3,7 +3,7 @@ import {
   AssetPropsWithChildren,
   Asset,
   createSlot,
-  isTemplateStringInstance,
+  BindingTemplateInstance,
 } from "@player-tools/dsl";
 import type { Asset as AssetType } from "@player-ui/player";
 import { Collection } from "@devtools-ui/collection";
@@ -14,19 +14,13 @@ import type { {{pascalCase assetName}}Asset } from "../types";
 * Defines the component DSL representation, so users of this plugin can author Player-UI
 * content leveraging .jsx/.tsx syntax.
 */
-export const {{pascalCase assetName}} = (props: AssetPropsWithChildren<{{pascalCase assetName}}Asset>) => {
-  const { exp, binding, children, ...rest } = props;
-
-  // Extracting the exp value from the props
-  let expValue: {{pascalCase assetName}}Asset["exp"];
-
-  if (isTemplateStringInstance(exp)) {
-    expValue = exp.toValue();
-  } else if (Array.isArray(exp)) {
-    expValue = exp.map((e) => (typeof e === "string" ? e : e.toValue()));
-  } else if (exp) {
-    expValue = exp;
+export const {{pascalCase assetName}} = (
+  props: Omit<AssetPropsWithChildren<{{pascalCase assetName}}Asset>, "binding"> & {
+    /** The binding as a tagged template instance */
+    binding: BindingTemplateInstance;
   }
+) => {
+  const { children, binding, ...rest } = props;
 
   return (
     <Asset type="{{kebabCase assetName}}" {...rest}>
