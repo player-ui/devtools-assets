@@ -1,8 +1,8 @@
-# @devtools-ui/{{assetName}}
+# @devtools-ui/{{kebabCase assetName}}
 
 ## Overview
 
-`@devtools-ui/{{assetName}}` is a component package designed to be leveraged by a [Player-UI assets plugin](https://player-ui.github.io/next/plugins).
+`@devtools-ui/{{kebabCase assetName}}` is a component package designed to be leveraged by a [Player-UI assets plugin](https://player-ui.github.io/next/plugins).
 
 It provides a [{{pascalCase assetName}}]([TODO: add link to storybook]) component that can be used to [TODO: define component features].
 
@@ -10,16 +10,16 @@ This package is part of a mono-repo built with Bazel, ensuring fast and reliable
 
 ## Installation
 
-To install `@devtools-ui/{{assetName}}`, you can use pnpm or yarn:
+To install `@devtools-ui/{{kebabCase assetName}}`, you can use pnpm or yarn:
 
 ```sh
-pnpm i @devtools-ui/{{assetName}}
+pnpm i @devtools-ui/{{kebabCase assetName}}
 ```
 
 or
 
 ```sh
-yarn add @devtools-ui/{{assetName}}
+yarn add @devtools-ui/{{kebabCase assetName}}
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ Or, your can leverage this asset in your own plugin:
 // TransformPlugin.ts
 import type { Player, PlayerPlugin } from "@player-ui/player";
 import { AssetTransformPlugin } from "@player-ui/asset-transform-plugin";
-import { {{assetName}}Transform } from "@devtools-ui/{{assetName}}";
+import { {{camelCase assetName}}Transform } from "@devtools-ui/{{kebabCase assetName}}";
 
 export class TransformsPlugin implements PlayerPlugin {
   name = "my-plugin-transforms";
@@ -56,7 +56,7 @@ export class TransformsPlugin implements PlayerPlugin {
   apply(player: Player) {
     player.registerPlugin(
       new AssetTransformPlugin([
-        [{ type: "{{assetName}}" }, {{assetName}}Transform],
+        [{ type: "{{kebabCase assetName}}" }, {{camelCase assetName}}Transform],
       ])
     );
   }
@@ -74,7 +74,7 @@ import type {
 } from "@player-ui/react";
 import { AssetProviderPlugin } from "@player-ui/asset-provider-plugin-react";
 import { TransformsPlugin } from "./TransformPlugin";
-import { {{pascalCase assetName}}Asset, {{pascalCase assetName}}Component } from "@devtools-ui/{{assetName}}";
+import { {{pascalCase assetName}}Asset, {{pascalCase assetName}}Component } from "@devtools-ui/{{kebabCase assetName}}";
 
 export class AssetsRegistryPlugin implements ReactPlayerPlugin, ExtendedPlayerPlugin<[{{pascalCase assetName}}Asset]> {
   name = "my-plugin";
@@ -82,7 +82,7 @@ export class AssetsRegistryPlugin implements ReactPlayerPlugin, ExtendedPlayerPl
   applyReact(reactPlayer: ReactPlayer) {
     reactPlayer.registerPlugin(
       new AssetProviderPlugin([
-        ["{{assetName}}", {{pascalCase assetName}}Component],
+        ["{{kebabCase assetName}}", {{pascalCase assetName}}Component],
       ])
     );
   }
@@ -95,4 +95,4 @@ export class AssetsRegistryPlugin implements ReactPlayerPlugin, ExtendedPlayerPl
 
 ## Contributing
 
-We welcome contributions to `@devtools-ui/{{assetName}}`! Please see the [CONTRIBUTING.md](TODO: link to the file) file for more information on how to contribute.
+We welcome contributions to `@devtools-ui/{{kebabCase assetName}}`! Please see the [CONTRIBUTING.md](TODO: link to the file) file for more information on how to contribute.

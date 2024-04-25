@@ -9,6 +9,6 @@ const meta: Meta<typeof {{pascalCase assetName}}> = {
 
 export default meta;
 
-export const Basic = createDSLStory(() => import("../flows/{{assetName}}/basic?raw"));
+export const Basic = createDSLStory(() => import("../flows/{{kebabCase assetName}}/basic?raw"));
 
 

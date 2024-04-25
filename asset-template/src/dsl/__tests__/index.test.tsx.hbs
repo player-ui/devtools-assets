@@ -9,7 +9,7 @@ import {
 import { {{pascalCase assetName}} } from "../";
 
 describe("DSL: {{pascalCase assetName}}", () => {
-  test("Renders {{assetName}}", async () => {
+  test("Renders {{camelCase assetName}}", async () => {
     const rendered = await render(
       <{{pascalCase assetName}} exp={e`my_expression`} binding={b`my_binding`}>
         <{{pascalCase assetName}}.Label>
@@ -35,7 +35,7 @@ describe("DSL: {{pascalCase assetName}}", () => {
 
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
-      type: "{{assetName}}",
+      type: "{{kebabCase assetName}}",
       label: {
         asset: {
           id: "label",
