@@ -76,11 +76,19 @@ const extendedActions = {
   renameStorybookFiles: {
     type: "renameStorybookFiles"
   },
-  mdxDocsiteDoc:
-  {
+  mdxDocsiteDoc: {
     type: "add",
-    path: "./docs/site/pages/assets/{{assetName}}.mdx",
+    path: "./docs/site/pages/assets/{{camelCase assetName}}.mdx",
     templateFile: "./asset-template/README.md.hbs",
+  },
+  mdxDocsiteNavigation: {
+    type: "append",
+    path: "./docs/site/config/navigation.ts",
+    pattern: /(?=\s+])/,
+    template: `            {
+              title: '{{pascalCase assetName}}',
+              path: '/assets/{{camelCase assetName}}',
+            },`,
   },
   linkingAssetToSBPreviewImport: {
     type: 'append',
