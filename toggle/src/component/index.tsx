@@ -14,8 +14,8 @@ const useToggleProps = (props: TransformedToggle) => {
 };
 
 export const ToggleComponent = (props: TransformedToggle) => {
-  const { children, ...rest } = useToggleProps(props);
+  const { value, ...rest } = useToggleProps(props);
 
   // Replace with the Elements that render your component:
-  return <div {...rest}>{children}</div>;
+  return <div {...rest}>Toggle Asset</div>;
 };

@@ -15,5 +15,21 @@ export const toggleTransform: TransformFunction<ToggleAsset, TransformedToggle> 
   // e.g.: options.transition?.(asset.value, { force: skipValidation });
   return {
     ...asset,
+    setCheck(val) {
+      if (asset.binding === undefined) {
+        return;
+      }
+
+      return options.data.model.set([[asset.binding, val]], {
+        formatted: true,
+      });
+    },
+    value:
+      asset.binding === undefined
+        ? ""
+        : options.data.model.get(asset.binding, {
+            includeInvalid: true,
+            formatted: true,
+          }),
   };
 };
