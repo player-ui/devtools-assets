@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 import MDX from '@next/mdx';
-import smartypants from 'remark-smartypants'
 import remarkGFM from 'remark-gfm'
 
 export const BASE_PREFIX =

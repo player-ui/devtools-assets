@@ -1,0 +1,55 @@
+import React from "react";
+import { {{pascalCase assetName}}, Text } from "@devtools-ui/plugin";
+import type { DSLFlow } from "@player-tools/dsl";
+import { expression as e, makeBindingsForObject } from "@player-tools/dsl";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const schema: any = {
+  label: {
+    type: "StringType",
+  },
+  value: {
+    type: "StringType",
+  },
+};
+
+const data = makeBindingsForObject(schema);
+
+const view1 = (
+  <{{pascalCase assetName}} exp={e`my_expression`} binding={b`my_binding`}>
+    <{{pascalCase assetName}}.Label>{data.label}</{{pascalCase assetName}}.Label>
+    <{{pascalCase assetName}}.Value>{data.value}</{{pascalCase assetName}}.Value>
+    <{{pascalCase assetName}}.Values>
+      <Text>First Value</Text>
+      <Text>Second Value</Text>
+    </{{pascalCase assetName}}.Values>
+  </{{pascalCase assetName}}>
+);
+
+const flow: DSLFlow = {
+  id: "{{kebabCase assetName}}-basic",
+  views: [view1],
+  data: {
+    count: 0,
+  },
+  schema,
+  navigation: {
+    BEGIN: "FLOW_1",
+    FLOW_1: {
+      startState: "VIEW_1",
+      VIEW_1: {
+        state_type: "VIEW",
+        ref: view1,
+        transitions: {
+          "*": "END_Done",
+        },
+      },
+      END_Done: {
+        state_type: "END",
+        outcome: "DONE",
+      },
+    },
+  },
+};
+
+export default flow;
