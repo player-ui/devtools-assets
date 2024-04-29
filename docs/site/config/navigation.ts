@@ -73,6 +73,10 @@ const navigation: Navigation = {
               title: 'Text',
               path: '/assets/text',
             },
+            {
+              title: 'Toggle',
+              path: '/assets/toggle',
+            },
           ]
         },
       ],

@@ -419,6 +419,9 @@ importers:
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
+      '@devtools-ui/toggle':
+        specifier: workspace:*
+        version: link:../toggle
 
   stacked-view:
     dependencies:
@@ -439,6 +442,15 @@ importers:
         version: link:../text
 
   text: {}
+
+  toggle:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
 
 packages:
 
