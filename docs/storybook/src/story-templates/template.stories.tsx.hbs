@@ -1,0 +1,14 @@
+import type { Meta } from "@storybook/react";
+import { createDSLStory } from "@player-ui/storybook-addon-player";
+import { {{pascalCase assetName}} } from "@devtools-ui/plugin";
+
+const meta: Meta<typeof {{pascalCase assetName}}> = {
+  title: "Devtools UI Assets/{{pascalCase assetName}}",
+  component: {{pascalCase assetName}},
+};
+
+export default meta;
+
+export const Basic = createDSLStory(() => import("../flows/{{kebabCase assetName}}/basic?raw"));
+
+

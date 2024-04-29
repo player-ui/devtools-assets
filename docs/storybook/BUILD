@@ -22,6 +22,8 @@ deps = [
     "//:node_modules/@player-ui/computed-properties-plugin",
     "//:node_modules/@chakra-ui/storybook-addon",
     "//:node_modules/remark-gfm",
+    "//:node_modules/@codemirror/state",
+    "//:node_modules/@codemirror/lang-json",
     ":node_modules/@player-ui/storybook-addon-player",
     ":node_modules/@devtools-ui/plugin",
 ]

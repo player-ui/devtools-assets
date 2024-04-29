@@ -28,6 +28,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@chakra-ui/storybook-addon": "^5.1.0",
     "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/state": "^6.4.1",
     "@devtools-ds/console": "^1.2.1",
     "@devtools-ds/object-inspector": "^1.1.2",
     "@emotion/react": "^11.11.4",
