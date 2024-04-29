@@ -14,8 +14,8 @@ const use{{pascalCase assetName}}Props = (props: Transformed{{pascalCase assetNa
 };
 
 export const {{pascalCase assetName}}Component = (props: Transformed{{pascalCase assetName}}) => {
-  const { children, ...buttonProps } = use{{pascalCase assetName}}Props(props);
+  const { children, ...rest } = use{{pascalCase assetName}}Props(props);
 
   // Replace with the Elements that render your component:
-  return <div {...buttonProps}>{children}</div>;
+  return <div {...rest}>{children}</div>;
 };
