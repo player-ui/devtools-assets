@@ -1,24 +1,20 @@
-import React from "react";
-import Editor from "@monaco-editor/react";
 import type { TransformedCodeEditor } from "../types";
-import { Flex } from "@chakra-ui/react";
+import React from "react";
+import CodeMirror from "@uiw/react-codemirror";
+import { json } from "@codemirror/lang-json";
+
+const extensions = [json()];
 
 export const CodeEditorComponent = (props: TransformedCodeEditor) => {
   const { code, run } = props;
 
   return (
-    <Flex h="50vh">
-      <Editor
-        theme="vs-dark"
-        value={code}
-        language="json"
-        options={{
-          formatOnPaste: true,
-        }}
-        onChange={(val) => {
-          run(val);
-        }}
-      />
-    </Flex>
+    <CodeMirror
+      value={code}
+      minHeight="300px"
+      theme="dark"
+      onChange={run}
+      extensions={extensions}
+    />
   );
 };
