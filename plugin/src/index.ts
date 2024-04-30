@@ -15,6 +15,7 @@ import {
   CopyToClipboardAsset,
   CopyToClipboard,
 } from "@devtools-ui/copy-to-clipboard";
+import { CodeEditorAsset, CodeEditor } from "@devtools-ui/code-editor";
 import { AssetsRegistryPlugin } from "./plugins";
 
 export default AssetsRegistryPlugin;
@@ -31,6 +32,7 @@ export type {
   StackedViewView,
   TableAsset,
   CopyToClipboardAsset,
+  CodeEditorAsset,
 };
 
 export {
@@ -45,4 +47,5 @@ export {
   StackedView,
   Table,
   CopyToClipboard,
+  CodeEditor,
 };

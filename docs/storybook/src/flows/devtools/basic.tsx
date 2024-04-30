@@ -3,6 +3,7 @@ import type { DSLFlow, DSLSchema } from "@player-tools/dsl";
 import { expression as e, makeBindingsForObject } from "@player-tools/dsl";
 import {
   Action,
+  CodeEditor,
   Console,
   Navigation,
   ObjectInspector,
@@ -18,6 +19,7 @@ const RecordType: Schema.DataType<Record<string, unknown>> = {
 const schema = {
   data: RecordType,
   flow: RecordType,
+  code: { type: "StringType" },
   expression: { type: "StringType" },
   history: [
     {
@@ -72,6 +74,9 @@ const Screen = ({
           <Action value="Console">
             <Action.Label>Console</Action.Label>
           </Action>
+          <Action value="Editor">
+            <Action.Label>Editor</Action.Label>
+          </Action>
         </Navigation.Values>
       </Navigation>
     </StackedView.Header>
@@ -123,9 +128,21 @@ const ConsoleView = (
   />
 );
 
+const EditorView = (
+  <Screen
+    id="editor-view"
+    main={
+      <CodeEditor
+        exp={e`beacon('override-flow', ${bindings.code})`}
+        binding={bindings.flow}
+      />
+    }
+  />
+);
+
 const flow: DSLFlow = {
   id: "devtools",
-  views: [EventsView, FlowView, DataView, ConsoleView],
+  views: [EventsView, FlowView, DataView, ConsoleView, EditorView],
   data: {
     flow: {
       id: "action-basic",
@@ -163,6 +180,7 @@ const flow: DSLFlow = {
       },
     },
     expression: "",
+    code: "",
     history: [
       { id: "0", expression: "1 + 1", result: "2" },
       { id: "1", expression: "1 / 0", result: "Infinity", severity: "error" },
@@ -219,6 +237,7 @@ const flow: DSLFlow = {
           Flow: "Flow",
           Data: "Data",
           Console: "Console",
+          Editor: "Editor",
         },
       },
       Flow: {
@@ -229,6 +248,7 @@ const flow: DSLFlow = {
           Flow: "Flow",
           Data: "Data",
           Console: "Console",
+          Editor: "Editor",
         },
       },
       Data: {
@@ -239,6 +259,7 @@ const flow: DSLFlow = {
           Flow: "Flow",
           Data: "Data",
           Console: "Console",
+          Editor: "Editor",
         },
       },
       Console: {
@@ -249,6 +270,18 @@ const flow: DSLFlow = {
           Flow: "Flow",
           Data: "Data",
           Console: "Console",
+          Editor: "Editor",
+        },
+      },
+      Editor: {
+        state_type: "VIEW",
+        ref: EditorView,
+        transitions: {
+          Events: "Events",
+          Flow: "Flow",
+          Data: "Data",
+          Console: "Console",
+          Editor: "Editor",
         },
       },
       END_Done: {

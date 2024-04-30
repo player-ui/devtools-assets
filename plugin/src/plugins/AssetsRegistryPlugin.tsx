@@ -27,6 +27,7 @@ import {
   ObjectInspectorComponent,
 } from "@devtools-ui/object-inspector";
 import { TextAsset, TextComponent } from "@devtools-ui/text";
+import { CodeEditorAsset, CodeEditorComponent } from "@devtools-ui/code-editor";
 import { TransformsPlugin } from "./TransformPlugin";
 
 const OptionalChakraThemeProvider = (
@@ -56,7 +57,8 @@ export class AssetsRegistryPlugin
         TextAsset,
         StackedViewView,
         TableAsset,
-        CopyToClipboardAsset
+        CopyToClipboardAsset,
+        CodeEditorAsset
       ]
     >
 {
@@ -76,6 +78,7 @@ export class AssetsRegistryPlugin
         ["stacked-view", StackedViewComponent],
         ["table", TableComponent],
         ["copy-to-clipboard", CopyToClipboardComponent],
+        ["code-editor", CodeEditorComponent],
       ])
     );
 

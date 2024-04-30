@@ -29,6 +29,7 @@ console/node_modules
 stacked-view/node_modules
 table/node_modules
 copy-to-clipboard/node_modules
+code-editor/node_modules
 
 # Backup files
 _backup

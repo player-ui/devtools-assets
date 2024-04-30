@@ -1,0 +1,22 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as CodeEditorStories from "./CodeEditor.stories";
+
+<Meta of={CodeEditorStories} />
+
+# CodeEditor Asset
+
+> type: `code-editor`
+
+It provides a `CodeEditor` component that can be used to allow the user to interact with the Player-UI expression evaluator.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `binding` | `string` | true | Binding to the JSON object to edit. | 
+| `exp` | `string` | true | On code change expression | 
+
+## Basic Use Case
+
+<Canvas of={CodeEditorStories.Basic} />
+
