@@ -8,10 +8,6 @@ import {
 import { Text } from "@devtools-ui/text";
 import type { ToggleAsset } from "../types";
 
-/**
- * Defines the component DSL representation, so users of this plugin can author Player-UI
- * content leveraging .jsx/.tsx syntax.
- */
 export const Toggle = (
   props: Omit<AssetPropsWithChildren<ToggleAsset>, "binding"> & {
     /** The binding as a tagged template instance */
