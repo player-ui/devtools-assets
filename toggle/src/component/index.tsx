@@ -1,4 +1,6 @@
 import React from "react";
+import { Switch, FormControl, FormLabel } from "@chakra-ui/react";
+import { ReactAsset } from "@player-ui/react";
 import type { TransformedToggle } from "../types";
 
 /**
@@ -14,8 +16,21 @@ const useToggleProps = (props: TransformedToggle) => {
 };
 
 export const ToggleComponent = (props: TransformedToggle) => {
-  const { value, ...rest } = useToggleProps(props);
+  const { value, label, id, setCheck } = useToggleProps(props);
+
+  const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    setCheck(e.target.checked);
+  };
 
   // Replace with the Elements that render your component:
-  return <div {...rest}>Toggle Asset</div>;
+  return (
+    <FormControl display="flex" alignItems="center">
+      {label && (
+        <FormLabel htmlFor={id}>
+          <ReactAsset {...label.asset} />
+        </FormLabel>
+      )}
+      <Switch id={id} onChange={onChange} />
+    </FormControl>
+  );
 };

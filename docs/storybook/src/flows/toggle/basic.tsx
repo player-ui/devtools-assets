@@ -1,5 +1,5 @@
 import React from "react";
-import { Toggle, Text } from "@devtools-ui/plugin";
+import { Toggle } from "@devtools-ui/plugin";
 import type { DSLFlow } from "@player-tools/dsl";
 import { expression as e, makeBindingsForObject } from "@player-tools/dsl";
 
@@ -16,13 +16,8 @@ const schema: any = {
 const data = makeBindingsForObject(schema);
 
 const view1 = (
-  <Toggle exp={e`my_expression`} binding={b`my_binding`}>
+  <Toggle binding={data.value}>
     <Toggle.Label>{data.label}</Toggle.Label>
-    <Toggle.Value>{data.value}</Toggle.Value>
-    <Toggle.Values>
-      <Text>First Value</Text>
-      <Text>Second Value</Text>
-    </Toggle.Values>
   </Toggle>
 );
 
@@ -30,7 +25,8 @@ const flow: DSLFlow = {
   id: "toggle-basic",
   views: [view1],
   data: {
-    count: 0,
+    value: false,
+    label: "Toggle test",
   },
   schema,
   navigation: {

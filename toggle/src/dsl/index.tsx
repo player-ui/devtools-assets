@@ -5,15 +5,13 @@ import {
   createSlot,
   BindingTemplateInstance,
 } from "@player-tools/dsl";
-import type { Asset as AssetType } from "@player-ui/player";
-import { Collection } from "@devtools-ui/collection";
 import { Text } from "@devtools-ui/text";
 import type { ToggleAsset } from "../types";
 
 /**
-* Defines the component DSL representation, so users of this plugin can author Player-UI
-* content leveraging .jsx/.tsx syntax.
-*/
+ * Defines the component DSL representation, so users of this plugin can author Player-UI
+ * content leveraging .jsx/.tsx syntax.
+ */
 export const Toggle = (
   props: Omit<AssetPropsWithChildren<ToggleAsset>, "binding"> & {
     /** The binding as a tagged template instance */
@@ -30,35 +28,9 @@ export const Toggle = (
   );
 };
 
-const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
-  return (
-    <Collection>
-      <Collection.Values>{props.children}</Collection.Values>
-    </Collection>
-  );
-};
-
 Toggle.Label = createSlot({
   name: "label",
   TextComp: Text,
-  CollectionComp,
   isArray: false,
   wrapInAsset: true,
 });
-
-Toggle.Value = createSlot({
-  name: "value",
-  TextComp: Text,
-  CollectionComp,
-  isArray: false,
-  wrapInAsset: true,
-});
-
-Toggle.Values = createSlot({
-  name: "values",
-  TextComp: Text,
-  CollectionComp,
-  isArray: true,
-  wrapInAsset: true,
-});
-
