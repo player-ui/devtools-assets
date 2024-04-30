@@ -27,6 +27,8 @@
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@chakra-ui/storybook-addon": "^5.1.0",
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/state": "^6.4.1",
     "@devtools-ds/console": "^1.2.1",
     "@devtools-ds/object-inspector": "^1.1.2",
     "@emotion/react": "^11.11.4",
@@ -75,6 +77,7 @@
     "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
+    "@uiw/react-codemirror": "4.22.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^1.2.2",
     "all-contributors-cli": "^6.20.0",
@@ -127,6 +130,7 @@
   },
   "resolutions": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@codemirror/language": "^6.0.0"
   }
 }

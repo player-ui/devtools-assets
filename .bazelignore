@@ -30,6 +30,7 @@ stacked-view/node_modules
 table/node_modules
 copy-to-clipboard/node_modules
 toggle/node_modules
+code-editor/node_modules
 
 # Backup files
 _backup

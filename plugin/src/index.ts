@@ -16,6 +16,7 @@ import {
   CopyToClipboardAsset,
   CopyToClipboard,
 } from "@devtools-ui/copy-to-clipboard";
+import { CodeEditorAsset, CodeEditor } from "@devtools-ui/code-editor";
 import { AssetsRegistryPlugin } from "./plugins";
 
 export default AssetsRegistryPlugin;
@@ -33,6 +34,7 @@ export type {
   TableAsset,
   CopyToClipboardAsset,
   ToggleAsset,
+  CodeEditorAsset,
 };
 
 export {
@@ -48,4 +50,5 @@ export {
   Table,
   CopyToClipboard,
   Toggle,
+  CodeEditor,
 };
