@@ -1,3 +1,45 @@
+# 0.1.0 (Tue Apr 30 2024)
+
+### Release Notes
+
+#### feat: adds code-editor asset ([#17](https://github.com/player-ui/devtools-assets/pull/17))
+
+Added `code-editor` asset that can be used to edit JSON content and call an expression on change:
+
+```typescript
+import { CodeEditor } from "@devtools-ui/plugin";
+
+// and use it to define your Player-UI content:
+myFlow = {
+  id: "my_flow",
+  views: [<CodeEditor exp={e`my_expression`} binding={b`my_binding`} />],
+};
+```
+
+---
+
+#### 🚀 Enhancement
+
+- feat: adds code-editor asset [#17](https://github.com/player-ui/devtools-assets/pull/17) (rafael_campos@intuit.com [@rafbcampos](https://github.com/rafbcampos))
+
+#### 🐛 Bug Fix
+
+- Release main [#19](https://github.com/player-ui/devtools-assets/pull/19) ([@intuit-svc](https://github.com/intuit-svc))
+- Devtools gen:asset Enhancements [#18](https://github.com/player-ui/devtools-assets/pull/18) ([@lexfm](https://github.com/lexfm))
+- fix table styles [#16](https://github.com/player-ui/devtools-assets/pull/16) (marlon_ercillo@intuit.com [@mercillo](https://github.com/mercillo))
+- Docs/devtools site [#14](https://github.com/player-ui/devtools-assets/pull/14) ([@lexfm](https://github.com/lexfm))
+
+#### Authors: 6
+
+- [@intuit-svc](https://github.com/intuit-svc)
+- Alex Fimbres ([@lexfm](https://github.com/lexfm))
+- marky ercillo (marlon_ercillo@intuit.com)
+- Marlon "Marky" Ercillo ([@mercillo](https://github.com/mercillo))
+- Rafael Campos ([@rafbcampos](https://github.com/rafbcampos))
+- rcampos2 (rafael_campos@intuit.com)
+
+---
+
 # 0.0.2 (Wed Apr 10 2024)
 
 ### Release Notes
