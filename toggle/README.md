@@ -4,7 +4,7 @@
 
 `@devtools-ui/toggle` is a component package designed to be leveraged by a [Player-UI assets plugin](https://player-ui.github.io/next/plugins).
 
-It provides a `Toggle` component that can be used to enter a boolean represented value
+It provides a `Toggle` component that can be used to enter a boolean represented value.
 
 This package is part of a mono-repo built with Bazel, ensuring fast and reliable builds.
 
