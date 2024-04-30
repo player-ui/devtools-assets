@@ -7,6 +7,7 @@ import { consoleTransform } from "@devtools-ui/console";
 import { tableTransform } from "@devtools-ui/table";
 import { copyToClipboardTransform } from "@devtools-ui/copy-to-clipboard";
 import { codeEditorTransform } from "@devtools-ui/code-editor";
+import { radioGroupTransform } from "@devtools-ui/radio-group";
 
 export class TransformsPlugin implements PlayerPlugin {
   name = "devtools-ui-transforms";
@@ -21,6 +22,7 @@ export class TransformsPlugin implements PlayerPlugin {
         [{ type: "table" }, tableTransform],
         [{ type: "copy-to-clipboard" }, copyToClipboardTransform],
         [{ type: "code-editor" }, codeEditorTransform],
+        [{ type: "radio-group" }, radioGroupTransform],
       ])
     );
   }

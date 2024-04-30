@@ -16,6 +16,7 @@ import {
   CopyToClipboard,
 } from "@devtools-ui/copy-to-clipboard";
 import { CodeEditorAsset, CodeEditor } from "@devtools-ui/code-editor";
+import { RadioGroupAsset, RadioGroup } from "@devtools-ui/radio-group";
 import { AssetsRegistryPlugin } from "./plugins";
 
 export default AssetsRegistryPlugin;
@@ -33,6 +34,7 @@ export type {
   TableAsset,
   CopyToClipboardAsset,
   CodeEditorAsset,
+  RadioGroupAsset,
 };
 
 export {
@@ -48,4 +50,5 @@ export {
   Table,
   CopyToClipboard,
   CodeEditor,
+  RadioGroup,
 };

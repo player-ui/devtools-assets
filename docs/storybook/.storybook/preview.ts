@@ -11,6 +11,7 @@ import DevtoolsUIPlugin, {
   Table,
   CopyToClipboard,
   CodeEditor,
+  RadioGroup,
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
 import { CommonTypesPlugin } from "@player-ui/common-types-plugin";
@@ -38,6 +39,7 @@ const components = {
   Table,
   CopyToClipboard,
   CodeEditor,
+  RadioGroup,
 };
 
 export const parameters = {

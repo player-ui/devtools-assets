@@ -28,6 +28,7 @@ import {
 } from "@devtools-ui/object-inspector";
 import { TextAsset, TextComponent } from "@devtools-ui/text";
 import { CodeEditorAsset, CodeEditorComponent } from "@devtools-ui/code-editor";
+import { RadioGroupAsset, RadioGroupComponent } from "@devtools-ui/radio-group";
 import { TransformsPlugin } from "./TransformPlugin";
 
 const OptionalChakraThemeProvider = (
@@ -58,7 +59,8 @@ export class AssetsRegistryPlugin
         StackedViewView,
         TableAsset,
         CopyToClipboardAsset,
-        CodeEditorAsset
+        CodeEditorAsset,
+        RadioGroupAsset
       ]
     >
 {
@@ -79,6 +81,7 @@ export class AssetsRegistryPlugin
         ["table", TableComponent],
         ["copy-to-clipboard", CopyToClipboardComponent],
         ["code-editor", CodeEditorComponent],
+        ["radio-group", RadioGroupComponent],
       ])
     );
 

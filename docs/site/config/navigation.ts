@@ -73,6 +73,10 @@ const navigation: Navigation = {
               title: 'Text',
               path: '/assets/text',
             },
+            {
+              title: 'RadioGroup',
+              path: '/assets/radioGroup',
+            },
           ]
         },
       ],
