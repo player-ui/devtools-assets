@@ -28,7 +28,6 @@ js_pipeline(
         "//:node_modules/@player-ui/asset-transform-plugin",
         "//:node_modules/@player-ui/player",
         "//:node_modules/@player-ui/react",
-        "//:node_modules/eslint-plugin-storybook",
         "//:node_modules/react",
         "//:node_modules/@types/react",
     ],
