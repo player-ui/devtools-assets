@@ -3,14 +3,8 @@ import { Switch, FormControl, FormLabel } from "@chakra-ui/react";
 import { ReactAsset } from "@player-ui/react";
 import type { TransformedToggle } from "../types";
 
-const useToggleProps = (props: TransformedToggle) => {
-  return {
-    ...props,
-  } as const;
-};
-
 export const ToggleComponent = (props: TransformedToggle) => {
-  const { value, label, id, setCheck } = useToggleProps(props);
+  const { value, label, id, setCheck } = props;
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setCheck(e.target.checked);
