@@ -1,9 +1,20 @@
 import type { Asset, AssetWrapper } from "@player-ui/types";
 import type { TextAsset } from "@devtools-ui/text";
 
+type RadioItem = {
+  /** String of the radio text */
+  value: string;
+  /** String of the radio check value */
+  radio: string;
+  /** The ID of the Radio item */
+  id: string;
+  /** The asset type */
+  type: string
+}
+
 export interface RadioGroupAsset extends Asset<"radio-group"> {
   /** list of assets in the collection */
-  values?: Array<AssetWrapper>;
+  values?: Array<AssetWrapper<RadioItem>>;
   /** Label */
   label?: AssetWrapper<TextAsset>;
   /** Dot sepparated string Representation of a path within the data-model */
