@@ -14,5 +14,6 @@ packages:
   - "stacked-view"
   - "table"
   - "copy-to-clipboard"
+  - "toggle"
   - "code-editor"
   - "radio-group"

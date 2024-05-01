@@ -24,6 +24,5 @@ js_pipeline(
         "//:node_modules/framer-motion",
         "//:node_modules/react",
         "//:node_modules/dlv",
-        "//:node_modules/eslint-plugin-storybook",
     ],
 )

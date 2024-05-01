@@ -11,6 +11,7 @@ import {
 import { TextAsset, Text } from "@devtools-ui/text";
 import { ConsoleAsset, Console } from "@devtools-ui/console";
 import { TableAsset, Table } from "@devtools-ui/table";
+import { ToggleAsset, Toggle } from "@devtools-ui/toggle";
 import {
   CopyToClipboardAsset,
   CopyToClipboard,
@@ -33,6 +34,7 @@ export type {
   StackedViewView,
   TableAsset,
   CopyToClipboardAsset,
+  ToggleAsset,
   CodeEditorAsset,
   RadioGroupAsset,
 };
@@ -49,6 +51,7 @@ export {
   StackedView,
   Table,
   CopyToClipboard,
+  Toggle,
   CodeEditor,
   RadioGroup,
 };

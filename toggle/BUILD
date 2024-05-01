@@ -9,7 +9,7 @@ tsup_config(name = "tsup_config")
 vitest_config(name = "vitest_config")
 
 js_pipeline(
-    package_name = "@devtools-ui/table",
+    package_name = "@devtools-ui/toggle",
     test_deps = [
         ":node_modules",
         "//:vitest_config",

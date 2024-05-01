@@ -10,6 +10,7 @@ import DevtoolsUIPlugin, {
   Console,
   Table,
   CopyToClipboard,
+  Toggle,
   CodeEditor,
   RadioGroup,
 } from "@devtools-ui/plugin";
@@ -38,6 +39,7 @@ const components = {
   Console,
   Table,
   CopyToClipboard,
+  Toggle,
   CodeEditor,
   RadioGroup,
 };
