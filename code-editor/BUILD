@@ -26,7 +26,6 @@ js_pipeline(
         "//:node_modules/@types/react",
         "//:node_modules/dlv",
         "//:node_modules/esbuild",
-        "//:node_modules/eslint-plugin-storybook",
         "//:node_modules/framer-motion",
         "//:node_modules/@uiw/react-codemirror",
         "//:node_modules/@codemirror/lang-json",

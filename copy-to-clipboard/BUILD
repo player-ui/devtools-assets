@@ -27,7 +27,6 @@ js_pipeline(
         "//:node_modules/@player-ui/types",
         "//:node_modules/@types/react",
         "//:node_modules/dlv",
-        "//:node_modules/eslint-plugin-storybook",
         "//:node_modules/framer-motion",
         "//:node_modules/react",
         "//:node_modules/react-copy-to-clipboard",

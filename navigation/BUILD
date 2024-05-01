@@ -26,7 +26,6 @@ js_pipeline(
         "//:node_modules/dlv",
         "//:node_modules/@player-ui/player",
         "//:node_modules/@player-ui/react",
-        "//:node_modules/eslint-plugin-storybook",
         ":node_modules/@devtools-ui/collection",
         ":node_modules/@devtools-ui/text",
     ],
