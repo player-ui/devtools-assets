@@ -10,6 +10,7 @@ import DevtoolsUIPlugin, {
   Console,
   Table,
   CopyToClipboard,
+  Toggle,
   CodeEditor,
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
@@ -37,6 +38,7 @@ const components = {
   Console,
   Table,
   CopyToClipboard,
+  Toggle,
   CodeEditor,
 };
 

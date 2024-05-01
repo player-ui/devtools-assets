@@ -6,6 +6,7 @@ import { objectInspectorTransform } from "@devtools-ui/object-inspector";
 import { consoleTransform } from "@devtools-ui/console";
 import { tableTransform } from "@devtools-ui/table";
 import { copyToClipboardTransform } from "@devtools-ui/copy-to-clipboard";
+import { toggleTransform } from "@devtools-ui/toggle";
 import { codeEditorTransform } from "@devtools-ui/code-editor";
 
 export class TransformsPlugin implements PlayerPlugin {
@@ -20,6 +21,7 @@ export class TransformsPlugin implements PlayerPlugin {
         [{ type: "console" }, consoleTransform],
         [{ type: "table" }, tableTransform],
         [{ type: "copy-to-clipboard" }, copyToClipboardTransform],
+        [{ type: "toggle" }, toggleTransform],
         [{ type: "code-editor" }, codeEditorTransform],
       ])
     );

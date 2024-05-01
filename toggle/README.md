@@ -1,25 +1,25 @@
-# @devtools-ui/{{kebabCase assetName}}
+# @devtools-ui/toggle
 
 ## Overview
 
-`@devtools-ui/{{kebabCase assetName}}` is a component package designed to be leveraged by a [Player-UI assets plugin](https://player-ui.github.io/next/plugins).
+`@devtools-ui/toggle` is a component package designed to be leveraged by a [Player-UI assets plugin](https://player-ui.github.io/next/plugins).
 
-It provides a [{{pascalCase assetName}}]([TODO: add link to storybook]) component that can be used to [TODO: define component features].
+It provides a `Toggle` component that can be used to enter a boolean represented value.
 
 This package is part of a mono-repo built with Bazel, ensuring fast and reliable builds.
 
 ## Installation
 
-To install `@devtools-ui/{{kebabCase assetName}}`, you can use pnpm or yarn:
+To install `@devtools-ui/toggle`, you can use pnpm or yarn:
 
 ```sh
-pnpm i @devtools-ui/{{kebabCase assetName}}
+pnpm i @devtools-ui/toggle
 ```
 
 or
 
 ```sh
-yarn add @devtools-ui/{{kebabCase assetName}}
+yarn add @devtools-ui/toggle
 ```
 
 ## Usage
@@ -27,14 +27,18 @@ yarn add @devtools-ui/{{kebabCase assetName}}
 You can leverage this asset through the `@devtools-ui/plugin`:
 
 ```ts
-import { {{pascalCase assetName}} } from "@devtools-ui/plugin";
+import { Toggle } from "@devtools-ui/plugin";
 
 // and use it to define your Player-UI content:
 myFlow = {
     id: 'my_flow',
     views: [
         <>
-            <{{pascalCase assetName}} />
+          <Toggle>
+            <Toggle.Label>
+              Toggle Test
+            </Toggle.Label>
+          </Toggle>
         </>
     ]
 }
@@ -48,7 +52,7 @@ Or, your can leverage this asset in your own plugin:
 // TransformPlugin.ts
 import type { Player, PlayerPlugin } from "@player-ui/player";
 import { AssetTransformPlugin } from "@player-ui/asset-transform-plugin";
-import { {{camelCase assetName}}Transform } from "@devtools-ui/{{kebabCase assetName}}";
+import { toggleTransform } from "@devtools-ui/toggle";
 
 export class TransformsPlugin implements PlayerPlugin {
   name = "my-plugin-transforms";
@@ -56,7 +60,7 @@ export class TransformsPlugin implements PlayerPlugin {
   apply(player: Player) {
     player.registerPlugin(
       new AssetTransformPlugin([
-        [{ type: "{{kebabCase assetName}}" }, {{camelCase assetName}}Transform],
+        [{ type: "toggle" }, toggleTransform],
       ])
     );
   }
@@ -74,15 +78,15 @@ import type {
 } from "@player-ui/react";
 import { AssetProviderPlugin } from "@player-ui/asset-provider-plugin-react";
 import { TransformsPlugin } from "./TransformPlugin";
-import { {{pascalCase assetName}}Asset, {{pascalCase assetName}}Component } from "@devtools-ui/{{kebabCase assetName}}";
+import { ToggleAsset, ToggleComponent } from "@devtools-ui/toggle";
 
-export class AssetsRegistryPlugin implements ReactPlayerPlugin, ExtendedPlayerPlugin<[{{pascalCase assetName}}Asset]> {
+export class AssetsRegistryPlugin implements ReactPlayerPlugin, ExtendedPlayerPlugin<[ToggleAsset]> {
   name = "my-plugin";
 
   applyReact(reactPlayer: ReactPlayer) {
     reactPlayer.registerPlugin(
       new AssetProviderPlugin([
-        ["{{kebabCase assetName}}", {{pascalCase assetName}}Component],
+        ["toggle", ToggleComponent],
       ])
     );
   }
@@ -93,6 +97,3 @@ export class AssetsRegistryPlugin implements ReactPlayerPlugin, ExtendedPlayerPl
 }
 ```
 
-{{!-- ## Contributing
-
-We welcome contributions to `@devtools-ui/{{kebabCase assetName}}`! Please see the [CONTRIBUTING.md](TODO: link to the file) file for more information on how to contribute. --}}

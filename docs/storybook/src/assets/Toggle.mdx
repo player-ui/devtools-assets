@@ -1,0 +1,23 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as ToggleStories from "./Toggle.stories";
+
+<Meta of={ ToggleStories } />
+
+# Toggle Asset
+
+> type: `toggle`
+
+It provides a `Toggle` component that can be used to enter a boolean represented value
+
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `binding` | `string` | false | The location in the data-model to store the data |
+| `label` | `AssetWrapper<TextAsset> \| string` | false | A text asset for the toggles's label |
+
+
+## Basic Use Case
+
+<Canvas of={ ToggleStories.Basic } />

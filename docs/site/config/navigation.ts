@@ -73,6 +73,14 @@ const navigation: Navigation = {
               title: 'Text',
               path: '/assets/text',
             },
+            {
+              title: 'Code Editor',
+              path: '/assets/code-editor',
+            },
+            {
+              title: 'Toggle',
+              path: '/assets/toggle',
+            },
           ]
         },
       ],
