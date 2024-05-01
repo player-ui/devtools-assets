@@ -9,25 +9,18 @@ import {
 import { RadioGroup } from "../";
 
 describe("DSL: RadioGroup", () => {
-  test("Renders radioGroup", async () => {
+  test("Renders radioGroup with a couple options", async () => {
     const rendered = await render(
-      <RadioGroup exp={e`my_expression`} binding={b`my_binding`}>
-        <RadioGroup.Label>
-          <Asset type="text">
-            <property name="value">Label</property>
-          </Asset>
-        </RadioGroup.Label>
-        <RadioGroup.Value>
-          <Asset type="text">
-            <property name="value">Value</property>
-          </Asset>
-        </RadioGroup.Value>
+      <RadioGroup binding={b`my_binding`}>
+        <RadioGroup.Label>RadioGroup Label</RadioGroup.Label>
         <RadioGroup.Values>
           <Asset type="text">
-            <property name="value">Test 1</property>
+            <property name="value">Option 1</property>
+            <property name="radio">opt1</property>
           </Asset>
           <Asset type="text">
-            <property name="value">Test 2</property>
+            <property name="value">Option 2</property>
+            <property name="radio">opt2</property>
           </Asset>
         </RadioGroup.Values>
       </RadioGroup>
@@ -36,18 +29,12 @@ describe("DSL: RadioGroup", () => {
     expect(rendered.jsonValue).toStrictEqual({
       id: "root",
       type: "radio-group",
+      binding: "my_binding",
       label: {
         asset: {
           id: "label",
           type: "text",
-          value: "Label",
-        },
-      },
-      value: {
-        asset: {
-          id: "value",
-          type: "text",
-          value: "Value",
+          value: "RadioGroup Label",
         },
       },
       values: [
@@ -55,14 +42,16 @@ describe("DSL: RadioGroup", () => {
           asset: {
             id: "values-0",
             type: "text",
-            value: "Test 1",
+            value: "Option 1",
+            radio: "opt1",
           },
         },
         {
           asset: {
             id: "values-1",
             type: "text",
-            value: "Test 2",
+            value: "Option 2",
+            radio: "opt2",
           },
         },
       ],

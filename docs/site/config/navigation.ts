@@ -82,8 +82,8 @@ const navigation: Navigation = {
               path: '/assets/toggle',
             },
             {
-              title: 'RadioGroup',
-              path: '/assets/radioGroup',
+              title: 'Radio Group',
+              path: '/assets/radio-group',
             },
           ]
         },

@@ -10,10 +10,6 @@ import { Collection } from "@devtools-ui/collection";
 import { Text } from "@devtools-ui/text";
 import type { RadioGroupAsset } from "../types";
 
-/**
-* Defines the component DSL representation, so users of this plugin can author Player-UI
-* content leveraging .jsx/.tsx syntax.
-*/
 export const RadioGroup = (
   props: Omit<AssetPropsWithChildren<RadioGroupAsset>, "binding"> & {
     /** The binding as a tagged template instance */
@@ -46,14 +42,6 @@ RadioGroup.Label = createSlot({
   wrapInAsset: true,
 });
 
-RadioGroup.Value = createSlot({
-  name: "value",
-  TextComp: Text,
-  CollectionComp,
-  isArray: false,
-  wrapInAsset: true,
-});
-
 RadioGroup.Values = createSlot({
   name: "values",
   TextComp: Text,
@@ -61,4 +49,3 @@ RadioGroup.Values = createSlot({
   isArray: true,
   wrapInAsset: true,
 });
-

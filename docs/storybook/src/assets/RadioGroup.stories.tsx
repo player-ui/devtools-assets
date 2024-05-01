@@ -9,6 +9,6 @@ const meta: Meta<typeof RadioGroup> = {
 
 export default meta;
 
-export const Basic = createDSLStory(() => import("../flows/radio-group/basic?raw"));
-
-
+export const Basic = createDSLStory(
+  () => import("../flows/radio-group/basic?raw")
+);

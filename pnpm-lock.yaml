@@ -425,6 +425,9 @@ importers:
       '@devtools-ui/object-inspector':
         specifier: workspace:*
         version: link:../object-inspector
+      '@devtools-ui/radio-group':
+        specifier: workspace:*
+        version: link:../radio-group
       '@devtools-ui/stacked-view':
         specifier: workspace:*
         version: link:../stacked-view
@@ -437,6 +440,15 @@ importers:
       '@devtools-ui/toggle':
         specifier: workspace:*
         version: link:../toggle
+
+  radio-group:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
 
   stacked-view:
     dependencies:

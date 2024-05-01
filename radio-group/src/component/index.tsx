@@ -17,5 +17,5 @@ export const RadioGroupComponent = (props: TransformedRadioGroup) => {
   const { children, ...rest } = useRadioGroupProps(props);
 
   // Replace with the Elements that render your component:
-  return <div {...rest}>{children}</div>;
+  return <div {...rest}>Something</div>;
 };

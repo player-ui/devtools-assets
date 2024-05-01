@@ -1,19 +1,20 @@
 import type { TransformFunction } from "@player-ui/player";
 import { RadioGroupAsset, TransformedRadioGroup } from "../types";
 
-/**
- * Platform-agnostic transform function that takes the properties we get from the Player Content (DSL > JSON)
- * and embeds Player state and methods:
- */
-export const radioGroupTransform: TransformFunction<RadioGroupAsset, TransformedRadioGroup> = (
-  asset,
-  options
-) => {
-  // GET/SET properties from the data model and/or embed Player methods
-  // e.g.: options.data.model.get(asset.binding, { includeInvalid: true, formatted: false });
-  // e.g.: options.evaluate(asset.exp);
-  // e.g.: options.transition?.(asset.value, { force: skipValidation });
+export const radioGroupTransform: TransformFunction<
+  RadioGroupAsset,
+  TransformedRadioGroup
+> = (asset, options) => {
   return {
     ...asset,
+    setRadio(val) {
+      if (asset.binding === undefined) {
+        return;
+      }
+
+      return options.data.model.set([[asset.binding, val]]);
+    },
+    value:
+      asset.binding === undefined ? "" : options.data.model.get(asset.binding),
   };
 };

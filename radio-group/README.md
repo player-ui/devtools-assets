@@ -93,6 +93,3 @@ export class AssetsRegistryPlugin implements ReactPlayerPlugin, ExtendedPlayerPl
 }
 ```
 
-## Contributing
-
-We welcome contributions to `@devtools-ui/radio-group`! Please see the [CONTRIBUTING.md](TODO: link to the file) file for more information on how to contribute.

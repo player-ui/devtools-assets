@@ -62,7 +62,7 @@ export class AssetsRegistryPlugin
         CopyToClipboardAsset,
         CodeEditorAsset,
         ToggleAsset,
-        RadioGroupAsset,
+        RadioGroupAsset
       ]
     >
 {
