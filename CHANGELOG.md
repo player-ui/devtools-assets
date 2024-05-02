@@ -1,3 +1,25 @@
+# 0.1.1 (Thu May 02 2024)
+
+#### 🐛 Bug Fix
+
+- Release main [#22](https://github.com/player-ui/devtools-assets/pull/22) ([@intuit-svc](https://github.com/intuit-svc))
+- [Devtools] Toggle Asset [#20](https://github.com/player-ui/devtools-assets/pull/20) ([@lexfm](https://github.com/lexfm))
+- chore: deps version bumps [#20](https://github.com/player-ui/devtools-assets/pull/20) (rafael_campos@intuit.com)
+- chore: removes unused deps [#21](https://github.com/player-ui/devtools-assets/pull/21) (rafael_campos@intuit.com [@rafbcampos](https://github.com/rafbcampos))
+
+#### ⚠️ Pushed to `main`
+
+- chore: bump player version (rafael_campos@intuit.com)
+
+#### Authors: 4
+
+- [@intuit-svc](https://github.com/intuit-svc)
+- Alex Fimbres ([@lexfm](https://github.com/lexfm))
+- Rafael Campos ([@rafbcampos](https://github.com/rafbcampos))
+- rcampos2 (rafael_campos@intuit.com)
+
+---
+
 # 0.1.0 (Tue Apr 30 2024)
 
 ### Release Notes
