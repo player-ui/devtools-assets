@@ -1,7 +1,7 @@
 import React from "react";
 import { Toggle } from "@devtools-ui/plugin";
 import type { DSLFlow } from "@player-tools/dsl";
-import { expression as e, makeBindingsForObject } from "@player-tools/dsl";
+import { makeBindingsForObject } from "@player-tools/dsl";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const schema: any = {

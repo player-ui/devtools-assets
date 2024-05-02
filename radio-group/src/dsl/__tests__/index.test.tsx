@@ -1,11 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import {
-  render,
-  expression as e,
-  binding as b,
-  Asset,
-} from "@player-tools/dsl";
+import { render, binding as b, Asset } from "@player-tools/dsl";
 import { RadioGroup } from "../";
 
 describe("DSL: RadioGroup", () => {
@@ -14,11 +9,11 @@ describe("DSL: RadioGroup", () => {
       <RadioGroup binding={b`my_binding`}>
         <RadioGroup.Label>RadioGroup Label</RadioGroup.Label>
         <RadioGroup.Values>
-          <Asset type="text">
+          <Asset type="radio-item">
             <property name="value">Option 1</property>
             <property name="radio">opt1</property>
           </Asset>
-          <Asset type="text">
+          <Asset type="radio-item">
             <property name="value">Option 2</property>
             <property name="radio">opt2</property>
           </Asset>
@@ -41,7 +36,7 @@ describe("DSL: RadioGroup", () => {
         {
           asset: {
             id: "values-0",
-            type: "text",
+            type: "radio-item",
             value: "Option 1",
             radio: "opt1",
           },
@@ -49,7 +44,7 @@ describe("DSL: RadioGroup", () => {
         {
           asset: {
             id: "values-1",
-            type: "text",
+            type: "radio-item",
             value: "Option 2",
             radio: "opt2",
           },

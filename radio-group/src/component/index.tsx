@@ -14,19 +14,17 @@ export const RadioGroupComponent = (props: TransformedRadioGroup) => {
         </FormLabel>
       )}
       <Stack>
-        {
-          values?.map(({ asset: {value: label, radio} }) => {
-            const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-              setRadio(e.target.checked);
-            };
+        {values?.map(({ asset: { value: label, radio, id: itemId } }) => {
+          const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+            setRadio(e.target.value);
+          };
 
-            return (
-              <Radio value={radio} checked={radio === value} onChange={onChange}>
-                {label}
-              </Radio>
-            )
-          })
-        }
+          return (
+            <Radio id={itemId} value={radio} onChange={onChange}>
+              {label}
+            </Radio>
+          );
+        })}
       </Stack>
     </RadioGroup>
   );

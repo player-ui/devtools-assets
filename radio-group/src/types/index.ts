@@ -9,8 +9,8 @@ type RadioItem = {
   /** The ID of the Radio item */
   id: string;
   /** The asset type */
-  type: string
-}
+  type: string;
+};
 
 export interface RadioGroupAsset extends Asset<"radio-group"> {
   /** list of assets in the collection */
@@ -24,7 +24,7 @@ export interface RadioGroupAsset extends Asset<"radio-group"> {
 /** A stateful instance of the asset */
 export interface TransformedRadioGroup extends RadioGroupAsset {
   /** A function to commit the new value to the data-model */
-  setRadio: (newValue: boolean) => void;
+  setRadio: (newValue: string) => void;
   /** The current value of the radio group from the data-model */
   value: string;
 }

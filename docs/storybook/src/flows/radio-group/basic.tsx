@@ -1,7 +1,6 @@
 import React from "react";
 import { RadioGroup, Text } from "@devtools-ui/plugin";
-import type { DSLFlow } from "@player-tools/dsl";
-import { expression as e, makeBindingsForObject } from "@player-tools/dsl";
+import { makeBindingsForObject, DSLFlow } from "@player-tools/dsl";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const schema: any = {
@@ -16,12 +15,17 @@ const schema: any = {
 const data = makeBindingsForObject(schema);
 
 const view1 = (
-  <RadioGroup exp={e`my_expression`} binding={b`my_binding`}>
+  <RadioGroup binding={data.value}>
     <RadioGroup.Label>{data.label}</RadioGroup.Label>
-    <RadioGroup.Value>{data.value}</RadioGroup.Value>
     <RadioGroup.Values>
-      <Text>First Value</Text>
-      <Text>Second Value</Text>
+      <Text>
+        <property name="value">Option 1</property>
+        <property name="radio">opt1</property>
+      </Text>
+      <Text>
+        <property name="value">Option 2</property>
+        <property name="radio">opt2</property>
+      </Text>
     </RadioGroup.Values>
   </RadioGroup>
 );
@@ -30,7 +34,8 @@ const flow: DSLFlow = {
   id: "radio-group-basic",
   views: [view1],
   data: {
-    count: 0,
+    value: "opt1",
+    label: "Radio Group Test",
   },
   schema,
   navigation: {
