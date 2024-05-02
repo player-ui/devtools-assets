@@ -3,9 +3,9 @@ import type { TextAsset } from "@devtools-ui/text";
 
 type RadioItem = {
   /** String of the radio text */
-  value: string;
+  label: string;
   /** String of the radio check value */
-  radio: string;
+  value: string;
   /** The ID of the Radio item */
   id: string;
   /** The asset type */
@@ -16,7 +16,7 @@ export interface RadioGroupAsset extends Asset<"radio-group"> {
   /** list of assets in the collection */
   values?: Array<AssetWrapper<RadioItem>>;
   /** Label */
-  label?: AssetWrapper<TextAsset>;
+  groupLabel?: AssetWrapper<TextAsset>;
   /** Dot sepparated string Representation of a path within the data-model */
   binding?: string;
 }

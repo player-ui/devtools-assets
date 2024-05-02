@@ -19,12 +19,12 @@ const view1 = (
     <RadioGroup.Label>{data.label}</RadioGroup.Label>
     <RadioGroup.Values>
       <Text>
-        <property name="value">Option 1</property>
-        <property name="radio">opt1</property>
+        <property name="label">Option 1</property>
+        <property name="value">opt1</property>
       </Text>
       <Text>
-        <property name="value">Option 2</property>
-        <property name="radio">opt2</property>
+        <property name="label">Option 2</property>
+        <property name="value">opt2</property>
       </Text>
     </RadioGroup.Values>
   </RadioGroup>

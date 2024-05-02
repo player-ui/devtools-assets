@@ -9,13 +9,13 @@ describe("DSL: RadioGroup", () => {
       <RadioGroup binding={b`my_binding`}>
         <RadioGroup.Label>RadioGroup Label</RadioGroup.Label>
         <RadioGroup.Values>
-          <Asset type="radio-item">
-            <property name="value">Option 1</property>
-            <property name="radio">opt1</property>
+          <Asset>
+            <property name="label">Option 1</property>
+            <property name="value">opt1</property>
           </Asset>
-          <Asset type="radio-item">
-            <property name="value">Option 2</property>
-            <property name="radio">opt2</property>
+          <Asset>
+            <property name="label">Option 2</property>
+            <property name="value">opt2</property>
           </Asset>
         </RadioGroup.Values>
       </RadioGroup>
@@ -36,17 +36,15 @@ describe("DSL: RadioGroup", () => {
         {
           asset: {
             id: "values-0",
-            type: "radio-item",
-            value: "Option 1",
-            radio: "opt1",
+            label: "Option 1",
+            value: "opt1",
           },
         },
         {
           asset: {
             id: "values-1",
-            type: "radio-item",
-            value: "Option 2",
-            radio: "opt2",
+            label: "Option 2",
+            value: "opt2",
           },
         },
       ],
