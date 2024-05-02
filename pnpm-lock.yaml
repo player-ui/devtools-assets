@@ -62,38 +62,38 @@ importers:
         specifier: 0.6.0-next.2
         version: 0.6.0-next.2(@types/node@18.19.31)(@types/react@18.3.1)(react@18.3.1)
       '@player-ui/asset-provider-plugin-react':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3(@player-ui/react@0.7.3-next.3)(@types/react@18.3.1)(react@18.3.1)
+        specifier: 0.7.3
+        version: 0.7.3(@player-ui/react@0.7.3)(@types/react@18.3.1)(react@18.3.1)
       '@player-ui/asset-transform-plugin':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/types@0.7.3-next.3)
+        specifier: 0.7.3
+        version: 0.7.3(@player-ui/player@0.7.3)(@player-ui/types@0.7.3)
       '@player-ui/beacon-plugin-react':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/react@0.7.3-next.3)(@player-ui/types@0.7.3-next.3)
+        specifier: 0.7.3
+        version: 0.7.3(@player-ui/player@0.7.3)(@player-ui/react@0.7.3)(@player-ui/types@0.7.3)
       '@player-ui/common-types-plugin':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3(@player-ui/player@0.7.3-next.3)
+        specifier: 0.7.3
+        version: 0.7.3(@player-ui/player@0.7.3)
       '@player-ui/computed-properties-plugin':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3(@player-ui/player@0.7.3-next.3)
+        specifier: 0.7.3
+        version: 0.7.3(@player-ui/player@0.7.3)
       '@player-ui/data-change-listener-plugin':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3(@player-ui/player@0.7.3-next.3)
+        specifier: 0.7.3
+        version: 0.7.3(@player-ui/player@0.7.3)
       '@player-ui/make-flow':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3
+        specifier: 0.7.3
+        version: 0.7.3
       '@player-ui/metrics-plugin-react':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/react@0.7.3-next.3)(@player-ui/types@0.7.3-next.3)(react@18.3.1)
+        specifier: 0.7.3
+        version: 0.7.3(@player-ui/player@0.7.3)(@player-ui/react@0.7.3)(@player-ui/types@0.7.3)(react@18.3.1)
       '@player-ui/player':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3
+        specifier: 0.7.3
+        version: 0.7.3
       '@player-ui/react':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3(@player-ui/types@0.7.3-next.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
+        specifier: 0.7.3
+        version: 0.7.3(@player-ui/types@0.7.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
       '@player-ui/types':
-        specifier: 0.7.3-next.3
-        version: 0.7.3-next.3
+        specifier: 0.7.3
+        version: 0.7.3
       '@reduxjs/toolkit':
         specifier: ^2.2.1
         version: 2.2.3(react-redux@9.1.1)(react@18.3.1)
@@ -4434,118 +4434,118 @@ packages:
       - '@types/node'
     dev: false
 
-  /@player-ui/asset-provider-plugin-react@0.7.3-next.3(@player-ui/react@0.7.3-next.3)(@types/react@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-8AEiq4ptAPCQ1tukUkK9a9rAiK4+XR44hwtma8BMrMjJJ/J4hX+EfSglAz2am6Sx2uHg2YBKpmXl8y+PCJa0Vg==, tarball: https://registry.npmjs.org/@player-ui/asset-provider-plugin-react/-/asset-provider-plugin-react-0.7.3-next.3.tgz}
+  /@player-ui/asset-provider-plugin-react@0.7.3(@player-ui/react@0.7.3)(@types/react@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-ndfnNLOphXVT7XnMhrR9wCHiL9/E8Ve/pzLrQeZgNeaH1TpfTQFh2TjmUsCjrmoZqavnR3Zik0bynlGUiIZfZA==, tarball: https://registry.npmjs.org/@player-ui/asset-provider-plugin-react/-/asset-provider-plugin-react-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/react': 0.7.3-next.3
+      '@player-ui/react': 0.7.3
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/react': 0.7.3-next.3(@player-ui/types@0.7.3-next.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
-      '@player-ui/react-subscribe': 0.7.3-next.3(@types/react@18.3.1)(react@18.3.1)
+      '@player-ui/react': 0.7.3(@player-ui/types@0.7.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
+      '@player-ui/react-subscribe': 0.7.3(@types/react@18.3.1)(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
       - react
     dev: false
 
-  /@player-ui/asset-transform-plugin@0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/types@0.7.3-next.3):
-    resolution: {integrity: sha512-5A11KCNIi/YwDuV93skOtH4cLffTt95JgFZw28pnUDf1G3JnZIciPYm7KMgagvNUnN97IjRxgZkgqG5jddxTQA==, tarball: https://registry.npmjs.org/@player-ui/asset-transform-plugin/-/asset-transform-plugin-0.7.3-next.3.tgz}
+  /@player-ui/asset-transform-plugin@0.7.3(@player-ui/player@0.7.3)(@player-ui/types@0.7.3):
+    resolution: {integrity: sha512-8ppp0hvazUsaYWO9pjW4t+BphepmAi7ZaNHwGhTFZ/7id3p+7Hu2Bu7jSInZO653wpt7yYIko0iXJyypkxevgQ==, tarball: https://registry.npmjs.org/@player-ui/asset-transform-plugin/-/asset-transform-plugin-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/types': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
+      '@player-ui/types': 0.7.3
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/partial-match-registry': 0.7.3-next.3
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/types': 0.7.3-next.3
+      '@player-ui/partial-match-registry': 0.7.3
+      '@player-ui/player': 0.7.3
+      '@player-ui/types': 0.7.3
     dev: false
 
-  /@player-ui/beacon-plugin-react@0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/react@0.7.3-next.3)(@player-ui/types@0.7.3-next.3):
-    resolution: {integrity: sha512-Kr/Uy4reu6Qy4tLzhy0M3s2ydYft963Roz1FDrOnXJUeEbs4ddPyVEf3ODriWxcS9Szw0RjYgLZrvBr2bkJcig==, tarball: https://registry.npmjs.org/@player-ui/beacon-plugin-react/-/beacon-plugin-react-0.7.3-next.3.tgz}
+  /@player-ui/beacon-plugin-react@0.7.3(@player-ui/player@0.7.3)(@player-ui/react@0.7.3)(@player-ui/types@0.7.3):
+    resolution: {integrity: sha512-oNvY8DxqKiZJB1uL1388kWtDhp7RYxLkJjAeLAnvVJpi5rHRTJrKIJqxrnGQwrSZt4vTMfj7hO76zohd+PZJZA==, tarball: https://registry.npmjs.org/@player-ui/beacon-plugin-react/-/beacon-plugin-react-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/react': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
+      '@player-ui/react': 0.7.3
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/beacon-plugin': 0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/types@0.7.3-next.3)
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/react': 0.7.3-next.3(@player-ui/types@0.7.3-next.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
+      '@player-ui/beacon-plugin': 0.7.3(@player-ui/player@0.7.3)(@player-ui/types@0.7.3)
+      '@player-ui/player': 0.7.3
+      '@player-ui/react': 0.7.3(@player-ui/types@0.7.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
     transitivePeerDependencies:
       - '@player-ui/types'
     dev: false
 
-  /@player-ui/beacon-plugin@0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/types@0.7.3-next.3):
-    resolution: {integrity: sha512-k3p6V/I1vKsGIc1jKF2dDD5CLzjQPUMF8PNcgT3NLxG0NkaGXeM+unvsTa653txDqoEyS4X66+e9jb55LZmLsQ==, tarball: https://registry.npmjs.org/@player-ui/beacon-plugin/-/beacon-plugin-0.7.3-next.3.tgz}
+  /@player-ui/beacon-plugin@0.7.3(@player-ui/player@0.7.3)(@player-ui/types@0.7.3):
+    resolution: {integrity: sha512-U+OxmpzrBdFswQFD3jbuNwYwuiKtIRJxsc29o5f39qC/KtDZZp+xoMBTmDz5esQb2WfZtHl7VFBd4Wxx9yQ9Ng==, tarball: https://registry.npmjs.org/@player-ui/beacon-plugin/-/beacon-plugin-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/types': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
+      '@player-ui/types': 0.7.3
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/types': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
+      '@player-ui/types': 0.7.3
       tapable-ts: 0.2.4
       timm: 1.7.1
     dev: false
 
-  /@player-ui/common-types-plugin@0.7.3-next.3(@player-ui/player@0.7.3-next.3):
-    resolution: {integrity: sha512-2akqcXChkkWIFPszBsMx2mEs/ts5FhkBObLmC2CSHZy6AEYAjViAOu2dqnjdxIRfA91G1N+mhHoNXL/yUsXGGA==, tarball: https://registry.npmjs.org/@player-ui/common-types-plugin/-/common-types-plugin-0.7.3-next.3.tgz}
+  /@player-ui/common-types-plugin@0.7.3(@player-ui/player@0.7.3):
+    resolution: {integrity: sha512-wxDocqs7xQ+pj3LIpyYxYYjzdybOdXOY+bXDftoSJy1UTbVBLtFlfWd4t+iEOCgo2SWMg8PBmC4OyHhbGe0WVA==, tarball: https://registry.npmjs.org/@player-ui/common-types-plugin/-/common-types-plugin-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/player': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/types-provider-plugin': 0.7.3-next.3(@player-ui/player@0.7.3-next.3)
+      '@player-ui/player': 0.7.3
+      '@player-ui/types-provider-plugin': 0.7.3(@player-ui/player@0.7.3)
     dev: false
 
-  /@player-ui/computed-properties-plugin@0.7.3-next.3(@player-ui/player@0.7.3-next.3):
-    resolution: {integrity: sha512-NdHONCSStJrJESKUr82NY2Bs1S3RtNFNJUQtEJIyplP2R/r+2jR3B+DwVMQ0iEyH6l2kdKP3WiZkDBshTpdNmQ==, tarball: https://registry.npmjs.org/@player-ui/computed-properties-plugin/-/computed-properties-plugin-0.7.3-next.3.tgz}
+  /@player-ui/computed-properties-plugin@0.7.3(@player-ui/player@0.7.3):
+    resolution: {integrity: sha512-GE/RQCYuXiEXan4IoLPrDKX+qe0QzJilUxw+y+/B0Eqcnu1ohqlvYetqxQKNWzxuUVNQvmCm2Rsue/ITBbE0Dw==, tarball: https://registry.npmjs.org/@player-ui/computed-properties-plugin/-/computed-properties-plugin-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/player': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/player': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
       tapable-ts: 0.2.4
     dev: false
 
-  /@player-ui/data-change-listener-plugin@0.7.3-next.3(@player-ui/player@0.7.3-next.3):
-    resolution: {integrity: sha512-pbcRFLirssSjGM9Re3xH7Hu2S60pD2c3OXgTWYeK/VgXeyBYtcYxlS+xVI7QOiuibjrXyAZSsp6pXp6kqgPXAg==, tarball: https://registry.npmjs.org/@player-ui/data-change-listener-plugin/-/data-change-listener-plugin-0.7.3-next.3.tgz}
+  /@player-ui/data-change-listener-plugin@0.7.3(@player-ui/player@0.7.3):
+    resolution: {integrity: sha512-3QG4jvH7yLkEvMIcruinj2fn7lHPvlDKed+1JJ5QS7ruyKof9bWJK3soBgGpBrHt1PDo0VK3qd39litpCFUYGw==, tarball: https://registry.npmjs.org/@player-ui/data-change-listener-plugin/-/data-change-listener-plugin-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/player': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/player': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
     dev: false
 
-  /@player-ui/make-flow@0.7.3-next.3:
-    resolution: {integrity: sha512-0Vksn2goWr51aVuTI/GMUygB5IzDcVKwSZe0tK57i+h9xBXAPdH+UivpMmS/dUT/aZcn9ltzpsu5swC9FIyVVA==, tarball: https://registry.npmjs.org/@player-ui/make-flow/-/make-flow-0.7.3-next.3.tgz}
+  /@player-ui/make-flow@0.7.3:
+    resolution: {integrity: sha512-3RjjwDlYs64motwJgK6RzyY6nlqbIPzX7Gl/XGawpiGts9bKgzjQl7+Th+FT9hnaNbsNQ/29xVDYBSkyIfnyvA==, tarball: https://registry.npmjs.org/@player-ui/make-flow/-/make-flow-0.7.3.tgz}
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/types': 0.7.3-next.3
+      '@player-ui/types': 0.7.3
     dev: false
 
-  /@player-ui/metrics-plugin-react@0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/react@0.7.3-next.3)(@player-ui/types@0.7.3-next.3)(react@18.3.1):
-    resolution: {integrity: sha512-E8tB1daaSYxmhHe/jZQR0ISzRbJtF17lzD14kOxF+SSeeLoXvVMTwO8bYdW588O0OEDSnKY+T+2+0zis4cGatw==, tarball: https://registry.npmjs.org/@player-ui/metrics-plugin-react/-/metrics-plugin-react-0.7.3-next.3.tgz}
+  /@player-ui/metrics-plugin-react@0.7.3(@player-ui/player@0.7.3)(@player-ui/react@0.7.3)(@player-ui/types@0.7.3)(react@18.3.1):
+    resolution: {integrity: sha512-HIQOiw3nX0SBGp59vlY3PCRT+QrkRolO9ZIqRiELs2hKpRxzLFPkGhHI4GllmMk9WUYkynK5oY+GsYpZsDC65g==, tarball: https://registry.npmjs.org/@player-ui/metrics-plugin-react/-/metrics-plugin-react-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/react': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
+      '@player-ui/react': 0.7.3
       react: ^18.2.0
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/metrics-plugin': 0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/types@0.7.3-next.3)
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/react': 0.7.3-next.3(@player-ui/types@0.7.3-next.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
+      '@player-ui/metrics-plugin': 0.7.3(@player-ui/player@0.7.3)(@player-ui/types@0.7.3)
+      '@player-ui/player': 0.7.3
+      '@player-ui/react': 0.7.3(@player-ui/types@0.7.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
       - '@player-ui/types'
     dev: false
 
-  /@player-ui/metrics-plugin@0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/types@0.7.3-next.3):
-    resolution: {integrity: sha512-vwmTLGK3tobfPlfRcZQDkkym0N4kpvtKfbYxyjJz9UWDZvIarMJNiQ6Yo6C1cQ6uW5Y2D5HPMKKQ4XOhu/Y5CA==, tarball: https://registry.npmjs.org/@player-ui/metrics-plugin/-/metrics-plugin-0.7.3-next.3.tgz}
+  /@player-ui/metrics-plugin@0.7.3(@player-ui/player@0.7.3)(@player-ui/types@0.7.3):
+    resolution: {integrity: sha512-qZTCJYrzjLmGKOoejWGZfJeGc5vOPlpN2wCuql2R9cf/dcKubYrGYhBVM2DZD4N59O0jEuawOHHTKrTMydlnNA==, tarball: https://registry.npmjs.org/@player-ui/metrics-plugin/-/metrics-plugin-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/player': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/beacon-plugin': 0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/types@0.7.3-next.3)
-      '@player-ui/player': 0.7.3-next.3
+      '@player-ui/beacon-plugin': 0.7.3(@player-ui/player@0.7.3)(@player-ui/types@0.7.3)
+      '@player-ui/player': 0.7.3
       tapable-ts: 0.2.4
     transitivePeerDependencies:
       - '@player-ui/types'
@@ -4560,8 +4560,8 @@ packages:
       sorted-array: 2.0.4
     dev: false
 
-  /@player-ui/partial-match-registry@0.7.3-next.3:
-    resolution: {integrity: sha512-fYGa0ixANKbP+x9aR9UxL82EBYzIa7z5o+jCDou/mb1wiP6sITlW3AiGjTL4K6+RxzUvs8k1LNFCidFcULz0gQ==, tarball: https://registry.npmjs.org/@player-ui/partial-match-registry/-/partial-match-registry-0.7.3-next.3.tgz}
+  /@player-ui/partial-match-registry@0.7.3:
+    resolution: {integrity: sha512-3Lo5jFKGQ6QkUagrhu9guAepA5eChz2YRDNru+5SSxR2CfcMfDUdTfPAkhUyjU/fB9Re7FUPtNSX4FOyt4YKPg==, tarball: https://registry.npmjs.org/@player-ui/partial-match-registry/-/partial-match-registry-0.7.3.tgz}
     dependencies:
       '@babel/runtime': 7.15.4
       '@types/dlv': 1.1.4
@@ -4588,12 +4588,12 @@ packages:
       ts-nested-error: 1.2.1
     dev: false
 
-  /@player-ui/player@0.7.3-next.3:
-    resolution: {integrity: sha512-LDSNJCiH8X5e3DmtzLcDZ83ecN9S7Ds/UPIB2pwrffTW7TpmriqhIFyUDo/23qZl26zCLRsiXYMkw8KnOMuQKw==, tarball: https://registry.npmjs.org/@player-ui/player/-/player-0.7.3-next.3.tgz}
+  /@player-ui/player@0.7.3:
+    resolution: {integrity: sha512-nZ9KdGgnVVZwxNHM9pzcgiH7ikUSAVcGS5CCNMJQflUlM4C+thhlytGtMUMuSjgnFN7q7ZFzWL4qQlsVgmgOqg==, tarball: https://registry.npmjs.org/@player-ui/player/-/player-0.7.3.tgz}
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/partial-match-registry': 0.7.3-next.3
-      '@player-ui/types': 0.7.3-next.3
+      '@player-ui/partial-match-registry': 0.7.3
+      '@player-ui/types': 0.7.3
       '@types/parsimmon': 1.10.9
       arr-flatten: 1.1.0
       dequal: 2.0.3
@@ -4607,8 +4607,8 @@ packages:
       ts-nested-error: 1.2.1
     dev: false
 
-  /@player-ui/react-subscribe@0.7.3-next.3(@types/react@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-YzUZbq5sO9sXzpeEi7CwwuEk3jCm0haOC/6ec/d/9VOheWCAd4RKIIOzpNQuZuGd+emI+arzUwRuXNeeyx0jdg==, tarball: https://registry.npmjs.org/@player-ui/react-subscribe/-/react-subscribe-0.7.3-next.3.tgz}
+  /@player-ui/react-subscribe@0.7.3(@types/react@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-b1m6LcHy9BOAsEhdvT5SZu9oDFVXzmth9rq9FqV5wPgGJ9HaLCgJZZhuPYweYTQVj4qeUNeXgEv4xuIhUBAX/A==, tarball: https://registry.npmjs.org/@player-ui/react-subscribe/-/react-subscribe-0.7.3.tgz}
     peerDependencies:
       '@types/react': ^17.0.25
       react: ^18.2.0
@@ -4619,18 +4619,18 @@ packages:
       react: 18.3.1
     dev: false
 
-  /@player-ui/react@0.7.3-next.3(@player-ui/types@0.7.3-next.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-M9ud/hPKmhZc1OSI3s31RImUu490k0ErEi73Io1XX61FuxwiygmWf4C9so/wbX8Do0Cpo1upylRzAd7CYu6nLA==, tarball: https://registry.npmjs.org/@player-ui/react/-/react-0.7.3-next.3.tgz}
+  /@player-ui/react@0.7.3(@player-ui/types@0.7.3)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-IPxWom+l84jKSfZxn6TKufyxYfFuHPZA79+4IV+dsk2BakVmUZvuGSGqW1PInY6H+SmCno7RCvxZmsdil9b0XA==, tarball: https://registry.npmjs.org/@player-ui/react/-/react-0.7.3.tgz}
     peerDependencies:
       '@types/react': ^17.0.25
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/metrics-plugin': 0.7.3-next.3(@player-ui/player@0.7.3-next.3)(@player-ui/types@0.7.3-next.3)
-      '@player-ui/partial-match-registry': 0.7.3-next.3
-      '@player-ui/player': 0.7.3-next.3
-      '@player-ui/react-subscribe': 0.7.3-next.3(@types/react@18.3.1)(react@18.3.1)
+      '@player-ui/metrics-plugin': 0.7.3(@player-ui/player@0.7.3)(@player-ui/types@0.7.3)
+      '@player-ui/partial-match-registry': 0.7.3
+      '@player-ui/player': 0.7.3
+      '@player-ui/react-subscribe': 0.7.3(@types/react@18.3.1)(react@18.3.1)
       '@types/react': 18.3.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -4640,13 +4640,13 @@ packages:
       - '@player-ui/types'
     dev: false
 
-  /@player-ui/types-provider-plugin@0.7.3-next.3(@player-ui/player@0.7.3-next.3):
-    resolution: {integrity: sha512-VIHi0UQiZix3fDcW1F0IS2sIx85Ci0jKQw/O6TG1eqbe8DEYaczs13slw7degJFHwlZyuSk8dNTJ9y3QS7qDyQ==, tarball: https://registry.npmjs.org/@player-ui/types-provider-plugin/-/types-provider-plugin-0.7.3-next.3.tgz}
+  /@player-ui/types-provider-plugin@0.7.3(@player-ui/player@0.7.3):
+    resolution: {integrity: sha512-JNxxQhlnvBB2lrM+vztxSIl2tI1cFrnbiTAySuBeh0eGiDVIItUkJ/dfAJdAceFlhCO5xFjfJYeS2OVJENu0ZQ==, tarball: https://registry.npmjs.org/@player-ui/types-provider-plugin/-/types-provider-plugin-0.7.3.tgz}
     peerDependencies:
-      '@player-ui/player': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
     dependencies:
       '@babel/runtime': 7.15.4
-      '@player-ui/player': 0.7.3-next.3
+      '@player-ui/player': 0.7.3
       tapable-ts: 0.2.4
     dev: false
 
@@ -4656,8 +4656,8 @@ packages:
       '@babel/runtime': 7.15.4
     dev: false
 
-  /@player-ui/types@0.7.3-next.3:
-    resolution: {integrity: sha512-fRrxR39m6vM0ss3AGVRf1yc2bGWD7r6e3K2mbSfFJ/6v6KyE8PDQkS+FiCTGbwt4Y9cly3wMbWJXvf9cnXFr3g==, tarball: https://registry.npmjs.org/@player-ui/types/-/types-0.7.3-next.3.tgz}
+  /@player-ui/types@0.7.3:
+    resolution: {integrity: sha512-Uqk14S4UmMM3O36TXt/PwYI9JY5aNYF1A3v/2wT9+gKv0RPZTXrs2N6MFXW8RopH/XeUwuunThVCpRZCsFiUMg==, tarball: https://registry.npmjs.org/@player-ui/types/-/types-0.7.3.tgz}
     dependencies:
       '@babel/runtime': 7.15.4
     dev: false
