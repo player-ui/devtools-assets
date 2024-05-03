@@ -4,7 +4,7 @@
 
 `@devtools-ui/radio-group` is a component package designed to be leveraged by a [Player-UI assets plugin](https://player-ui.github.io/next/plugins).
 
-It provides a [RadioGroup]([TODO: add link to storybook]) component that can be used to [TODO: define component features].
+It provides a `RadioGroup` component that can present a way to input one of multiple choices.
 
 This package is part of a mono-repo built with Bazel, ensuring fast and reliable builds.
 

@@ -7,15 +7,22 @@ import * as RadioGroupStories from "./RadioGroup.stories";
 
 > type: `radio-group`
 
-It provides a `RadioGroup` component that can be used to 
-[TODO: define component features].
+It provides a `RadioGroup` component that can present a way to input one of multiple choices.
 
-
-## DSL Properties
+## RadioGroup DSL Properties
 
 | Property | Type | Required | Description |
 | --- | --- | --- | --- |
-[TODO: define DSL component properties].
+| `binding` | `string` | false | The location in the data-model to store the data |
+| `label` | `AssetWrapper<TextAsset> \| string` | false | A text asset for the radio group label |
+| `values` | `Array<AssetWrapper<RadioItem>>` | false | A text asset for the radio group label |
+
+## RadioItem DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `label` | `string` | true | The radio item label |
+| `value` | `string` | true | The radio item value stored |
 
 ## Basic Use Case
 
