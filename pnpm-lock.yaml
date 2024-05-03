@@ -449,6 +449,9 @@ importers:
       '@devtools-ui/collection':
         specifier: workspace:*
         version: link:../collection
+      '@devtools-ui/radio-item':
+        specifier: workspace:*
+        version: link:../radio-item
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text

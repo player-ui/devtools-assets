@@ -17,6 +17,7 @@ js_pipeline(
     deps = [
         ":node_modules/@devtools-ui/collection",
         ":node_modules/@devtools-ui/text",
+        ":node_modules/@devtools-ui/radio-item",
         "//:node_modules/@chakra-ui/react",
         "//:node_modules/@emotion/react",
         "//:node_modules/@emotion/styled",
