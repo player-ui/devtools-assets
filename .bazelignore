@@ -32,6 +32,7 @@ copy-to-clipboard/node_modules
 toggle/node_modules
 code-editor/node_modules
 radio-group/node_modules
+radio-item/node_modules
 
 # Backup files
 _backup

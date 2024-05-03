@@ -6,7 +6,7 @@ import { ReactAsset } from "@player-ui/react";
 export const RadioGroupComponent = (props: TransformedRadioGroup) => {
   const { id, groupLabel, setRadio, values } = props;
 
-  console.log("RADIO VALUES:", values);
+  console.log("RADIO PROPS:", props);
 
   return (
     <RadioGroup>

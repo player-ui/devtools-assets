@@ -428,6 +428,9 @@ importers:
       '@devtools-ui/radio-group':
         specifier: workspace:*
         version: link:../radio-group
+      '@devtools-ui/radio-item':
+        specifier: workspace:*
+        version: link:../radio-item
       '@devtools-ui/stacked-view':
         specifier: workspace:*
         version: link:../stacked-view
@@ -449,6 +452,8 @@ importers:
       '@devtools-ui/text':
         specifier: workspace:*
         version: link:../text
+
+  radio-item: {}
 
   stacked-view:
     dependencies:
