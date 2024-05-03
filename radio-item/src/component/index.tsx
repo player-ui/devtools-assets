@@ -2,8 +2,14 @@ import React from "react";
 import { Radio } from "@chakra-ui/react";
 import type { RadioItemAsset } from "../types";
 
-export const RadioItemComponent = ({ value, label }: RadioItemAsset) => (
+export const RadioItemComponent = ({
+  value,
+  label,
+  ...rest
+}: RadioItemAsset) => (
   <div>
-    <Radio value={value}>{label}</Radio>
+    <Radio value={value} {...rest}>
+      {label}
+    </Radio>
   </div>
 );
