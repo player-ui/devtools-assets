@@ -20,9 +20,9 @@ describe("DSL: RadioGroup", () => {
       id: "root",
       type: "radio-group",
       binding: "my_binding",
-      groupLabel: {
+      label: {
         asset: {
-          id: "groupLabel",
+          id: "label",
           type: "text",
           value: "RadioGroup Label",
         },

@@ -6,7 +6,7 @@ export interface RadioGroupAsset extends Asset<"radio-group"> {
   /** list of assets in the collection */
   values?: Array<AssetWrapper<RadioItemAsset>>;
   /** Label */
-  groupLabel?: AssetWrapper<TextAsset>;
+  label?: AssetWrapper<TextAsset>;
   /** Dot sepparated string Representation of a path within the data-model */
   binding?: string;
 }

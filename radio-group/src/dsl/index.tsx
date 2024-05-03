@@ -35,7 +35,7 @@ const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
 };
 
 RadioGroup.Label = createSlot({
-  name: "groupLabel",
+  name: "label",
   TextComp: Text,
   isArray: false,
   wrapInAsset: true,

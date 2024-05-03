@@ -4,15 +4,13 @@ import { RadioGroup, Stack, FormLabel } from "@chakra-ui/react";
 import { ReactAsset } from "@player-ui/react";
 
 export const RadioGroupComponent = (props: TransformedRadioGroup) => {
-  const { id, groupLabel, setRadio, values } = props;
-
-  console.log("RADIO PROPS:", props);
+  const { id, label, setRadio, values } = props;
 
   return (
     <RadioGroup>
-      {groupLabel && (
+      {label && (
         <FormLabel htmlFor={id}>
-          <ReactAsset {...groupLabel.asset} />
+          <ReactAsset {...label.asset} />
         </FormLabel>
       )}
       <Stack>
