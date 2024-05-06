@@ -18,7 +18,6 @@ import {
 } from "@devtools-ui/copy-to-clipboard";
 import { CodeEditorAsset, CodeEditor } from "@devtools-ui/code-editor";
 import { RadioGroupAsset, RadioGroup } from "@devtools-ui/radio-group";
-import { RadioItemAsset, RadioItem } from "@devtools-ui/radio-item";
 import { AssetsRegistryPlugin } from "./plugins";
 
 export default AssetsRegistryPlugin;
@@ -38,7 +37,6 @@ export type {
   ToggleAsset,
   CodeEditorAsset,
   RadioGroupAsset,
-  RadioItemAsset,
 };
 
 export {
@@ -56,5 +54,4 @@ export {
   Toggle,
   CodeEditor,
   RadioGroup,
-  RadioItem,
 };

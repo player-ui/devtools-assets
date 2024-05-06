@@ -20,7 +20,6 @@ It register the following assets to your React Player instance:
 - code-editor
 - radio-group
 - toggle
-- radio-item
 
 ## Installation
 

@@ -4,11 +4,13 @@ import {
   Asset,
   createSlot,
   BindingTemplateInstance,
+  WithTemplateTypes,
+  WithChildren,
+  toJsonProperties,
 } from "@player-tools/dsl";
 import type { Asset as AssetType } from "@player-ui/player";
-import { Collection } from "@devtools-ui/collection";
 import { Text } from "@devtools-ui/text";
-import type { RadioGroupAsset } from "../types";
+import type { RadioGroupAsset, RadioItemAsset } from "../types";
 
 export const RadioGroup = (
   props: Omit<AssetPropsWithChildren<RadioGroupAsset>, "binding"> & {
@@ -21,16 +23,35 @@ export const RadioGroup = (
   return (
     <Asset type="radio-group" {...rest}>
       <property name="binding">{binding.toValue()}</property>
-      {props.children}
+      {children}
     </Asset>
   );
 };
 
-const CollectionComp = (props: AssetPropsWithChildren<AssetType>) => {
+export const RadioItem = (
+  props: Partial<WithChildren<WithTemplateTypes<RadioItemAsset>>>
+) => {
+  const { children, ...rest } = props;
   return (
-    <Collection>
-      <Collection.Values>{props.children}</Collection.Values>
-    </Collection>
+    <obj>
+      {toJsonProperties(rest)}
+      {children}
+    </obj>
+  );
+};
+
+RadioItem.Label = createSlot({
+  name: "label",
+  TextComp: Text,
+  isArray: false,
+  wrapInAsset: true,
+});
+
+const RadioGroupValues = (props: AssetPropsWithChildren<AssetType>) => {
+  return (
+    <property name="values">
+      <array {...props} />
+    </property>
   );
 };
 
@@ -41,9 +62,5 @@ RadioGroup.Label = createSlot({
   wrapInAsset: true,
 });
 
-RadioGroup.Values = createSlot({
-  name: "values",
-  CollectionComp,
-  isArray: true,
-  wrapInAsset: true,
-});
+RadioGroup.Values = RadioGroupValues;
+RadioGroupValues.Value = RadioItem;

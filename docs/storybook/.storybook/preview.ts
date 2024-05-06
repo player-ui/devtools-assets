@@ -13,7 +13,6 @@ import DevtoolsUIPlugin, {
   Toggle,
   CodeEditor,
   RadioGroup,
-  RadioItem,
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
 import { CommonTypesPlugin } from "@player-ui/common-types-plugin";
@@ -43,7 +42,6 @@ const components = {
   Toggle,
   CodeEditor,
   RadioGroup,
-  RadioItem,
 };
 
 export const parameters = {

@@ -1,12 +1,18 @@
 import type { Asset, AssetWrapper } from "@player-ui/types";
-import type { TextAsset } from "@devtools-ui/text";
-import type { RadioItemAsset } from "@devtools-ui/radio-item";
 
-export interface RadioGroupAsset extends Asset<"radio-group"> {
-  /** list of assets in the collection */
-  values?: Array<AssetWrapper<RadioItemAsset>>;
+export interface RadioItemAsset<AnyAsset extends Asset = Asset> {
+  /** Value */
+  value: string;
   /** Label */
-  label?: AssetWrapper<TextAsset>;
+  label: AssetWrapper<AnyAsset>;
+}
+
+export interface RadioGroupAsset<AnyAsset extends Asset = Asset>
+  extends Asset<"radio-group"> {
+  /** list of assets in the collection */
+  values?: Array<RadioItemAsset<AnyAsset>>;
+  /** Label */
+  label?: AssetWrapper<AnyAsset>;
   /** Dot sepparated string Representation of a path within the data-model */
   binding?: string;
 }

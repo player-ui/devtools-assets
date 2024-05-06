@@ -1,7 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render, binding as b, Asset } from "@player-tools/dsl";
-import { RadioItem } from "@devtools-ui/radio-item";
+import { render, binding as b } from "@player-tools/dsl";
 import { RadioGroup } from "../";
 
 describe("DSL: RadioGroup", () => {
@@ -10,8 +9,16 @@ describe("DSL: RadioGroup", () => {
       <RadioGroup binding={b`my_binding`}>
         <RadioGroup.Label>RadioGroup Label</RadioGroup.Label>
         <RadioGroup.Values>
-          <RadioItem label="Option 1" value="opt1" />
-          <RadioItem label="Option 2" value="opt2" />
+          <RadioGroup.Values.Value value="opt1">
+            <RadioGroup.Values.Value.Label>
+              Option 1
+            </RadioGroup.Values.Value.Label>
+          </RadioGroup.Values.Value>
+          <RadioGroup.Values.Value value="opt2">
+            <RadioGroup.Values.Value.Label>
+              Option 2
+            </RadioGroup.Values.Value.Label>
+          </RadioGroup.Values.Value>
         </RadioGroup.Values>
       </RadioGroup>
     );
@@ -29,20 +36,24 @@ describe("DSL: RadioGroup", () => {
       },
       values: [
         {
-          asset: {
-            type: "radio-item",
-            id: "values-0",
-            label: "Option 1",
-            value: "opt1",
+          label: {
+            asset: {
+              id: "label",
+              type: "text",
+              value: "Option 1",
+            },
           },
+          value: "opt1",
         },
         {
-          asset: {
-            type: "radio-item",
-            id: "values-1",
-            label: "Option 2",
-            value: "opt2",
+          label: {
+            asset: {
+              id: "label",
+              type: "text",
+              value: "Option 2",
+            },
           },
+          value: "opt2",
         },
       ],
     });

@@ -1,5 +1,5 @@
 import React from "react";
-import { RadioGroup, RadioItem } from "@devtools-ui/plugin";
+import { RadioGroup } from "@devtools-ui/plugin";
 import { makeBindingsForObject, DSLFlow } from "@player-tools/dsl";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,8 +18,12 @@ const view1 = (
   <RadioGroup binding={data.value}>
     <RadioGroup.Label>{data.label}</RadioGroup.Label>
     <RadioGroup.Values>
-      <RadioItem label="Option 1" value="opt1" />
-      <RadioItem label="Option 2" value="opt2" />
+      <RadioGroup.Values.Value value="opt1">
+        <RadioGroup.Values.Value.Label>Option 1</RadioGroup.Values.Value.Label>
+      </RadioGroup.Values.Value>
+      <RadioGroup.Values.Value value="opt2">
+        <RadioGroup.Values.Value.Label>Option 2</RadioGroup.Values.Value.Label>
+      </RadioGroup.Values.Value>
     </RadioGroup.Values>
   </RadioGroup>
 );

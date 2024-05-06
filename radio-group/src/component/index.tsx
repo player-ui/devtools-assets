@@ -1,6 +1,6 @@
 import React from "react";
 import type { TransformedRadioGroup } from "../types";
-import { RadioGroup, Stack, FormLabel } from "@chakra-ui/react";
+import { RadioGroup, Stack, FormLabel, Radio } from "@chakra-ui/react";
 import { ReactAsset } from "@player-ui/react";
 
 export const RadioGroupComponent = (props: TransformedRadioGroup) => {
@@ -18,13 +18,12 @@ export const RadioGroupComponent = (props: TransformedRadioGroup) => {
           const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
             setRadio(e.target.value);
           };
+          const { value, label } = radioItem;
 
           return (
-            <ReactAsset
-              key={radioItem.asset.id}
-              onChange={onChange}
-              {...radioItem.asset}
-            />
+            <Radio key={value} onChange={onChange} value={value}>
+              <ReactAsset {...label.asset} />
+            </Radio>
           );
         })}
       </Stack>

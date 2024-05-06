@@ -4,7 +4,6 @@
   "main": "src/index.ts",
   "dependencies": {
     "@devtools-ui/text": "workspace:*",
-    "@devtools-ui/radio-item": "workspace:*",
     "@devtools-ui/collection": "workspace:*"
   }
 }
