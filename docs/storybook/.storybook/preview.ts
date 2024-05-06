@@ -12,6 +12,7 @@ import DevtoolsUIPlugin, {
   CopyToClipboard,
   Toggle,
   CodeEditor,
+  RadioGroup,
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
 import { CommonTypesPlugin } from "@player-ui/common-types-plugin";
@@ -40,6 +41,7 @@ const components = {
   CopyToClipboard,
   Toggle,
   CodeEditor,
+  RadioGroup,
 };
 
 export const parameters = {

@@ -1,0 +1,23 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as RadioGroupStories from "./RadioGroup.stories";
+
+<Meta of={ RadioGroupStories } />
+
+# RadioGroup Asset
+
+> type: `radio-group`
+
+It provides a `RadioGroup` component that can present a way to input one of multiple choices.
+
+## RadioGroup DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `binding` | `string` | false | The location in the data-model to store the data |
+| `label` | `AssetWrapper<TextAsset> \| string` | false | A text asset for the radio group label |
+| `values` | `Array<AssetWrapper<RadioGroup.Value.Values>>` | false | An array of options containing value and label |
+
+
+## Basic Use Case
+
+<Canvas of={ RadioGroupStories.Basic } />

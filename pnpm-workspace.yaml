@@ -16,3 +16,4 @@ packages:
   - "copy-to-clipboard"
   - "toggle"
   - "code-editor"
+  - "radio-group"

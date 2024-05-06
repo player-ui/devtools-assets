@@ -15,7 +15,8 @@
     "@devtools-ui/stacked-view": "workspace:*",
     "@devtools-ui/table": "workspace:*",
     "@devtools-ui/copy-to-clipboard": "workspace:*",
+    "@devtools-ui/code-editor": "workspace:*",
     "@devtools-ui/toggle": "workspace:*",
-    "@devtools-ui/code-editor": "workspace:*"
+    "@devtools-ui/radio-group": "workspace:*"
   }
 }

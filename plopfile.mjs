@@ -39,6 +39,8 @@ export default function (plop) {
 
   plop.setHelper("kebabCase", toKebabCase);
 
+  plop.setHelper("spacedPascal", toSpacedPascal)
+
   plop.setGenerator("asset", {
     description: "Create a new asset",
     prompts: [
@@ -71,6 +73,11 @@ export default function (plop) {
       .replace(/^-/, "") // remove leading - if any
       .toLowerCase(); // Converting all to lowercase
   }
+
+  function toSpacedPascal(text) {
+    return text
+      .replace(/(?<=[a-z])([A-Z])/g, " $1") // adds space before inner capitalized lettes in pascal-cased words
+  }
 }
 
 const extendedActions = {
@@ -91,7 +98,7 @@ const extendedActions = {
   },
   mdxDocsiteDoc: {
     type: "add",
-    path: "./docs/site/pages/assets/{{camelCase assetName}}.mdx",
+    path: "./docs/site/pages/assets/{{kebabCase assetName}}.mdx",
     templateFile: "./asset-template/README.md.hbs",
   },
   mdxDocsiteNavigation: {
@@ -99,8 +106,8 @@ const extendedActions = {
     path: "./docs/site/config/navigation.ts",
     pattern: /(?=\s+])/,
     template: `            {
-              title: '{{pascalCase assetName}}',
-              path: '/assets/{{camelCase assetName}}',
+              title: '{{spacedPascal (pascalCase assetName)}}',
+              path: '/assets/{{kebabCase assetName}}',
             },`,
   },
   linkingAssetToSBPreviewImport: {

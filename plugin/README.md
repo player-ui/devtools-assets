@@ -17,6 +17,8 @@ It register the following assets to your React Player instance:
 - table
 - console
 - copy-to-clipboard
+- code-editor
+- radio-group
 - toggle
 
 ## Installation
