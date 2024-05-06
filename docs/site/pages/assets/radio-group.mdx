@@ -33,9 +33,23 @@ import { RadioGroup } from "@devtools-ui/plugin";
 myFlow = {
     id: 'my_flow',
     views: [
-        <>
-            <RadioGroup />
-        </>
+      <>
+        <RadioGroup binding={b`my_binding`}>
+          <RadioGroup.Label>RadioGroup Label</RadioGroup.Label>
+          <RadioGroup.Values>
+            <RadioGroup.Values.Value value="opt1">
+              <RadioGroup.Values.Value.Label>
+                Option 1
+              </RadioGroup.Values.Value.Label>
+            </RadioGroup.Values.Value>
+            <RadioGroup.Values.Value value="opt2">
+              <RadioGroup.Values.Value.Label>
+                Option 2
+              </RadioGroup.Values.Value.Label>
+            </RadioGroup.Values.Value>
+          </RadioGroup.Values>
+        </RadioGroup>
+      </>
     ]
 }
 ```
