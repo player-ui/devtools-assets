@@ -186,13 +186,14 @@ export const useInputAssetProps = (
 
   /** Parses file content for upload into a string if file type Inpu */
   const onFileUpload: React.ChangeEventHandler = (e): void => {
-    const file = e.target.files[0];
+    const fileList = (<HTMLInputElement>e.target).files;
+    const file = fileList ? fileList[0] : "";
     const reader = new FileReader();
 
     reader.addEventListener(
       "load",
       () => {
-        // this will then display a text file
+        // this will set the file contents in the data model
         props.set(reader.result as string);
       },
       false
@@ -212,12 +213,21 @@ export const useInputAssetProps = (
   /** clear anything pending on unmount of input */
   React.useEffect(() => clearPending, []);
 
+  const fileProps = props.file
+    ? {
+        type: "file",
+        onChange: onFileUpload,
+        accept: ".json, .txt",
+        value: "",
+      }
+    : {};
+
   return {
-    ...(props.file ? { type: "file" } : {}),
     onBlur,
-    onChange: props.file ? onFileUpload : onChange,
+    onChange,
     onKeyDown,
     onFocus,
     value: localValue,
+    ...fileProps,
   };
 };

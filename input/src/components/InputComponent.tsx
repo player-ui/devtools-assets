@@ -15,6 +15,8 @@ export const InputComponent = (props: TransformedInput) => {
     props;
   const inputProps = useInputAssetProps(props);
 
+  console.log("INPUTPROPS", inputProps);
+
   return (
     <FormControl isInvalid={Boolean(validation)}>
       {label && (
