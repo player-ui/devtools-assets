@@ -11,7 +11,8 @@ import { ReactAsset } from "@player-ui/react";
 import { useInputAssetProps } from "./hooks";
 
 export const InputComponent = (props: TransformedInput) => {
-  const { validation, label, id, note, size, maxLength, placeholder } = props;
+  const { validation, label, id, note, size, maxLength, placeholder, file } =
+    props;
   const inputProps = useInputAssetProps(props);
 
   return (

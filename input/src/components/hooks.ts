@@ -184,6 +184,25 @@ export const useInputAssetProps = (
     }
   };
 
+  /** Parses file content for upload into a string if file type Inpu */
+  const onFileUpload: React.ChangeEventHandler = (e): void => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener(
+      "load",
+      () => {
+        // this will then display a text file
+        props.set(reader.result as string);
+      },
+      false
+    );
+
+    if (file) {
+      reader.readAsText(file);
+    }
+  };
+
   // Update the stored value if data changes
   const propsValue = props.value;
   React.useEffect(() => {
@@ -194,8 +213,9 @@ export const useInputAssetProps = (
   React.useEffect(() => clearPending, []);
 
   return {
+    ...(props.file ? { type: "file" } : {}),
     onBlur,
-    onChange,
+    onChange: props.file ? onFileUpload : onChange,
     onKeyDown,
     onFocus,
     value: localValue,

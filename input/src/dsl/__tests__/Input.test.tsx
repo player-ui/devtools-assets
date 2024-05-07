@@ -62,4 +62,26 @@ describe("DSL: Input", () => {
       binding: "binding",
     });
   });
+
+  test("It should render a file uploader version of Input asset", async () => {
+    const rendered = await render(
+      <Input binding={b`binding`} file={true}>
+        <Input.Label>Label</Input.Label>
+      </Input>
+    );
+
+    expect(rendered.jsonValue).toStrictEqual({
+      id: "root",
+      type: "input",
+      file: true,
+      label: {
+        asset: {
+          id: "label",
+          type: "text",
+          value: "Label",
+        },
+      },
+      binding: "binding",
+    });
+  });
 });
