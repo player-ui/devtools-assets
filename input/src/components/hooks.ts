@@ -184,6 +184,26 @@ export const useInputAssetProps = (
     }
   };
 
+  // Update the stored value if data changes
+  const propsValue = props.value;
+  React.useEffect(() => {
+    setLocalValue(formatValueWithAffix(propsValue));
+  }, [propsValue]);
+
+  /** clear anything pending on unmount of input */
+  React.useEffect(() => clearPending, []);
+
+  return {
+    onBlur,
+    onChange,
+    onKeyDown,
+    onFocus,
+    value: localValue,
+  };
+};
+
+/** Props for file type Input */
+export const useFileInputAssetProps = (props: TransformedInput) => {
   /** Parses file content for upload into a string if file type Inpu */
   const onFileUpload: React.ChangeEventHandler = (e): void => {
     const fileList = (<HTMLInputElement>e.target).files;
@@ -204,30 +224,9 @@ export const useInputAssetProps = (
     }
   };
 
-  // Update the stored value if data changes
-  const propsValue = props.value;
-  React.useEffect(() => {
-    setLocalValue(formatValueWithAffix(propsValue));
-  }, [propsValue]);
-
-  /** clear anything pending on unmount of input */
-  React.useEffect(() => clearPending, []);
-
-  const fileProps = props.file
-    ? {
-        type: "file",
-        onChange: onFileUpload,
-        accept: ".json, .txt",
-        value: "",
-      }
-    : {};
-
   return {
-    onBlur,
-    onChange,
-    onKeyDown,
-    onFocus,
-    value: localValue,
-    ...fileProps,
+    type: "file",
+    onChange: onFileUpload,
+    accept: ".json, .txt",
   };
 };

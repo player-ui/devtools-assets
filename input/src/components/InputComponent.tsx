@@ -8,14 +8,27 @@ import {
 } from "@chakra-ui/react";
 import { TransformedInput } from "../types";
 import { ReactAsset } from "@player-ui/react";
-import { useInputAssetProps } from "./hooks";
+import { useInputAssetProps, useFileInputAssetProps } from "./hooks";
+
+const fileInputComponent = (props: TransformedInput) => {
+  const inputProps = useFileInputAssetProps(props);
+
+  return (
+    <>
+      <input id={props.id} name={props.id} {...inputProps} />
+    </>
+  );
+};
 
 export const InputComponent = (props: TransformedInput) => {
   const { validation, label, id, note, size, maxLength, placeholder, file } =
     props;
-  const inputProps = useInputAssetProps(props);
 
-  console.log("INPUTPROPS", inputProps);
+  if (file) {
+    return fileInputComponent(props);
+  }
+
+  const inputProps = useInputAssetProps(props);
 
   return (
     <FormControl isInvalid={Boolean(validation)}>
