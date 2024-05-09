@@ -1,0 +1,19 @@
+.button-file {
+    /* Resetting OS-specfic / browser-specific default style*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #dee1e3; 
+    border: 1px solid; 
+    border-radius: 4px; 
+    cursor: pointer;
+    font: inherit;
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .button-file:focus {
+    outline-offset: 4px; /* For Chrome to show a focus ring around the button */
+  }
+
+  
