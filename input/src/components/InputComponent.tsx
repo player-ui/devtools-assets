@@ -12,7 +12,7 @@ import { ReactAsset } from "@player-ui/react";
 import { useInputAssetProps, useFileInputAssetProps } from "./hooks";
 import "./styles.css";
 
-const fileInputComponent = (props: TransformedInput) => {
+const FileInputComponent = (props: TransformedInput) => {
   const hiddenFileInput: React.Ref<any> = useRef(null);
 
   const [fileName, setFileName] = useState("");
@@ -51,7 +51,7 @@ export const InputComponent = (props: TransformedInput) => {
   const inputProps = useInputAssetProps(props);
 
   return file ? (
-    fileInputComponent(props)
+    <FileInputComponent {...props}/>
   ) : (
     <FormControl isInvalid={Boolean(validation)}>
       {label && (
