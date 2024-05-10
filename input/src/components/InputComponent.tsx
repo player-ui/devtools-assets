@@ -51,7 +51,7 @@ export const InputComponent = (props: TransformedInput) => {
   const inputProps = useInputAssetProps(props);
 
   return file ? (
-    <FileInputComponent {...props}/>
+    <FileInputComponent {...props} />
   ) : (
     <FormControl isInvalid={Boolean(validation)}>
       {label && (
