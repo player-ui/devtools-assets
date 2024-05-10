@@ -11,11 +11,7 @@ const schema: any = {
 
 const bindings = makeBindingsForObject(schema);
 
-const view1 = (
-  <Input binding={bindings.fileContent} file={true}>
-    <Input.Label>Label</Input.Label>
-  </Input>
-);
+const view1 = <Input binding={bindings.fileContent} file={true} />;
 
 const flow: DSLFlow = {
   id: "input-basic",

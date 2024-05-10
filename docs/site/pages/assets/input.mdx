@@ -6,6 +6,8 @@
 
 It provides an `Input` component that can be used to acquire data from the user.
 
+The file type input is also available for uploading content by simply setting the `file` prop to `true`.
+
 ## Installation
 
 To install `@devtools-ui/input`, you can use pnpm or yarn:
@@ -41,6 +43,8 @@ myFlow = {
         <Input.Label>Label</Input.Label>
         <Input.Note>Some note</Input.Note>
       </Input>
+      /* File type Input */
+      <Input binding={b`contentBinding`} file={true} />
     </MyView>,
   ],
 };
