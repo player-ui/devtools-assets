@@ -277,6 +277,9 @@ importers:
       react-error-boundary:
         specifier: ^4.0.12
         version: 4.0.13(react@18.3.1)
+      react-flame-graph:
+        specifier: ^1.4.0
+        version: 1.4.0(react-dom@18.3.1)(react@18.3.1)
       react-icons:
         specifier: ^5.0.1
         version: 5.2.0(react@18.3.1)
@@ -363,6 +366,15 @@ importers:
         specifier: workspace:*
         version: link:../../addon-storybook
 
+  flame-graph:
+    dependencies:
+      '@devtools-ui/collection':
+        specifier: workspace:*
+        version: link:../collection
+      '@devtools-ui/text':
+        specifier: workspace:*
+        version: link:../text
+
   input:
     dependencies:
       '@devtools-ui/text':
@@ -413,6 +425,9 @@ importers:
       '@devtools-ui/copy-to-clipboard':
         specifier: workspace:*
         version: link:../copy-to-clipboard
+      '@devtools-ui/flame-graph':
+        specifier: workspace:*
+        version: link:../flame-graph
       '@devtools-ui/input':
         specifier: workspace:*
         version: link:../input
@@ -9215,6 +9230,12 @@ packages:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==, tarball: https://registry.npmjs.org/flatted/-/flatted-3.3.1.tgz}
     dev: false
 
+  /flow-bin@0.118.0:
+    resolution: {integrity: sha512-jlbUu0XkbpXeXhan5xyTqVK1jmEKNxE8hpzznI3TThHTr76GiFwK0iRzhDo4KNy+S9h/KxHaqVhTP86vA6wHCg==, tarball: https://registry.npmjs.org/flow-bin/-/flow-bin-0.118.0.tgz}
+    engines: {node: '>=0.10.0'}
+    hasBin: true
+    dev: false
+
   /flow-parser@0.235.1:
     resolution: {integrity: sha512-s04193L4JE+ntEcQXbD6jxRRlyj9QXcgEl2W6xSjH4l9x4b0eHoCHfbYHjqf9LdZFUiM5LhgpiqsvLj/AyOyYQ==, tarball: https://registry.npmjs.org/flow-parser/-/flow-parser-0.235.1.tgz}
     engines: {node: '>=0.4.0'}
@@ -11300,6 +11321,10 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
+  /memoize-one@3.1.1:
+    resolution: {integrity: sha512-YqVh744GsMlZu6xkhGslPSqSurOv6P+kLN2J3ysBZfagLcL5FdRK/0UpgLoL8hwjjEvvAVkjJZyFP+1T6p1vgA==, tarball: https://registry.npmjs.org/memoize-one/-/memoize-one-3.1.1.tgz}
+    dev: false
+
   /memoizerific@1.11.3:
     resolution: {integrity: sha512-/EuHYwAPdLtXwAwSZkh/Gutery6pD2KYd44oQLhAvQp/50mpyduZh8Q7PYHXTCJ+wuXxt7oij2LXyIJOOYFPog==, tarball: https://registry.npmjs.org/memoizerific/-/memoizerific-1.11.3.tgz}
     dependencies:
@@ -12988,6 +13013,20 @@ packages:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==, tarball: https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.2.tgz}
     dev: false
 
+  /react-flame-graph@1.4.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-DaCK9ZX+xK0mNca72kUE5cu6T8hGe/KLsefQWf+eT9sVt+0WP1dVxZCGD8Svfn2KrZB9Mv011Intg/yG2YWSxA==, tarball: https://registry.npmjs.org/react-flame-graph/-/react-flame-graph-1.4.0.tgz}
+    engines: {node: '>8.0.0'}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      flow-bin: 0.118.0
+      memoize-one: 3.1.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-window: 1.8.10(react-dom@18.3.1)(react@18.3.1)
+    dev: false
+
   /react-flatten-children@1.1.2:
     resolution: {integrity: sha512-9pnG/uw2Wa0n97s+yBZg/WgfMPE8RC4qNcr6iYbyb19sacCk3gRJCmCzAhTuANSWesFsK9v/yTKW42pkenaAfw==, tarball: https://registry.npmjs.org/react-flatten-children/-/react-flatten-children-1.1.2.tgz}
     dev: false
@@ -13151,6 +13190,19 @@ packages:
       prismjs: 1.29.0
       react: 18.3.1
       refractor: 3.6.0
+    dev: false
+
+  /react-window@1.8.10(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-Y0Cx+dnU6NLa5/EvoHukUD0BklJ8qITCtVEPY1C/nL8wwoZ0b5aEw8Ff1dOVHw7fCzMt55XfJDd8S8W8LCaUCg==, tarball: https://registry.npmjs.org/react-window/-/react-window-1.8.10.tgz}
+    engines: {node: '>8.0.0'}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@babel/runtime': 7.24.5
+      memoize-one: 3.1.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /react@18.3.1:

@@ -18,6 +18,7 @@ import {
 } from "@devtools-ui/copy-to-clipboard";
 import { CodeEditorAsset, CodeEditor } from "@devtools-ui/code-editor";
 import { RadioGroupAsset, RadioGroup } from "@devtools-ui/radio-group";
+import { FlameGraphAsset, FlameGraph } from "@devtools-ui/flame-graph";
 import { AssetsRegistryPlugin } from "./plugins";
 
 export default AssetsRegistryPlugin;
@@ -37,6 +38,7 @@ export type {
   ToggleAsset,
   CodeEditorAsset,
   RadioGroupAsset,
+  FlameGraphAsset,
 };
 
 export {
@@ -54,4 +56,5 @@ export {
   Toggle,
   CodeEditor,
   RadioGroup,
+  FlameGraph,
 };

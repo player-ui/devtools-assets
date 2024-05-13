@@ -17,3 +17,4 @@ packages:
   - "toggle"
   - "code-editor"
   - "radio-group"
+  - "flame-graph"

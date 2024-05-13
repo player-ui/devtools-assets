@@ -1,0 +1,20 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as FlameGraphStories from "./FlameGraph.stories";
+
+<Meta of={ FlameGraphStories } />
+
+# FlameGraph Asset
+
+> type: `flame-graph`
+
+It provides a `FlameGraph` component for visualizing profiling data.
+
+## DSL Properties
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `binding` | `string` | true | The binding to the profiling data source (`ProfilerNode`). |
+
+## Basic Use Case
+
+<Canvas of={ FlameGraphStories.Basic } />

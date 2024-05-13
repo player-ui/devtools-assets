@@ -30,6 +30,7 @@ import { TextAsset, TextComponent } from "@devtools-ui/text";
 import { ToggleAsset, ToggleComponent } from "@devtools-ui/toggle";
 import { CodeEditorAsset, CodeEditorComponent } from "@devtools-ui/code-editor";
 import { RadioGroupAsset, RadioGroupComponent } from "@devtools-ui/radio-group";
+import { FlameGraphAsset, FlameGraphComponent } from "@devtools-ui/flame-graph";
 import { TransformsPlugin } from "./TransformPlugin";
 
 const OptionalChakraThemeProvider = (
@@ -62,7 +63,8 @@ export class AssetsRegistryPlugin
         CopyToClipboardAsset,
         CodeEditorAsset,
         ToggleAsset,
-        RadioGroupAsset
+        RadioGroupAsset,
+        FlameGraphAsset
       ]
     >
 {
@@ -85,6 +87,7 @@ export class AssetsRegistryPlugin
         ["code-editor", CodeEditorComponent],
         ["toggle", ToggleComponent],
         ["radio-group", RadioGroupComponent],
+        ["flame-graph", FlameGraphComponent],
       ])
     );
 
