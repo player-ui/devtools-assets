@@ -85,6 +85,10 @@ const navigation: Navigation = {
               title: 'Radio Group',
               path: '/assets/radio-group',
             },
+            {
+              title: 'Flame Graph',
+              path: '/assets/flame-graph',
+            },
           ]
         },
       ],

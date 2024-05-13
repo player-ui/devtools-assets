@@ -25,6 +25,7 @@ js_pipeline(
         ":node_modules/@devtools-ui/toggle",
         ":node_modules/@devtools-ui/code-editor",
         ":node_modules/@devtools-ui/radio-group",
+        ":node_modules/@devtools-ui/flame-graph",
         "//:node_modules/@chakra-ui/react",
         "//:node_modules/@player-ui/asset-provider-plugin-react",
         "//:node_modules/@player-ui/asset-transform-plugin",
