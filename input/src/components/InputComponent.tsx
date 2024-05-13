@@ -10,7 +10,6 @@ import {
 import { TransformedInput } from "../types";
 import { ReactAsset } from "@player-ui/react";
 import { useInputAssetProps, useFileInputAssetProps } from "./hooks";
-import "./styles.css";
 
 const FileInputComponent = (props: TransformedInput) => {
   const hiddenFileInput: React.Ref<any> = useRef(null);
@@ -25,16 +24,20 @@ const FileInputComponent = (props: TransformedInput) => {
     setFileName(fileName);
   };
 
+  const { id, label } = props;
+
   const inputProps = useFileInputAssetProps({ ...props, handleFile });
 
   return (
     <FormControl>
       <Button className="button-file" onClick={handleClick}>
-        Select Content
+        <FormLabel style={{ margin: 0 }}>
+          {label ? <ReactAsset {...label.asset} /> : <>Select Content</>}
+        </FormLabel>
       </Button>
       <Input
-        id={props.id}
-        name={props.id}
+        id={id}
+        name={id}
         {...inputProps}
         style={{ display: "none" }}
         ref={hiddenFileInput}

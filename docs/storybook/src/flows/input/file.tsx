@@ -14,7 +14,7 @@ const bindings = makeBindingsForObject(schema);
 const view1 = <Input binding={bindings.fileContent} file={true} />;
 
 const flow: DSLFlow = {
-  id: "input-basic",
+  id: "input-file",
   views: [view1],
   data: {
     fileContent: "",
