@@ -206,7 +206,7 @@ export const useInputAssetProps = (
 export const useFileInputAssetProps = (
   props: TransformedInput & { handleFile: (name: string) => void }
 ) => {
-  /** Parses file content for upload into a string if file type Inpu */
+  /** Parses file content for upload into a string if file type Input */
   const onFileUpload: React.ChangeEventHandler = (e): void => {
     const fileList = (<HTMLInputElement>e.target).files;
     const file = fileList ? fileList[0] : "";
