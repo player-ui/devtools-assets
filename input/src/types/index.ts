@@ -25,8 +25,11 @@ export interface InputAsset extends Asset<"input"> {
   /** Max character length in the Input */
   maxLength?: number;
 
-  /** For file uploader input */
+  /** For file uploader Input */
   file?: boolean;
+
+  /** File extensions to be accepted by the file uploader Input, .json supported by default */
+  accept?: string[];
 }
 
 export interface TransformedInput extends InputAsset {

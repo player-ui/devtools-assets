@@ -206,6 +206,12 @@ export const useInputAssetProps = (
 export const useFileInputAssetProps = (
   props: TransformedInput & { handleFile: (name: string) => void }
 ) => {
+  const { accept } = props;
+
+  const acceptedExtensions = accept
+    ? accept.concat(".json").join(", ")
+    : ".json";
+
   /** Parses file content for upload into a string if file type Input */
   const onFileUpload: React.ChangeEventHandler = (e): void => {
     const fileList = (<HTMLInputElement>e.target).files;
@@ -230,6 +236,6 @@ export const useFileInputAssetProps = (
   return {
     type: "file",
     onChange: onFileUpload,
-    accept: ".json, .txt",
+    accept: acceptedExtensions,
   };
 };

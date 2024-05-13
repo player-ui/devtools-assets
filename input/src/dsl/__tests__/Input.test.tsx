@@ -84,4 +84,18 @@ describe("DSL: Input", () => {
       binding: "binding",
     });
   });
+
+  test("It should render a file uploader Input asset with accepted file extensions", async () => {
+    const rendered = await render(
+      <Input binding={b`binding`} file={true} accept={[".tsx", ".jsx"]} />
+    );
+
+    expect(rendered.jsonValue).toStrictEqual({
+      id: "root",
+      type: "input",
+      file: true,
+      accept: [".tsx", ".jsx"],
+      binding: "binding",
+    });
+  });
 });
