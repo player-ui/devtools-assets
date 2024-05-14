@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
 
 // https://github.com/chakra-ui/chakra-ui-docs/blob/main/src/components/header.tsx
+// eslint-disable-next-line react/display-name
 export const GithubIcon = React.forwardRef<SVGSVGElement>(
-  (props: React.ComponentProps<'svg'>, ref) => (
+  (props: React.ComponentProps<"svg">, ref) => (
     <svg ref={ref} viewBox="0 0 20 20" {...props}>
       <path
         fill="currentColor"
