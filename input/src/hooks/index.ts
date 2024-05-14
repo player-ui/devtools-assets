@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import type { TransformedInput } from "../types";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,5 +1,6 @@
 import { useInputAssetProps, useFileInputAssetProps } from "..";
 import { describe, expect, test } from "vitest";
+import { renderHook } from "@testing-library/react-hooks";
 import type { TransformedInput } from "../../types";
 
 const inputAssetPropsMock: TransformedInput = {
@@ -20,15 +21,19 @@ const inputFileAssetPropsMock: TransformedInput = {
 
 describe("useInputProps hooks", () => {
   test("Returns regular input props and handlers", () => {
-    const result = useInputAssetProps(inputAssetPropsMock);
+    const { result } = renderHook(() =>
+      useInputAssetProps(inputAssetPropsMock)
+    );
 
-    expect(result).toMatchSnapshot();
+    expect(result.current).toMatchInlineSnapshot();
   });
 
   test("returns file upload input props and handlers", () => {
-    const result = useFileInputAssetProps(inputFileAssetPropsMock);
+    const { result } = renderHook(() =>
+      useFileInputAssetProps(inputFileAssetPropsMock)
+    );
 
-    expect(result.accept).toBe(".txt, .json");
-    expect(result.onChange).toBeDefined();
+    expect(result.current.accept).toBe(".txt, .json");
+    expect(result.current.onChange).toBeDefined();
   });
 });
