@@ -1,41 +1,28 @@
 load("@npm//:defs.bzl", "npm_link_all_packages")
-load("@npm//:webpack-cli/package_json.bzl", webpack_bin = "bin")
-load("@npm//:webpack-dev-server/package_json.bzl", webpack_dev_server_bin = "bin")
+load("@aspect_rules_ts//ts:defs.bzl", "ts_config")
+load("//docs/site:defs.bzl", "next")
+load("@npm//docs/site:next/package_json.bzl", next_bin = "bin")
 
-npm_link_all_packages(
-    name = "node_modules",
-)
+npm_link_all_packages(name = "node_modules")
 
-srcs = glob([
-    "public/**/*",
-    "pages/**/*",
-    "styles/*",
-    "app/**/*",
-    "components/**/*",
-    "plugins/*",
-    "utils/*",
-    "config/*",
-]) + [
-    "package.json",
-    "tsconfig.json",
-    "webpack.config.ts",
-]
 
 build_deps = [
     "//:typings",
-    "//:node_modules/webpack",
     "//:node_modules/ts-loader",
     "//:node_modules/ts-node",
-    "//:node_modules/html-webpack-plugin",
     "//:node_modules/css-loader",
     "//:node_modules/style-loader",
     "//:node_modules/postcss-loader",
     "//:node_modules/babel-loader",
     "//:node_modules/@babel/preset-env",
     "//:node_modules/@babel/preset-react",
-    "//:node_modules/copy-webpack-plugin",
-    "//:node_modules/terser-webpack-plugin",
+    "//:node_modules/@next/mdx",
 ]
+
+next_bin.next_binary(
+    name = "next_js_binary",
+    visibility = ["//visibility:public"],
+)
 
 deps = [
     ":node_modules/@player-ui/react",
@@ -45,6 +32,7 @@ deps = [
     "//:node_modules/tslib",
     "//:node_modules/@types/react",
     "//:node_modules/@types/node",
+    "//:node_modules/@next/mdx",
     # "//:node_modules/next",
     "//:node_modules/tailwindcss",
     "//:node_modules/tailwindcss-animate",
@@ -86,36 +74,33 @@ deps = [
     "//:node_modules/rehype-autolink-headings",
     "//:node_modules/remove-markdown",
     "//:node_modules/github-slugger",
+    "//:node_modules/@next/mdx",
     "//:node_modules/gray-matter",
     # "//:node_modules/nextjs-google-analytics",
 ]
 
-webpack_bin.webpack_cli(
-    name = "site",
-    srcs = srcs + deps + build_deps,
-    args = [
-        "build",
-    ],
-    chdir = "docs/site",
-    env = {
-        "NODE_OPTIONS": "--loader ts-node/esm",
-        "NODE_ENV": "production",
-    },
-    out_dirs = ["dist"],
+
+ts_config(
+    name = "tsconfig",
+    src = "tsconfig.json",
     visibility = ["//visibility:public"],
 )
 
-webpack_dev_server_bin.webpack_dev_server_binary(
-    name = "start",
-    args = [],
-    chdir = package_name(),
-    data = srcs + deps + build_deps,
-    env = {
-        "NODE_OPTIONS": "--loader ts-node/esm",
-        "NODE_ENV": "development",
-    },
-    tags = [
-        "ibazel_notify_changes",
+next(
+    name = "next",
+    srcs = [
+        "//docs/site/pages",
+        "//docs/site/public",
     ],
-    visibility = ["//visibility:public"],
+    data = [
+        "next.config.mjs",
+        ":node_modules/next",
+        ":node_modules/react",
+        ":node_modules/react-dom",
+        ":node_modules/typescript",
+        "//:node_modules/@next/mdx",
+    ],
+    next_bin = "./node_modules/next/dist/bin/next",
+    next_js_binary = "//docs/site:next_js_binary",
 )
+

@@ -1,6 +1,6 @@
-import React from 'react';
-import path from 'path';
-import Link from 'next/link';
+import React from "react";
+import path from "path";
+import Link from "next/link";
 import {
   Heading,
   Text,
@@ -27,11 +27,11 @@ import {
   AlertDescription,
   AlertIcon,
   Box,
-} from '@chakra-ui/react';
-import { MDXProviderComponents } from '@mdx-js/react';
-import { useRouter } from 'next/router';
-import { CodeHighlight } from './code-highlight';
-import { withBasePrefix } from './Image';
+} from "@chakra-ui/react";
+import { MDXProviderComponents } from "@mdx-js/react";
+import { useRouter } from "next/router";
+import { CodeHighlight } from "./code-highlight";
+import { withBasePrefix } from "./Image";
 
 /**
  * Generic Tab Component that extends Chakra's Tab
@@ -50,18 +50,18 @@ const GradleTab = (props: any) => {
 };
 
 const CodeTabsNameMap = new Map([
-  ['core', 'Core'],
-  ['react', 'React'],
-  ['ios', 'iOS'],
-  ['android', 'Android'],
+  ["core", "Core"],
+  ["react", "React"],
+  ["ios", "iOS"],
+  ["android", "Android"],
 ]);
 
 const ContentTabsNameMap = new Map([
-  ['json', 'JSON'],
-  ['tsx', 'TSX'],
+  ["json", "JSON"],
+  ["tsx", "TSX"],
 ]);
 
-const CodeTabsMap = new Map([['gradle', GradleTab]]);
+const CodeTabsMap = new Map([["gradle", GradleTab]]);
 
 /**
  * Generic wrapper around Chakra's tab to make use in mdx easier.
@@ -99,7 +99,6 @@ const Tabs = (props: any) => {
   );
 };
 
-
 /**
  * Tab section for Content Authoring. This should include tsx and/or example JSON files.
  */
@@ -112,15 +111,15 @@ const ContentTabs = (props: React.PropsWithChildren<unknown>) => {
 };
 
 const langMap: Record<string, string> = {
-  js: 'javascript',
-  ts: 'typescript',
+  js: "javascript",
+  ts: "typescript",
 };
 
 /**
  * Code Block comopnent
  */
-const CodeBlock = ({children: {props}}: any) => {
-  let lang = props.className?.split('-')[1];
+const CodeBlock = ({ children: { props } }: any) => {
+  let lang = props.className?.split("-")[1];
   if (langMap[lang] !== undefined) {
     lang = langMap[lang];
   }
@@ -135,21 +134,21 @@ const CodeBlock = ({children: {props}}: any) => {
 /**
  * Image Component
  */
-export const Img = (props: JSX.IntrinsicElements['img']) => {
-  const darkModeInvert = props.src?.includes('darkModeInvert');
-  const darkModeOnly = props.src?.includes('darkModeOnly');
-  const lightModeOnly = props.src?.includes('lightModeOnly');
+export const Img = (props: JSX.IntrinsicElements["img"]) => {
+  const darkModeInvert = props.src?.includes("darkModeInvert");
+  const darkModeOnly = props.src?.includes("darkModeOnly");
+  const lightModeOnly = props.src?.includes("lightModeOnly");
 
   const { colorMode } = useColorMode();
 
   const filterStyles = useColorModeValue(
     undefined,
-    'invert(80%) hue-rotate(180deg);'
+    "invert(80%) hue-rotate(180deg);"
   );
 
   if (
-    (colorMode === 'light' && darkModeOnly) ||
-    (colorMode === 'dark' && lightModeOnly)
+    (colorMode === "light" && darkModeOnly) ||
+    (colorMode === "dark" && lightModeOnly)
   ) {
     return null;
   }
@@ -171,7 +170,7 @@ export const Img = (props: JSX.IntrinsicElements['img']) => {
 export const useNormalizedUrl = (url: string) => {
   const router = useRouter();
 
-  if (!url.startsWith('.')) {
+  if (!url.startsWith(".")) {
     return url;
   }
 
@@ -184,11 +183,11 @@ export const useNormalizedUrl = (url: string) => {
   return path.join(path.dirname(router.pathname), withoutExt);
 };
 
-export const InlineCode = (props: JSX.IntrinsicElements['code']) => {
+export const InlineCode = (props: JSX.IntrinsicElements["code"]) => {
   return (
     <ChakraCode
       colorScheme="gray"
-      bg={useColorModeValue('blue.100', 'gray.800')}
+      bg={useColorModeValue("blue.100", "gray.800")}
       {...props}
     />
   );
@@ -198,30 +197,40 @@ type ChakraAlertProps = React.PropsWithChildren<{
   status?: AlertStatus;
   title?: string;
   description?: string;
-}>
+}>;
 
 export const Alert = (props: ChakraAlertProps) => {
   return (
-      <ChakraAlert status={props.status} variant='left-accent'>
-        <AlertIcon />
-        <Box flex={1}>
-          {props.title && <AlertTitle>{props.title}</AlertTitle>}
-          {props.description && <AlertDescription>{props.description}</AlertDescription>}
-          {props.children}
-        </Box>
-      </ChakraAlert>
+    <ChakraAlert status={props.status} variant="left-accent">
+      <AlertIcon />
+      <Box flex={1}>
+        {props.title && <AlertTitle>{props.title}</AlertTitle>}
+        {props.description && (
+          <AlertDescription>{props.description}</AlertDescription>
+        )}
+        {props.children}
+      </Box>
+    </ChakraAlert>
   );
 };
-
 
 /**
  * Anchor tab component wrapping Chakra's
  */
-const A = (props: JSX.IntrinsicElements['a']) => {
+const A = (props: JSX.IntrinsicElements["a"]) => {
   const { href, ...other } = props;
   return (
-    <Link passHref href={useNormalizedUrl(href || '')} style={{color: 'blue'}} {...other}>
-      <Box color={useColorModeValue('blue.800', 'blue.600')} style={{display: 'inline'}} {...other} />
+    <Link
+      passHref
+      href={useNormalizedUrl(href || "")}
+      style={{ color: "blue" }}
+      {...other}
+    >
+      <Box
+        color={useColorModeValue("blue.800", "blue.600")}
+        style={{ display: "inline" }}
+        {...other}
+      />
     </Link>
   );
 };

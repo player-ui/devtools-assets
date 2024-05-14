@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
-import MDX from '@next/mdx';
-import remarkGFM from 'remark-gfm'
+import MDX from "@next/mdx";
+import remarkGFM from "remark-gfm";
 
 export const BASE_PREFIX =
-  process.env.NODE_ENV === 'production' ? '/DOCS_BASE_PATH' : undefined;
+  process.env.NODE_ENV === "production" ? "/DOCS_BASE_PATH" : undefined;
 
 const withMDX = MDX({
   extension: /\.mdx?$/,
@@ -15,19 +15,21 @@ const withMDX = MDX({
     // If using `MDXProvider`, uncomment the following line.
     providerImportSource: "@mdx-js/react",
   },
-})
-
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: BASE_PREFIX,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   // pageExtensions including md and mdx
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   // Any other Next.js config goes below
   reactStrictMode: true,
-}
+};
 
 // Combining MDX config with Next.js config
-export default withMDX(nextConfig)
+export default withMDX(nextConfig);

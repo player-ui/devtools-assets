@@ -18,3 +18,4 @@ packages:
   - "code-editor"
   - "radio-group"
   - "flame-graph"
+  - "docs/site"

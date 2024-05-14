@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   Flex,
   Button,
@@ -18,14 +18,14 @@ import {
   useDisclosure,
   useBreakpointValue,
   Text,
-} from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import type { Route } from '../config/navigation';
-import NAV, { PATH_TO_NAV } from '../config/navigation';
-import { ColorSchemeSwitch } from './ColorSchemeSwitch';
-import { GITHUB_URL } from '../config/constants';
-import { withBasePrefix } from './Image';
-import { GithubIcon } from './gh-icon';
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import type { Route } from "../config/navigation";
+import NAV, { PATH_TO_NAV } from "../config/navigation";
+import { ColorSchemeSwitch } from "./ColorSchemeSwitch";
+import { GITHUB_URL } from "../config/constants";
+import { withBasePrefix } from "./Image";
+import { GithubIcon } from "./gh-icon";
 
 const getPathFromRoute = (route: Route): string => {
   if (route.path) {
@@ -41,9 +41,8 @@ const getPathFromRoute = (route: Route): string => {
     }
   }
 
-  return '';
+  return "";
 };
-
 
 const NavTitleOrLink = (props: { route: Route }) => {
   const { route } = props;
@@ -51,7 +50,7 @@ const NavTitleOrLink = (props: { route: Route }) => {
   const { pathname } = useRouter();
   const router = useRouter();
   const langpref = router.query.lang;
-  const selectedButtonColor = useColorModeValue('blue.800', 'blue.600');
+  const selectedButtonColor = useColorModeValue("blue.800", "blue.600");
 
   if (route.path) {
     return (
@@ -67,7 +66,7 @@ const NavTitleOrLink = (props: { route: Route }) => {
             size="sm"
             variant="ghost"
             mx="3"
-            colorScheme={pathname === route.path ? 'blue' : 'gray'}
+            colorScheme={pathname === route.path ? "blue" : "gray"}
             color={pathname === route.path ? selectedButtonColor : undefined}
           >
             <HStack spacing="2">
@@ -156,16 +155,16 @@ export const TopNavigation = () => {
 
   const logoSrc = useBreakpointValue({
     base: useColorModeValue(
-      withBasePrefix('/logo/logo-light-small.png'),
-      withBasePrefix('/logo/logo-dark-small.png')
+      withBasePrefix("/logo/logo-light-small.png"),
+      withBasePrefix("/logo/logo-dark-small.png")
     ),
     lg: useColorModeValue(
-      withBasePrefix('/logo/logo-light-large.png'),
-      withBasePrefix('/logo/logo-dark-large.png')
+      withBasePrefix("/logo/logo-light-large.png"),
+      withBasePrefix("/logo/logo-dark-large.png")
     ),
   });
 
-  const selectedButtonColor = useColorModeValue('blue.800', 'blue.600');
+  const selectedButtonColor = useColorModeValue("blue.800", "blue.600");
 
   return (
     <Flex w="100%" h="100%" direction="column" align="center">
@@ -174,12 +173,17 @@ export const TopNavigation = () => {
           <IconButton
             variant="ghost"
             icon={<HamburgerIcon />}
-            display={{ base: 'flex', md: 'none' }}
+            display={{ base: "flex", md: "none" }}
             aria-label="Open Side Navigation Menu"
             onClick={mobileNavDisclosure.onOpen}
           />
           <Link passHref href="/">
-            <Image alt="Player Logo" height="48px" src={logoSrc} style={{ margin: '16px 0 16px 0' }} />
+            <Image
+              alt="Player Logo"
+              height="48px"
+              src={logoSrc}
+              style={{ margin: "16px 0 16px 0" }}
+            />
           </Link>
         </HStack>
 
@@ -190,10 +194,10 @@ export const TopNavigation = () => {
               const isSelected = currentTopLevelRoute?.title === topRoute.title;
 
               return (
-                <Link key={topRoute.title} passHref href={navRoute} >
+                <Link key={topRoute.title} passHref href={navRoute}>
                   <Button
                     variant="ghost"
-                    colorScheme={isSelected ? 'blue' : 'gray'}
+                    colorScheme={isSelected ? "blue" : "gray"}
                     color={isSelected ? selectedButtonColor : undefined}
                     size="md"
                     ml="0"

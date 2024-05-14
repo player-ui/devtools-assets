@@ -1,0 +1,56 @@
+load("@aspect_rules_jest//jest:defs.bzl", "jest_test")
+load("@aspect_rules_ts//ts:defs.bzl", "ts_project")
+
+
+SRCS = [
+    "_app.tsx",
+    "index.tsx",
+]
+
+SPECS = [
+    "index.test.tsx",
+]
+
+ts_project(
+    name = "pages",
+    srcs = SRCS,
+    declaration = True,
+    resolve_json_module = True,
+    transpiler = "tsc",
+    tsconfig = "//docs/site:tsconfig",
+    visibility = ["//docs/site:__subpackages__"],
+    deps = [
+        "//docs/site:node_modules/@types/react",
+        "//docs/site:node_modules/@types/react-dom",
+        "//docs/site:node_modules/next",
+        "//docs/site:node_modules/@chakra-ui/react",       
+        
+    ],
+)
+
+ts_project(
+    name = "specs",
+    srcs = SPECS,
+    resolve_json_module = True,
+    transpiler = "tsc",
+    tsconfig = "//docs/site:tsconfig",
+    deps = [
+        "//docs/site:node_modules/@testing-library/jest-dom",
+        "//docs/site:node_modules/@testing-library/react",
+        "//docs/site:node_modules/@types/jest",
+    ],
+)
+
+jest_test(
+    name = "jest_test",
+    config = "//docs/site:jest_config",
+    data = [
+        ":specs",
+        "//docs/site:node_modules/jest-environment-jsdom",
+        "//docs/site:node_modules/jest-transform-stub",
+        "//docs/site:node_modules/react",
+        "//docs/site:package_json",
+        "//docs/site/styles",
+    ],
+    node_modules = "//docs/site:node_modules",
+)
