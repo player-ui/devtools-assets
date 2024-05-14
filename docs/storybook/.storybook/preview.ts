@@ -13,6 +13,7 @@ import DevtoolsUIPlugin, {
   Toggle,
   CodeEditor,
   RadioGroup,
+  FlameGraph,
 } from "@devtools-ui/plugin";
 import { Preview } from "@storybook/react";
 import { CommonTypesPlugin } from "@player-ui/common-types-plugin";
@@ -42,6 +43,7 @@ const components = {
   Toggle,
   CodeEditor,
   RadioGroup,
+  FlameGraph,
 };
 
 export const parameters = {

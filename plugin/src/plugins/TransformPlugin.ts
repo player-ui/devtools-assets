@@ -9,6 +9,7 @@ import { copyToClipboardTransform } from "@devtools-ui/copy-to-clipboard";
 import { toggleTransform } from "@devtools-ui/toggle";
 import { codeEditorTransform } from "@devtools-ui/code-editor";
 import { radioGroupTransform } from "@devtools-ui/radio-group";
+import { flameGraphTransform } from "@devtools-ui/flame-graph";
 
 export class TransformsPlugin implements PlayerPlugin {
   name = "devtools-ui-transforms";
@@ -25,6 +26,7 @@ export class TransformsPlugin implements PlayerPlugin {
         [{ type: "toggle" }, toggleTransform],
         [{ type: "code-editor" }, codeEditorTransform],
         [{ type: "radio-group" }, radioGroupTransform],
+        [{ type: "flame-graph" }, flameGraphTransform],
       ])
     );
   }
