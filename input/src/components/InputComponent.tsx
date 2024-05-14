@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { TransformedInput } from "../types";
 import { ReactAsset } from "@player-ui/react";
-import { useInputAssetProps, useFileInputAssetProps } from "./hooks";
+import { useInputAssetProps, useFileInputAssetProps } from "../hooks";
 
 const FileInputComponent = (props: TransformedInput) => {
   const hiddenFileInput: React.Ref<any> = useRef(null);

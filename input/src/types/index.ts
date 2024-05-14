@@ -47,4 +47,7 @@ export interface TransformedInput extends InputAsset {
 
   /** The dataType defined from the schema */
   dataType?: Schema.DataType;
+
+  /** Handler for persisting file name for file type input */
+  handleFile?: (name: string) => void;
 }
