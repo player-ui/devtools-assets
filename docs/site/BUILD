@@ -1,10 +1,21 @@
 load("@npm//:defs.bzl", "npm_link_all_packages")
 load("@aspect_rules_ts//ts:defs.bzl", "ts_config")
 load("//docs/site:defs.bzl", "next")
-load("@npm//docs/site:next/package_json.bzl", next_bin = "bin")
+load("@npm//:next/package_json.bzl", next_bin = "bin")
+load("//docs/site:defs.bzl", "next")
 
 npm_link_all_packages(name = "node_modules")
 
+next_bin.next_binary(
+    name = "next_js_binary",
+    visibility = ["//visibility:public"],
+)
+
+ts_config(
+    name = "tsconfig",
+    src = "//docs/site:tsconfig.json",
+    visibility = ["//visibility:public"],
+)
 
 build_deps = [
     "//:typings",
@@ -19,10 +30,6 @@ build_deps = [
     "//:node_modules/@next/mdx",
 ]
 
-next_bin.next_binary(
-    name = "next_js_binary",
-    visibility = ["//visibility:public"],
-)
 
 deps = [
     ":node_modules/@player-ui/react",
@@ -79,18 +86,18 @@ deps = [
     # "//:node_modules/nextjs-google-analytics",
 ]
 
-
-ts_config(
-    name = "tsconfig",
-    src = "tsconfig.json",
-    visibility = ["//visibility:public"],
-)
+# next_bin.next(
+#     name = "next",
+#     src = glob(["src/**/*"]),
+#     deps = deps,
+#     out_dirs = [""]
+# )
 
 next(
     name = "next",
     srcs = [
         "//docs/site/pages",
-        "//docs/site/public",
+        # "//docs/site/public",
     ],
     data = [
         "next.config.mjs",
