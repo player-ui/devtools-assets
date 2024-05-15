@@ -15,4 +15,5 @@ packages:
   - "table"
   - "copy-to-clipboard"
   - "code-editor"
+  - "docs/site/pages"
   - "docs/site"
