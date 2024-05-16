@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import type { TransformedInput } from "../types";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -43,7 +43,7 @@ export const useInputAssetProps = (
   props: TransformedInput,
   config?: InputHookConfig
 ) => {
-  const [localValue, setLocalValue] = React.useState(props.value ?? "");
+  const [localValue, setLocalValue] = useState(props.value ?? "");
   const formatTimerRef = React.useRef<NodeJS.Timeout | undefined>(undefined);
 
   const { formatDelay, decimalSymbol, prefix, suffix } = getConfig(config);
