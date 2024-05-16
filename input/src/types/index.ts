@@ -24,6 +24,12 @@ export interface InputAsset extends Asset<"input"> {
 
   /** Max character length in the Input */
   maxLength?: number;
+
+  /** For file uploader Input */
+  file?: boolean;
+
+  /** File extensions to be accepted by the file uploader Input, .json supported by default */
+  accept?: string[];
 }
 
 export interface TransformedInput extends InputAsset {
@@ -41,4 +47,7 @@ export interface TransformedInput extends InputAsset {
 
   /** The dataType defined from the schema */
   dataType?: Schema.DataType;
+
+  /** Handler for persisting file name for file type input */
+  handleFile?: (name: string) => void;
 }

@@ -10,3 +10,5 @@ const meta: Meta<typeof Input> = {
 export default meta;
 
 export const Basic = createDSLStory(() => import("../flows/input/basic?raw"));
+
+export const File = createDSLStory(() => import("../flows/input/file?raw"));

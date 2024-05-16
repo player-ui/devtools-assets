@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import type { TransformedInput } from "../types";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -43,8 +43,8 @@ export const useInputAssetProps = (
   props: TransformedInput,
   config?: InputHookConfig
 ) => {
-  const [localValue, setLocalValue] = React.useState(props.value ?? "");
-  const formatTimerRef = React.useRef<NodeJS.Timeout | undefined>(undefined);
+  const [localValue, setLocalValue] = useState(props.value ?? "");
+  const formatTimerRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const { formatDelay, decimalSymbol, prefix, suffix } = getConfig(config);
 
@@ -186,12 +186,12 @@ export const useInputAssetProps = (
 
   // Update the stored value if data changes
   const propsValue = props.value;
-  React.useEffect(() => {
+  useEffect(() => {
     setLocalValue(formatValueWithAffix(propsValue));
   }, [propsValue]);
 
   /** clear anything pending on unmount of input */
-  React.useEffect(() => clearPending, []);
+  useEffect(() => clearPending, []);
 
   return {
     onBlur,
@@ -199,5 +199,41 @@ export const useInputAssetProps = (
     onKeyDown,
     onFocus,
     value: localValue,
+  };
+};
+
+/** Props for file type Input */
+export const useFileInputAssetProps = (props: TransformedInput) => {
+  const { accept } = props;
+
+  const acceptedExtensions = accept
+    ? accept.concat(".json").join(", ")
+    : ".json";
+
+  /** Parses file content for upload into a string if file type Input */
+  const onFileUpload: React.ChangeEventHandler = (e): void => {
+    const fileList = (<HTMLInputElement>e.target).files;
+    const file = fileList ? fileList[0] : "";
+    const reader = new FileReader();
+
+    reader.addEventListener(
+      "load",
+      () => {
+        // this will set the file contents in the data model
+        props.set(reader.result as string);
+      },
+      false
+    );
+
+    if (file) {
+      reader.readAsText(file);
+      props.handleFile && props.handleFile(file.name);
+    }
+  };
+
+  return {
+    type: "file",
+    onChange: onFileUpload,
+    accept: acceptedExtensions,
   };
 };
