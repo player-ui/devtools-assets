@@ -28,10 +28,10 @@ import {
   AlertIcon,
   Box,
 } from "@chakra-ui/react";
-import { MDXProviderComponents } from "@mdx-js/react";
 import { useRouter } from "next/router";
 import { CodeHighlight } from "./code-highlight";
 import { withBasePrefix } from "./Image";
+import { MDXProvider } from "@mdx-js/react";
 
 /**
  * Generic Tab Component that extends Chakra's Tab
@@ -214,6 +214,14 @@ export const Alert = (props: ChakraAlertProps) => {
   );
 };
 
+const AnchorLabel = (props: any) => (
+  <Box
+    color={useColorModeValue("blue.800", "blue.600")}
+    style={{ display: "inline" }}
+    {...props}
+  />
+);
+
 /**
  * Anchor tab component wrapping Chakra's
  */
@@ -226,16 +234,12 @@ const A = (props: JSX.IntrinsicElements["a"]) => {
       style={{ color: "blue" }}
       {...other}
     >
-      <Box
-        color={useColorModeValue("blue.800", "blue.600")}
-        style={{ display: "inline" }}
-        {...other}
-      />
+      <AnchorLabel {...other} />
     </Link>
   );
 };
 
-export const MDXComponents: MDXProviderComponents = {
+export const MDXComponents: Parameters<typeof MDXProvider>[0]["components"] = {
   h1: (props: any) => <Heading my="1.5rem" as="h1" size="xl" {...props} />,
   h2: (props: any) => <Heading my="1.5rem" as="h2" size="lg" {...props} />,
   h3: (props: any) => <Heading my="1.5rem" as="h3" size="md" {...props} />,
