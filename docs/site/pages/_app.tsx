@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ChakraProvider, useColorMode } from "@chakra-ui/react";
@@ -28,7 +28,9 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
             <Head>
               <title>Devtools</title>
             </Head>
-            <Component {...pageProps} />
+            <Suspense fallback={<>Loading...</>}>
+              <Component {...pageProps} />
+            </Suspense>
           </MdxLayout>
         </ChakraProvider>
       </Context>

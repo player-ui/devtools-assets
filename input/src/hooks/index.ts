@@ -1,4 +1,8 @@
+<<<<<<< HEAD:input/src/hooks/index.ts
 import React, { useState, useEffect, useRef } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> 8855109 (WIP: attempt at downgrading to 13.3.4):input/src/components/hooks.ts
 import type { TransformedInput } from "../types";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -44,7 +48,11 @@ export const useInputAssetProps = (
   config?: InputHookConfig
 ) => {
   const [localValue, setLocalValue] = useState(props.value ?? "");
+<<<<<<< HEAD:input/src/hooks/index.ts
   const formatTimerRef = useRef<NodeJS.Timeout | undefined>(undefined);
+=======
+  const formatTimerRef = React.useRef<NodeJS.Timeout | undefined>(undefined);
+>>>>>>> 8855109 (WIP: attempt at downgrading to 13.3.4):input/src/components/hooks.ts
 
   const { formatDelay, decimalSymbol, prefix, suffix } = getConfig(config);
 
