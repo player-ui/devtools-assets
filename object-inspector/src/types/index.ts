@@ -7,6 +7,9 @@ export interface ObjectInspectorAsset<AnyTextAsset extends Asset = Asset>
 
   /** A text-like asset for the action's label */
   label?: AssetWrapper<AnyTextAsset>;
+
+  /** Flag if a path-to-prop filter is to get included */
+  filter?: boolean;
 }
 
 export interface TransformedObjectInspector extends ObjectInspectorAsset {

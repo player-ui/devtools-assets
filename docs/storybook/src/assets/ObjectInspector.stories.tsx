@@ -12,3 +12,7 @@ export default meta;
 export const Basic = createDSLStory(
   () => import("../flows/object-inpector/basic?raw")
 );
+
+export const Filter = createDSLStory(
+  () => import("../flows/object-inpector/filter?raw")
+);
