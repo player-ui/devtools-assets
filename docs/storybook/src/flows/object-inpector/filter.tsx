@@ -15,7 +15,7 @@ const schema = {
 const bindings = makeBindingsForObject(schema);
 
 const view1 = (
-  <ObjectInspector binding={bindings.foo}>
+  <ObjectInspector binding={bindings.foo} filter={true}>
     <ObjectInspector.Label>With Filter</ObjectInspector.Label>
   </ObjectInspector>
 );

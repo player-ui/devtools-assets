@@ -1,30 +1,29 @@
 import React, { useState } from "react";
 import { Text, Input } from "@chakra-ui/react";
 import { ObjectInspector as ObjectorInspectorDS } from "@devtools-ds/object-inspector";
-import { ReactAsset, DataModel } from "@player-ui/react";
+import { ReactAsset } from "@player-ui/react";
+import { DataModel } from "@player-ui/types";
 import { ObjectInspectorAsset } from "../types";
 
 const FilterResults = (props: ObjectInspectorAsset) => {
   const { data } = props;
 
   const [filterCriteria, setFilterCriteria] = useState("");
-  const [result, setResult] = useState<object>(data || {});
 
-  const findValue = () => {
-    for (
-      let index = 0,
-        path: string[] = filterCriteria.split("."),
-        len = path.length;
-      index < len;
-      index++
-    ) {
-      // setResult(result[path[index]]);
+  const getPathvalue = (object: DataModel, path: string) => {
+    const keys = path.split(".");
+    let result: any = object;
+    for (const key of keys) {
+      if (!result[key]) return;
+      result = result[key];
     }
     return result;
   };
 
   const onChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setFilterCriteria(e.target.value);
+
+    const result = getPathvalue(data as DataModel, e.target.value);
   };
 
   return (
