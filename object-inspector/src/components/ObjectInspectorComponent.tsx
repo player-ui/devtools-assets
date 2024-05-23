@@ -9,12 +9,13 @@ const FilterResults = (props: ObjectInspectorAsset) => {
   const { data } = props;
 
   const [filterCriteria, setFilterCriteria] = useState("");
+  const [resultData, setResultData] = useState("Path result will display here");
 
   const getPathvalue = (object: DataModel, path: string) => {
     const keys = path.split(".");
     let result: any = object;
     for (const key of keys) {
-      if (!result[key]) return;
+      if (!result[key]) return "No result";
       result = result[key];
     }
     return result;
@@ -24,14 +25,23 @@ const FilterResults = (props: ObjectInspectorAsset) => {
     setFilterCriteria(e.target.value);
 
     const result = getPathvalue(data as DataModel, e.target.value);
+    setResultData(result);
   };
 
   return (
-    <Input
-      placeholder="Search path..."
-      value={filterCriteria}
-      onChange={onChangeHandler}
-    />
+    <>
+      <Input
+        placeholder="Search path..."
+        value={filterCriteria}
+        onChange={onChangeHandler}
+      />
+      {/* <ObjectorInspectorDS
+        data={resultData}
+        includePrototypes={false}
+        expandLevel={7}
+      /> */}
+      <Text>{JSON.stringify(resultData)}</Text>
+    </>
   );
 };
 
@@ -43,7 +53,7 @@ export const ObjectInspectorComponent = (props: ObjectInspectorAsset) => {
       {label && <ReactAsset {...label} />}
       {data ? (
         <>
-          {filter && <FilterResults {...props} />}
+          {filter && <FilterResults {...props} style={{ margin: "16px" }} />}
           <ObjectorInspectorDS
             data={data}
             includePrototypes={false}
