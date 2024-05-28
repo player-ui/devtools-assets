@@ -2,8 +2,8 @@ load("@npm//:defs.bzl", "npm_link_all_packages")
 load("@aspect_rules_ts//ts:defs.bzl", "ts_config","ts_project")
 load("//docs/site:defs.bzl", "next")
 load("@npm//:next/package_json.bzl", next_bin = "bin")
-load("//docs/site:defs.bzl", "next")
 load("@aspect_rules_js//js:defs.bzl", "js_library")
+load("@aspect_bazel_lib//lib:copy_to_bin.bzl", "copy_to_bin")
 
 npm_link_all_packages(name = "node_modules")
 
@@ -32,8 +32,38 @@ deps = [
 
 js_library(
     name = "build_deps",
-    srcs = glob(["pages/**/*","public/**/*","components/**/*","config/**/*"]) + ["next.config.mjs","package.json","next-env.d.ts",".eslintrc.json"]
+    srcs = glob(["pages/**/*","public/**/*","components/**/*","config/**/*"])
 ) 
+
+data = ["next.config.mjs","package.json","next-env.d.ts",".eslintrc.json"]
+
+filegroup(
+    name = "source_files",
+    srcs = glob([
+        "public/**/*",
+        "pages/**/*",
+        "components/**/*",
+        "config/**/*"
+    ])
+)
+
+filegroup(
+    name = "data_files",
+    srcs = data
+)
+
+copy_to_bin(
+    name = "copy_source_files",
+    srcs = ["source_files"],
+)
+
+next(
+    name = "build",
+    srcs = ["copy_source_files"] + deps,
+    data = ["data_files"],
+    next_bin = "./node_modules/next/dist/bin/next",
+    next_js_binary = ":next_js_binary",
+)
 
 next(
     name = "next",
