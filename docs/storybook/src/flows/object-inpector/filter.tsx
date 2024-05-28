@@ -29,6 +29,7 @@ const flow: DSLFlow = {
         b: "else",
         c: {
           test: "test",
+          myArr: [{ a: 0 }, { b: 1 }, { c: 2 }],
         },
       },
     },

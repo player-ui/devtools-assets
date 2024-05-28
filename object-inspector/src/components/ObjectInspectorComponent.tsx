@@ -15,8 +15,21 @@ const FilterResults = (props: ObjectInspectorAsset) => {
     const keys = path.split(".");
     let result: any = object;
     for (const key of keys) {
-      if (!result[key]) return "No result";
-      result = result[key];
+      const arrayIndex = key.search(/\[\d+\]$/);
+
+      if (!result[key] && arrayIndex === -1)
+        return "No result for the given path";
+
+      // If key has a numeric index, e.g. for Multi-copy and/or array values.
+      if (arrayIndex > -1) {
+        const subkey = key.substring(0, arrayIndex);
+        const subIndexMatch = key.match(/(?<=\[)\d+(?=\])/);
+
+        result = result[subkey][subIndexMatch ? subIndexMatch[0] : 0];
+        if (!result) return "No result for the given index";
+      } else {
+        result = result[key];
+      }
     }
     return result;
   };
