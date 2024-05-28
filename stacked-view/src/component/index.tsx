@@ -8,11 +8,13 @@ export const StackedViewComponent = (props: StackedViewView) => {
 
   return (
     <Grid h="100%" w="100%" gap="4" templateAreas={'"header" "main" "footer"'}>
-      <GridItem area={"header"}>
+      <GridItem w={"full"} maxWidth={"100vh"} area={"header"}>
         {header && <ReactAsset {...header} />}
       </GridItem>
-      <GridItem area={"main"}>{main && <ReactAsset {...main} />}</GridItem>
-      <GridItem area={"footer"}>
+      <GridItem w={"full"} maxHeight={"70vh"} maxWidth={"100vh"} area={"main"}>
+        {main && <ReactAsset {...main} />}
+      </GridItem>
+      <GridItem w={"full"} maxWidth={"100vh"} area={"footer"}>
         {footer && <ReactAsset {...footer} />}
       </GridItem>
     </Grid>
