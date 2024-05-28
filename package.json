@@ -101,7 +101,7 @@
     "lint-staged": "^11.2.3",
     "lz-string": "^1.5.0",
     "mkdirp": "^1.0.4",
-    "next": "13.3.4",
+    "next": "^14.1.4",
     "patch-package": "^6.4.7",
     "plop": "^4.0.1",
     "prettier": "^2.4.1",

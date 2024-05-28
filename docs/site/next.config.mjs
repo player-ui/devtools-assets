@@ -19,9 +19,7 @@ const withMDX = MDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    NEXT_PUBLIC_BASE_PATH: BASE_PREFIX,
-  },
+  output: "export",
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -29,6 +27,9 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   // Any other Next.js config goes below
   reactStrictMode: true,
+  experimental: {
+    appDir: false,
+  },
 };
 
 // Combining MDX config with Next.js config
