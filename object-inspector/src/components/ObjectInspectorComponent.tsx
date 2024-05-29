@@ -1,15 +1,24 @@
 import React, { useState } from "react";
-import { Text, Input } from "@chakra-ui/react";
+import { Text, Input, background } from "@chakra-ui/react";
 import { ObjectInspector as ObjectorInspectorDS } from "@devtools-ds/object-inspector";
 import { ReactAsset } from "@player-ui/react";
 import { DataModel } from "@player-ui/types";
 import { ObjectInspectorAsset } from "../types";
 
 const FilterResults = (props: ObjectInspectorAsset) => {
-  const { data } = props;
+  const { data, id } = props;
 
   const [filterCriteria, setFilterCriteria] = useState("");
   const [resultData, setResultData] = useState("Path result will display here");
+
+  const isObject = (value: any): boolean => {
+    return (
+      value != null &&
+      (value.constructor === Object ||
+        (!value.constructor && typeof value === "object") ||
+        Array.isArray(value))
+    );
+  };
 
   const getPathvalue = (object: DataModel, path: string) => {
     const keys = path.split(".");
@@ -48,12 +57,24 @@ const FilterResults = (props: ObjectInspectorAsset) => {
         value={filterCriteria}
         onChange={onChangeHandler}
       />
-      {/* <ObjectorInspectorDS
-        data={resultData}
-        includePrototypes={false}
-        expandLevel={7}
-      /> */}
-      <Text>{JSON.stringify(resultData)}</Text>
+      <div
+        style={{
+          backgroundColor: "#e0e0e0",
+          borderRadius: "8px",
+          padding: "8px",
+        }}
+      >
+        {isObject(resultData) ? (
+          <ObjectorInspectorDS
+            data={resultData}
+            includePrototypes={false}
+            expandLevel={3}
+            id={`filter-${id}`}
+          />
+        ) : (
+          <Text style={{ padding: "0 16px" }}>{resultData}</Text>
+        )}
+      </div>
     </>
   );
 };
