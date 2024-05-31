@@ -65,7 +65,12 @@ export const TableComponent = (props: TransformedTable) => {
   }
 
   return (
-    <TableContainer overflow={"auto"}>
+    <TableContainer
+      maxHeight="70vh"
+      width={"100%"}
+      overflowY={"auto"}
+      overflowX={"auto"}
+    >
       <Table variant="simple">
         <Thead>
           <Tr>
