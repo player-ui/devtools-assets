@@ -16,10 +16,16 @@ export const StackedViewComponent = (props: StackedViewView) => {
       <GridItem w={"100%"} area={"header"}>
         {header && <ReactAsset {...header} />}
       </GridItem>
-      <GridItem w={"100%"} area={"main"}>
+      <GridItem
+        w={"100%"}
+        maxHeight="70vh"
+        overflowX="auto"
+        overflowY="auto"
+        area={"main"}
+      >
         {main && <ReactAsset {...main} />}
       </GridItem>
-      <GridItem w={"100%"} area={"footer"}>
+      <GridItem w={"100%"} overflowX="auto" overflowY="auto" area={"footer"}>
         {footer && <ReactAsset {...footer} />}
       </GridItem>
     </Grid>
