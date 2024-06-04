@@ -9,7 +9,7 @@ export const NavigationComponent = (props: NavigationAsset) => {
   return (
     <Stack direction="row" spacing={4} {...rest}>
       {values?.map((a) => (
-        <ReactAsset key={a.asset.id} {...a} />
+        <ReactAsset w="100%" key={a.asset.id} {...a} />
       ))}
     </Stack>
   );

@@ -7,12 +7,25 @@ export const StackedViewComponent = (props: StackedViewView) => {
   const { header, main, footer } = props;
 
   return (
-    <Grid h="100%" w="100%" gap="4" templateAreas={'"header" "main" "footer"'}>
-      <GridItem area={"header"}>
+    <Grid
+      h="100%"
+      gap="4"
+      templateAreas={'"header" "main" "footer"'}
+      width="full"
+    >
+      <GridItem w={"100%"} area={"header"}>
         {header && <ReactAsset {...header} />}
       </GridItem>
-      <GridItem area={"main"}>{main && <ReactAsset {...main} />}</GridItem>
-      <GridItem area={"footer"}>
+      <GridItem
+        w={"100%"}
+        maxHeight="70vh"
+        overflowX="auto"
+        overflowY="auto"
+        area={"main"}
+      >
+        {main && <ReactAsset {...main} />}
+      </GridItem>
+      <GridItem w={"100%"} overflowX="auto" overflowY="auto" area={"footer"}>
         {footer && <ReactAsset {...footer} />}
       </GridItem>
     </Grid>
