@@ -1,3 +1,37 @@
+# 0.2.0 (Wed Jun 05 2024)
+
+### Release Notes
+
+#### feat: flame-graph ([#25](https://github.com/player-ui/devtools-assets/pull/25))
+
+Adds `flame-graph` component.
+
+```ts
+<FlameGraph binding={b`my_binding`} height={100} width={200} />
+```
+
+---
+
+#### 🚀 Enhancement
+
+- feat: flame-graph [#25](https://github.com/player-ui/devtools-assets/pull/25) ([@rafbcampos](https://github.com/rafbcampos))
+
+#### 🐛 Bug Fix
+
+- Release main [#28](https://github.com/player-ui/devtools-assets/pull/28) ([@intuit-svc](https://github.com/intuit-svc))
+- stackedView width fix [#26](https://github.com/player-ui/devtools-assets/pull/26) ([@mercillo](https://github.com/mercillo))
+- [Devtools/file upload] Asset [#24](https://github.com/player-ui/devtools-assets/pull/24) ([@lexfm](https://github.com/lexfm))
+- [Devtools/radio-group] asset [#23](https://github.com/player-ui/devtools-assets/pull/23) ([@lexfm](https://github.com/lexfm) [@rafbcampos](https://github.com/rafbcampos))
+
+#### Authors: 4
+
+- [@intuit-svc](https://github.com/intuit-svc)
+- Alex Fimbres ([@lexfm](https://github.com/lexfm))
+- Marlon "Marky" Ercillo ([@mercillo](https://github.com/mercillo))
+- Rafael Campos ([@rafbcampos](https://github.com/rafbcampos))
+
+---
+
 # 0.1.1 (Thu May 02 2024)
 
 #### 🐛 Bug Fix
