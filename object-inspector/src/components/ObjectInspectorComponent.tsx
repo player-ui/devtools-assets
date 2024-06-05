@@ -26,7 +26,8 @@ const FilterResults = (props: ObjectInspectorAsset) => {
     for (const key of keys) {
       const arrayIndex = key.search(/\[\d+\]$/);
 
-      if (!result[key] && arrayIndex === -1) return 0;
+      if (result[key] === undefined && arrayIndex === -1)
+        return "No result for the given path";
 
       // If key has a numeric index, e.g. for Multi-copy and/or array values.
       if (arrayIndex > -1) {
@@ -34,22 +35,12 @@ const FilterResults = (props: ObjectInspectorAsset) => {
         const subIndexMatch = key.match(/(?<=\[)\d+(?=\])/);
 
         result = result[subkey][subIndexMatch ? subIndexMatch[0] : 0];
-        if (!result) return -1;
+        if (result === undefined) return "No result for the given index";
       } else {
         result = result[key];
       }
     }
     return result;
-  };
-
-  const getResultTag = (result: any) => {
-    if (result === -1) {
-      return "No result for the given index";
-    } else if (result === 0) {
-      return "No result for the given path";
-    } else if (!isObject(result)) {
-      return result;
-    }
   };
 
   const onChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -73,7 +64,12 @@ const FilterResults = (props: ObjectInspectorAsset) => {
           padding: "8px",
         }}
       >
-        <Text style={{ padding: "0 16px" }}>{getResultTag(resultData)}</Text>
+        {!isObject(resultData) ? (
+          <Text style={{ padding: "0 16px", color: "#EE8956" }}>
+            {resultData as any}
+          </Text>
+        ) : null}
+
         {isObject(resultData) ? (
           <ObjectorInspectorDS
             data={resultData as Flow}
