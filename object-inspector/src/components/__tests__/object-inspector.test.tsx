@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, waitFor, getByText } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { ObjectInspectorComponent } from "../index";
 import { TransformedObjectInspector } from "../../types";
@@ -44,7 +44,7 @@ describe("ObjectInspectorComponent test", () => {
     test("Filters data tree on path", async () => {
       const { container, findByPlaceholderText, findByText, queryByText } =
         render(
-          <ObjectInspectorComponent {...objectInspectorAssetPropsMock} filter />
+          <ObjectInspectorComponent {...objectInspectorAssetFilterPropsMock} />
         );
 
       await findByPlaceholderText("Search path...");
@@ -63,7 +63,7 @@ describe("ObjectInspectorComponent test", () => {
     test("Filters data tree on path with array index", async () => {
       const { container, findByPlaceholderText, findByText, queryByText } =
         render(
-          <ObjectInspectorComponent {...objectInspectorAssetPropsMock} filter />
+          <ObjectInspectorComponent {...objectInspectorAssetFilterPropsMock} />
         );
 
       await findByPlaceholderText("Search path...");
@@ -82,7 +82,7 @@ describe("ObjectInspectorComponent test", () => {
     test("Shows 'no path result' message", async () => {
       const { container, findByPlaceholderText, findByText, queryByText } =
         render(
-          <ObjectInspectorComponent {...objectInspectorAssetPropsMock} filter />
+          <ObjectInspectorComponent {...objectInspectorAssetFilterPropsMock} />
         );
 
       await findByPlaceholderText("Search path...");
@@ -99,7 +99,7 @@ describe("ObjectInspectorComponent test", () => {
     test("Shows 'no given index found' message", async () => {
       const { container, findByPlaceholderText, findByText, queryByText } =
         render(
-          <ObjectInspectorComponent {...objectInspectorAssetPropsMock} filter />
+          <ObjectInspectorComponent {...objectInspectorAssetFilterPropsMock} />
         );
 
       await findByPlaceholderText("Search path...");
