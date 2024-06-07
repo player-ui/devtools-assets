@@ -5,7 +5,7 @@ import { ReactAsset } from "@player-ui/react";
 import { Flow } from "@player-ui/types";
 import { ObjectInspectorAsset } from "../types";
 
-const FilterResults = (props: ObjectInspectorAsset) => {
+const FilterObjectInspector = (props: ObjectInspectorAsset) => {
   const { data, id } = props;
 
   const [filterCriteria, setFilterCriteria] = useState("");
@@ -51,7 +51,7 @@ const FilterResults = (props: ObjectInspectorAsset) => {
   };
 
   return (
-    <>
+    <div style={{ margin: "16px" }}>
       <Input
         placeholder="Search path..."
         value={filterCriteria}
@@ -79,12 +79,25 @@ const FilterResults = (props: ObjectInspectorAsset) => {
           />
         ) : null}
       </div>
-    </>
+    </div>
+  );
+};
+
+const ObjectInspector = (props: ObjectInspectorAsset) => {
+  const { data, id } = props;
+
+  return (
+    <ObjectorInspectorDS
+      data={data as Flow}
+      includePrototypes={false}
+      expandLevel={7}
+      id={id}
+    />
   );
 };
 
 export const ObjectInspectorComponent = (props: ObjectInspectorAsset) => {
-  const { data, label, filter, id } = props;
+  const { filter, data, label } = props;
 
   return (
     <>
@@ -92,14 +105,9 @@ export const ObjectInspectorComponent = (props: ObjectInspectorAsset) => {
       {data ? (
         <>
           {filter ? (
-            <FilterResults {...props} style={{ margin: "16px" }} />
+            <FilterObjectInspector {...props} />
           ) : (
-            <ObjectorInspectorDS
-              data={data}
-              includePrototypes={false}
-              expandLevel={7}
-              id={id}
-            />
+            <ObjectInspector {...props} />
           )}
         </>
       ) : (
