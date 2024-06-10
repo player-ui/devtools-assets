@@ -5,7 +5,7 @@ import { ReactAsset } from "@player-ui/react";
 import { Flow } from "@player-ui/types";
 import { ObjectInspectorAsset } from "../types";
 
-const isObject = (value: any): boolean => {
+export const isObject = (value: any): boolean => {
   return (
     value != null &&
     (value.constructor === Object ||
@@ -14,7 +14,7 @@ const isObject = (value: any): boolean => {
   );
 };
 
-const getPathvalue = (object: Flow, path: string) => {
+export const getPathvalue = (object: object, path: string) => {
   const keys = path.split(".");
   let result: any = object;
   for (const key of keys) {
