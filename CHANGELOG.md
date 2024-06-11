@@ -1,3 +1,22 @@
+# 0.3.0 (Tue Jun 11 2024)
+
+#### 🚀 Enhancement
+
+- [Devtools/GED] Filter in Obbject Inspector [#27](https://github.com/player-ui/devtools-assets/pull/27) ([@lexfm](https://github.com/lexfm))
+
+#### 🐛 Bug Fix
+
+- Release main [#34](https://github.com/player-ui/devtools-assets/pull/34) ([@intuit-svc](https://github.com/intuit-svc))
+- Configure Renovate [#30](https://github.com/player-ui/devtools-assets/pull/30) ([@renovate[bot]](https://github.com/renovate[bot]))
+
+#### Authors: 3
+
+- [@intuit-svc](https://github.com/intuit-svc)
+- [@renovate[bot]](https://github.com/renovate[bot])
+- Alex Fimbres ([@lexfm](https://github.com/lexfm))
+
+---
+
 # 0.2.0 (Wed Jun 05 2024)
 
 ### Release Notes
