@@ -6,6 +6,8 @@
 
 It provides an `ObjectInspector` component to display objects for debugging purposes.
 
+You can optionally enable the object path filter capability by providing the `filter` flag in the DSL.
+
 ## Installation
 
 To install `@devtools-ui/object-inspector`, you can use pnpm or yarn:
@@ -34,6 +36,12 @@ myFlow = {
     <MyView>
       <ObjectInspector binding={b`foo`}>
         <ObjectInspector.Label>Label</ObjectInspector.Label>
+      </ObjectInspector>
+    </MyView>,
+    // With filter enabled
+    <MyView>
+      <ObjectInspector binding={b`foo`} filter>
+        <ObjectInspector.Label>With Filter</ObjectInspector.Label>
       </ObjectInspector>
     </MyView>,
   ],

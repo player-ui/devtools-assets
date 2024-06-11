@@ -24,4 +24,26 @@ describe("DSL: Object Inspector", () => {
       },
     });
   });
+
+  test("with filter", async () => {
+    const rendered = await render(
+      <ObjectInspector binding={b`foo`} filter>
+        <ObjectInspector.Label>With Filter</ObjectInspector.Label>
+      </ObjectInspector>
+    );
+
+    expect(rendered.jsonValue).toStrictEqual({
+      id: "root",
+      type: "object-inspector",
+      binding: "foo",
+      filter: true,
+      label: {
+        asset: {
+          id: "label",
+          type: "text",
+          value: "With Filter",
+        },
+      },
+    });
+  });
 });
