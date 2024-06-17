@@ -201,6 +201,32 @@ workflows:
           requires:
             - build
 
+  build_and_test_pr_renovate:
+    jobs:
+      - setup:
+          filters:
+            branches:
+              only:
+                - /renovate/.*/
+              ignore:
+                - main
+                - /version-.*/
+                - /pull\/.*/
+            tags:
+              ignore: /.*/
+
+      - build:
+          requires:
+            - setup
+
+      - test:
+          requires:
+            - build
+
+      - coverage:
+          requires:
+            - build
+
   build_and_test_main:
     when:
       equal: ["", << pipeline.parameters.GHA_Action >>]
