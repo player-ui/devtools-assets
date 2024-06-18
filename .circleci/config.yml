@@ -152,6 +152,7 @@ workflows:
                 - main
                 - /version-.*/
                 - /pull\/.*/
+                - /renovate/.*/
             tags:
               ignore: /.*/
 
