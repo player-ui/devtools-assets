@@ -151,30 +151,63 @@ workflows:
               ignore:
                 - main
                 - /version-.*/
-                - /pull\/.*/
-                - /renovate/.*/
             tags:
               ignore: /.*/
 
       - bazelrc:
+          filters:
+            branches:
+              ignore: /pull\/.*/
           context:
             - BuildTools
           requires:
             - setup
 
       - build:
+          name: build-trunk
+          filters:
+            branches:
+              ignore:
+                -  /pull\/.*/
           requires:
             - bazelrc
 
+      - build:
+          name: build-fork
+          filters:
+            branches:
+              only:
+                - /pull\/.*/
+          requires:
+            - setup
+
       - maybe_release:
+          filters:
+            branches:
+              ignore:
+                - /pull\/.*/
           context:
             - Publish
           requires:
-            - build
+            - build-trunk
 
       - test:
+          name: test-trunk
+          filters:
+            branches:
+              ignore:
+                - /pull\/.*/
           requires:
-            - build
+            - build-trunk
+
+      - test:
+          name: test-fork
+          filters:
+            branches:
+              only:
+                - /pull\/.*./
+          requires:
+            - build-fork
 
       - coverage:
           requires:
@@ -186,32 +219,6 @@ workflows:
           filters:
             branches:
               only:
-                - /pull\/.*/
-            tags:
-              ignore: /.*/
-
-      - build:
-          requires:
-            - setup
-
-      - test:
-          requires:
-            - build
-
-      - coverage:
-          requires:
-            - build
-
-  build_and_test_pr_renovate:
-    jobs:
-      - setup:
-          filters:
-            branches:
-              only:
-                - /renovate/.*/
-              ignore:
-                - main
-                - /version-.*/
                 - /pull\/.*/
             tags:
               ignore: /.*/
