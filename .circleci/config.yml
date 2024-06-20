@@ -210,8 +210,22 @@ workflows:
             - build-fork
 
       - coverage:
+          name: coverage-trunk
+          filters:
+            branches:
+              ignore:
+                - /pull\/.*/
           requires:
-            - build
+            - build-trunk
+            
+      - coverage:
+          name: coverage-fork
+          filters:
+            branches:
+              only:
+                - /pull\/.*/
+          requires:
+            - build-fork
 
   build_and_test_pr_fork:
     jobs:
