@@ -10,6 +10,13 @@ vitest_config(name = "vitest_config")
 
 js_pipeline(
     package_name = "@devtools-ui/console",
+    peer_deps = [
+        "//:node_modules/@player-tools/dsl",
+        "//:node_modules/@player-ui/asset-transform-plugin",
+        "//:node_modules/@player-ui/player",
+        "//:node_modules/@player-ui/react",
+        "//:node_modules/@player-ui/types",
+    ],
     test_deps = [
         ":node_modules",
         "//:vitest_config",
@@ -18,17 +25,12 @@ js_pipeline(
         ":node_modules/@devtools-ui/collection",
         ":node_modules/@devtools-ui/text",
         "//:node_modules/@chakra-ui/react",
+        "//:node_modules/@devtools-ds/console",
         "//:node_modules/@emotion/react",
         "//:node_modules/@emotion/styled",
-        "//:node_modules/@player-tools/dsl",
-        "//:node_modules/@player-ui/asset-transform-plugin",
-        "//:node_modules/@player-ui/player",
-        "//:node_modules/@player-ui/react",
-        "//:node_modules/@player-ui/types",
         "//:node_modules/@types/react",
         "//:node_modules/dlv",
         "//:node_modules/framer-motion",
         "//:node_modules/react",
-        "//:node_modules/@devtools-ds/console"
     ],
 )
