@@ -230,8 +230,8 @@ importers:
         specifier: ^11.0.8
         version: 11.1.8(react-dom@18.3.1)(react@18.3.1)
       happy-dom:
-        specifier: ^13.3.8
-        version: 13.10.1
+        specifier: ^15.0.0
+        version: 15.11.0
       husky:
         specifier: ^7.0.2
         version: 7.0.4
@@ -318,7 +318,7 @@ importers:
         version: 5.2.11(@types/node@18.19.32)
       vitest:
         specifier: ^1.2.2
-        version: 1.6.0(@types/node@18.19.32)(happy-dom@13.10.1)
+        version: 1.6.0(@types/node@18.19.32)(happy-dom@15.11.0)
 
   action:
     dependencies:
@@ -5728,7 +5728,7 @@ packages:
       dom-accessibility-api: 0.6.3
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 1.6.0(@types/node@18.19.32)(happy-dom@13.10.1)
+      vitest: 1.6.0(@types/node@18.19.32)(happy-dom@15.11.0)
     dev: false
 
   /@testing-library/react-hooks@8.0.1(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1):
@@ -6356,7 +6356,7 @@ packages:
       std-env: 3.7.0
       strip-literal: 2.1.0
       test-exclude: 6.0.0
-      vitest: 1.6.0(@types/node@18.19.32)(happy-dom@13.10.1)
+      vitest: 1.6.0(@types/node@18.19.32)(happy-dom@15.11.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -6591,6 +6591,7 @@ packages:
 
   /acorn-import-assertions@1.9.0(acorn@8.11.3):
     resolution: {integrity: sha512-cmMwop9x+8KFhxvKrKfPYmN6/pKTYYHBqLa0DfvVZcKMJWNyWLnaqND7dx/qn66R7ewM1UX5XMaDVP5wlVTaVA==, tarball: https://registry.npmjs.org/acorn-import-assertions/-/acorn-import-assertions-1.9.0.tgz}
+    deprecated: package has been renamed to acorn-import-attributes
     peerDependencies:
       acorn: ^8
     dependencies:
@@ -9716,9 +9717,9 @@ packages:
       uglify-js: 3.17.4
     dev: false
 
-  /happy-dom@13.10.1:
-    resolution: {integrity: sha512-9GZLEFvQL5EgfJX2zcBgu1nsPUn98JF/EiJnSfQbdxI6YEQGqpd09lXXxOmYonRBIEFz9JlGCOiPflDzgS1p8w==, tarball: https://registry.npmjs.org/happy-dom/-/happy-dom-13.10.1.tgz}
-    engines: {node: '>=16.0.0'}
+  /happy-dom@15.11.0:
+    resolution: {integrity: sha512-/zyxHbXriYJ8b9Urh43ILk/jd9tC07djURnJuAimJ3tJCOLOzOUp7dEHDwJOZyzROlrrooUhr/0INZIDBj1Bjw==, tarball: https://registry.npmjs.org/happy-dom/-/happy-dom-15.11.0.tgz}
+    engines: {node: '>=18.0.0'}
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -15302,7 +15303,7 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /vitest@1.6.0(@types/node@18.19.32)(happy-dom@13.10.1):
+  /vitest@1.6.0(@types/node@18.19.32)(happy-dom@15.11.0):
     resolution: {integrity: sha512-H5r/dN06swuFnzNFhq/dnz37bPXnq8xB2xB5JOVk8K09rUtoeNN+LHWkoQ0A/i3hvbUKKcCei9KpbxqHMLhLLA==, tarball: https://registry.npmjs.org/vitest/-/vitest-1.6.0.tgz}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -15337,7 +15338,7 @@ packages:
       chai: 4.4.1
       debug: 4.3.4(supports-color@8.1.1)
       execa: 8.0.1
-      happy-dom: 13.10.1
+      happy-dom: 15.11.0
       local-pkg: 0.5.0
       magic-string: 0.30.10
       pathe: 1.1.2
