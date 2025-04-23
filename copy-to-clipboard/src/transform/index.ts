@@ -1,5 +1,19 @@
-import type { TransformFunction } from "@player-ui/player";
+import type { TransformFunction, Resolve } from "@player-ui/player";
 import { CopyToClipboardAsset, TransformedCopyToClipboard } from "../types";
+
+const getData = (
+  asset: CopyToClipboardAsset,
+  options: Resolve.NodeResolveOptions
+): string => {
+  if (asset.binding === undefined) {
+    return "";
+  }
+  const obj = options.data.model.get(asset.binding, {
+    includeInvalid: true,
+    formatted: false,
+  });
+  return typeof obj === "string" ? obj : JSON.stringify(obj, null, 2);
+};
 
 /**
  * Platform-agnostic transform function that takes the properties we get from the Player Content (DSL > JSON)
@@ -10,15 +24,5 @@ export const copyToClipboardTransform: TransformFunction<
   TransformedCopyToClipboard
 > = (asset, options) => ({
   ...asset,
-  data:
-    asset.binding === undefined
-      ? ""
-      : JSON.stringify(
-          options.data.model.get(asset.binding, {
-            includeInvalid: true,
-            formatted: false,
-          }),
-          null,
-          2
-        ),
+  data: getData(asset, options),
 });
