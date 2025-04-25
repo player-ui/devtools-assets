@@ -1,3 +1,26 @@
+# 0.4.0 (Fri Apr 25 2025)
+
+#### 🚀 Enhancement
+
+- Use peer deps for all player-* deps [#49](https://github.com/player-ui/devtools-assets/pull/49) ([@adierkens](https://github.com/adierkens))
+
+#### 🐛 Bug Fix
+
+- Release main [#58](https://github.com/player-ui/devtools-assets/pull/58) ([@intuit-svc](https://github.com/intuit-svc))
+- feat: support copy string data [#57](https://github.com/player-ui/devtools-assets/pull/57) ([@jcravi](https://github.com/jcravi))
+- update from 0.6.0 to 0.7.0 and 0.7.3 to 0.7.4 [#45](https://github.com/player-ui/devtools-assets/pull/45) ([@mercillo](https://github.com/mercillo))
+- Renovate/circle ci [#44](https://github.com/player-ui/devtools-assets/pull/44) ([@mercillo](https://github.com/mercillo))
+- circleCI test [#43](https://github.com/player-ui/devtools-assets/pull/43) ([@mercillo](https://github.com/mercillo))
+
+#### Authors: 4
+
+- [@intuit-svc](https://github.com/intuit-svc)
+- [@jcravi](https://github.com/jcravi)
+- Adam Dierkens ([@adierkens](https://github.com/adierkens))
+- Marlon "Marky" Ercillo ([@mercillo](https://github.com/mercillo))
+
+---
+
 # 0.3.0 (Tue Jun 11 2024)
 
 #### 🚀 Enhancement
