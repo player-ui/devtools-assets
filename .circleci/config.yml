@@ -9,8 +9,8 @@ parameters:
     default: false
 
 orbs:
-  macos: circleci/macos@2
-  android: circleci/android@2.0
+  macos: circleci/macos@2.5.4
+  android: circleci/android@2.0.3
   codecov: codecov/codecov@3.2.2
 
 executors:
