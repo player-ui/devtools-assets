@@ -14,7 +14,7 @@ js_pipeline(
         "//:node_modules/@player-ui/player",
         "//:node_modules/@player-ui/react",
         "//:node_modules/@player-ui/types",
-        "//:node_modules/@player-tools/dsl",
+        "//:node_modules/@player-lang/react-dsl",
     ],
     test_deps = [
         ":node_modules",

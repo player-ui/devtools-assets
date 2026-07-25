@@ -10,7 +10,7 @@ npm_link_all_packages(
 deps = [
     "//:node_modules/dlv",
     "//:node_modules/vite",
-    "//:node_modules/@player-tools/dsl",
+    "//:node_modules/@player-lang/react-dsl",
     "//:node_modules/@vitejs/plugin-react",
     "//:node_modules/react-dom",
     "//:node_modules/@storybook/addon-docs",

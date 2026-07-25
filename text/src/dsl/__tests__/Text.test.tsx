@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render } from "@player-tools/dsl";
+import { render } from "@player-lang/react-dsl";
 import { Text } from "../Text";
 
 describe("DSL: Text", () => {

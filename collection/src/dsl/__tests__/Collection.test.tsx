@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { Asset, render } from "@player-tools/dsl";
+import { Asset, render } from "@player-lang/react-dsl";
 import { Collection } from "../Collection";
 
 describe("DSL: Collection", () => {

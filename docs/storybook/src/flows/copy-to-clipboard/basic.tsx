@@ -1,7 +1,7 @@
 import React from "react";
 import { CopyToClipboard, Text } from "@devtools-ui/plugin";
-import type { DSLFlow } from "@player-tools/dsl";
-import { makeBindingsForObject } from "@player-tools/dsl";
+import type { DSLFlow } from "@player-lang/react-dsl";
+import { makeBindingsForObject } from "@player-lang/react-dsl";
 
 const schema = {
   foo: {

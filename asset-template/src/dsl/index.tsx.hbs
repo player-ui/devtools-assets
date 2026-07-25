@@ -4,7 +4,7 @@ import {
   Asset,
   createSlot,
   BindingTemplateInstance,
-} from "@player-tools/dsl";
+} from "@player-lang/react-dsl";
 import type { Asset as AssetType } from "@player-ui/player";
 import { Collection } from "@devtools-ui/collection";
 import { Text } from "@devtools-ui/text";

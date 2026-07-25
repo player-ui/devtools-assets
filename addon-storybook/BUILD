@@ -22,7 +22,7 @@ dependencies = [
     "//:node_modules/@chakra-ui/react",
     "//:node_modules/@storybook/types",
     "//:node_modules/esbuild-wasm",
-    "//:node_modules/@player-tools/dsl",
+    "//:node_modules/@player-lang/react-dsl",
     "//:node_modules/@player-ui/react",
     "//:node_modules/lz-string",
     "//:node_modules/@player-ui/beacon-plugin-react",

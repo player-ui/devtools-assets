@@ -4,7 +4,7 @@ import {
   Asset,
   createSlot,
   BindingTemplateInstance,
-} from "@player-tools/dsl";
+} from "@player-lang/react-dsl";
 import { Text } from "@devtools-ui/text";
 import type { ToggleAsset } from "../types";
 

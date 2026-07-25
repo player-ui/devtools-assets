@@ -1,5 +1,9 @@
 import React from "react";
-import { AssetPropsWithChildren, Asset, createSlot } from "@player-tools/dsl";
+import {
+  AssetPropsWithChildren,
+  Asset,
+  createSlot,
+} from "@player-lang/react-dsl";
 import { Text } from "@devtools-ui/text";
 import type { Asset as AssetType } from "@player-ui/player";
 import { Collection } from "@devtools-ui/collection";

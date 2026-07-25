@@ -1,7 +1,7 @@
 import React from "react";
 import { FlameGraph } from "@devtools-ui/plugin";
-import type { DSLFlow } from "@player-tools/dsl";
-import { expression as e, makeBindingsForObject } from "@player-tools/dsl";
+import type { DSLFlow } from "@player-lang/react-dsl";
+import { expression as e, makeBindingsForObject } from "@player-lang/react-dsl";
 import type { Schema } from "@player-ui/types";
 
 const RecordType: Schema.DataType<Record<string, unknown>> = {
