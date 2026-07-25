@@ -193,9 +193,6 @@ importers:
       auto:
         specifier: ^10.37.2
         version: 10.46.0(@types/node@18.19.32)(typescript@4.8.4)
-      browser:
-        specifier: link:esbuild-wasm/lib/browser
-        version: link:esbuild-wasm/lib/browser
       bundle-analyzer:
         specifier: ^0.0.6
         version: 0.0.6
