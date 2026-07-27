@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render, expression as e, Asset } from "@player-tools/dsl";
+import { render, expression as e, Asset } from "@player-lang/react-dsl";
 import { Action } from "../Action";
 
 describe("DSL: Action", () => {

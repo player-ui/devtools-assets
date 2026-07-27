@@ -4,7 +4,7 @@ import {
   expression as e,
   makeBindingsForObject,
   type DSLFlow,
-} from "@player-tools/dsl";
+} from "@player-lang/react-dsl";
 import { CodeEditor } from "@devtools-ui/plugin";
 
 const RecordType: Schema.DataType<Record<string, unknown>> = {

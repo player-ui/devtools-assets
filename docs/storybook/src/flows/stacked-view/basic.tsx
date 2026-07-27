@@ -1,6 +1,6 @@
 import React from "react";
 import { Collection, StackedView, Text } from "@devtools-ui/plugin";
-import type { DSLFlow } from "@player-tools/dsl";
+import type { DSLFlow } from "@player-lang/react-dsl";
 
 const view1 = (
   <StackedView>

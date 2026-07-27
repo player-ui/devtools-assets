@@ -1,6 +1,6 @@
 import React from "react";
 import { Action, Collection } from "@devtools-ui/plugin";
-import type { DSLFlow } from "@player-tools/dsl";
+import type { DSLFlow } from "@player-lang/react-dsl";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const schema: any = {

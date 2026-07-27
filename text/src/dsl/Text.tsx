@@ -1,5 +1,5 @@
 import React from "react";
-import { AssetPropsWithChildren, Asset } from "@player-tools/dsl";
+import { AssetPropsWithChildren, Asset } from "@player-lang/react-dsl";
 import { TextAsset } from "../types";
 
 export const Text = (

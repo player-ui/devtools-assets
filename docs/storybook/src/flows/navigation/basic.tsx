@@ -1,6 +1,6 @@
 import React from "react";
 import { Action, Navigation, Collection, Text } from "@devtools-ui/plugin";
-import type { DSLFlow } from "@player-tools/dsl";
+import type { DSLFlow } from "@player-lang/react-dsl";
 
 const Nav = () => (
   <Navigation id="transition-1">

@@ -11,7 +11,7 @@ vitest_config(name = "vitest_config")
 js_pipeline(
     package_name = "@devtools-ui/flame-graph",
     peer_deps = [
-        "//:node_modules/@player-tools/dsl",
+        "//:node_modules/@player-lang/react-dsl",
         "//:node_modules/@player-ui/asset-transform-plugin",
         "//:node_modules/@player-ui/player",
         "//:node_modules/@player-ui/react",

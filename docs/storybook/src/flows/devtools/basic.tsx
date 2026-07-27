@@ -1,6 +1,6 @@
 import React from "react";
-import type { DSLFlow, DSLSchema } from "@player-tools/dsl";
-import { expression as e, makeBindingsForObject } from "@player-tools/dsl";
+import type { DSLFlow, DSLSchema } from "@player-lang/react-dsl";
+import { expression as e, makeBindingsForObject } from "@player-lang/react-dsl";
 import {
   Action,
   CodeEditor,

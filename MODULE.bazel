@@ -2,17 +2,22 @@ module(name = "devtools-ui", version = "1.0")
 
 bazel_dep(name = "rules_player")
 
-git_override(module_name = "rules_player", remote = "https://github.com/player-ui/rules_player.git", commit = "e71339c96deeec1f4976fbc04815143ee23d8541")
+archive_override(
+    module_name = "rules_player",
+    strip_prefix = "rules_player-2.6.6",
+    urls = ["https://github.com/player-ui/rules_player/archive/refs/tags/v2.6.6.tar.gz"],
+)
 
-bazel_dep(name = "aspect_bazel_lib", version = "1.39.0")
-bazel_dep(name = "aspect_rules_js", version = "1.34.1")
-bazel_dep(name = "bazel_skylib", version = "1.4.2")
-bazel_dep(name = "rules_pkg", version = "0.9.1")
-bazel_dep(name = "aspect_rules_ts", version = "2.1.0")
-bazel_dep(name = "aspect_rules_swc", version = "1.1.0")
+bazel_dep(name = "aspect_bazel_lib", version = "2.22.5")
+bazel_dep(name = "aspect_rules_js", version = "2.3.8")
+bazel_dep(name = "bazel_skylib", version = "1.9.0")
+bazel_dep(name = "rules_pkg", version = "1.1.0")
+bazel_dep(name = "aspect_rules_ts", version = "3.8.10")
+bazel_dep(name = "aspect_rules_swc", version = "2.7.5")
+bazel_dep(name = "rules_cc", version = "0.2.18")
 
 ####### Node.js version #########
-bazel_dep(name = "rules_nodejs", version = "6.0.2")
+bazel_dep(name = "rules_nodejs", version = "6.7.5")
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
 node.toolchain(node_version = "18.18.0")
 #################################
@@ -25,6 +30,7 @@ npm.npm_translate_lock(
     data = [
         "//:package.json",
     ],
+    npm_package_target_name = "{dirname}",
     npmrc = "//:.npmrc",
     verify_node_modules_ignored = "//:.bazelignore",
 )
@@ -37,6 +43,6 @@ rules_ts_ext = use_extension(
     dev_dependency = True,
 )
 
-rules_ts_ext.deps()
+rules_ts_ext.deps(ts_version = "4.8.4")
 
 use_repo(rules_ts_ext, "npm_typescript")

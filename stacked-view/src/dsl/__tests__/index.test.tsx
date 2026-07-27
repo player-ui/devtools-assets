@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render, Asset } from "@player-tools/dsl";
+import { render, Asset } from "@player-lang/react-dsl";
 import { StackedView } from "../";
 
 describe("DSL: StackedView", () => {

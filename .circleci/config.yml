@@ -11,12 +11,12 @@ parameters:
 orbs:
   macos: circleci/macos@2
   android: circleci/android@2.0
-  codecov: codecov/codecov@3.2.2
+  codecov: codecov/codecov@6.0.0
 
 executors:
   base:
     docker:
-      - image: docker.io/playerui/bazel-docker:6
+      - image: docker.io/playerui/bazel-docker:latest
     working_directory: ~/devtools-ui
     resource_class: xlarge
     environment:
@@ -126,7 +126,7 @@ jobs:
           bazel coverage --config=ci -- $BUNDLE_TARGETS
 
       - codecov/upload:
-          file: ./bazel-out/_coverage/_coverage_report.dat
+          files: ./bazel-out/_coverage/_coverage_report.dat
 
   maybe_release:
     executor: base

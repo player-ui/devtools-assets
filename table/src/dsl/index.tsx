@@ -3,7 +3,7 @@ import {
   AssetPropsWithChildren,
   Asset,
   BindingTemplateInstance,
-} from "@player-tools/dsl";
+} from "@player-lang/react-dsl";
 import type { TableAsset } from "../types";
 
 /**

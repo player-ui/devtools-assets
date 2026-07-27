@@ -12,7 +12,7 @@ js_pipeline(
     package_name = "@devtools-ui/collection",
     peer_deps = [
         "//:node_modules/@player-ui/player",
-        "//:node_modules/@player-tools/dsl",
+        "//:node_modules/@player-lang/react-dsl",
         "//:node_modules/@player-ui/types",
         "//:node_modules/@player-ui/react",
     ],

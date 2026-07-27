@@ -7,7 +7,7 @@ import {
   WithTemplateTypes,
   WithChildren,
   toJsonProperties,
-} from "@player-tools/dsl";
+} from "@player-lang/react-dsl";
 import type { Asset as AssetType } from "@player-ui/player";
 import { Text } from "@devtools-ui/text";
 import type { RadioGroupAsset, RadioItemAsset } from "../types";

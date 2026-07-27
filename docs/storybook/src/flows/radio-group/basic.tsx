@@ -1,6 +1,6 @@
 import React from "react";
 import { RadioGroup } from "@devtools-ui/plugin";
-import { makeBindingsForObject, DSLFlow } from "@player-tools/dsl";
+import { makeBindingsForObject, DSLFlow } from "@player-lang/react-dsl";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const schema: any = {

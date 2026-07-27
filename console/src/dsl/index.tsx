@@ -4,7 +4,7 @@ import {
   Asset,
   BindingTemplateInstance,
   ExpressionTemplateInstance,
-} from "@player-tools/dsl";
+} from "@player-lang/react-dsl";
 import type { ConsoleAsset } from "../types";
 
 /**

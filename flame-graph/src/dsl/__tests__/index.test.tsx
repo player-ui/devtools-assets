@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render, binding as b } from "@player-tools/dsl";
+import { render, binding as b } from "@player-lang/react-dsl";
 import { FlameGraph } from "../";
 
 describe("DSL: FlameGraph", () => {

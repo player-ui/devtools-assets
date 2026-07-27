@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "@devtools-ui/plugin";
-import type { DSLFlow, DSLSchema } from "@player-tools/dsl";
-import { makeBindingsForObject } from "@player-tools/dsl";
+import type { DSLFlow, DSLSchema } from "@player-lang/react-dsl";
+import { makeBindingsForObject } from "@player-lang/react-dsl";
 
 const schema = {
   my_table: [

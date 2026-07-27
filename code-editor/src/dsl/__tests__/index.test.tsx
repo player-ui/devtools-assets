@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "vitest";
-import { render, expression as e, binding as b } from "@player-tools/dsl";
+import { render, expression as e, binding as b } from "@player-lang/react-dsl";
 import { CodeEditor } from "../";
 
 describe("DSL: CodeEditor", () => {

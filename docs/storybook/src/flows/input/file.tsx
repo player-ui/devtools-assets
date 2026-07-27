@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "@devtools-ui/plugin";
-import { DSLFlow, makeBindingsForObject } from "@player-tools/dsl";
+import { DSLFlow, makeBindingsForObject } from "@player-lang/react-dsl";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const schema: any = {
