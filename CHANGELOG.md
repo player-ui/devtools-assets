@@ -1,3 +1,25 @@
+# 0.4.1 (Mon Jul 27 2026)
+
+### Release Notes
+
+#### Update Player to 0.15.5, migrate DSL to @player-lang/react-dsl, and upgrade to Bazel 9 ([#62](https://github.com/player-ui/devtools-assets/pull/62))
+
+Player runtime bumped to `0.15.5`; DSL moved from deprecated `@player-tools/dsl` to `@player-lang/react-dsl`. Build toolchain upgraded to Bazel 9.
+
+---
+
+#### 🐛 Bug Fix
+
+- Release main [#63](https://github.com/player-ui/devtools-assets/pull/63) ([@intuit-svc](https://github.com/intuit-svc))
+- Update Player to 0.15.5, migrate DSL to @player-lang/react-dsl, and upgrade to Bazel 9 [#62](https://github.com/player-ui/devtools-assets/pull/62) ([@sugarmanz](https://github.com/sugarmanz))
+
+#### Authors: 2
+
+- [@intuit-svc](https://github.com/intuit-svc)
+- Jeremiah Zucker ([@sugarmanz](https://github.com/sugarmanz))
+
+---
+
 # 0.4.0 (Fri Apr 25 2025)
 
 #### 🚀 Enhancement
