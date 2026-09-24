@@ -18,3 +18,11 @@ packages:
   - "code-editor"
   - "radio-group"
   - "flame-graph"
+
+minimumReleaseAge: 4320 # 3 days
+minimumReleaseAgeExclude:
+  - "@player-cli/*"
+  - "@player-lang/*"
+  - "@xlr-lib/*"
+  - "@player-tools/*"
+  - "@player-ui/*"
