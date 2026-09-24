@@ -24,3 +24,5 @@ minimumReleaseAgeExclude:
   - "@player-cli/*"
   - "@player-lang/*"
   - "@xlr-lib/*"
+  - "@player-tools/*"
+  - "@player-ui/*"
