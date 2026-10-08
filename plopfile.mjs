@@ -128,12 +128,6 @@ const extendedActions = {
     pattern: /(.|\n)+(.*node_modules)/,
     template: "{{kebabCase assetName}}/node_modules",
   },
-  pnpmWorkspace: {
-    type: "append",
-    path: "./pnpm-workspace.yaml",
-    pattern: /(.|\n)+(.[\w|"])/,
-    template: '  - "{{kebabCase assetName}}"',
-  },
   pluginReadme: {
     type: "append",
     path: "./plugin/README.md",

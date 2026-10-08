@@ -8,7 +8,6 @@
     "url": "https://github.com/player-ui/devtools-ui.git"
   },
   "scripts": {
-    "setup": "node ./scripts/generate-pnpm-workspace.js",
     "link:local": "node ./scripts/pnpm-link-setup.js",
     "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx $(scripts/pkg-roots.sh)",
     "prepare": "is-ci || husky install",
